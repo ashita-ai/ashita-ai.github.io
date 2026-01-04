@@ -78,7 +78,7 @@ This mirrors how biological memory consolidation works. Encoding is fast; consol
 
 The architecture is settled. The code is catching up.
 
-The stack includes [Pydantic AI](https://ai.pydantic.dev/) for structured LLM interactions, [Qdrant](https://qdrant.tech/) for vector storage, and either DBOS or Temporal for durable execution of background jobs.
+The stack includes [Pydantic AI](https://ai.pydantic.dev/) for structured LLM interactions, [Qdrant](https://qdrant.tech/) for vector storage, and either [DBOS](https://www.dbos.dev/) or [Temporal](https://temporal.io/) for durable execution of background jobs.
 
 I am building this because I need it. The AI applications I want to build require memory that works—memory that does not hallucinate, that can be verified, that degrades gracefully when something has to give.
 
