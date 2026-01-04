@@ -23,8 +23,9 @@ Engram is a memory system for AI applications that preserves ground truth and tr
 
 ## Memory types
 
-Multiple memory types, each with different confidence and decay characteristics:
+Six memory types, each with different confidence and decay characteristics:
 
+- **Working** — Current conversation context, volatile and in-memory
 - **Episodic** — Immutable ground truth, verbatim storage
 - **Factual** — Pattern-extracted facts (emails, dates, names)
 - **Semantic** — LLM-inferred knowledge with variable confidence
