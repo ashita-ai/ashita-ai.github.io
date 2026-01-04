@@ -86,4 +86,4 @@ If this problem interests you, [the repo is on GitHub](https://github.com/ashita
 
 ---
 
-*This is the first in a series of posts about the tools I am building at Ashita AI. Next: Arbiter, an LLM evaluation framework with cost transparency.*
+*This is the first in a series of posts about the tools I am building at Ashita AI. Next: Tessera, data contract coordination for warehouses.*
