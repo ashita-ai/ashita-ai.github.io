@@ -1,0 +1,22 @@
+---
+layout: default
+---
+
+<article class="project">
+  <header class="page-header">
+    {% if page.logo %}
+    <img src="{{ page.logo | relative_url }}" alt="{{ page.title }}" class="project-logo" style="height: 48px; margin-bottom: 1rem;">
+    {% endif %}
+    <h1>{{ page.title }}</h1>
+  </header>
+
+  <div class="project-content">
+    {{ content }}
+  </div>
+
+  {% if page.github %}
+  <p style="margin-top: 2rem;">
+    <a href="{{ page.github }}" target="_blank" rel="noopener">View on GitHub →</a>
+  </p>
+  {% endif %}
+</article>

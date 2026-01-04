@@ -1,0 +1,35 @@
+title: Ashita AI
+description: an island of misfit data tools
+url: "https://ashita.ai"
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+permalink: /blog/:slug/
+
+# Collections
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - .git
+  - .gitignore

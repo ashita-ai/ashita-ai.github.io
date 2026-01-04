@@ -1,0 +1,24 @@
+---
+layout: default
+title: Projects
+permalink: /projects/
+---
+
+<header class="page-header">
+  <h1>Projects</h1>
+</header>
+
+<p>Open source tools for the problems that don't have clean solutions.</p>
+
+{% for project in site.projects %}
+<article class="project-card">
+  {% if project.logo %}
+  <img src="{{ project.logo | relative_url }}" alt="{{ project.title }}" class="project-logo">
+  {% endif %}
+  <div class="project-content">
+    <h3><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h3>
+    <p>{{ project.description }}</p>
+    <a href="{{ project.url | relative_url }}" class="project-link">Learn more →</a>
+  </div>
+</article>
+{% endfor %}
