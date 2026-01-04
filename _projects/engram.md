@@ -3,30 +3,38 @@ title: Engram
 layout: project
 logo: /assets/images/engram.jpg
 github: https://github.com/ashita-ai/engram
-description: Memory is strange. It's selective, associative, and surprisingly useful when you stop treating it like a filing cabinet. Engram takes a different approach to how systems remember things.
+description: Memory is strange. AI memory systems have an accuracy crisis—benchmarks show answer accuracies below 56%. Engram preserves ground truth, tracks confidence, and prevents hallucinations.
 ---
 
 Memory is strange.
 
-It's not a filing cabinet. It's not a database. It doesn't work by exact match. You remember things by association, by feel, by context you can't quite articulate. You forget what you thought you'd remember and remember what you thought you'd forgotten.
+AI memory systems have an accuracy crisis. Recent benchmarks show answer accuracies below 56%, with hallucination and omission rates remaining high. Most systems use LLM extraction on every message, compounding errors until the original truth is lost.
 
-Engram takes this seriously.
+Engram takes a different approach: memory you can trust.
 
 ## What it does
 
-Engram is a memory layer for applications that need to remember things the way humans do—not perfectly, but usefully. It provides:
+Engram is a memory system for AI applications that preserves ground truth and tracks confidence:
 
-- **Associative retrieval** that finds related memories even when the query doesn't match exactly
-- **Graceful forgetting** that lets old, unused memories fade rather than accumulate forever
-- **Contextual recall** that considers when and how something was stored, not just what
-- **Semantic connections** between memories that weren't explicitly linked
+- **Store first, derive later** — Raw conversations stored verbatim. LLM extraction happens in background where errors can be caught.
+- **Track confidence** — Every fact carries provenance: `verbatim` (highest), `extracted` (high), `inferred` (variable).
+- **Verify on retrieval** — Applications filter by confidence. High-stakes queries use only trusted facts.
+- **Enable recovery** — Derived facts trace to sources. Errors can be corrected by re-deriving.
+
+## Memory types
+
+Multiple memory types, each with different confidence and decay characteristics:
+
+- **Episodic** — Immutable ground truth, verbatim storage
+- **Factual** — Pattern-extracted facts (emails, dates, names)
+- **Semantic** — LLM-inferred knowledge with variable confidence
+- **Procedural** — Behavioral patterns and preferences
+- **Inhibitory** — What is explicitly NOT true
 
 ## The philosophy
 
-Most storage systems optimize for precision. Engram optimizes for usefulness. Sometimes the most helpful thing isn't an exact match—it's something adjacent, something that reminds you of what you were actually looking for.
-
-This makes it suited for AI systems, conversational interfaces, and anywhere that "close enough" is better than "not found."
+Ground truth is sacred. Every derived memory points back to source episodes. If extraction makes a mistake, re-derive from the original. Forgetting is a feature—memories decay over time, keeping the store relevant.
 
 ## Status
 
-Engram is available for early adopters. The core memory engine works; we're refining the forgetting curves and association algorithms based on real-world usage.
+Engram is in pre-alpha. Built on Pydantic AI with durable execution (DBOS/Temporal) and Qdrant for vector storage.
