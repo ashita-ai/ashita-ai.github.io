@@ -68,9 +68,9 @@ The linking between memories is inspired by [A-MEM research](https://arxiv.org/a
 
 The expensive work happens in the background.
 
-On the critical path, store the episode and run deterministic extraction—pattern matching for emails, dates, and so on—with no LLM calls, making it fast and reliable.
+The critical path stores the episode and runs deterministic extraction—pattern matching for emails, dates, and so on—with no LLM calls. This keeps it fast and reliable.
 
-Semantic inference—the LLM-heavy work—runs as a background job. This has two benefits: it does not slow down the application, and errors can be caught before they propagate. A batch consolidation job can compare new inferences against existing knowledge and flag contradictions.
+Semantic inference runs as a background job. This has two benefits: it does not slow down the application, and errors can be caught before they propagate. A batch consolidation job compares new inferences against existing knowledge and flags contradictions.
 
 This mirrors how biological memory consolidation works. Encoding is fast; consolidation is slow and happens offline. In the biological case, this happens during sleep. In the engineering case, this happens in a job queue. The [research on systems consolidation](https://pubmed.ncbi.nlm.nih.gov/7624455/) is extensive and the analogy is more useful than it might first appear.
 
