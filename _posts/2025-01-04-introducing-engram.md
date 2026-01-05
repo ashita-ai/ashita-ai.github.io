@@ -58,9 +58,11 @@ This leads to a layout with distinct regions:
 
 **Procedural** memories capture behavioral patterns, such as when a user prefers concise responses, detected through repetition with very slow decay.
 
-**Inhibitory** memories represent what is explicitly NOT true. When a user corrects a misunderstanding, that negation gets stored to prevent false matches.
+**Negation** memories represent what is explicitly NOT true. When a user corrects a misunderstanding, that negation gets stored to prevent false matches.
 
-The inhibitory type is interesting. It is inspired by [research on memory selectivity](https://www.nature.com/articles/s41593-023-01551-w) in biological systems—CCK+ interneurons that suppress incorrect associations. Most memory systems only store positive knowledge. They have no way to represent that the user does NOT use MongoDB. So they keep suggesting it.
+This is an engineering construct—most memory systems only store positive knowledge. They have no way to represent that the user does NOT use MongoDB. So they keep suggesting it. Negation facts solve this practical problem.
+
+The neuroscience here is fascinating but not yet implemented. [Research on memory selectivity](https://www.nature.com/articles/s41593-023-01551-w) shows that CCK+ interneurons suppress incorrect associations in biological systems—memories become selective over time through inhibitory plasticity. We model a related concept through `selectivity_score` on semantic memories, which increases as memories survive consolidation passes. True inhibitory mechanisms that actively suppress competing associations remain a future goal.
 
 The linking between memories is inspired by [A-MEM research](https://arxiv.org/abs/2502.12110) showing 2x improvement on multi-hop reasoning benchmarks. And the buffer promotion system draws from [Cognitive Workspace](https://arxiv.org/abs/2508.13171) research demonstrating 58.6% memory reuse compared to 0% for naive RAG approaches.
 
