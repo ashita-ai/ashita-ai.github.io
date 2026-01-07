@@ -90,8 +90,9 @@ main {
   border: none;
 }
 
-.logo-hidden {
-  visibility: hidden;
+.logo-spacer {
+  width: 64px;
+  height: 64px;
 }
 
 .logo {
