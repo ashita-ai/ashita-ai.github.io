@@ -1,10 +1,8 @@
 <header class="site-header">
   <nav class="nav-container">
-    {% unless page.url == '/' or page.title == 'Home' %}
-    <a href="{{ '/' | relative_url }}" class="logo-link">
+    <a href="{{ '/' | relative_url }}" class="logo-link {% if page.url == '/' or page.title == 'Home' %}logo-hidden{% endif %}">
       <img src="{{ '/assets/images/ashita.jpg' | relative_url }}" alt="Ashita AI" class="logo">
     </a>
-    {% endunless %}
     <ul class="nav-links">
       <li><a href="{{ '/' | relative_url }}">Home</a></li>
       <li><a href="{{ '/projects/' | relative_url }}">Projects</a></li>
