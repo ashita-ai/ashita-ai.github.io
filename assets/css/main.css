@@ -343,6 +343,56 @@ tr:last-child td {
   border-bottom: none;
 }
 
+/* Code Blocks */
+code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  background: #e8e9e3;
+  padding: 0.15em 0.4em;
+  border-radius: 3px;
+}
+
+pre {
+  background: #2d2d2d;
+  color: #ccc;
+  padding: 1.25rem;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  border-radius: 4px;
+  line-height: 1.5;
+}
+
+pre code {
+  background: none;
+  padding: 0;
+  font-size: 0.8125rem;
+  color: inherit;
+}
+
+/* Rouge syntax highlighting */
+.highlight {
+  background: #2d2d2d;
+  border-radius: 4px;
+  margin: 1.5rem 0;
+}
+
+.highlight pre {
+  margin: 0;
+  background: transparent;
+}
+
+.highlight .c, .highlight .c1, .highlight .cm { color: #999; } /* Comments */
+.highlight .k, .highlight .kd, .highlight .kn, .highlight .kp { color: #c9a26d; } /* Keywords */
+.highlight .s, .highlight .s1, .highlight .s2, .highlight .sr { color: #a5c98d; } /* Strings */
+.highlight .mi, .highlight .mf, .highlight .mh { color: #d4a5a5; } /* Numbers */
+.highlight .nf, .highlight .nb { color: #88b8c4; } /* Functions */
+.highlight .nc, .highlight .nn { color: #e0c589; } /* Classes */
+.highlight .o, .highlight .ow { color: #ccc; } /* Operators */
+.highlight .p { color: #ccc; } /* Punctuation */
+.highlight .n, .highlight .na, .highlight .nv { color: #ccc; } /* Names */
+.highlight .bp { color: #88b8c4; } /* Built-in pseudo */
+.highlight .nt { color: #c9a26d; } /* Tag names */
+
 /* Responsive */
 @media (max-width: 600px) {
   .nav-container {
