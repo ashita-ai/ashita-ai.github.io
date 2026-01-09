@@ -65,7 +65,12 @@ The weights are configurable per-query. A user-facing chat might prioritize late
 
 *I am still verifying these results. Treat them as preliminary.*
 
-I tested all 11 algorithms on two datasets: MMLU (1000 knowledge queries) and GSM8K (1319 math problems).
+I tested all 11 algorithms on two datasets:
+
+- **MMLU** (Massive Multitask Language Understanding): 1000 multiple-choice questions across 57 subjects from STEM to humanities. Tests breadth of knowledge.
+- **GSM8K** (Grade School Math 8K): 1319 math word problems requiring multi-step reasoning. Tests logical problem-solving.
+
+For each query, algorithms route to one of the available models, then receive feedback on whether the answer was correct. Quality is the percentage of correct answers.
 
 **MMLU (1000 queries)** - 6 models: GPT-4o-mini, GPT-4o, GPT-4-turbo, Claude Sonnet 4.5, Claude Opus 4.5, Gemini 2.5 Pro
 
