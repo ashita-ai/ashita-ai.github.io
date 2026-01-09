@@ -83,7 +83,7 @@ I tested all 11 algorithms on two datasets: MMLU (1000 knowledge queries) and GS
 | Hybrid UCB1+LinUCB | $10.68 | 95.3% |
 | Dueling Bandit | $10.40 | 95.1% |
 | Thompson Sampling | $11.51 | 92.9% |
-| Static model | $17.84 | 87.0% |
+| Static model (Gemini 2.5 Pro) | $17.84 | 87.0% |
 
 The key finding: **learning algorithms outperform static model selection**. On MMLU, Dueling Bandit reached 93.2% vs 82.0% for always routing to a fixed high-quality model. On GSM8K, Hybrid UCB1+LinUCB hit 95.3% vs 87.0% for static routing. No single model dominates all query types - adaptive routing discovers which models work best for which questions.
 
