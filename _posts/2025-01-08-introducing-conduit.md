@@ -90,7 +90,7 @@ For each query, algorithms route to one of the available models, then receive fe
 | Thompson Sampling | $11.51 | 92.9% |
 | Static model (Gemini 2.5 Pro) | $17.84 | 87.0% |
 
-The key finding: **learning algorithms outperform static model selection**. On MMLU, Dueling Bandit reached 93.2% vs 82.0% for always routing to a fixed high-quality model. On GSM8K, Hybrid UCB1+LinUCB hit 95.3% vs 87.0% for static routing. No single model dominates all query types - adaptive routing discovers which models work best for which questions.
+The key finding: **learning algorithms outperform static model selection**. On MMLU, Dueling Bandit reached 93.2% vs 82.0% for always routing to a fixed high-quality model. On GSM8K, Hybrid UCB1+LinUCB hit 95.3% vs 87.0% for static routing. No single model dominates all query types - adaptive routing discovers which models work best for which questions. Full methodology and raw data in the [benchmark repo](https://github.com/ashita-ai/conduit-benchmark).
 
 ## What Conduit does not do
 
