@@ -28,7 +28,7 @@ None of these are good. The first wastes money. The second wastes time debugging
 
 Conduit takes a different approach: it learns which model works best for each type of query.
 
-Conduit includes 11 routing algorithms, from simple baselines to contextual bandits. The best performer in my tests was [Dueling Bandit](https://arxiv.org/abs/0903.3746), which uses pairwise comparisons to find the best model for each query type. These algorithms maintain probability distributions over model performance and learn which models work best for different query types.
+Conduit includes 11 routing algorithms, from simple baselines to contextual bandits. The best performer in my tests was [Dueling Bandit](https://www.cs.cornell.edu/people/tj/publications/yue_joachims_09a.pdf), which uses pairwise comparisons to find the best model for each query type. These algorithms maintain probability distributions over model performance and learn which models work best for different query types.
 
 ```python
 from conduit import Router, Query
