@@ -62,7 +62,7 @@ This leads to a layout with distinct regions:
 
 This is an engineering construct—most memory systems only store positive knowledge. They have no way to represent that the user does NOT use MongoDB. So they keep suggesting it. Negation facts solve this practical problem.
 
-The neuroscience here is fascinating but not yet implemented. [Research on memory selectivity](https://www.nature.com/articles/s41593-023-01551-w) shows that CCK+ interneurons suppress incorrect associations in biological systems—memories become selective over time through inhibitory plasticity. We model a related concept through `selectivity_score` on semantic memories, which increases as memories survive consolidation passes. True inhibitory mechanisms that actively suppress competing associations remain a future goal.
+The neuroscience here is instructive. Memories strengthen through repeated retrieval—the [testing effect](https://pmc.ncbi.nlm.nih.gov/articles/PMC5912918/)—so Engram tracks `consolidation_strength` that increases when memories are linked, refined, or undergo consolidation. [Retrieval-induced forgetting](https://pubmed.ncbi.nlm.nih.gov/7931095/) shows that retrieving some memories actively suppresses related non-retrieved items; Engram implements this via opt-in RIF to naturally prune redundant memories.
 
 The linking between memories is inspired by [A-MEM research](https://arxiv.org/abs/2502.12110) showing 2x improvement on multi-hop reasoning benchmarks. And the buffer promotion system draws from [Cognitive Workspace](https://arxiv.org/abs/2508.13171) research demonstrating 58.6% memory reuse compared to 0% for naive RAG approaches.
 

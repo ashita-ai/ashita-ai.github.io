@@ -30,7 +30,7 @@ Six memory types, each with different confidence and decay characteristics:
 - **Factual** — Pattern-extracted facts (emails, dates, names)
 - **Semantic** — LLM-inferred knowledge with variable confidence
 - **Procedural** — Behavioral patterns and preferences
-- **Inhibitory** — What is explicitly NOT true
+- **Negation** — What is explicitly NOT true
 
 ## The philosophy
 
