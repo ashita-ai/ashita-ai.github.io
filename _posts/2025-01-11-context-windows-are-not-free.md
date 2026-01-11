@@ -8,13 +8,13 @@ Gemini offers a 2 million token context window. Claude goes to 200K, with a 1M b
 
 The pitch is seductive: dump everything in and let the model figure it out. No retrieval pipeline to build. No chunking strategy to tune. Just concatenate your documents and ask your question.
 
-This is expensive, slow, and—here's the part that matters—often wrong.
+This is expensive, slow, and often wrong.
 
 ## The bill adds up fast
 
 Token pricing looks cheap until you multiply. A 100K context query generating a 2K response on Claude Sonnet costs $0.33. Run that 1,000 times a day and you're spending $10K/month on a single query type.
 
-The compute cost is worse. Transformer attention is [quadratic](https://towardsdatascience.com/extending-context-length-in-large-language-models-74e59201b51f/)—double the context, quadruple the compute. A 100K context can require [10,000x more computation](https://arxiv.org/html/2507.04239v1) than 1K. For Llama 3 70B, [128K tokens consume 40GB](https://developer.nvidia.com/blog/mastering-llm-techniques-inference-optimization/) of GPU memory just for the attention cache. Per user.
+The compute cost is worse. Transformer attention is [quadratic](https://towardsdatascience.com/extending-context-length-in-large-language-models-74e59201b51f/). Double the context, quadruple the compute. A 100K context can require [10,000x more computation](https://arxiv.org/html/2507.04239v1) than 1K. For Llama 3 70B, [128K tokens consume 40GB](https://developer.nvidia.com/blog/mastering-llm-techniques-inference-optimization/) of GPU memory just for the attention cache. Per user.
 
 But money and latency are problems you can throw resources at. The accuracy problem is different.
 
@@ -28,7 +28,7 @@ More context made the answers worse.
 
 [Chroma's research](https://research.trychroma.com/context-rot) found something stranger: models perform worse when context has logical flow. Shuffling documents randomly actually improved retrieval. The structure we add to help models parse information makes them worse at finding it.
 
-And [recent work](https://arxiv.org/abs/2510.05381) isolated the effect of length itself. Even when models perfectly retrieve all relevant information—even when the irrelevant tokens are just whitespace—performance degrades 13.9% to 85%. Length alone hurts. No distractions required.
+And [recent work](https://arxiv.org/abs/2510.05381) isolated the effect of length itself. Even when models perfectly retrieve all relevant information, even when the irrelevant tokens are just whitespace, performance degrades 13.9% to 85%. Length alone hurts. No distractions required.
 
 ## Real conversations are worse
 
@@ -47,17 +47,17 @@ The dangerous failure mode is what Lund calls "silent false negatives." The mode
 
 ## When to actually use long context
 
-Long context is not useless. It wins when a task genuinely requires holding multiple sources in mind simultaneously—analyzing an entire codebase for architectural patterns, synthesizing a legal document, comparing research papers.
+Long context is not useless. It wins when a task genuinely requires holding multiple sources in mind simultaneously: analyzing an entire codebase for architectural patterns, synthesizing a legal document, comparing research papers.
 
 For synthesis tasks, [long context outperforms RAG](https://www.databricks.com/blog/long-context-rag-performance-llms) 56.3% to 49%. The model sees relationships that chunked retrieval would miss.
 
-But for most retrieval tasks—finding specific facts, answering questions from documents—RAG matches or beats long context while costing 10-100x less. The question is whether you need synthesis or retrieval.
+But for most retrieval tasks (finding specific facts, answering questions from documents) RAG matches or beats long context while costing 10-100x less. The question is whether you need synthesis or retrieval.
 
 ## Design for loss
 
 The alternative to stuffing everything into context is deciding what matters.
 
-Lund [recommends](https://fastpaca.com/blog/failure-case-memory-layout/) categorizing information by the consequences of losing it. Some context is sacred—version numbers, security constraints—and must never be dropped. Some is critical and cannot be compressed without losing meaning. Some is expendable and can be reconstructed if needed.
+Lund [recommends](https://fastpaca.com/blog/failure-case-memory-layout/) categorizing information by the consequences of losing it. Some context is sacred (version numbers, security constraints) and must never be dropped. Some is critical and cannot be compressed without losing meaning. Some is expendable and can be reconstructed if needed.
 
 Most systems treat all tokens equally, evicting whatever is oldest. This guarantees that something important will eventually be lost. [Designing explicit eviction policies](/blog/introducing-engram/) based on what information matters is harder but more honest about the tradeoffs.
 
