@@ -116,9 +116,9 @@ Arbiter makes sense if:
 - You run LLM evaluations regularly
 - You care about what those evaluations cost
 - You want to build custom evaluators without reinventing infrastructure
-- You prefer libraries over platforms
+- You prefer libraries over platforms.
 
-It does not make sense if:
+It doesn't make sense if:
 
 - You need a visual dashboard (use a platform instead)
 - You run evaluations rarely enough that cost does not matter

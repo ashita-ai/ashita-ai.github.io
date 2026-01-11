@@ -48,7 +48,7 @@ I am not claiming to have this solved.
 
 **Recurring meetings that outlive their usefulness.** I audit quarterly and still miss some.
 
-**The meeting that should have been a document.** Writing is harder, so the meeting happens.
+**The meeting that should have been a document.** Writing is harder, so the meeting happens
 
 **The "quick sync" that expands.** Two people align. A third joins for context. Then a fourth.
 

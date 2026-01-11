@@ -24,7 +24,7 @@ The fix is conceptually simple: do not throw away the original.
 
 Store raw conversations verbatim, as immutable episodic memories. These are the ground truth. All derived knowledge—facts, preferences, semantic connections—traces back to specific episodes. If the system believes something incorrect, you can find where that belief came from and correct it.
 
-This seems obvious in retrospect. It is how you would design any system where accuracy matters. But it is not how most AI memory systems work. They optimize for storage efficiency over correctness, which is a choice that compounds poorly over time.
+This seems obvious in retrospect. It's how you would design any system where accuracy matters. But it is not how most AI memory systems work. They optimize for storage efficiency over correctness, which is a choice that compounds poorly over time.
 
 ## Confidence as a first-class concept
 
@@ -58,7 +58,7 @@ This leads to a layout with distinct regions:
 
 **Procedural** memories capture behavioral patterns, such as when a user prefers concise responses, detected through repetition with very slow decay.
 
-**Negation** memories represent what is explicitly NOT true. When a user corrects a misunderstanding, that negation gets stored to prevent false matches.
+**Negation** memories represent what is explicitly NOT true. When a user corrects a misunderstanding, that negation gets stored to prevent false matches
 
 This is an engineering construct—most memory systems only store positive knowledge. They have no way to represent that the user does NOT use MongoDB. So they keep suggesting it. Negation facts solve this practical problem.
 
