@@ -41,7 +41,7 @@ Sebastian Lund [describes](https://fastpaca.com/blog/failure-case-memory-layout/
 - **Poisoning**: an early error compounds through every subsequent response
 - **Distraction**: past 100K tokens, models start repeating themselves and drifting
 - **Confusion**: contradictory information causes the model to oscillate between answers
-- **Clash**: system prompts fight with user-provided context
+- **Clash**: system prompts fight with user-provided context.
 
 The dangerous failure mode is what Lund calls "silent false negatives." The model confidently omits crucial information without signaling uncertainty. An auditing agent loses version numbers during summarization, then asserts a system is secure without realizing it forgot to check the logs. False confidence is worse than honest uncertainty.
 
