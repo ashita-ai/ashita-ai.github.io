@@ -3,6 +3,9 @@ description: an island of misfit data tools
 url: "https://ashita.ai"
 baseurl: ""
 
+# Social/Open Graph
+og_image: /assets/images/ashita.jpg
+
 # Build settings
 markdown: kramdown
 highlighter: rouge
