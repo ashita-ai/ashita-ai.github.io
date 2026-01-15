@@ -16,7 +16,7 @@ Token usage. Latency. Cost per query. Error rates. These metrics tell you the ec
 
 [68% of agent trajectories](https://arxiv.org/html/2511.04032v1) in one research dataset were anomalous. Cycles, errors, drift. Most never crashed. They completed successfully with wrong results.
 
-When tools return wrong answers, [agents do not reject them](https://arxiv.org/html/2406.19228v1). They copy the incorrect output and hallucinate a justification. The response is fluent. The reasoning sounds plausible. The answer is wrong.
+When tools return wrong answers, [agents do not reject them](https://arxiv.org/html/2406.19228v1). They copy the incorrect output and hallucinate a justification. The response is fluent. The reasoning sounds plausible. The answer is wrong. [Errors cascade](/blog/your-agents-need-a-supervisor/).
 
 Your error rate dashboard will not catch this.
 
@@ -30,7 +30,7 @@ None of these fully solve the semantic gap. They tell you what happened. "Why di
 
 ## What I am still figuring out
 
-The tradeoff between observability depth and cost is unclear. Structural tracing is cheap (under 3% overhead). Semantic evaluation (LLM judging each step) is expensive and scales with workflow length.
+The tradeoff between observability depth and cost is unclear. Structural tracing is cheap (under 3% overhead). [Semantic evaluation](/blog/introducing-arbiter/) (LLM judging each step) is expensive and scales with workflow length.
 
 For high-stakes workflows, semantic evaluation probably pays for itself. For high-volume queries, maybe not. I do not have a principled way to decide where the threshold is.
 
