@@ -30,7 +30,7 @@ The pattern: teams keep investing in better pre-production measurement. The gap 
 
 **Structured outputs.** OpenAI's [schema enforcement](https://openai.com/index/introducing-structured-outputs-in-the-api/) went from 40% compliance with prompting alone to 100% with strict mode. This is not glamorous, but it is where production systems actually break.
 
-**Synthetic data for bootstrapping.** You can [generate thousands of test cases](https://www.confident-ai.com/blog/the-definitive-guide-to-synthetic-data-generation-using-llms) in minutes. This is useful early, before you understand your domain. Once you know what matters, curated test cases beat synthetic volume. But most teams skip the bootstrapping phase entirely and end up with neither.
+**Synthetic data for bootstrapping.** Synthetic data solves the cold start problem: no production traffic yet, no labeled dataset. You can [generate thousands of test cases](https://www.confident-ai.com/blog/the-definitive-guide-to-synthetic-data-generation-using-llms) in minutes. Once you understand your domain, curated test cases beat synthetic volume.
 
 **Binary labels.** [Both](https://eugeneyan.com/writing/llm-evaluators/) [practitioners](https://hamel.dev/blog/posts/llm-judge/) recommend pass/fail over Likert scales. The difference between a "3" and a "4" is subjective. Pass/fail forces clearer thinking.
 
