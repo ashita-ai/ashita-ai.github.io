@@ -54,7 +54,7 @@ Do not staff for permanent human ops. Staff for the transition. Build the system
 
 Measure agent maintainability, not just human maintainability. Can Claude Code understand your codebase? Can Devin reproduce your bugs? If not, you are building a system that will require expensive human labor forever.
 
-Invest in structured observability. The [30-50% of AI cloud spend](https://www.cloudzero.com/state-of-ai-costs/) that evaporates into waste does so because nobody (human or agent) can see what is happening. Fix visibility first.
+Invest in structured observability. [Organizations waste 30% or more of cloud budgets](https://www.datastackhub.com/insights/cloud-wastage-statistics/) on unused or misconfigured resources, and in 54% of cases the waste stems from lack of visibility. Fix visibility first.
 
 Accept that the tax exists today. Budget for human ops while building for agent ops. The companies that pretend the transition is complete end up with systems that neither humans nor agents can maintain.
 
