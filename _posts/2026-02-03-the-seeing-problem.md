@@ -10,9 +10,7 @@ The distinction matters because the remediation is different. You can refactor m
 
 ## The velocity trap
 
-AI coding tools work. [84% of developers](https://www.netcorpsoftwaredevelopment.com/blog/ai-generated-code-statistics) now use them. They write [41% of all code](https://www.netcorpsoftwaredevelopment.com/blog/ai-generated-code-statistics). Nubank reported [12x efficiency improvement](https://devin.ai/customers/nubank) using Devin for migrations. These are not hype numbers. This is the new baseline.
-
-But velocity has a cost that does not show up in sprint metrics. [Research on AI-generated projects](https://arxiv.org/html/2512.22387) found that only 68.3% execute successfully. Of the failures, 52.6% stemmed from code generation errors. The dependency gap is worse: projects claiming 3 dependencies actually required an average of 37 packages. A 13.5x difference between what the AI said and what the code needed.
+AI coding tools work. The productivity gains are documented. But velocity has a cost that does not show up in sprint metrics. [Research on AI-generated projects](https://arxiv.org/html/2512.22387) found that only 68.3% execute successfully. Of the failures, 52.6% stemmed from code generation errors. The dependency gap is worse: projects claiming 3 dependencies actually required an average of 37 packages. A 13.5x difference between what the AI said and what the code needed.
 
 When [Veracode tested over 100 LLMs](https://www.veracode.com/blog/genai-code-security-report/), 45% of the generated code failed security tests. SQL injection points. Exposed API keys. Insecure authentication patterns.
 
