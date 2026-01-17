@@ -393,6 +393,26 @@ pre code {
 .highlight .bp { color: #88b8c4; } /* Built-in pseudo */
 .highlight .nt { color: #c9a26d; } /* Tag names */
 
+/* About Page */
+.about-section {
+  margin-top: 1rem;
+}
+
+.about-photo {
+  margin-bottom: 2rem;
+}
+
+.about-photo img {
+  width: 100%;
+  border-radius: 4px;
+}
+
+.about-tagline {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
 /* Responsive */
 @media (max-width: 600px) {
   .nav-container {
