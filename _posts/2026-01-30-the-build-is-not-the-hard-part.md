@@ -36,7 +36,7 @@ AI tools make the construction cheaper. They do not make the decisions better. I
 
 Before you build anything (whether with AI tools or without), answer three questions:
 
-**Do you have differentiated data?** If your competitive advantage is the data itself, you need to own the model. If you are using the same data everyone else has, you are not building differentiation. You are building commodity infrastructure at custom prices.
+**What is your actual advantage?** The case for building is strongest when you have something vendors cannot replicate: proprietary data, domain-specific workflows, or integration patterns unique to your business. If your advantage is in how you combine systems or automate processes that no off-the-shelf tool addresses, building makes sense. If you are using the same data and workflows as everyone else, you are building commodity infrastructure at custom prices.
 
 **Is this core to your business?** [BCG's framework](https://www.bcg.com/publications/2018/build-buy-dilemma-artificial-intelligence) maps AI investments by strategic importance and data differentiation. If both are low, you are in "commodity" territory where buying is almost certainly right. If both are high, you are in a "gold mine" where building creates defensible advantage.
 
