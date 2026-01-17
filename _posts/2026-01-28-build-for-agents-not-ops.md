@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "The Reliability Tax"
+title: "Build for Agents, Not Ops"
 date: 2026-01-28
 ---
 
