@@ -22,7 +22,7 @@ That answer assumed humans were the only ones who could do the work.
 
 [Devin](https://devin.ai/) writes code, debugs it, runs tests, and fixes issues autonomously. Goldman Sachs made it ["Employee #1"](https://www.ibm.com/think/news/goldman-sachs-first-ai-employee-devin) in their hybrid AI workforce. Nubank used it for migrating their core ETL (a 6-million line monolith) and reported [12x efficiency improvement and 20x cost savings](https://devin.ai/customers/nubank).
 
-Claude Code reads logs, diagnoses issues, and fixes code. Cursor and Windsurf do the same. These are not research demos. They are production tools that thousands of engineers use daily.
+Claude Code reads logs, diagnoses issues, and fixes code. Cursor and Windsurf do the same. [Ardent](https://tryardent.com/) automates code review and testing. These are not research demos. They are production tools that thousands of engineers use daily.
 
 The reliability tax assumed humans do the ops. If agents do the ops, the multiplier collapses.
 
