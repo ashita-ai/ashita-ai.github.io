@@ -4,7 +4,7 @@ title: "The AI Pilot Graveyard"
 date: 2026-01-22
 ---
 
-Zillow had the model. They had the data. They had years of Zestimate predictions behind them. In 2021, they deployed their AI-powered iBuyer program to production across 25 metropolitan areas. Within months, they had [lost $881 million](https://www.gsb.stanford.edu/insights/flip-flop-why-zillows-algorithmic-home-buying-venture-imploded), written off $304 million in inventory, cut 2,000 jobs, and watched $7.8 billion in market value evaporate.
+Zillow had the model. They had the data. They had years of Zestimate predictions behind them. In 2018, they launched their AI-powered iBuyer program and expanded it to 25 metropolitan areas. By the time they [shut it down](https://www.geekwire.com/2021/zillow-shutter-home-buying-business-lay-off-2k-employees-big-real-estate-bet-falters/) in November 2021, the division had lost $881 million for the year, they had cut 2,000 jobs (25% of their workforce), and watched their stock drop 25% in a single day.
 
 Meanwhile, their competitors Opendoor and Offerpad used similar AI and survived. The difference was not the algorithm. It was the guardrails.
 
