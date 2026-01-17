@@ -22,7 +22,7 @@ That answer assumed humans were the only ones who could do the work.
 
 [Devin](https://devin.ai/) writes code, debugs it, runs tests, and fixes issues autonomously. Goldman Sachs made it ["Employee #1"](https://www.ibm.com/think/news/goldman-sachs-first-ai-employee-devin) in their hybrid AI workforce. Nubank used it for migrating their core ETL (a 6-million line monolith) and reported [12x efficiency improvement and 20x cost savings](https://devin.ai/customers/nubank).
 
-Claude Code reads logs, diagnoses issues, and fixes code. Cursor and Windsurf do the same. [Ardent](https://tryardent.com/) automates code review and testing. These are not research demos. They are production tools that thousands of engineers use daily.
+Claude Code reads logs, diagnoses issues, and fixes code. Cursor and Windsurf do the same. [Ardent](https://tryardent.com/) builds AI agents that handle engineering workflows end-to-end. These are not research demos. They are production tools that thousands of engineers use daily.
 
 The reliability tax assumed humans do the ops. If agents do the ops, the multiplier collapses.
 
@@ -32,7 +32,7 @@ The question is not "how much should I budget for ops?" The question is "can age
 
 This changes what you optimize for. Instead of building systems that humans can monitor and debug, you build systems that agents can monitor and debug. The requirements are different:
 
-**Structured outputs over natural language.** Agents parse JSON reliably. They struggle with prose. [The decisions you make about data infrastructure](/blog/the-data-platform-decisions-that-haunt-you/) in year one determine whether agents can maintain your system in year three.
+**Structured outputs over ambiguity.** Agents work best when the shape of the data is predictable. Schemas, typed APIs, consistent formats. The more your system relies on implicit conventions or unstructured blobs, the harder it is for agents to reason about. [The decisions you make about data infrastructure](/blog/the-data-platform-decisions-that-haunt-you/) in year one determine whether agents can maintain your system in year three.
 
 **Explicit error states over silent failures.** Agents cannot infer what went wrong from vibes. They need clear signals. Systems that fail loudly are systems agents can fix.
 
@@ -42,7 +42,7 @@ This changes what you optimize for. Instead of building systems that humans can 
 
 ## The transition cost
 
-The 4-6x multiplier is real today. You cannot pretend you are post-tax when you are not.
+The operational cost multiplier (that $4-6 spent on ops for every $1 on development) is real today. You cannot pretend you are post-tax when you are not.
 
 But the trajectory is clear. Observability platforms like Arize and WhyLabs are using AI to detect drift automatically. LLM monitoring tools like Langfuse and Braintrust are building toward automated evaluation and retraining triggers. The agents are getting better every quarter.
 
