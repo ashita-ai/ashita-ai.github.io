@@ -74,7 +74,7 @@ That is exactly why production is where the learning happens.
 
 If you are building AI systems, data platforms, or really any software that matters:
 
-**Invest in visibility before architecture.** You cannot improve what you cannot see. The slow query tool at Mailchimp cost a few weeks to build. It saved years of debugging.
+**Invest in visibility before architecture.** You cannot improve what you cannot see. The slow query tool at Mailchimp cost days to build. It saved months of debugging.
 
 **Treat coordination as infrastructure.** Schema changes, API contracts, dependency tracking. These are not nice-to-haves. They are the foundation that lets you move fast without breaking things.
 
