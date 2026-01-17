@@ -10,7 +10,7 @@ In 1770, Wolfgang von Kempelen unveiled "The Turk," a chess-playing automaton th
 
 ## The Wizard of Oz decade
 
-**2009-2017: Expensify** marketed "SmartScan" as AI that automatically processed expense receipts. Reality: [Mechanical Turk workers](https://thehustle.co/expensify-smartscan-powered-by-humans) paid 2 cents per receipt to transcribe them manually. One worker discovered strangers' Uber receipts with full names and home addresses. Boarding passes. Medical receipts. Bank account numbers. The CEO admitted they had used human labor since 2009.
+**2009-2017: Expensify** marketed "SmartScan" as AI that automatically processed expense receipts. Reality: [Mechanical Turk workers](https://theoutline.com/post/2520/strangers-are-looking-at-your-data-for-pennies) paid 2 cents per receipt to transcribe them manually. One worker discovered strangers' Uber receipts with full names and home addresses. Boarding passes. Medical receipts. Bank account numbers. The CEO admitted they had used human labor since 2009.
 
 **2015-2018: Facebook M** was announced as an AI assistant that could make purchases, order food, and book appointments. Reality: [no more than 30% of answers](https://en.wikipedia.org/wiki/M_(virtual_assistant)) were ever served by the AI system. Over 70% required human operators who took over conversations without users knowing. Quietly shut down in January 2018.
 
@@ -28,7 +28,7 @@ The trust gap is not a communication problem. It is an earned reputation.
 
 ## Consumer distrust follows
 
-The skepticism has spread. [53% of consumers](https://consumergoods.com/53-consumers-distrust-ai-enabled-search-results-gartner) now distrust AI-powered search results and summaries. 41% say AI overviews make search more frustrating than traditional methods. 61% want an option to disable AI summaries entirely.
+The skepticism has spread. [53% of consumers](https://consumergoods.com/53-consumers-distrust-ai-enabled-search-results-gartner) now distrust AI-powered search results and summaries. 41% say AI overviews make search more frustrating than traditional methods. [61% want an option](https://www.marketingdive.com/news/more-than-half-of-consumers-are-wary-of-ai-powered-search-gartner/759451/) to disable AI summaries entirely.
 
 This is not technophobia. This is pattern recognition. Consumers have watched AI search confidently cite sources that do not exist, summarize articles it clearly did not read, and present hallucinations as facts. They have adjusted their priors accordingly.
 
