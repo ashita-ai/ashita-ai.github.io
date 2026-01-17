@@ -73,5 +73,3 @@ The discipline that came from scarcity (clear requirements, defined success crit
 ---
 
 AI tools are real. The productivity gains are real. But the hard part of software was never typing. It was knowing what to type.
-
-The 67% stat will not change because the gap was never about construction costs. It was about decision quality. AI tools do not fix that. They just make the consequences arrive faster.
