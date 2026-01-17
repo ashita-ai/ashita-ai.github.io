@@ -4,7 +4,7 @@ title: "The AI Pilot Graveyard"
 date: 2026-01-22
 ---
 
-Zillow had the model. They had the data. They had years of Zestimate predictions behind them. In 2018, they launched their AI-powered iBuyer program and expanded it to 25 metropolitan areas. By the time they [shut it down](https://www.geekwire.com/2021/zillow-shutter-home-buying-business-lay-off-2k-employees-big-real-estate-bet-falters/) in November 2021, the division had lost $881 million for the year, they had cut 2,000 jobs (25% of their workforce), and watched their stock drop 25% in a single day.
+Zillow had the model. They had the data. They had years of Zestimate predictions behind them. In 2018, they launched their AI-powered iBuyer program and expanded it to 25 metropolitan areas. By the time they [shut it down](https://www.geekwire.com/2021/zillow-shutter-home-buying-business-lay-off-2k-employees-big-real-estate-bet-falters/) in November 2021, the division had [lost $881 million](https://therealdeal.com/new-york/2022/02/13/zillow-reports-880m-loss-on-failed-home-flipping-business/) for the year, they had cut 2,000 jobs (25% of their workforce), and watched their stock drop 25% in a single day.
 
 Meanwhile, their competitors Opendoor and Offerpad used similar AI and survived. The difference was not the algorithm. It was the guardrails.
 
@@ -42,7 +42,7 @@ Regulated industries have legitimate compliance gates. These are not pilots. A c
 
 ## Build versus buy
 
-One of the cleaner findings from the MIT research: purchased AI tools succeed [67% of the time](https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo/) compared to 33% for internal builds.
+One of the cleaner findings from the MIT research: purchased AI tools [succeed 67% of the time](https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo/), while internal builds succeed only one-third as often.
 
 Why does buying work better? Vendors force production deployment. When you buy software, it ships. There is no six-month pilot phase. There is a contract, an implementation timeline, and users. Internal builds stall because they can. There is always another stakeholder to consult, another edge case to handle, another quarter to refine the model.
 
@@ -52,7 +52,7 @@ Pilots fail because they test the wrong things.
 
 A pilot that validates whether GPT-4 can summarize documents is worthless. Of course it can. A pilot that validates whether your legal team will actually use AI summaries instead of reading the originals is the only question that matters.
 
-Most pilots are [technical solutions to organizational problems](/blog/the-rag-trap/). They let engineering teams prove the technology works while avoiding the harder question of whether the organization will change how it operates.
+Most pilots are technical solutions to organizational problems. They let engineering teams prove the technology works while avoiding the harder question of whether the organization will change how it operates.
 
 The companies that scale AI do not ask "does this model perform well?" They ask "will this change how decisions get made?" Those are different questions. The first one can be answered in a sandbox. The second one requires production.
 
@@ -64,7 +64,7 @@ Deploy to limited production with real users. Not friendly internal users. Real 
 
 Build automated guardrails before you build the model. [The decisions you make about monitoring and rollback](/blog/the-data-platform-decisions-that-haunt-you/) matter more than the decisions you make about model architecture. This is what separates [healthy metrics from broken agents](/blog/healthy-metrics-broken-agent/).
 
-Buy when you can. The 67% versus 33% success rate is not a suggestion. [Taking on that technical debt](/blog/technical-debt-as-strategy/) is only worth it if you have a genuine competitive advantage to protect.
+Buy when you can. The 3x success rate gap is not a suggestion. [Taking on that technical debt](/blog/technical-debt-as-strategy/) is only worth it if you have a genuine competitive advantage to protect.
 
 ---
 
