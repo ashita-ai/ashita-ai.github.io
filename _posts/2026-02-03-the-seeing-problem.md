@@ -4,9 +4,13 @@ title: "The Seeing Problem"
 date: 2026-02-03
 ---
 
-Researchers at Carnegie Mellon recently introduced a concept they call [comprehension debt](https://arxiv.org/abs/2512.08942): what happens when AI helps teams build systems more sophisticated than they can independently understand or maintain. Traditional technical debt means someone understood the code when it was written. Comprehension debt means nobody ever did.
+A startup used AI to translate their codebase into a new language. The AI generated a hardcoded UUID that assigned every new user the identical identifier. The code worked perfectly for the first user. For everyone after that, the signup flow crashed on database uniqueness constraints.
 
-The distinction matters because the remediation is different. You can refactor messy code. You cannot refactor missing knowledge.
+The outage lasted [five days](https://allinconsulting.substack.com/p/how-ai-generated-code-caused-a-10000). At least $10,000 in lost revenue. Dozens of angry support messages before anyone figured out what was wrong.
+
+The fix would have been trivial. A basic alert on signup failures. An error log anyone was monitoring. But the startup had neither. They discovered the bug from customer complaints, not observability.
+
+This is the seeing problem: AI makes building faster while making understanding harder. Carnegie Mellon researchers call it [comprehension debt](https://arxiv.org/abs/2512.08942), what happens when teams build systems more sophisticated than they can independently understand. Traditional technical debt means someone understood the code when it was written. Comprehension debt means nobody ever did.
 
 ## The velocity trap
 
@@ -60,7 +64,7 @@ This is the leverage that keeps getting ignored. [Splunk's research](https://www
 
 The Mailchimp tool cost days to build. It saved months of debugging. The ROI was obvious in retrospect. It was not obvious in advance because visibility does not demo well. It does not justify new headcount. It does not generate press releases.
 
-AI makes this worse. AI-generated code ships faster, which means the codebase grows faster, which means the surface area for bugs expands faster. [75% of developer time](https://coralogix.com/blog/this-is-what-your-developers-are-doing-75-of-the-time-and-this-is-the-cost-you-pay/) already goes to debugging. AI velocity is increasing the numerator without decreasing the denominator.
+AI makes this worse. AI-generated code ships faster, which means the codebase grows faster, which means the surface area for bugs expands faster. [92% of developers](https://runframe.io/blog/state-of-incident-management-2025) report that AI tools have increased the "blast radius" of bad deployments. [75% of developer time](https://coralogix.com/blog/this-is-what-your-developers-are-doing-75-of-the-time-and-this-is-the-cost-you-pay/) already goes to debugging. AI velocity is increasing the numerator without decreasing the denominator.
 
 ## The investment mismatch
 
