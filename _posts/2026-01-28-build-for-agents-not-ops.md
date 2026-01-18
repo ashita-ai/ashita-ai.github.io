@@ -10,17 +10,17 @@ This is the conventional framing: AI has a reliability tax. Budget for it. Staff
 
 That framing is already obsolete.
 
-## The old model
+## The old model is failing
 
 [MIT research](https://www.nannyml.com/blog/91-of-ml-perfomance-degrade-in-time) found that 91% of ML models degrade over time. [CloudZero](https://www.cloudzero.com/state-of-ai-costs/) found that only 51% of organizations can track whether their AI investments deliver returns. The conventional response is to staff up: hire ML engineers, build monitoring dashboards, create retraining pipelines, run incident response.
 
-Google's research team called ML systems ["the high-interest credit card of technical debt"](https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/43146.pdf) in 2015. For a decade, the answer was to pay down that debt with human labor.
+It is not working. For the first time in five years, [operational toil increased](https://runframe.io/blog/state-of-incident-management-2025): from 25% to 30% of developer time. The expectation was that AI would reduce toil, not exacerbate it. But 69% of AI-powered decisions still require human verification. Organizations added new monitoring layers, alerts, and code review burdens without removing equivalent work.
 
-That answer assumed humans were the only ones who could do the work.
+Google's research team called ML systems ["the high-interest credit card of technical debt"](https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/43146.pdf) in 2015. For a decade, the answer was to pay down that debt with human labor. That approach is hitting a ceiling.
 
 ## The new model
 
-[Devin](https://devin.ai/) writes code, debugs it, runs tests, and fixes issues autonomously. Goldman Sachs made it ["Employee #1"](https://www.ibm.com/think/news/goldman-sachs-first-ai-employee-devin) in their hybrid AI workforce. Nubank used it for migrating their core ETL (a 6-million line monolith) and reported [12x efficiency improvement and 20x cost savings](https://devin.ai/customers/nubank).
+[Devin](https://devin.ai/) writes code, debugs it, runs tests, and fixes issues autonomously. Goldman Sachs made it ["Employee #1"](https://www.ibm.com/think/news/goldman-sachs-first-ai-employee-devin) in their hybrid AI workforce. Nubank used it for migrating their core ETL (a 6-million line monolith) and reported [12x efficiency improvement and 20x cost savings](https://devin.ai/customers/nubank). For security vulnerabilities, one organization saw [20x efficiency gains](https://cognition.ai/blog/devin-annual-performance-review-2025): human developers averaged 30 minutes per fix, Devin averaged 1.5 minutes.
 
 Claude Code reads logs, diagnoses issues, and fixes code. Cursor and Windsurf do the same. [Ardent](https://tryardent.com/) builds AI agents that handle engineering workflows end-to-end. These are not research demos. They are production tools that thousands of engineers use daily.
 
