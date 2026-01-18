@@ -10,7 +10,7 @@ The outage lasted [five days](https://allinconsulting.substack.com/p/how-ai-gene
 
 The fix would have been trivial. A basic alert on signup failures. An error log anyone was monitoring. But the startup had neither. They discovered the bug from customer complaints, not observability.
 
-This is the seeing problem: AI makes building faster while making understanding harder. Carnegie Mellon researchers call it [comprehension debt](https://arxiv.org/abs/2512.08942), what happens when teams build systems more sophisticated than they can independently understand. Traditional technical debt means someone understood the code when it was written. Comprehension debt means nobody ever did.
+This is the seeing problem: AI makes building faster while making understanding harder. Researchers call it [comprehension debt](https://arxiv.org/abs/2512.08942): what happens when teams build systems more sophisticated than they can independently understand. Traditional technical debt means someone understood the code when it was written. Comprehension debt means nobody ever did.
 
 ## The velocity trap
 
