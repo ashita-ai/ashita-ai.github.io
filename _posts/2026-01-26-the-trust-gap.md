@@ -36,7 +36,7 @@ This is not technophobia. This is pattern recognition. Consumers have watched AI
 
 Here is the counterpoint that makes this interesting: Google's [2025 DORA report](https://dora.dev/research/2025/dora-report/) found that 90% of developers now use AI in production. But only 70% trust what they are deploying.
 
-Run the math: 27% of production AI systems are running on hope.
+Run the math: [27% of production AI systems are running on hope](/blog/the-cost-of-being-wrong/). That post is about the technical reasons: AI fails silently with confident wrongness. This post is about the historical reasons: the industry spent a decade faking it.
 
 This creates a strange dynamic. Organizations that deploy AI learn its actual capabilities and limitations. Organizations that do not deploy remain skeptical based on the Wizard of Oz decade. The [pilot graveyard](/blog/the-ai-pilot-graveyard/) is full of initiatives that never reached the point where trust could be established through experience.
 
