@@ -74,8 +74,12 @@ If you are shipping 12x more code, you need 12x more visibility. If you are gene
 
 The seeing problem is not a technical limitation. The tools exist. [Datadog](https://www.datadoghq.com/product/llm-observability/), [Honeycomb](https://www.honeycomb.io/resources/getting-started/what-is-llm-observability), [Arize](https://arize.com/), [Langfuse](https://langfuse.com/). The problem is prioritization. Teams treat observability as something to add after the system works. But with AI-generated code, you may not know if the system works until you can see what it is actually doing.
 
+## What I am still figuring out
+
+The Mailchimp story suggests that simple visibility tools have outsized impact. But that was traditional software with deterministic behavior. I am not sure whether the same approach scales to AI-generated systems where behavior is non-deterministic by design. The chain-of-thought reasoning that worked for one prompt may not apply to the next. Production may be fundamentally less reproducible than it was before. If so, "observability" as we understood it may need to become something closer to continuous auditing. I do not know what the right abstraction is yet.
+
 ---
 
-AI solved the building problem. It created the seeing problem. The companies that figure out how to see what they built will outperform the ones that just build faster.
+That startup's five-day outage cost at least $10,000. The fix was a basic alert that would have caught the UUID collision in minutes.
 
-Velocity without visibility is not speed. It is accumulating debt you cannot measure in a codebase you do not understand.
+AI solved the building problem. It created the seeing problem. Velocity without visibility is not speed. It is a $10,000 lesson you have not learned yet.
