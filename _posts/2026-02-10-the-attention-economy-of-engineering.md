@@ -46,10 +46,16 @@ Sometimes the technically interesting problem is the important one. Scale can be
 
 The failure mode isn't spending attention on hard problems. It's spending attention on hard problems that don't matter yet, for an audience that won't use the product. Build for the audience that pays you, not the audience that hires you next.
 
+## What I am still figuring out
+
+The line between resume-driven development and legitimate technical investment is blurry. Sometimes you need Kubernetes. Sometimes microservices are the right architecture. The same choice can be correct technical judgment or cargo culting depending on context. I do not have a reliable test for distinguishing them in advance. The closest I have is asking whether the engineer can explain the decision without referencing what other companies do.
+
 ## The compounding effect
 
-The difference isn't the technology. It's the decisions made in the first year that compound for the next five.
+The difference is not the technology. It is the decisions made in the first year that compound for the next five.
 
-That startup's impressive infrastructure showed up in an acqui-hire. The Netflix pipeline - hundreds of rows, technically boring - compounded into executive trust, better decisions, and shows that got made because the data was right.
+That startup's impressive infrastructure showed up in an acqui-hire. Less than a million dollars. The Netflix pipeline (hundreds of rows, technically boring) compounded into executive trust, better decisions, and shows that got made because the data was right.
+
+42% of startups fail because they built something nobody wanted. Not because they could not build it. Because they built the wrong thing well.
 
 Engineering attention is finite. Where you direct it determines what gets built well. What gets built well determines what decisions your company can make. And those decisions compound.
