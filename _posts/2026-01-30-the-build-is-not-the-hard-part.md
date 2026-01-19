@@ -70,6 +70,12 @@ When building is expensive, you are forced to prioritize. You cannot build every
 
 The discipline that came from scarcity (clear requirements, defined success criteria, commitment to production) does not automatically transfer to abundance. Teams that could barely ship one feature per quarter will use AI to ship five features per quarter, learn nothing five times faster, and wonder why success rates have not improved.
 
+## What I am still figuring out
+
+The METR study troubles me. Developers with 5+ years of experience in their specific repositories were 19% slower with AI tools. My instinct is that this is a task selection problem (the study used complex, context-heavy work where AI tools add overhead). But I cannot rule out that AI tools create a confidence bubble where developers stop verifying outputs properly. If the latter is true, the productivity gains we are measuring elsewhere may be illusory. I do not have enough data to know.
+
 ---
 
-AI tools are real. The productivity gains are real. But the hard part of software was never typing. It was knowing what to type.
+The METR developers thought AI saved them 20%. It cost them 19%. The perception gap was 39 percentage points.
+
+AI tools are real. The productivity gains on routine work are real. But on complex work, we may be measuring confidence instead of competence. The hard part of software was never typing. It was knowing whether what you typed was right.
