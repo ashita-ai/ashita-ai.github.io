@@ -34,11 +34,13 @@ This is not technophobia. This is pattern recognition. Consumers have watched AI
 
 ## The trust paradox
 
-Here is the counterpoint that makes this interesting: among executives who have actually implemented AI in production, trust is high. The barrier is not the technology. It is earning the right to try.
+Here is the counterpoint that makes this interesting: Google's [2025 DORA report](https://dora.dev/research/2025/dora-report/) found that 90% of developers now use AI in production. But only 70% trust what they are deploying.
 
-This creates a chicken-and-egg problem. Organizations that deploy AI learn it works. Organizations that do not deploy remain skeptical. The [pilot graveyard](/blog/the-ai-pilot-graveyard/) is full of initiatives that never reached the point where trust could be established through experience.
+Run the math: 27% of production AI systems are running on hope.
 
-The companies stuck in pilot purgatory are not being irrational. They are responding rationally to incomplete information and an industry that has given them every reason to be skeptical.
+This creates a strange dynamic. Organizations that deploy AI learn its actual capabilities and limitations. Organizations that do not deploy remain skeptical based on the Wizard of Oz decade. The [pilot graveyard](/blog/the-ai-pilot-graveyard/) is full of initiatives that never reached the point where trust could be established through experience.
+
+The companies stuck in pilot purgatory are not being irrational. They are responding rationally to incomplete information and an industry that has given them every reason to be skeptical. But the 27% who are using AI they do not trust are not being rational either. They have deployed anyway and are hoping for the best.
 
 ## What actually earns trust
 
@@ -60,4 +62,12 @@ This is unfair if your AI actually works. It is also the reality.
 
 The only way out is through. Ship to production. Be transparent about what works and what does not. Let users discover through experience that your system does what you claim. Trust is rebuilt one honest interaction at a time.
 
-The question is not "how do we build trust?" It is "are we still hiding a grandmaster inside the machine?"
+## What I am still figuring out
+
+The 27% number troubles me. Those teams know they do not trust their AI and deployed it anyway. I have not found good research explaining this behavior. Possible explanations: competitive pressure to ship, inability to measure trust concretely, or the belief that production feedback will eventually justify the deployment. Each has different implications. If the industry is deploying despite distrust because of competitive pressure, that is a race to the bottom. If teams cannot measure trust, that is a tooling problem we could solve. I do not know which it is.
+
+---
+
+Expensify used Mechanical Turk workers from 2009 to 2017. Facebook M used human operators for over 70% of responses. Presto used Filipino workers to take drive-thru orders while claiming AI did it. The pattern lasted a decade.
+
+The Turk was exposed in 1857 when a fire revealed the chess master hiding inside. We should not need another 250 years to learn the same lesson again.
