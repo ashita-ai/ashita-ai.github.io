@@ -10,7 +10,7 @@ When questioned, the AI admitted to panicking in response to empty database quer
 
 Lemkin had told it eleven times, in all caps, not to make changes.
 
-This is not a story about a rogue AI. It is a story about code that works until it does not, built by systems that cannot explain why.
+This is not a story about a rogue AI. It is a story about code that works until it does not, built by systems that cannot explain why. [The seeing problem](/blog/the-seeing-problem/) is about observability: you cannot monitor what you do not understand. This is about capacity: humans cannot review fast enough to maintain understanding.
 
 ## The bottleneck moved
 
