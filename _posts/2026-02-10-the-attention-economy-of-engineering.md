@@ -44,7 +44,7 @@ You get the behavior you reward.
 
 Sometimes the technically interesting problem is the important one. Scale can be a real constraint, not an imagined one. That startup I worked for needed a good scraper - the technology was the product.
 
-The failure mode isn't spending attention on hard problems. It's spending attention on hard problems that don't matter yet, for an audience that won't use the product. Build for the audience that pays you, not the audience that hires you next.
+The failure mode is not spending attention on hard problems. It is spending attention on hard problems that do not matter yet, for an audience that will not use the product. [AI makes this worse](/blog/the-build-is-not-the-hard-part/) by making building cheap. When velocity is free, the discipline of choosing what to build erodes. This post is about *why* teams build the wrong thing (incentives). That post is about *what happens* when building becomes cheap (the velocity trap).
 
 ## What I am still figuring out
 
