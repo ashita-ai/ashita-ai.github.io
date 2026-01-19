@@ -34,7 +34,7 @@ A model that passes all your evals can still hallucinate in ways you never teste
 
 The premium is not because AI attacks are more sophisticated. It is because they run longer before detection.
 
-Google's 2025 DORA report found that [90% of developers now use AI in production](https://www.relyance.ai/blog/ai-trust-paradox-dora-report), but only 70% trust what they are deploying. The math: 27% of production AI systems are running on hope.
+Google's 2025 DORA report found that [90% of developers now use AI in production](https://www.relyance.ai/blog/ai-trust-paradox-dora-report), but only 70% trust what they are deploying. Do the math: 27% of developers are shipping AI they do not trust.
 
 ## The counterargument deserves a real answer
 
