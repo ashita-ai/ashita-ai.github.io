@@ -6,7 +6,7 @@ date: 2025-01-14
 
 In 2022, Unity Technologies ingested bad data from a client into their ad-targeting ML model. They did not notice until revenue started dropping. By the time they found it, the damage was [$110 million](https://www.montecarlodata.com/blog-bad-data-quality-examples/), a 37% stock crash, a class action lawsuit, and 4% of the workforce laid off.
 
-The pipeline ran fine. The metrics looked normal. The data was poison.
+The pipeline ran fine. The schema validated. The data was poison.
 
 ## The decisions that haunt you
 

@@ -63,10 +63,10 @@ The retrieval layer cannot fix what the data layer broke.
 
 RAG has become the default. Team builds chatbot, team adds RAG. But RAG is not a solution. It is a tradeoff: you exchange the cost of fine-tuning or long context for the cost of maintaining a retrieval pipeline.
 
-That pipeline has all the problems of any data pipeline. Garbage in, garbage out. [Schema drift](/blog/introducing-tessera/). Ownership gaps. Quality degradation over time.
+That pipeline has all the problems of any data pipeline. [Schema drift](/blog/introducing-tessera/). Ownership gaps. Quality degradation over time. The retrieval layer cannot fix what the data layer broke.
 
 Most RAG failures are not retrieval failures. They are data failures wearing a retrieval costume.
 
 ---
 
-Before you add another retrieval layer, ask: are these data worth retrieving?
+Before you add another embedding model, another reranker, another retrieval strategy: is the answer even in your documents?
