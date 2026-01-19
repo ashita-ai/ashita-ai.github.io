@@ -4,7 +4,7 @@ title: "The 28% Problem"
 date: 2026-02-06
 ---
 
-A fintech startup I worked with shipped something new every quarter. They also left the previous quarter's work unfinished every quarter. Ten engineers, ten business and product people, and a roadmap that reset every twelve weeks.
+A fintech startup I worked with shipped something new every quarter. They also left the previous quarter's work unfinished every quarter. Ten engineers, ten business and product people, and a roadmap that reset every twelve weeks. By my estimate, they wasted roughly 40% of their engineering capacity on projects that were abandoned before they could deliver value.
 
 The problem was not execution. The engineers were good. The problem was that leadership kept placing bets on projects with vague definitions and no appetite constraints. "Build a recommendation engine" is not a strategy. It is a wish.
 
@@ -94,5 +94,6 @@ How to version control strategy. When the document changes, how do you communica
 
 ---
 
-The fintech startup still ships quarterly. They also finish what they start now. The difference was not process. It was a single page that forced them to decide what they actually believed.
+28% of managers can name their company's strategic priorities. That means 72% cannot. If your leadership team is average, three out of four of your managers are making daily decisions based on their best guess about what matters.
 
+The fintech startup still ships quarterly. They also finish what they start now. The 40% waste disappeared. The difference was not process. It was a single page that forced them to decide what they actually believed.
