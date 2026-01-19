@@ -8,6 +8,8 @@ Zillow had the model. They had the data. They had years of Zestimate predictions
 
 Meanwhile, their competitors Opendoor and Offerpad used similar AI and survived. The difference was not the algorithm. It was the guardrails.
 
+McDonald's had a different problem. Their AI drive-thru pilot with IBM [reached 100 locations](https://museumoffailure.com/exhibition/mcdonalds-ai-failure). It processed real orders. It scaled. And in June 2024, they shut it down. Order accuracy hovered in the low-to-mid 80% range while operating costs stayed high. The viral videos (bacon on ice cream, nine sweet teas when a customer ordered none) were symptoms, not the disease. The pilot validated that the technology could take orders. It did not validate that customers would tolerate the experience or that the economics would work.
+
 This is not a story about pilots failing to reach production. It is a story about what happens when they do.
 
 ## The 95% stat
@@ -38,7 +40,13 @@ This is what separated Opendoor from Zillow. Both used AI to value homes. Both d
 
 The lesson is not "deploy faster." The lesson is "deploy with kill switches."
 
-Regulated industries have legitimate compliance gates. These are not pilots. A compliance gate has external accountability, a clear definition of "done," and a regulatory body that will shut you down if you skip it. A pilot has none of these. The problem is when companies use "compliance" as cover for what is actually innovation theater. If your pilot has been "waiting for legal review" for six months, the bottleneck is not legal.
+## When pilots are legitimate
+
+Regulated industries have legitimate compliance gates. Healthcare AI needs FDA clearance. Financial models need regulatory approval. These are not pilots. A compliance gate has external accountability, a clear definition of "done," and a regulatory body that will shut you down if you skip it. A pilot has none of these.
+
+The difference matters. MD Anderson's [IBM Watson oncology project](https://spectrum.ieee.org/how-ibm-watson-overpromised-and-underdelivered-on-ai-health-care) spent four years and over $62 million before being quietly shelved. That was not regulatory compliance. That was a pilot with no kill switch and no external accountability, dressed up as medical research.
+
+The tell is simple: if your pilot has external deadlines enforced by someone who can shut you down, it is compliance. If your pilot has been "waiting for legal review" for six months, the bottleneck is not legal.
 
 ## Build versus buy
 
@@ -66,6 +74,10 @@ Build automated guardrails before you build the model. [The decisions you make a
 
 Buy when you can. The 3x success rate gap is not a suggestion. [Taking on that technical debt](/blog/technical-debt-as-strategy/) is only worth it if you have a genuine competitive advantage to protect.
 
+## What I am still figuring out
+
+The 90-day cutoff is arbitrary. Some industries genuinely need longer validation cycles. I have not found a reliable way to distinguish "legitimate extended validation" from "innovation theater that has learned to hide." The best proxy I have is external accountability: if someone outside your company can force a deadline, it is probably real. If your only deadlines are internal, it is probably theater.
+
 ---
 
-The graveyard is full of pilots that succeeded on every metric except the one that mattered: shipping.
+Zillow lost $881 million. MD Anderson spent $62 million. McDonald's spent years on a pilot that worked but did not matter. The graveyard is not full of failed technology. It is full of successful pilots that validated the wrong things.
