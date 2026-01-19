@@ -3,12 +3,12 @@ title: Conduit
 layout: project
 logo: /assets/images/conduit.jpg
 github: https://github.com/ashita-ai/conduit
-description: Conduit learns which LLM works best for each type of query, reducing API costs while maintaining quality.
+description: LLM routing that learns which model works best for each query. Stop overpaying for simple tasks.
 ---
 
 Conduit learns which LLM works best for each type of query.
 
-A simple "what time is it in Tokyo" does not need a frontier model. Neither does "summarize this paragraph." But the cognitive overhead of deciding per-query adds up fast, so most people default to the expensive option.
+A simple "what time is it in Tokyo" does not need a frontier model. Neither does "summarize this paragraph." But the cognitive overhead of deciding per-query adds up fast, so most teams default to the expensive option. [Context windows are not free](/blog/context-windows-are-not-free/), and neither is routing everything to GPT-4.
 
 ## What it does
 

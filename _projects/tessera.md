@@ -3,12 +3,12 @@ title: Tessera
 layout: project
 logo: /assets/images/tessera.png
 github: https://github.com/ashita-ai/tessera
-description: Tessera coordinates breaking changes between data producers and consumers. It prevents operational disruptions by requiring consumer acknowledgment before breaking schema changes can be deployed.
+description: Data contract coordination. No more 3am surprises when someone upstream drops a column.
 ---
 
 Tessera coordinates breaking changes between data producers and consumers.
 
-Someone upstream wants to drop a column. Downstream, three teams are using it. Without coordination, someone discovers broken pipelines at 3am. Tessera prevents that.
+Someone upstream wants to drop a column. Downstream, three teams are using it. Without coordination, someone discovers broken pipelines at 3am. These are the [data platform decisions that haunt you](/blog/the-data-platform-decisions-that-haunt-you/). Tessera prevents them.
 
 ## What it does
 

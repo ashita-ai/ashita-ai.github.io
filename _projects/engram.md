@@ -3,12 +3,12 @@ title: Engram
 layout: project
 logo: /assets/images/engram.jpg
 github: https://github.com/ashita-ai/engram
-description: Memory is strange. AI memory systems have an accuracy crisis—benchmarks show answer accuracies below 56%. Engram preserves ground truth, tracks confidence, and prevents hallucinations.
+description: AI memory that preserves ground truth. Because most memory systems hallucinate more than the models they serve.
 ---
 
 Memory is strange.
 
-AI memory systems have an accuracy crisis. Recent benchmarks show answer accuracies below 56%, with hallucination and omission rates remaining high. Most systems use LLM extraction on every message, compounding errors until the original truth is lost.
+AI memory systems have an accuracy crisis. Recent benchmarks show answer accuracies below 56%, with hallucination and omission rates remaining high. Most systems use LLM extraction on every message, compounding errors until the original truth is lost. [RAG is not the answer](/blog/the-rag-trap/) when your memory layer is the problem.
 
 Engram takes a different approach: memory you can trust.
 

@@ -3,12 +3,12 @@ title: Arbiter
 layout: project
 logo: /assets/images/arbiter.jpg
 github: https://github.com/ashita-ai/arbiter
-description: The only LLM evaluation framework that shows you exactly what your evaluations cost. Arbiter tracks every LLM interaction, providing real-time cost calculations so you can see the financial impact of your evaluation choices.
+description: LLM evaluation with cost transparency. Know what your evals cost before the invoice arrives.
 ---
 
 The only LLM evaluation framework that shows you exactly what your evaluations cost.
 
-Running evals shouldn't be a mystery. You need to know what you're spending—not after the fact, but as it happens. Arbiter tracks every LLM interaction automatically.
+[Evals won't save you](/blog/your-evals-wont-save-you/) if you can't afford to run them. Most teams discover their evaluation costs after the invoice arrives. Arbiter tracks every LLM interaction automatically, so you know what you're spending as it happens.
 
 ## What it does
 
