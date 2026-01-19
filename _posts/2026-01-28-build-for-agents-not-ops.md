@@ -14,7 +14,9 @@ That framing is already obsolete.
 
 [MIT research](https://www.nannyml.com/blog/91-of-ml-perfomance-degrade-in-time) found that 91% of ML models degrade over time. [CloudZero](https://www.cloudzero.com/state-of-ai-costs/) found that only 51% of organizations can track whether their AI investments deliver returns. The conventional response is to staff up: hire ML engineers, build monitoring dashboards, create retraining pipelines, run incident response.
 
-It is not working. For the first time in five years, [operational toil increased](https://runframe.io/blog/state-of-incident-management-2025): from 25% to 30% of developer time. The expectation was that AI would reduce toil, not exacerbate it. But 69% of AI-powered decisions still require human verification. Organizations added new monitoring layers, alerts, and code review burdens without removing equivalent work.
+It is not working. For the first time in five years, [operational toil increased](https://runframe.io/blog/state-of-incident-management-2025): from 25% to 30% of developer time. That is roughly $37,500 wasted per engineer annually. For a 250-person engineering team, $9.4 million in human labor spent on tasks that should not require humans.
+
+The expectation was that AI would reduce toil, not exacerbate it. But 69% of AI-powered decisions still require human verification. Organizations added new monitoring layers, alerts, and code review burdens without removing equivalent work. 73% experienced outages caused by ignored or suppressed alerts (alert fatigue means teams miss real incidents).
 
 Google's research team called ML systems ["the high-interest credit card of technical debt"](https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/43146.pdf) in 2015. For a decade, the answer was to pay down that debt with human labor. That approach is hitting a ceiling.
 
@@ -58,6 +60,12 @@ Invest in structured observability. [Organizations waste 30% or more of cloud bu
 
 Accept that the tax exists today. Budget for human ops while building for agent ops. The companies that pretend the transition is complete end up with systems that neither humans nor agents can maintain.
 
+## What I am still figuring out
+
+The transition timing is genuinely uncertain. Devin and Claude Code are impressive, but I do not know whether they can handle the long tail of operational complexity (the weird edge cases, the undocumented infrastructure quirks, the incidents that require institutional knowledge). The optimistic read is that structured observability solves this. The pessimistic read is that some operational knowledge is inherently tacit and will resist automation for years. I have not seen enough production deployments to know which is true.
+
 ---
 
-The reliability tax is real. It is also shrinking. The question is whether you are building for the tax rate of 2024 or the tax rate of 2027.
+In 2015, Google called ML the "high-interest credit card of technical debt." For a decade, organizations paid that debt with human labor. The interest kept compounding: 25% became 30%, and $9.4 million in toil became the cost of doing business.
+
+The debt is still real. But the payment method is changing.
