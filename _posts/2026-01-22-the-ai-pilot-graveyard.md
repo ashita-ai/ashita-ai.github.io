@@ -56,7 +56,7 @@ Why does buying work better? Vendors force production deployment. When you buy s
 
 ## The real problem
 
-Pilots fail because they test the wrong things.
+Pilots fail because they test the wrong things. This is different from the [eval problem](/blog/your-evals-wont-save-you/). Evals test whether the model works. Pilots test whether the organization will use it. Both fail for the same reason: they validate capability when they should validate adoption.
 
 A pilot that validates whether GPT-4 can summarize documents is worthless. Of course it can. A pilot that validates whether your legal team will actually use AI summaries instead of reading the originals is the only question that matters.
 
