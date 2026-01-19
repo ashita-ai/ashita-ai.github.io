@@ -34,6 +34,8 @@ A model that passes all your evals can still hallucinate in ways you never teste
 
 The premium is not because AI attacks are more sophisticated. It is because they run longer before detection.
 
+Google's 2025 DORA report found that [90% of developers now use AI in production](https://www.relyance.ai/blog/ai-trust-paradox-dora-report), but only 70% trust what they are deploying. The math: 27% of production AI systems are running on hope.
+
 ## The counterargument deserves a real answer
 
 The obvious objection: traditional software has silent failures too. Off-by-one errors in financial calculations. Race conditions that corrupt data intermittently. Memory leaks that degrade performance slowly. The failure modes I am describing are not unique to AI.
