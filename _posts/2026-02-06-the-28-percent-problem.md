@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The 28% Problem"
-date: 2026-02-07
+date: 2026-02-06
 ---
 
 A fintech startup I worked with shipped something new every quarter. They also left the previous quarter's work unfinished every quarter. Ten engineers, ten business and product people, and a roadmap that reset every twelve weeks.
