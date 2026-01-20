@@ -7,13 +7,8 @@ permalink: /contact/
 <p>Have a question, idea, or just want to say hello? Send a message.</p>
 
 <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
-  <!-- Replace with your Web3Forms access key -->
   <input type="hidden" name="access_key" value="a27ae970-176c-49e5-a702-0293207a6bb0">
-
-  <!-- Optional: Redirect after submission -->
   <input type="hidden" name="redirect" value="https://ashita.ai/thanks/">
-
-  <!-- Honeypot spam protection -->
   <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 
   <div class="form-group">
@@ -31,9 +26,7 @@ permalink: /contact/
     <textarea name="message" id="message" required></textarea>
   </div>
 
-  <!-- hCaptcha widget -->
-  <div class="h-captcha" data-captcha="true"></div>
-  <script src="https://web3forms.com/client/script.js" async defer></script>
-
-  <button type="submit" class="btn">Send Message</button>
+  <div style="text-align: right;">
+    <button type="submit" class="btn">Send Message</button>
+  </div>
 </form>
