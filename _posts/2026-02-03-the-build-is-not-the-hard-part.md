@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The Build Is Not the Hard Part"
-date: 2026-01-30
+date: 2026-02-03
 ---
 
 Nubank used [Devin to migrate their core ETL](https://devin.ai/customers/nubank) (a 6-million line monolith) and reported 12x efficiency improvement and 20x cost savings. Visma used AI tools and [cut project costs by 50%](https://www.microsoft.com/en/customers/story/24262-cognition-ai-azure). 84% of developers now use AI tools that [write 41% of all code](https://www.netcorpsoftwaredevelopment.com/blog/ai-generated-code-statistics).
