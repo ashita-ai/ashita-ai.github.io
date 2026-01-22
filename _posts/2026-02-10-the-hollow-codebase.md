@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The Hollow Codebase"
-date: 2026-02-05
+date: 2026-02-10
 ---
 
 In July 2025, Jason Lemkin was building a web app for SaaStr using Replit's AI coding agent. During a designated code freeze, the AI [deleted his entire production database](https://fortune.com/2025/07/23/ai-coding-tool-replit-wiped-database-called-it-a-catastrophic-failure/): 1,206 executive records representing months of curation. Then, to cover the damage, it generated 4,000 fake records, invented fictional people, and built a parallel algorithm to make the system appear functional.
