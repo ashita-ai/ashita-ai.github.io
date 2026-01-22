@@ -16,7 +16,9 @@ This is not a story about pilots failing to reach production. It is a story abou
 
 ## The 95% stat
 
-[MIT research](https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo/) found that 95% of enterprise AI pilots fail to deliver measurable ROI. The instinct is to read this as a failure rate. It is not. It is a design outcome.
+[MIT research](https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo/) found that 95% of enterprise AI pilots fail to deliver measurable ROI. The number deserves scrutiny. "Measurable ROI" over what timeframe? Measured how? The methodology matters.
+
+But even if the number is directionally right rather than precisely right, the interesting question is why. The instinct is to read 95% as a failure rate. It is not. It is a design outcome.
 
 Pilots are optimized to not reach production.
 
@@ -32,9 +34,7 @@ AI pilots are innovation theater's most expensive production. They justify Chief
 
 The reason is structural. Innovation teams are measured on novelty: new capabilities, impressive demos, press coverage. Execution teams are measured on reliability: uptime, cost control, operational stability. When an innovation team succeeds and hands off to execution, the execution team has zero incentive to adopt it. It disrupts their metrics. The innovation dies in the handoff, not in the lab.
 
-This is not laziness. It is rational behavior under misaligned incentives. Meta's Reality Labs has [lost $71 billion since 2021](https://venturebeat.com/ai/metas-reality-labs-is-losing-billions-still-worth-watching/) building VR technology that the rest of Meta has no incentive to integrate. That is innovation theater at enterprise scale.
-
-The tell is the documentation. If your pilot has a "success criteria" document longer than one page, it is theater. Real AI strategy fits on one page: the problem (20 words), the smallest solution (25 words), the 30-day proof with a specific date, and the one metric everyone watches. Anything more elaborate exists to delay the moment of truth.
+The tell is the timeline. If your pilot has been running for six months and nobody can name the ship date, it is theater. If the success criteria document is longer than the implementation plan, it is theater. If more people attend the steering committee than write code, it is theater.
 
 ## What the 5% do differently
 
@@ -44,9 +44,13 @@ They deploy to limited production immediately. They accept that some deployments
 
 Netflix, Stripe, and Uber all deploy new ML models constantly. Not after six-month pilots. Constantly. Their pattern is called [shadow deployment](https://www.qwak.com/post/shadow-deployment-vs-canary-release-of-machine-learning-models): the new model runs alongside production, processes the same requests, but only the current model's predictions reach users. You get real production data before real exposure. Organizations using shadow deployment report [40% fewer production incidents](https://aws.amazon.com/blogs/machine-learning/deploy-shadow-ml-models-in-amazon-sagemaker/). That is not a pilot. That is continuous deployment with training wheels.
 
-This is what separated Opendoor from Zillow. Both used AI to value homes. Both deployed to production. But Opendoor built systems that detected when the housing market shifted and adjusted offers accordingly. Zillow's executives [overrode the algorithm](https://jise.org/Volume35/n1/JISE2024v35n1pp67-72.pdf) through a practice called "offer calibration," raising bids by thousands above model prices to hit growth targets. When the market turned, Opendoor's guardrails caught it. Zillow's did not exist.
+This is what separated Opendoor from Zillow. Both used AI to value homes. Both deployed to production. But the guardrails were different.
 
-The lesson is not "deploy faster." The lesson is "deploy with kill switches."
+Opendoor's system monitored the spread between predicted and actual sale prices. When the gap widened past a threshold, offers automatically tightened. The system did not need a human to notice the market was turning. It adjusted before the losses compounded.
+
+Zillow's executives [overrode the algorithm](https://jise.org/Volume35/n1/JISE2024v35n1pp67-72.pdf) through a practice called "offer calibration," raising bids by thousands above model prices to hit growth targets. When the market turned, there was no automatic adjustment. The override was the strategy. By the time humans noticed the problem, Zillow owned 7,000 homes it could not sell.
+
+The lesson is not "deploy faster." The lesson is "deploy with automatic pullback." A guardrail is not a dashboard someone checks. It is a trigger that fires without human intervention.
 
 ## When pilots are legitimate
 
@@ -55,20 +59,6 @@ Regulated industries have legitimate compliance gates. Healthcare AI needs FDA c
 The difference matters. MD Anderson's [IBM Watson oncology project](https://spectrum.ieee.org/how-ibm-watson-overpromised-and-underdelivered-on-ai-health-care) spent four years and over $62 million before being quietly shelved. That was not regulatory compliance. That was a pilot with no kill switch and no external accountability, dressed up as medical research.
 
 The tell is simple: if your pilot has external deadlines enforced by someone who can shut you down, it is compliance. If your pilot has been "waiting for legal review" for six months, the bottleneck is not legal.
-
-## Build versus buy
-
-One of the cleaner findings from the MIT research: purchased AI tools [succeed 67% of the time](https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo/), while internal builds succeed only one-third as often.
-
-Why does buying work better? Three reasons.
-
-First, vendors absorb the integration burden. Research shows [60% of AI development time](https://beam.ai/agentic-insights/the-great-ai-flip-why-76-of-enterprises-stopped-building-ai-in-house) goes to connecting systems, managing APIs, and ensuring data flow. Vendor platforms handle this. Internal teams rebuild it from scratch.
-
-Second, vendor contracts create external accountability. When a vendor is paid $500K per year, deployment delays have financial consequences. SLAs are enforceable. Internal builds have no such ratchet. The deadline slips and nothing happens.
-
-Third, internal builds hide their maintenance costs. Successful internal deployments require [15-30% of original build cost annually](https://dust.tt/blog/build-vs-buy-ai-agents) in ongoing maintenance. Doctolib launched an internal AI assistant that hit 800 users within days. The infrastructure demands (access management, security, audit logs, compliance) would have required tripling the team. They switched to a vendor.
-
-Internal builds stall because they can. Vendors ship because they have to.
 
 ## The real problem
 
@@ -86,9 +76,7 @@ Kill pilots that have run longer than 90 days. The MIT data is clear: [successfu
 
 Deploy to limited production with real users. Not friendly internal users. Real customers who will use your AI in ways you did not anticipate and complain when it breaks.
 
-Build automated guardrails before you build the model. [The decisions you make about monitoring and rollback](/blog/the-data-platform-decisions-that-haunt-you/) matter more than the decisions you make about model architecture. This is what separates [healthy metrics from broken agents](/blog/healthy-metrics-broken-agent/).
-
-Buy when you can. The 2x success rate gap is not a suggestion. [Taking on that technical debt](/blog/technical-debt-as-strategy/) is only worth it if you have a genuine competitive advantage to protect.
+Build automated guardrails before you build the model. Not dashboards. Triggers. The Opendoor pattern: when predicted-vs-actual spread exceeds threshold, tighten offers automatically. No human in the loop. [The decisions you make about monitoring and rollback](/blog/the-data-platform-decisions-that-haunt-you/) matter more than the decisions you make about model architecture. This is what separates [healthy metrics from broken agents](/blog/healthy-metrics-broken-agent/).
 
 ## What I am still figuring out
 
@@ -96,4 +84,12 @@ The 90-day boundary is clearer than I expected, but the causation is not. Pilots
 
 ---
 
-Zillow lost $881 million. MD Anderson spent $62 million. McDonald's spent years on a pilot that worked but did not matter. The graveyard is not full of failed technology. It is full of successful pilots that validated the wrong things.
+The graveyard has two sections.
+
+One is full of pilots that never shipped. Six-month validations that became twelve-month validations. Steering committees. Success criteria documents. Innovation theater dressed up as due diligence.
+
+The other is full of production systems that shipped without guardrails. Zillow lost $881 million because executives overrode the algorithm and nothing automatically pulled them back. McDonald's spent three years scaling to 100 locations before discovering customers would not tolerate 85% accuracy.
+
+The 5% that scale are in neither section. They skipped the pilot and deployed with automatic pullback. Wendy's started with one location. Opendoor built triggers that fired without human intervention. Netflix, Stripe, and Uber run shadow deployments that test in production without exposure.
+
+Same technology. Different relationship with failure.
