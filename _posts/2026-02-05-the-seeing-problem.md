@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The Seeing Problem"
-date: 2026-02-03
+date: 2026-02-05
 ---
 
 A startup used AI to translate their codebase into a new language. The AI generated a hardcoded UUID that assigned every new user the identical identifier. The code worked perfectly for the first user. For everyone after that, the signup flow crashed on database uniqueness constraints.
