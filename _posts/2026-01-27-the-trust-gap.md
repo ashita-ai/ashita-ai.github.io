@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The Trust Gap"
-date: 2026-01-26
+date: 2026-01-27
 ---
 
 In 1770, Wolfgang von Kempelen unveiled "The Turk," a chess-playing automaton that defeated Napoleon Bonaparte and Benjamin Franklin. It toured Europe for decades as a marvel of artificial intelligence. It was a fraud. A chess grandmaster hid inside, moving the pieces.
