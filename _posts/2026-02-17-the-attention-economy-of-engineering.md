@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The Attention Economy of Engineering"
-date: 2026-02-10
+date: 2026-02-17
 ---
 
 The first startup I worked for built an intelligent scraper. The technology was genuinely impressive, and we engineered for Netflix-scale when we were a tiny fraction of it. We invested engineering attention in the scraper and the data infrastructure to support it, instead of the front-end product and user experience. The startup was acquired for less than a million dollars.
