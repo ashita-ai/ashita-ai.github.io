@@ -36,7 +36,21 @@ pagination:
 <p>No posts yet. Check back soon.</p>
 {% endif %}
 
+<p class="git-blame"><code>$ git blame OPINIONS.md</code><br><code>a1b2c3d (Evan Volgas) These opinions are mine, not my employer's.</code></p>
+
 <style>
+.git-blame {
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e0e0e0;
+}
+.git-blame code {
+  background: none;
+  padding: 0;
+  font-family: 'SF Mono', Monaco, 'Courier New', monospace;
+}
 .pagination {
   display: flex;
   justify-content: flex-end;
