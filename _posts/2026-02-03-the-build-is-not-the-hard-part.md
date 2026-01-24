@@ -50,7 +50,7 @@ They do not collapse the cost of:
 
 **Understanding complex systems.** The METR developers were slower because they had to verify AI outputs against institutional knowledge. The AI did not know why that config flag existed. Neither did the AI-assisted developer, but they had to figure it out anyway.
 
-**Making good decisions.** AI tools do not tell you whether the feature should exist. They do not tell you whether the architecture will scale. They do not tell you whether anyone will use this.
+**Making good decisions.** AI tools do not tell you whether the feature should exist. They do not tell you whether the architecture will scale. They do not tell you whether anyone will use this. [The industry built the factory but forgot the design department](/blog/the-factory-without-a-design-department/).
 
 **Reaching production.** [The pilot graveyard](/blog/the-ai-pilot-graveyard/) is full of systems that worked in development and died before deployment. AI tools accelerate development. They do not accelerate the organizational decisions required to ship.
 
