@@ -16,7 +16,7 @@ Same underlying models. Radically different results. Cursor built a complex fact
 
 The industry is building factories. Cursor, Devin, Claude Code, CrewAI, LangGraph, AutoGen—all orchestration engines. [Gartner reported](https://www.gartner.com/en/articles/multiagent-systems) a 1,445% surge in multi-agent system inquiries from Q1 2024 to Q2 2025. Two-thirds of enterprise AI implementations now use multi-agent architectures.
 
-The same industry reports a [41-86.7% failure rate](https://arxiv.org/html/2503.13657v1) for production multi-agent systems. [Seventy-nine percent](https://arxiv.org/html/2503.13657v1) of failures originate from specification and coordination issues rather than technical implementation.
+The same industry reports a [41-86.7% failure rate](https://arxiv.org/html/2503.13657v1) for production multi-agent systems. Seventy-nine percent of failures originate from specification and coordination issues rather than technical implementation.
 
 We built the factory. We forgot the design department.
 
