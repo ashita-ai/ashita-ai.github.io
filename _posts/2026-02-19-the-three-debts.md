@@ -76,7 +76,7 @@ The intervention must match the debt type:
 
 - **Technical debt** responds to engineering effort. Refactor, pay it down, move on.
 - **Comprehension debt** responds to learning. Slow down, understand the system, or accept the dependency.
-- **Decision debt** responds only to strategic change. No amount of engineering excellence fixes building the wrong thing.
+- **Decision debt** responds only to strategic change. No amount of engineering excellence fixes building the wrong thing. [The factory works. The design department does not.](/blog/the-factory-without-a-design-department/)
 
 Most organizations have all three. The dangerous ones are the invisible debts—comprehension debt hiding in AI-generated code, decision debt hiding in locally-rational choices.
 
