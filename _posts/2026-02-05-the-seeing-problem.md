@@ -22,7 +22,7 @@ These are not edge cases discovered in research labs. These are production codeb
 
 ## The visibility gap
 
-The building tools are mature. Cursor, Copilot, Claude Code, Devin. They are production-ready and getting better every quarter.
+The building tools are mature. Cursor, Copilot, Claude Code, Devin. They are production-ready and getting better every quarter. [The industry built the factory](/blog/the-factory-without-a-design-department/).
 
 The seeing tools are not.
 
