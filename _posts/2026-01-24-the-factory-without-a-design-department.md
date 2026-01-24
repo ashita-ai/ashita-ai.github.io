@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The Factory Without a Design Department"
-date: 2026-01-25
+date: 2026-01-24
 ---
 
 <img src="/assets/images/the_blueprint.jpg" alt="The Blueprint Spec-Press vs the Orchestration Engine" style="width: 120%; max-width: none; margin-left: -10%; height: auto; margin-bottom: 2rem;">
