@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Build for Agents, Not Ops"
-date: 2026-01-30
+date: 2026-01-29
 ---
 
 A [$500,000 model cost $3.5 million to operate](https://itsoli.ai/the-hidden-tax-of-ai/) over three years. Gartner found that for every dollar spent on AI development, enterprises spend [$4-6 on ongoing operations](https://itsoli.ai/the-hidden-tax-of-ai/). [60% of enterprise GenAI investments](https://menlovc.com/2024-the-state-of-generative-ai-in-the-enterprise/) come from innovation budgets, not operational budgets. The money funds the build. The maintenance is someone else's problem.
