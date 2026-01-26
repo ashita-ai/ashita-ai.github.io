@@ -66,7 +66,7 @@ The pattern is identical to what DORA describes. Engineers knew the system was n
 
 Boeing's lesson applies directly to AI: "Even the best companies can fall prey to competitive pressures as they seek to stay financially viable, grow faster, or profit by shipping products more quickly and cheaply."
 
-The aviation industry relies on public trust. So does AI. And every high-profile failure—every UnitedHealthcare algorithm denying care with a [90% error rate](https://www.cio.com/article/190888/5-famous-analytics-and-ai-disasters.html), every Cruise robotaxi [dragging a pedestrian 20 feet](https://www.evidentlyai.com/blog/ai-failures-examples), every chatbot confidently hallucinating legal citations—erodes the foundation.
+The aviation industry relies on public trust. So does AI. And every high-profile failure—every UnitedHealthcare algorithm denying care with a [90% error rate on appeals](https://www.cbsnews.com/news/unitedhealth-lawsuit-ai-deny-claims-medicare-advantage-health-insurance-denials/), every Cruise robotaxi [dragging a pedestrian over 20 feet](https://www.justice.gov/usao-ndca/pr/cruise-admits-submitting-false-report-influence-federal-investigation-and-agrees-pay), every chatbot confidently hallucinating legal citations—erodes the foundation.
 
 ## The exception
 
