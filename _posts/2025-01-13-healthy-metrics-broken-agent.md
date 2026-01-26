@@ -4,7 +4,7 @@ title: "Healthy Metrics, Broken Agent"
 date: 2025-01-13
 ---
 
-An infinite agent loop ran for [11 days at GetOnStack](https://www.zenml.io/blog/what-1200-production-deployments-reveal-about-llmops-in-2025) before anyone noticed. Costs went from $127/week to $47,000.
+An infinite agent loop ran undetected for [11 days at GetOnStack](https://www.zenml.io/blog/what-1200-production-deployments-reveal-about-llmops-in-2025). Weekly costs escalated from $127 to $47,000 over four weeks.
 
 The latency metrics looked fine. Error rates were zero. The dashboard was green. The agents were burning money in a conversation with themselves.
 
@@ -36,6 +36,6 @@ For high-stakes workflows, semantic evaluation probably pays for itself. For hig
 
 ---
 
-The Sentry team [learned this the hard way](https://www.zenml.io/blog/what-1200-production-deployments-reveal-about-llmops-in-2025): "shipped early without observability and paid for it: when AI tooling breaks, users don't retry the next day but abandon it for months."
+As one LLMOps analysis [observed](https://www.zenml.io/blog/what-1200-production-deployments-reveal-about-llmops-in-2025): "When AI tooling breaks, users don't retry the next day but abandon it for months."
 
 The cost of operating blind is not just $47,000 in runaway bills. It is users who quietly leave and never come back.

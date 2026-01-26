@@ -4,7 +4,7 @@ title: "The AI Pilot Graveyard"
 date: 2026-01-22
 ---
 
-Zillow had the model. They had the data. They had years of Zestimate predictions behind them. In 2018, they launched their AI-powered iBuyer program and expanded it to 25 metropolitan areas. By the time they [shut it down](https://www.geekwire.com/2021/zillow-shutter-home-buying-business-lay-off-2k-employees-big-real-estate-bet-falters/) in November 2021, the division had [lost $881 million](https://therealdeal.com/new-york/2022/02/13/zillow-reports-880m-loss-on-failed-home-flipping-business/) for the year, they had cut 2,000 jobs (25% of their workforce), and watched their stock drop 25% in a single day.
+Zillow had the model. They had the data. They had years of Zestimate predictions behind them. In 2018, they launched their AI-powered iBuyer program and expanded it to 25 metropolitan areas. By the time they [shut it down](https://www.geekwire.com/2021/zillow-shutter-home-buying-business-lay-off-2k-employees-big-real-estate-bet-falters/) in November 2021, the division had [lost $881 million](https://therealdeal.com/new-york/2022/02/13/zillow-reports-880m-loss-on-failed-home-flipping-business/) for the year, they had cut 2,000 jobs (25% of their workforce), and watched their stock drop over 20% in a single day.
 
 Meanwhile, their competitors Opendoor and Offerpad used similar AI and survived. The difference was not the algorithm. It was the guardrails.
 
@@ -42,13 +42,13 @@ The companies that scale AI are not running better pilots. They are skipping pil
 
 They deploy to limited production immediately. They accept that some deployments will fail visibly. They build systems with guardrails that detect when conditions change and pull back automatically.
 
-Netflix, Stripe, and Uber all deploy new ML models constantly. Not after six-month pilots. Constantly. Their pattern is called [shadow deployment](https://www.qwak.com/post/shadow-deployment-vs-canary-release-of-machine-learning-models): the new model runs alongside production, processes the same requests, but only the current model's predictions reach users. You get real production data before real exposure. Organizations using shadow deployment report [40% fewer production incidents](https://aws.amazon.com/blogs/machine-learning/deploy-shadow-ml-models-in-amazon-sagemaker/). That is not a pilot. That is continuous deployment with training wheels.
+Netflix, Stripe, and Uber all deploy new ML models constantly. Not after six-month pilots. Constantly. Their pattern is called [shadow deployment](https://www.qwak.com/post/shadow-deployment-vs-canary-release-of-machine-learning-models): the new model runs alongside production, processes the same requests, but only the current model's predictions reach users. You get real production data before real exposure. Shadow deployment lets you test with real production data before real exposure. That is not a pilot. That is continuous deployment with training wheels.
 
 This is what separated Opendoor from Zillow. Both used AI to value homes. Both deployed to production. But the guardrails were different.
 
 Opendoor's system monitored the spread between predicted and actual sale prices. When the gap widened past a threshold, offers automatically tightened. The system did not need a human to notice the market was turning. It adjusted before the losses compounded.
 
-Zillow's executives [overrode the algorithm](https://jise.org/Volume35/n1/JISE2024v35n1pp67-72.pdf) through a practice called "offer calibration," raising bids by thousands above model prices to hit growth targets. When the market turned, there was no automatic adjustment. The override was the strategy. By the time humans noticed the problem, Zillow owned 7,000 homes it could not sell.
+Zillow's executives [overrode the algorithm](https://www.gsb.stanford.edu/insights/flip-flop-why-zillows-algorithmic-home-buying-venture-imploded) through a practice called "offer calibration," raising bids by thousands above model prices to hit growth targets. When the market turned, there was no automatic adjustment. The override was the strategy. By the time humans noticed the problem, Zillow owned 7,000 homes it could not sell.
 
 The lesson is not "deploy faster." The lesson is "deploy with automatic pullback." A guardrail is not a dashboard someone checks. It is a trigger that fires without human intervention.
 

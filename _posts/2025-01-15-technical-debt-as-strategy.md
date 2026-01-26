@@ -12,7 +12,7 @@ Most teams are too debt-averse. The debt-tolerant are winning. Clean code is a l
 
 ## The real killer
 
-The [Startup Genome Report](https://startupgenome.com/articles/a-deep-dive-into-the-anatomy-of-premature-scaling-new-infographic) analyzed 3,200 startups: 74% of failures came from premature scaling. The pattern is always the same. A team imagines Google-scale traffic, builds Google-scale infrastructure, burns runway on systems that never see the load. Meanwhile, the simple Django app their competitor shipped is serving real users.
+The [Startup Genome Report](https://startupgenome.com/article/premature-scaling-is-the-1-killer-of-startups) analyzed 3,200 startups: 74% of failures came from premature scaling. The pattern is always the same. A team imagines Google-scale traffic, builds Google-scale infrastructure, burns runway on systems that never see the load. Meanwhile, the simple Django app their competitor shipped is serving real users.
 
 The startups that die are not the ones that picked the wrong database. They are the ones that spent six months picking while their competitors shipped.
 
@@ -34,7 +34,7 @@ Debt on *how* you build is acceptable. Debt on *what you produce* is dangerous. 
 
 Some teams treat debt as a temporary evil. Others treat it as the baseline.
 
-Etsy has deployed to production [50 times a day](https://www.simform.com/blog/etsy-devops-case-study/) since 2009. Their philosophy: "developers are happy when they're shipping product." Speed is not a phase they will grow out of. Speed is the product.
+Etsy has deployed to production [over 50 times a day](https://www.simform.com/blog/etsy-devops-case-study/). Their philosophy: "developers are happy when they're shipping product." Speed is not a phase they will grow out of. Speed is the product.
 
 Basecamp runs a [9-year-old Rails monolith](https://dev.37signals.com/vanilla-rails-is-plenty/) with 400 controllers and 500 models, serving millions of users daily. DHH calls it the "majestic monolith." Their advice: stay in it as long as you can.
 

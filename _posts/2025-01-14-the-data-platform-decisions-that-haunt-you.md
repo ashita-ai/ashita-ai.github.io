@@ -70,7 +70,7 @@ The [Critical Data Elements](https://www.alation.com/blog/critical-data-elements
 
 Ask three questions: Would inaccuracy affect compliance? Does this drive a key dashboard? Would customers notice if it broke? If yes to any, it is critical. Everything else can wait.
 
-For brownfield platforms, the [strangler fig pattern](https://dzone.com/articles/replacing-legacy-systems-one-step-at-a-time-with-d) applies. Do not try to retrofit quality everywhere at once. Pick one critical pipeline. Add contracts. Add tests. Validate in parallel with the old system. Once you trust it, move to the next. This is slower than a big bang rewrite and more likely to actually work.
+For brownfield platforms, the [strangler fig pattern](https://martinfowler.com/bliki/StranglerFigApplication.html) applies. Do not try to retrofit quality everywhere at once. Pick one critical pipeline. Add contracts. Add tests. Validate in parallel with the old system. Once you trust it, move to the next. This is slower than a big bang rewrite and more likely to actually work.
 
 The trap is perfectionism. "We will add data quality once we have time" means never. "We will add it to this one pipeline this sprint" means progress.
 

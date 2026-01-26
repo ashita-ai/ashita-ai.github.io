@@ -22,7 +22,7 @@ It starts with benchmarks. An LLM scores [87% on HumanEval](https://www.codeant.
 
 So the team builds custom evals. Reference-based metrics like ROUGE and BERTScore. But Eugene Yan [found](https://eugeneyan.com/writing/evals/) these do not discriminate well enough to set production thresholds. The similarity distributions of positive and negative instances are too close. Generated outputs often surpass reference quality anyway.
 
-So the team builds an eval framework. Infrastructure, pipelines, dashboards. But Hamel Husain, who has trained [over 2,000 engineers](https://hamel.dev/blog/posts/evals/) on evals, says start simpler: "Spend 30 minutes manually reviewing 20-50 LLM outputs." If you are building infrastructure before you have looked at your data, you are optimizing for the wrong thing.
+So the team builds an eval framework. Infrastructure, pipelines, dashboards. But Hamel Husain [advises](https://hamel.dev/blog/posts/evals/) starting simpler: "Spend 30 minutes manually reviewing 20-50 LLM outputs." If you are building infrastructure before you have looked at your data, you are optimizing for the wrong thing.
 
 The pattern: teams keep investing in better pre-production measurement. The gap is not measurement. The gap is what happens after you ship.
 
