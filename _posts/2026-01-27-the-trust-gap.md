@@ -16,7 +16,7 @@ In 1770, Wolfgang von Kempelen unveiled "The Turk," a chess-playing automaton th
 
 The tech industry ran the same con.
 
-**Expensify** marketed "SmartScan" as AI that automatically processed expense receipts. From 2009 to 2012, [Mechanical Turk workers](https://theoutline.com/post/2520/strangers-are-looking-at-your-data-for-pennies) transcribed them manually for 2 cents each. One worker discovered strangers' Uber receipts with full names and home addresses. Boarding passes. Medical records. Bank account numbers. The practice resurfaced in 2017 when reporters caught them using crowdsourced labor again.
+**Expensify** marketed "SmartScan" as AI that automatically processed expense receipts. From 2009 to 2012, [Mechanical Turk workers](https://theoutline.com/post/2520/strangers-are-looking-at-your-data-for-pennies) transcribed them manually for 2 cents each. One worker discovered strangers' Uber receipts with full names and home addresses. Boarding passes. Medical records. Bank account numbers. The practice resurfaced in 2017.
 
 **Facebook M** was announced as an AI assistant in 2015. Reality: [no more than 30% of responses](https://en.wikipedia.org/wiki/M_(virtual_assistant)) were ever served by the AI. Human operators handled the rest, taking over conversations without users knowing. Quietly shut down in 2018.
 
@@ -60,46 +60,22 @@ Contrast this with Presto. The problem was not that humans assisted with orders.
 
 The difference is not transparency as a virtue. It is transparency as a mechanism. Stripe's approach works because it converts trust from a social question ("do I believe this company?") into an empirical one ("can I verify these claims?").
 
-## The verification gap
+## The race
 
-The 30% who distrust AI-generated code are not the problem. The problem is the gap between "I distrust this" and "I verify this."
+Here is what I cannot figure out.
 
-Distrust without verification is just anxiety. You ship the code anyway, but you feel bad about it. Verification without distrust is theater. You run the tests, but you assume they pass.
+If 30% of teams are shipping AI they do not trust, one of two things is happening.
 
-The developers who treat AI suggestions as suspect—who read every line, who test edge cases the AI would not think of, who reject suggestions that look right but smell wrong—are doing more careful work than they did before. Their distrust makes them better engineers.
+**Possibility one:** Competitive pressure is forcing premature deployment. Teams know their AI is not ready but ship anyway because everyone else is shipping. This is a race to the bottom. The industry is building on foundations it does not believe in, and the collapse will come when enough systems fail at once.
 
-The developers who accept suggestions because the linter passes are not distrustful enough. They have adopted the tool without adopting the skepticism that makes it safe.
+**Possibility two:** Distrust is the wrong frame. Teams are not "trusting" or "distrusting" their AI. They are treating it as a tool that requires verification rather than a system that requires faith. The 30% who report low trust may actually have the healthiest relationship with their AI: they deploy it, but they watch it.
 
-## What verification looks like
+I do not know which is true. The DORA data does not distinguish between "I deployed despite distrust because my VP made me" and "I deployed despite distrust because I have good monitoring in place."
 
-The 30% who report low trust are not the problem. The problem is the gap between "I distrust this" and "I verify this."
-
-Verification for AI code generation looks different than verification for fraud detection. You cannot publish a single accuracy number for Copilot because accuracy depends on context, language, and use case. But you can measure:
-
-- **Review time delta.** How much longer do PRs with AI-generated code take to review? If the answer is "the same," your reviewers are not catching AI mistakes. If the answer is "50% longer," the trust gap is doing its job.
-- **Post-merge defect rate.** Track bugs introduced by AI-assisted commits versus human-only commits. If AI commits have higher defect rates, you have a verification problem. If they are the same or lower, your review process is working.
-- **Suggestion acceptance rate by author.** Senior engineers rejecting 60% of suggestions while juniors accept 90% is a signal. The juniors may be shipping code they do not understand.
-
-The companies that survive the trust gap are not the ones who learned to trust AI. They are the ones who built verification into every deployment path.
-
-## The real divide
-
-The DORA data shows two populations that look identical in the numbers but are completely different in practice.
-
-Population one: Teams shipping AI because the VP mandated it. They distrust the outputs, skip verification because it slows them down, and hope nothing breaks. When it breaks, they blame the tool.
-
-Population two: Teams shipping AI because they verified it works. They distrust the outputs, verify anyway, and catch the failures before production. When something slips through, they improve the verification.
-
-Both report low trust. Both show 90% adoption. One is a race to the bottom. The other is healthy engineering.
-
-The trust gap is not going away. The question is whether your distrust makes you more careful or just more anxious.
+If it is the first, we are in trouble. If it is the second, the trust gap might be exactly what healthy AI adoption looks like.
 
 ---
 
-The Turk toured Europe for 84 years before fire exposed the grandmaster inside. The Wizard of Oz decade ran from 2009 until the SEC started enforcing.
+The Turk toured Europe for 84 years before a fire revealed the chess master hiding inside. The Wizard of Oz decade lasted from 2009 to 2025.
 
-Stripe publishes fraud rates. Anthropic publishes red team results. The developers who survive AI coding tools are the ones who read every line the AI writes.
-
-The companies escaping the trust gap are not building more trustworthy AI. They are hiring engineers whose distrust makes them more careful.
-
-The 30% who distrust AI-generated code are not behind. They are ahead—if their distrust drives verification instead of paralysis.
+Stripe publishes how Radar works. Anthropic submits Claude to external red teams. The companies escaping the trust gap are not asking for trust. They are making it unnecessary.
