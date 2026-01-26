@@ -60,15 +60,15 @@ Contrast this with Presto. The problem was not that humans assisted with orders.
 
 The difference is not transparency as a virtue. It is transparency as a mechanism. Stripe's approach works because it converts trust from a social question ("do I believe this company?") into an empirical one ("can I verify these claims?").
 
-## The Copilot question
+## The verification gap
 
-GitHub claims 90% of Fortune 100 companies use Copilot. Copilot does not publish model internals. It does not offer Stripe-style verification metrics. Yet adoption is massive.
+The 30% who distrust AI-generated code are not the problem. The problem is the gap between "I distrust this" and "I verify this."
 
-This seems to contradict the Stripe thesis. If transparency converts trust from social to empirical, why did Copilot succeed without it?
+Distrust without verification is just anxiety. You ship the code anyway, but you feel bad about it. Verification without distrust is theater. You run the tests, but you assume they pass.
 
-The answer is structural. Copilot operates in a domain where verification is built into the workflow. Every suggestion goes through code review. Every output gets tested. The human-in-the-loop is not optional—it is the entire development process. Copilot does not need to publish accuracy metrics because your CI pipeline is the accuracy metric.
+The developers who treat AI suggestions as suspect—who read every line, who test edge cases the AI would not think of, who reject suggestions that look right but smell wrong—are doing more careful work than they did before. Their distrust makes them better engineers.
 
-Radar and Copilot both work because they make verification cheap. Radar publishes the numbers. Copilot relies on your existing review process. Neither asks you to trust the AI. Both assume you will check.
+The developers who accept suggestions because the linter passes are not distrustful enough. They have adopted the tool without adopting the skepticism that makes it safe.
 
 ## What verification looks like
 
@@ -98,6 +98,8 @@ The trust gap is not going away. The question is whether your distrust makes you
 
 The Turk toured Europe for 84 years before fire exposed the grandmaster inside. The Wizard of Oz decade ran from 2009 until the SEC started enforcing.
 
-Stripe publishes fraud rates. Anthropic publishes red team results. GitHub trusts your code review process. The companies escaping the trust gap are not building more trustworthy AI. They are building AI that assumes you will verify.
+Stripe publishes fraud rates. Anthropic publishes red team results. The developers who survive AI coding tools are the ones who read every line the AI writes.
+
+The companies escaping the trust gap are not building more trustworthy AI. They are hiring engineers whose distrust makes them more careful.
 
 The 30% who distrust AI-generated code are not behind. They are ahead—if their distrust drives verification instead of paralysis.
