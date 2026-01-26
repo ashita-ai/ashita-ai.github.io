@@ -14,7 +14,7 @@ This is expensive, slow, and often wrong.
 
 Token pricing looks cheap until you multiply. A 100K context query generating a 2K response on Claude Sonnet costs $0.33. Run that 1,000 times a day and you're spending $10K/month on a single query type.
 
-The compute cost is worse. Transformer attention is [quadratic](https://towardsdatascience.com/extending-context-length-in-large-language-models-74e59201b51f/). Double the context, quadruple the compute. A 100K context can require [10,000x more computation](https://arxiv.org/html/2507.04239v1) than 1K. For Llama 3 70B, [128K tokens consume 40GB](https://developer.nvidia.com/blog/mastering-llm-techniques-inference-optimization/) of GPU memory just for the attention cache. Per user.
+The compute cost is worse. Transformer attention is [quadratic](https://towardsdatascience.com/extending-context-length-in-large-language-models-74e59201b51f/). Double the context, quadruple the compute. Long context windows consume enormous GPU memory for the KV cache alone.
 
 But money and latency are problems you can throw resources at. The accuracy problem is different.
 
@@ -34,7 +34,7 @@ And [recent work](https://arxiv.org/abs/2510.05381) isolated the effect of lengt
 
 These benchmarks test single-turn interactions. Real applications involve multi-turn conversations where context accumulates.
 
-[Microsoft researchers](https://arxiv.org/abs/2506.15999) measured a 39% average performance drop in multi-turn versus single-turn. OpenAI's o3, their most capable reasoning model, dropped from 98.1 to 64.1 as conversation history grew.
+[Microsoft and Salesforce researchers](https://arxiv.org/abs/2505.06120) measured a 39% average performance drop in multi-turn underspecified conversations. OpenAI's o3, their most capable reasoning model, dropped from 98.1 to 64.1 as conversation history grew.
 
 Sebastian Lund [describes](https://fastpaca.com/blog/failure-case-memory-layout/) how this plays out:
 
@@ -49,7 +49,7 @@ The dangerous failure mode is what Lund calls "silent false negatives." The mode
 
 Long context is not useless. It wins when a task genuinely requires holding multiple sources in mind simultaneously: analyzing an entire codebase for architectural patterns, synthesizing a legal document, comparing research papers.
 
-For synthesis tasks, [long context outperforms RAG](https://www.databricks.com/blog/long-context-rag-performance-llms) 56.3% to 49%. The model sees relationships that chunked retrieval would miss.
+For synthesis tasks, [long context outperforms RAG](https://arxiv.org/abs/2501.01880) 56.3% to 49%. The model sees relationships that chunked retrieval would miss.
 
 But for most retrieval tasks (finding specific facts, answering questions from documents) RAG matches or beats long context while costing 10-100x less. The question is whether you need synthesis or retrieval.
 

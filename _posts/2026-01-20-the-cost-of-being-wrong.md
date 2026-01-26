@@ -30,7 +30,7 @@ AI systems break this model. Pre-production testing catches the errors you antic
 
 A model that passes all your evals can still hallucinate in ways you never tested for. An agent that works perfectly in staging can make catastrophic decisions when user behavior differs from your assumptions. The failure modes are not bugs in the traditional sense. They are emergent properties of systems that do not know what they do not know.
 
-[IBM's 2025 security research](https://newsroom.ibm.com/2025-07-30-ibm-report-13-of-organizations-reported-breaches-of-ai-models-or-applications,-97-of-which-reported-lacking-proper-ai-access-controls) found that 13% of organizations had experienced breaches involving AI models or applications. Of those compromised, 97% reported lacking proper AI access controls. Breaches involving unmonitored "shadow AI" tools cost an [average of $670,000 more](https://www.cybersecuritydive.com/news/artificial-intelligence-security-shadow-ai-ibm-report/754009/) than breaches at organizations with AI governance.
+[IBM's 2025 Cost of a Data Breach report](https://www.ibm.com/reports/data-breach) found that 13% of organizations had experienced breaches involving AI models or applications. Of those compromised, 97% reported lacking proper AI access controls. Breaches involving unmonitored "shadow AI" tools cost an [average of $670,000 more](https://www.ibm.com/reports/data-breach) than breaches at organizations with AI governance.
 
 The premium is not because AI attacks are more sophisticated. It is because they run longer before detection.
 

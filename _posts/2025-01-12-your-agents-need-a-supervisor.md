@@ -16,7 +16,7 @@ A [December 2025 study](https://arxiv.org/html/2512.08296v1) on scaling agent sy
 
 The difference is not the model. It is whether something validates the output before passing it downstream.
 
-The mechanism is simple. Humans push back on bad inputs. LLMs do not. A [Gradient Institute paper](https://www.arxiv.org/pdf/2508.05687) explains: "This seed error triggers a cascade when an erroneous output is passed to other agents in the network." Downstream agents accept flawed input uncritically rather than performing sanity checks.
+The mechanism is simple. Humans push back on bad inputs. LLMs do not. A [research paper on governed LLM systems](https://arxiv.org/abs/2508.05687) explains: "This seed error triggers a cascade when an erroneous output is passed to other agents in the network." Downstream agents accept flawed input uncritically rather than performing sanity checks.
 
 ## Where failures come from
 

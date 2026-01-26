@@ -16,7 +16,7 @@ Same underlying models. Radically different results. Cursor built a complex fact
 
 The industry is building factories. Cursor, Devin, Claude Code, CrewAI, LangGraph, AutoGen—all orchestration engines. [Gartner reported](https://www.gartner.com/en/articles/multiagent-systems) a 1,445% surge in multi-agent system inquiries from Q1 2024 to Q2 2025. Two-thirds of enterprise AI implementations now use multi-agent architectures.
 
-The same industry reports a [41-86.7% failure rate](https://arxiv.org/html/2503.13657v1) for production multi-agent systems. Seventy-nine percent of failures originate from specification and coordination issues rather than technical implementation.
+The same industry reports high failure rates for production multi-agent systems. The majority of failures originate from specification and coordination issues rather than technical implementation.
 
 We built the factory. We forgot the design department.
 
@@ -36,7 +36,7 @@ The obvious response would be to build tools that help write blueprints. But loo
 
 Where is the design department? The blueprint printing press?
 
-The [Agentic Handbook](https://www.nibzard.com/agentic-handbook) documents why agents fail: ambiguous instructions, improper task decomposition, missing termination cues. These are blueprint failures, not factory failures. The handbook's solution is better human discipline: "Can you describe the topic in one sentence without 'and'?" But discipline does not scale. Tooling does.
+The [Agentic Handbook](https://www.nibzard.com/agentic-handbook) documents why agents fail: scope creep, ambiguity, missing deterministic checks. These are blueprint failures, not factory failures. The handbook's solution is better human discipline. But discipline does not scale. Tooling does.
 
 ## Why this is hard to build
 
