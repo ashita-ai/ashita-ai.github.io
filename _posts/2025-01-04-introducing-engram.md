@@ -64,7 +64,7 @@ This is an engineering construct. Most memory systems only store positive knowle
 
 The neuroscience here is instructive. Memories strengthen through repeated retrieval (the [testing effect](https://pmc.ncbi.nlm.nih.gov/articles/PMC5912918/)) so Engram tracks `consolidation_strength` that increases when memories are linked, refined, or undergo consolidation. [Retrieval-induced forgetting](https://pubmed.ncbi.nlm.nih.gov/7931095/) shows that retrieving some memories actively suppresses related non-retrieved items; Engram implements this via opt-in RIF to naturally prune redundant memories.
 
-The linking between memories is inspired by [A-MEM research](https://arxiv.org/abs/2502.12110) showing 2x improvement on multi-hop reasoning benchmarks. And the buffer promotion system draws from [Cognitive Workspace](https://arxiv.org/abs/2508.13171) research demonstrating 58.6% memory reuse compared to 0% for naive RAG approaches.
+The linking between memories is inspired by [A-MEM research](https://arxiv.org/abs/2502.12110) showing significant improvement on multi-hop reasoning benchmarks. And the buffer promotion system draws from [Cognitive Workspace](https://arxiv.org/abs/2508.13171) research demonstrating 58.6% memory reuse compared to 0% for naive RAG approaches.
 
 ## Deferred processing
 

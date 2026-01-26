@@ -18,7 +18,7 @@ What is not subjective: [71% of senior managers](https://hbr.org/2018/02/how-to-
 
 ### 1. Agenda out 24 hours before
 
-For meetings with more than four people, send the agenda 24 hours ahead. [Research confirms](https://qz.com/work/1713662/how-to-have-great-meetings-according-to-200-scientific-studies) this is one of the strongest predictors of meeting success. If you have not done this, you are not ready to be in the meeting.
+For meetings with more than four people, send the agenda 24 hours ahead. [Research on meeting effectiveness](https://pmc.ncbi.nlm.nih.gov/articles/PMC6743516/) supports this practice. If you have not done this, you are not ready to be in the meeting.
 
 ### 2. Define success before you start
 

@@ -12,16 +12,17 @@ RAG powers an estimated 60% of production AI applications. The gap between promi
 
 When RAG fails, teams debug the wrong layer. They tweak prompts, swap embedding models, adjust temperature. The LLM gets blamed.
 
-But most RAG failures are not LLM failures. A [research paper](https://arxiv.org/html/2401.05856v1) identified seven failure points in RAG systems. Six of them are retrieval or data problems:
+But most RAG failures are not LLM failures. A [research paper](https://arxiv.org/html/2401.05856v1) identified seven failure points in RAG systems:
 
 1. **Missing content** - the answer does not exist in your documents
 2. **Missed in retrieval** - the answer exists but was not in the top-K results
-3. **Filtered out** - retrieved but dropped due to token limits
-4. **Not extracted** - in context but buried in noise
+3. **Not in context** - retrieved but dropped due to token limits
+4. **Not extracted** - in context but the LLM failed to identify it
 5. **Wrong format** - LLM ignores formatting instructions
-6. **Incomplete** - response misses available information
+6. **Incorrect specificity** - response too vague or too detailed
+7. **Incomplete** - response misses available information
 
-Only one (wrong format) is an LLM problem. The rest are upstream.
+The first three are retrieval problems. The rest are generation problems. But even the generation failures often trace back to noisy or insufficient context.
 
 As IBM's Dinesh Nirmal [put it](https://www.ibm.com/think/insights/rag-problems-five-ways-to-fix): "Pure RAG is not really giving the optimal results that were expected." The real challenges are ingestion, retrieval optimization, metadata management, and data quality. [If your vector store is bloated with junk](https://www.cloudfactory.com/blog/rag-is-breaking), your retrieval will reflect that.
 
