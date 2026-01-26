@@ -61,6 +61,4 @@ Lund [recommends](https://fastpaca.com/blog/failure-case-memory-layout/) categor
 
 Most systems treat all tokens equally, evicting whatever is oldest. This guarantees that something important will eventually be lost. [Designing explicit eviction policies](/blog/introducing-engram/) based on what information matters is harder but more honest about the tradeoffs.
 
-The question is not how much you can fit. It's what happens when something has to go.
-
-Because two million tokens is not two million opportunities to be right. It's two million opportunities to get lost.
+The question is not how much you can fit. It is what happens when something has to go.

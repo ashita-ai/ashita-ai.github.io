@@ -87,5 +87,3 @@ The cost of being wrong scales with autonomy. An AI that suggests and a human wh
 The Deloitte hallucinations ran for three months. Then six months. The lawyers' fake citations are still being discovered. The enterprise decisions based on hallucinated content have already been made.
 
 Traditional software taught us to invest in catching errors before production. AI requires catching errors during production—because that is when confident wrongness finally becomes visible.
-
-The cost of being wrong is not the mistake. It is the months before anyone realizes confidence is not correctness.

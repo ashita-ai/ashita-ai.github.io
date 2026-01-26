@@ -68,6 +68,4 @@ By the time velocity drops, you are already in crisis. The leading indicators sh
 
 ---
 
-The best architecture is the one that ships. But shipping is not a one-time event.
-
-The leading indicator is avoidance. When engineers route around the codebase instead of through it, the interest is compounding faster than you think.
+The best architecture is the one that ships. The leading indicator that you have waited too long: engineers route around the codebase instead of through it.

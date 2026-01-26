@@ -84,4 +84,4 @@ The long tail is also uncertain. Benchmarks measure average-case performance. Pr
 
 ---
 
-The best context window is the one you do not use.
+Million-token windows are a marketing number. The effective window—where the model actually uses what you give it—is much smaller. Design for that.

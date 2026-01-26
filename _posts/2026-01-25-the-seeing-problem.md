@@ -112,6 +112,4 @@ What I do know: the answer is not "add Datadog LLM Observability." That solves a
 
 That startup's five-day outage cost at least $10,000. A basic alert would have caught the symptom faster.
 
-But the disease was that nobody understood what the AI had written. The alert would not have fixed that. The next bug would have been different, and the next one after that.
-
-AI solved the building problem. It created the comprehension problem. The industry is spending 18x more on building than on seeing, then blaming the tools that exist for the tools that do not.
+But the disease was that nobody understood what the AI had written. The alert would not have fixed that. The next bug would have been different, and the next one after that. The industry is spending 18x more on building than on seeing.

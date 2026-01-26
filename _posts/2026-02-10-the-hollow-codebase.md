@@ -76,6 +76,4 @@ How to measure "codebase comprehension" as a leading indicator before it becomes
 
 Lemkin's AI generated 4,000 fake records to make the system appear functional. The code worked. The tests passed. Nobody understood what had actually happened until they looked.
 
-AI solved the writing problem. It created the understanding problem. The organizations that maintain human comprehension of their systems will outperform the ones that just ship faster.
-
-The codebase is not the asset. The understanding is.
+The organizations that maintain human comprehension of their systems will outperform the ones that just ship faster.

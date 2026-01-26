@@ -30,7 +30,7 @@ Once you know what success looks like, the attendee list follows. Who can make t
 
 [Stanford research](https://hbr.org/2018/06/the-most-productive-meetings-have-fewer-than-8-people) found that productive meetings contain five to eight people. [Bezos' two-pizza rule](https://aws.amazon.com/executive-insights/content/amazon-two-pizza-team/) says the same thing differently: if two pizzas cannot feed the group, it is too large.
 
-The math is simple: five people means ten possible conversations, eight people means twenty-eight. Coordination costs grow faster than headcount. And when everyone is responsible, no one feels responsible. Researchers have [documented this pattern](https://en.wikipedia.org/wiki/Ringelmann_effect) since 1913.
+The math is simple: five people means ten possible conversations, eight people means twenty-eight. Coordination costs grow faster than headcount.
 
 ### 3. Start on time. End on time. Or early.
 
