@@ -32,7 +32,7 @@ Organizations are paying 4x more for degraded performance because "use the whole
 
 The worst failures are invisible. When a model hallucinates from insufficient context, the failure is obvious. When a model produces plausible-sounding answers from malformed context, you ship bugs to production.
 
-[RLHF trains models to sound confident](https://www.nature.com/articles/s41586-024-07421-0). Semantic entropy research from Nature (2024) showed that models produce high-confidence wrong answers when context is corrupted or contradictory. The system does not know it failed. Neither do you, until a customer complains.
+Models can produce plausible-sounding wrong answers that are difficult to detect. [Semantic entropy research from Nature (2024)](https://www.nature.com/articles/s41586-024-07421-0) showed that models express uncertainty through semantic variation—giving different answers to the same question—but users cannot detect this without specialized measurement. The system does not know it failed. Neither do you, until a customer complains.
 
 This is why context window size is a trap. Systems succeed with partial context, wrong context, or no context—and produce confident garbage. "Information flooding" does not just waste money. It actively degrades quality.
 

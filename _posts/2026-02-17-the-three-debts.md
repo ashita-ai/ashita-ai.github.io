@@ -24,7 +24,7 @@ Technical debt has a known remediation: refactor. You can see the code. You unde
 
 ## Comprehension Debt
 
-Carnegie Mellon researchers recently [identified a new form of debt](https://arxiv.org/abs/2512.08942) emerging from AI-assisted development: comprehension debt. This is what happens when AI helps teams build systems more sophisticated than they can independently understand or maintain.
+Researchers have recently [identified a new form of debt](https://arxiv.org/abs/2512.08942) emerging from AI-assisted development: comprehension debt. This is what happens when AI helps teams build systems more sophisticated than they can independently understand or maintain.
 
 The distinction from technical debt is fundamental. Technical debt means someone understood the code when it was written. Comprehension debt means nobody ever did.
 
@@ -84,7 +84,7 @@ Most organizations have all three. The dangerous ones are the invisible debts—
 
 The obvious critique: this is splitting hairs. Debt is debt. Just pay it down.
 
-But the intervention determines the outcome. CodeScene found that developers spend [42% of their time](https://www.blueoptima.com/post/the-real-price-of-technical-debt) dealing with technical debt. That is the debt they can see. Comprehension debt and decision debt do not show up in static analysis. They do not trigger code quality alerts. They surface as production incidents, market failures, and strategic confusion.
+But the intervention determines the outcome. CodeScene found that developers spend [23-42% of their time](https://codescene.com/hubfs/calculate-business-costs-of-technical-debt.pdf) dealing with technical debt. That is the debt they can see. Comprehension debt and decision debt do not show up in static analysis. They do not trigger code quality alerts. They surface as production incidents, market failures, and strategic confusion.
 
 When you treat comprehension debt as technical debt, you refactor code you do not understand into different code you do not understand. When you treat decision debt as technical debt, you polish implementations of the wrong thing. The debt remains. The interest compounds.
 

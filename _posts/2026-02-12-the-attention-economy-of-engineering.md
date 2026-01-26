@@ -18,7 +18,7 @@ There's a name for this pattern when it happens in engineering: [resume-driven d
 
 This isn't a character flaw. It's a principal-agent problem. Engineers are rationally optimizing for their next job, not their current one.
 
-Carnegie Mellon's Software Engineering Institute [studied failing software programs](https://resources.sei.cmu.edu/asset_files/Podcast/2012_016_100_296206.pdf) and found a recurring pattern: misaligned incentives. The researchers were surprised because "we typically view the world from a technical perspective." But the problems weren't technical. They were about people optimizing for the wrong things.
+Carnegie Mellon's Software Engineering Institute has [studied failing software programs](https://insights.sei.cmu.edu/blog/reducing-project-failures-by-aligning-acquisition-strategy-and-software-architecture-with-stakeholder-needs-second-in-a-series/) and found a recurring pattern: misaligned incentives. The problems are rarely purely technical. They are about people optimizing for the wrong things.
 
 Interesting problems attract engineering attention naturally. They're conference talks, blog posts, promotions. Important problems often don't. The Netflix pipeline wasn't going to get anyone a speaking slot. It just needed to be right.
 

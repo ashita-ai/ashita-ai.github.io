@@ -22,7 +22,7 @@ Almost double the output. Almost double the review time. The constraint shifted 
 
 The [2024 DORA Report](https://cloud.google.com/blog/products/devops-sre/announcing-the-2024-dora-report) found it got worse from there: as AI adoption increased, delivery throughput dropped 1.5% and stability dropped 7.2%. The [2025 report](https://dora.dev/research/2025/dora-report/) introduced a concept they call the "Vacuum Hypothesis." AI frees up developer time, but that time gets absorbed by lower-value tasks rather than improving delivery.
 
-[76% of developers](https://dora.dev/research/2025/dora-report/) now use AI tools daily. Most organizations see no measurable performance gains.
+[76% of developers](https://dora.dev/research/2025/dora-report/) now use AI tools in some part of their daily work. Most organizations see no measurable performance gains.
 
 ## The hollow codebase
 
