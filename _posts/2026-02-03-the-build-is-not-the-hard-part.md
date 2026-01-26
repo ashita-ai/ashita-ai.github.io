@@ -4,7 +4,7 @@ title: "The Build Is Not the Hard Part"
 date: 2026-02-03
 ---
 
-Nubank used [Devin to migrate their core ETL](https://devin.ai/customers/nubank) (a 6-million line monolith) and reported 12x efficiency improvement and 20x cost savings. Visma used AI tools and [cut project costs by 50%](https://www.microsoft.com/en/customers/story/24262-cognition-ai-azure). 84% of developers now use AI tools that [write 41% of all code](https://www.netcorpsoftwaredevelopment.com/blog/ai-generated-code-statistics).
+Nubank used [Devin to migrate their core ETL](https://devin.ai/customers/nubank) (a 6-million line monolith) and reported 8-12x efficiency improvement and over 20x cost savings. Visma used AI tools and [cut project costs by 50%](https://www.microsoft.com/en/customers/story/24262-cognition-ai-azure). GitHub Copilot now [writes 46% of code](https://medium.com/@aminsiddique95/ai-is-writing-46-of-all-code-github-copilots-real-impact-on-15-million-developers-787d789fcfdc) for its 20 million active users, reaching 61% in Java projects.
 
 The narrative writes itself: AI makes building cheaper. Custom development should finally beat buying off-the-shelf.
 
@@ -40,11 +40,11 @@ Before you build anything (whether with AI tools or without), answer three quest
 
 **Is this core to your business?** [BCG's framework](https://www.bcg.com/publications/2018/build-buy-dilemma-artificial-intelligence) maps AI investments by strategic importance and data differentiation. If both are low, you are in "commodity" territory where buying is almost certainly right. If both are high, you are in a "gold mine" where building creates defensible advantage.
 
-**What is the path to production?** [Annual AI maintenance](https://xenoss.io/blog/total-cost-of-ownership-for-enterprise-ai) accounts for 15-30% of total infrastructure cost, with legacy system integration adding a 2-3x implementation premium. The build is not the expensive part. Integration, maintenance, monitoring, retraining, incident response (these are the costs that compound). If you cannot answer how this reaches production, AI tools will help you build an expensive orphan faster.
+**What is the path to production?** [Annual AI maintenance](https://xenoss.io/blog/total-cost-of-ownership-for-enterprise-ai) accounts for 15-30% of total infrastructure cost. Legacy system integration can [add 40-60% to implementation costs](https://www.coherentsolutions.com/insights/ai-development-cost-estimation-pricing-structure-roi)—organizations with outdated infrastructure pay a steep integration tax. The build is not the expensive part. Integration, maintenance, monitoring, retraining, incident response—these are the costs that compound. If you cannot answer how this reaches production, AI tools will help you build an expensive orphan faster.
 
 ## What AI tools actually change
 
-AI tools collapse the cost of routine work: migrations, boilerplate, greenfield projects, repetitive refactoring. Nubank's 12x efficiency came from exactly this kind of work.
+AI tools collapse the cost of routine work: migrations, boilerplate, greenfield projects, repetitive refactoring. Nubank's 8-12x efficiency gains came from exactly this kind of work.
 
 They do not collapse the cost of:
 
