@@ -48,7 +48,7 @@ The fintech startup transformed when leadership started asking that question. Th
 
 ## The litmus test
 
-Sheryl Sandberg called Netflix's culture document ["the most important document to ever come out of Silicon Valley"](https://jobs.netflix.com/culture). What made it effective was not that it described Netflix's values. Every company has a values document. What made it effective was that it functioned as a litmus test.
+Sheryl Sandberg called Netflix's culture document ["maybe the most important document ever to come out of the Valley"](https://techcrunch.com/2013/01/31/read-what-facebooks-sandberg-calls-maybe-the-most-important-document-ever-to-come-out-of-the-valley/). What made it effective was not that it described Netflix's values. Every company has a values document. What made it effective was that it functioned as a litmus test.
 
 The document told you what Netflix was and was not. If you wanted a family environment with job security, Netflix was not for you. If you wanted a professional sports team where performance determined tenure, you would thrive. The document did not try to be everything to everyone. It made a choice and accepted the consequences.
 
