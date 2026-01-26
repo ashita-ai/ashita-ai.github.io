@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The 28% Problem"
-date: 2026-02-12
+date: 2026-02-05
 ---
 
 A fintech startup I worked with shipped something new every quarter. They also left the previous quarter's work unfinished every quarter. Ten engineers, ten business and product people, and a roadmap that reset every twelve weeks. By my estimate, they wasted roughly 40% of their engineering capacity on projects that were abandoned before they could deliver value.
