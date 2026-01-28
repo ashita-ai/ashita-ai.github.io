@@ -4,7 +4,7 @@ title: "What I Learned Building Four Tools With AI Agents"
 date: 2026-01-28
 ---
 
-Over the past year, I built four open-source tools almost entirely with AI coding agents: [Engram](https://github.com/evanvolgas/engram) (a memory system for AI applications that preserves ground truth and tracks confidence), [Tessera](https://github.com/evanvolgas/tessera) (data contract coordination for warehouses), [Conduit](https://github.com/evanvolgas/conduit) (ML-powered LLM routing using contextual bandits), and [Arbiter](https://github.com/evanvolgas/arbiter) (a provider-agnostic LLM evaluation framework). Combined: 1,016 commits, tens of thousands of lines of code.
+Over the past year, I built four open-source tools almost entirely with AI coding agents: [Engram](https://github.com/ashita-ai/engram) (a memory system for AI applications that preserves ground truth and tracks confidence), [Tessera](https://github.com/ashita-ai/tessera) (data contract coordination for warehouses), [Conduit](https://github.com/ashita-ai/conduit) (ML-powered LLM routing using contextual bandits), and [Arbiter](https://github.com/ashita-ai/arbiter) (a provider-agnostic LLM evaluation framework). Combined: 1,016 commits, tens of thousands of lines of code.
 
 This is what I learned about designing systems that agents can actually build.
 
@@ -84,7 +84,7 @@ Agents forget. Context windows fill up. Sessions end. GitHub Issues persist. Eve
 
 ## The CLAUDE.md Template
 
-Every project used a variation of this structure:
+Every project started from the same skeleton: a one-line description, a role statement, a design philosophy, and three tiers of boundaries (Always Do, Ask First, Never Do). The [early versions](https://github.com/ashita-ai/engram/blob/main/CLAUDE.md) were compact:
 
 ```markdown
 # [Project] Agent Guide
@@ -124,6 +124,8 @@ Every project used a variation of this structure:
 - NEVER bypass authentication
 - NEVER log sensitive data
 ```
+
+The later projects grew more elaborate as I learned what agents actually needed. [Conduit's file](https://github.com/ashita-ai/conduit/blob/main/CLAUDE.md) added model configuration warnings (never modify `conduit.yaml` priors without explicit request), anti-pattern lists, and pre-commit detection commands. [Arbiter's](https://github.com/ashita-ai/arbiter/blob/main/CLAUDE.md) added a common mistakes section, a testing decision matrix, and a self-improvement protocol where the agent updates its own rules after failures. The skeleton held. The guardrails got more specific with each project.
 
 ## The Issue Decomposition Checklist
 
