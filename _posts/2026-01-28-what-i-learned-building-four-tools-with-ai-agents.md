@@ -148,4 +148,4 @@ The agents did most of the typing. The architecture was still my job.
 
 ---
 
-*Thanks to the contributors who helped with these projects: [JithinBathula](https://github.com/JithinBathula), [nicoleman0](https://github.com/nicoleman0), [Aditya-Singh-008](https://github.com/Aditya-Singh-008), [Nikhita-14](https://github.com/Nikhita-14), [harshit-69](https://github.com/harshit-69), [hhayan](https://github.com/hhayan), [ChanfeiLi](https://github.com/ChanfeiLi), [MeghanBao](https://github.com/MeghanBao), and [MukeshK17](https://github.com/MukeshK17).*
+*Thanks to the contributors who helped with these projects: [SoulSniper-V2](https://github.com/SoulSniper-V2), [ChanfeiLi](https://github.com/ChanfeiLi), [MukeshK17](https://github.com/MukeshK17), [JithinBathula](https://github.com/JithinBathula), [nicoleman0](https://github.com/nicoleman0), [Aditya-Singh-008](https://github.com/Aditya-Singh-008), [Nikhita-14](https://github.com/Nikhita-14), [harshit-69](https://github.com/harshit-69), [hhayan](https://github.com/hhayan), [DAShaikh10](https://github.com/DAShaikh10), [MeghanBao](https://github.com/MeghanBao), and [jskrable](https://github.com/jskrable).*
