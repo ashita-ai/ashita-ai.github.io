@@ -4,7 +4,7 @@ title: "What I Learned Building Four Tools With AI Agents"
 date: 2026-01-28
 ---
 
-Over the past year, I built four open-source tools almost entirely with AI coding agents: [Engram](https://github.com/evanvolgas/engram) (a memory system), [Tessera](https://github.com/evanvolgas/tessera) (data contracts), [Conduit](https://github.com/evanvolgas/conduit) (an MCP server framework), and [Arbiter](https://github.com/evanvolgas/arbiter) (a rules engine). Combined: 1,016 commits, tens of thousands of lines of code.
+Over the past year, I built four open-source tools almost entirely with AI coding agents: [Engram](https://github.com/evanvolgas/engram) (a memory system for AI applications that preserves ground truth and tracks confidence), [Tessera](https://github.com/evanvolgas/tessera) (data contract coordination for warehouses), [Conduit](https://github.com/evanvolgas/conduit) (ML-powered LLM routing using contextual bandits), and [Arbiter](https://github.com/evanvolgas/arbiter) (a provider-agnostic LLM evaluation framework). Combined: 1,016 commits, tens of thousands of lines of code.
 
 This is what I learned about designing systems that agents can actually build.
 
