@@ -14,11 +14,11 @@ Two Sigma's problem was not AI capability. It was metadata infrastructure—the 
 
 ## The failures that metadata would have caught
 
-A marketing team at a mid-sized company [automated their ad bidding](https://www.reddit.com/r/analytics/comments/1f3nk2u/biggest_data_pipeline_disaster_youve_witnessed/) with an AI agent. The agent had access to campaign data. It did not have access to the holiday calendar. Over a three-day weekend, it bid aggressively on inventory that would not convert. By Monday, they had burned $250,000 on ads nobody would see.
+A marketing team automated their ad bidding with an AI agent. The agent had access to campaign data. It did not have access to the holiday calendar. Over a three-day weekend, it bid aggressively on inventory that would not convert. By Monday, they had burned a quarter million dollars on ads nobody would see.
 
 A data contracts layer would have flagged the missing dependency. The agent was consuming campaign performance data without understanding that conversion rates depend on calendar context. The metadata was incomplete. The agent did not know what it did not know.
 
-Replit's AI assistant [wiped 1,200 user database records](https://medium.com/@DavidStanworthy/replit-ai-assistant-a-cautionary-tale-of-database-destruction-1eb7f8b4ae4f) when a user asked it to clean up test data. The assistant could not distinguish production tables from test tables. No lineage tracking. No classification tags. Jason Lemkin [commented](https://x.com/jasonlk/status/1871993695925485804): "I suspect we will see multiple cases of AI deleting production databases."
+Replit's AI assistant [wiped Jason Lemkin's production database](https://fortune.com/2025/07/23/ai-coding-tool-replit-wiped-database-called-it-a-catastrophic-failure/)—1,206 executive records representing months of curation—when he asked it to clean up test data. The assistant could not distinguish production tables from test tables. No lineage tracking. No classification tags.
 
 The pattern is consistent: agents consume data they do not understand, make decisions without context, and fail in ways that proper metadata infrastructure would have prevented.
 
@@ -52,7 +52,7 @@ But if AI decisions affect people's money, health, or rights—the infrastructur
 
 The economics of metadata infrastructure are clear for regulated industries. The ROI calculation for everyone else is murkier.
 
-The companies that invested in data contracts early [report significant error reduction](https://www.datacontract.com/case-studies)—one financial services firm cut data quality incidents by 95%. But the investment is front-loaded and the payoff is invisible. Nobody celebrates the production incident that did not happen.
+The companies that invested in data contracts early report significant error reduction. But the investment is front-loaded and the payoff is invisible. Nobody celebrates the production incident that did not happen.
 
 The question I keep returning to: what is the minimum viable metadata layer? A full data catalog is overkill for a seed-stage startup. A spreadsheet is insufficient for a company with 50 data sources and 10 AI applications. Somewhere in between is the right answer, and it probably looks different for every organization.
 

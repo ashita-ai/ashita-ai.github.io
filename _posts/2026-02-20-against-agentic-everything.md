@@ -4,7 +4,7 @@ title: "Against Agentic Everything"
 date: 2026-02-20
 ---
 
-In February 2024, an employee at Arup's Hong Kong office joined a video call with the company's CFO and other senior executives. The CFO instructed them to transfer funds. They complied. The deepfake agents on the call were AI-generated. The [loss was $25 million](https://www.cnn.com/2024/02/04/asia/deepfake-cfo-scam-hong-kong-intl-hnk/index.html).
+In February 2024, an employee at Arup's Hong Kong office joined a video call with the company's CFO and other senior executives. The CFO instructed them to transfer funds. They complied. The deepfake agents on the call were AI-generated. The [loss was $25 million](https://fortune.com/europe/2024/05/17/arup-deepfake-fraud-scam-victim-hong-kong-25-million-cfo/).
 
 The attackers did not need a sophisticated multi-agent framework. They needed one agent good enough to impersonate a CFO for fifteen minutes.
 
@@ -14,9 +14,9 @@ A decade. Not a quarter. Not a roadmap item. A co-founder of OpenAI saying the t
 
 ## The math
 
-[Berkeley researchers](https://arxiv.org/abs/2503.13657) analyzed 1,600 execution traces across seven multi-agent frameworks. Failure rates ranged from 41% to 86.7%. Graham Neubig at CMU [tested coding agents](https://www.newcomer.co/p/why-ai-agents-are-mostly-hype) on the same benchmark six months apart. Task completion improved from 24% to 30%. At this rate, agents will not hit 90% until 2028.
+[Berkeley researchers](https://arxiv.org/abs/2503.13657) analyzed 1,600 execution traces across seven multi-agent frameworks. Failure rates ranged from 41% to 86.7%.
 
-The compounding is what kills you. [ScaleAI's analysis](https://dnyuz.com/2025/04/17/dont-get-too-excited-about-ai-agents-yet-they-make-a-lot-of-mistakes/): 20% error rate per action, five-step workflow, you are down to 32% success. Even at 99% per-step reliability—which nobody has—you only get 82% success over 20 steps.
+The compounding is what kills you. At a 20% error rate per action, a five-step workflow drops to 32% success. Even at 99% per-step reliability—which nobody has—you only get 82% success over 20 steps.
 
 Production systems need 99.9%+. The math does not work.
 
@@ -44,9 +44,9 @@ The data readiness problem has not been solved. It has been papered over with de
 
 ## The fraud problem
 
-The SEC [charged](https://www.sec.gov/enforcement-litigation/administrative-proceedings/33-11352-s) Presto Automation with claiming its AI drive-thru "eliminated the need for human order taking." Reality: over 70% of orders required human agents in the Philippines.
+The SEC [charged](https://www.sec.gov/newsroom/press-releases/2025-15) Presto Automation with claiming its AI drive-thru "eliminated the need for human order taking." Reality: over 70% of orders required human agents in the Philippines.
 
-The SEC and DOJ [charged](https://www.sec.gov/enforcement-litigation/litigation-releases/lr-26282) Albert Saniger of Nate Inc. with fraud. He raised $42 million claiming AI automation. Actual automation rate: zero percent. Hundreds of contractors in a Philippine call center manually completed purchases. He faces 40 years.
+The SEC and DOJ charged Albert Saniger of Nate Inc. with fraud. He raised $42 million claiming AI automation. Actual automation rate: zero percent. Hundreds of contractors in a Philippine call center manually completed purchases. He faces up to 40 years if convicted.
 
 Gartner estimates only 130 of thousands of vendors claiming "agentic AI" are legitimate. The rest are agent-washing: rebranding chatbots without substantial capabilities. Gartner [predicts](https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027) over 40% of agentic AI projects will be cancelled by end of 2027.
 
@@ -62,7 +62,7 @@ The failures are broad, external, and autonomous. General-purpose agents making 
 
 The decade timeline feels right but the path is unclear. Current agents fail on multi-step tasks, but the failure modes are not improving predictably. Some capabilities are advancing (coding, research). Others are stuck (reliable tool use, long-horizon planning).
 
-The question I cannot answer: is this a capabilities problem that more compute will solve, or an architectural problem that requires a different approach? Karpathy thinks capabilities. [Yann LeCun thinks architecture](https://spectrum.ieee.org/ai-agents-agi). If LeCun is right, the current wave of agent investments is building on the wrong foundation.
+The question I cannot answer: is this a capabilities problem that more compute will solve, or an architectural problem that requires a different approach? Karpathy thinks capabilities. Yann LeCun thinks architecture. If LeCun is right, the current wave of agent investments is building on the wrong foundation.
 
 Either way, the companies deploying agents today are running the experiment with their own money. Some will learn. Most will join the [pilot graveyard](/blog/the-ai-pilot-graveyard/).
 

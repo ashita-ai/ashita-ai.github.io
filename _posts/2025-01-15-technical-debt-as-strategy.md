@@ -34,7 +34,7 @@ Debt on *how* you build is acceptable. Debt on *what you produce* is dangerous. 
 
 Some teams treat debt as a temporary evil. Others treat it as the baseline.
 
-Etsy has deployed to production [over 50 times a day](https://www.simform.com/blog/etsy-devops-case-study/). Their philosophy: "developers are happy when they're shipping product." Speed is not a phase they will grow out of. Speed is the product.
+Etsy deploys to production [more than 20 times a day](https://www.simform.com/blog/etsy-devops-case-study/). Their philosophy: "developers are happy when they're shipping product." Speed is not a phase they will grow out of. Speed is the product.
 
 Basecamp runs a [9-year-old Rails monolith](https://dev.37signals.com/vanilla-rails-is-plenty/) with 400 controllers and 500 models, serving millions of users daily. DHH calls it the "majestic monolith." Their advice: stay in it as long as you can.
 
