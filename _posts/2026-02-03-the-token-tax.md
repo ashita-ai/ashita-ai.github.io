@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The Token Tax"
-date: 2026-02-01
+date: 2026-02-03
 ---
 
 Perplexity spent [164% of their revenue](https://www.wheresyoured.at/why-everybody-is-losing-money-on-ai/) on AWS, Anthropic, and OpenAI bills in 2024. They were not training models. They were running searches. The cost structure made profitability mathematically impossible at their current scale.
