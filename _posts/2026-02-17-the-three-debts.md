@@ -50,7 +50,7 @@ The debt was in the decision itself—engineering attention allocated to technic
 
 Decision debt is invisible in the codebase. The code is fine. The architecture might even be elegant. The debt is in what you chose to build, when you chose to build it, and why. It surfaces years later when you realize the decisions made in year one have [compounded into constraints](/blog/the-data-platform-decisions-that-haunt-you/) you cannot escape without starting over.
 
-[28% of executives cannot name their company's strategic priorities](/blog/the-28-percent-problem/). The decisions being made are not aligned with any coherent strategy. Each decision is locally rational, individually defensible, and collectively incoherent. The debt compounds with every sprint.
+28% of executives cannot name their company's strategic priorities. The decisions being made are not aligned with any coherent strategy. Each decision is locally rational, individually defensible, and collectively incoherent. The debt compounds with every sprint.
 
 You cannot refactor decision debt. You cannot improve your way out of building the wrong thing. Sony's Concord game [cost $200 million to develop and lasted 14 days](https://medium.com/javarevisited/the-biggest-software-failures-of-2024-8e9413350f4c) after launch before being pulled. The code worked. The decisions did not.
 

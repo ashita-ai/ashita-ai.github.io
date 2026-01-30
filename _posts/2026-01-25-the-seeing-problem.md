@@ -30,7 +30,7 @@ When people say "the observability tools exist," they are usually pointing at pr
 
 ## The comprehension debt crisis
 
-Researchers at Carnegie Mellon [named this pattern](https://arxiv.org/abs/2512.08942) comprehension debt: what happens when teams build systems more sophisticated than they can independently understand. [Traditional technical debt](/blog/the-three-debts/) means someone understood the code when it was written. Comprehension debt means nobody ever did.
+Researchers at Carnegie Mellon [named this pattern](https://arxiv.org/abs/2512.08942) comprehension debt: what happens when teams build systems more sophisticated than they can independently understand. Traditional technical debt means someone understood the code when it was written. Comprehension debt means nobody ever did.
 
 The consequences are materializing faster than the industry expected.
 
@@ -102,7 +102,7 @@ AI-generated code breaks this model in two ways.
 
 First, the code itself may be non-deterministic in origin. The same prompt to the same model produces different code. Model updates change output quality without warning. You cannot reproduce the conditions that generated the code you are debugging.
 
-Second, [comprehension debt compounds](/blog/the-hollow-codebase/). Each AI-generated module you do not understand makes the next one harder to evaluate. The codebase becomes a black box assembled from black boxes.
+Second, comprehension debt compounds. Each AI-generated module you do not understand makes the next one harder to evaluate. The codebase becomes a black box assembled from black boxes.
 
 I do not know what the right abstraction is. Maybe it is provenance tracking that logs which model version generated which code. Maybe it is mandatory property-based testing for any AI-generated module touching critical paths. Maybe it is Martin Kleppmann's prediction that [AI will make formal verification mainstream](https://martin.kleppmann.com/2025/12/08/ai-formal-verification.html)—LLMs propose invariants, theorem provers guarantee correctness.
 

@@ -46,7 +46,7 @@ What explains the contradiction?
 
 The METR study used experienced developers on familiar codebases doing complex, judgment-heavy work. The positive studies often measured less experienced developers, unfamiliar codebases, or more routine tasks. The pattern suggests that AI agents excel at structured, repeatable work and struggle with the messy complexity that senior engineers handle.
 
-This matches [the hollow codebase problem](/blog/the-hollow-codebase/). AI removes work that was easy to review and adds work that is hard to review. The Nubank migration was largely mechanical—exactly the kind of work agents handle well. The METR study involved the judgment-heavy long tail.
+AI removes work that was easy to review and adds work that is hard to review. The Nubank migration was largely mechanical—exactly the kind of work agents handle well. The METR study involved the judgment-heavy long tail.
 
 ## The real question
 
