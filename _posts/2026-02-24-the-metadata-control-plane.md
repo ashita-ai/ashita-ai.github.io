@@ -14,9 +14,11 @@ Two Sigma's problem was not AI capability. It was metadata infrastructure—the 
 
 ## The failures that metadata would have caught
 
-A marketing team automated their ad bidding with an AI agent. The agent had access to campaign data. It did not have access to the holiday calendar. Over a three-day weekend, it bid aggressively on inventory that would not convert. By Monday, they had burned a quarter million dollars on ads nobody would see.
+On August 1, 2012, Knight Capital [deployed a routine software update](https://www.sec.gov/newsroom/press-releases/2013-222) to participate in the NYSE's new Retail Liquidity Program. The update accidentally reactivated dormant code. Knight had no kill switch, no documented incident response procedures, no way to trace what the system was doing. In 45 minutes, the algorithm executed 4 million erroneous trades across 154 stocks. Loss: $440 million. Knight's stock dropped 70%. The company was acquired within months.
 
-A data contracts layer would have flagged the missing dependency. The agent was consuming campaign performance data without understanding that conversion rates depend on calendar context. The metadata was incomplete. The agent did not know what it did not know.
+On March 18, 2018, Uber's self-driving car [killed pedestrian Elaine Herzberg](https://www.ntsb.gov/investigations/accidentreports/reports/har1903.pdf) in Tempe, Arizona. The NTSB found the system detected her nearly six seconds before impact but never classified her correctly. The algorithm could not conceive of a pedestrian outside a crosswalk. It alternated between "vehicle," "bicycle," and "unknown object"—each reclassification resetting her predicted path. The car decided to brake 1.3 seconds before impact.
+
+Both systems had the raw data. Neither had the context to interpret it. Knight's trading system lacked operational metadata—incident classification, circuit breakers, lineage to trace cascading failures. Uber's perception system lacked semantic context—the classification "pedestrian" was unavailable because its training data did not include jaywalking scenarios. A data contracts layer would have flagged these gaps before deployment.
 
 Replit's AI assistant [wiped Jason Lemkin's production database](https://fortune.com/2025/07/23/ai-coding-tool-replit-wiped-database-called-it-a-catastrophic-failure/)—1,206 executive records representing months of curation—when he asked it to clean up test data. The assistant could not distinguish production tables from test tables. No lineage tracking. No classification tags.
 
