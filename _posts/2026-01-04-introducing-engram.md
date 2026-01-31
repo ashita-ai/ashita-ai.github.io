@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Building a Memory System That Doesn't Lie to You"
-date: 2025-01-04
+date: 2026-01-04
 ---
 
 I have been thinking about memory systems for AI applications. Not the kind that store everything forever, but the kind that actually work.

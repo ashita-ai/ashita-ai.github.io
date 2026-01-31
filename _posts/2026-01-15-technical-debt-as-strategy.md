@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Technical Debt as Strategy"
-date: 2025-01-15
+date: 2026-01-15
 ---
 
 In 2017, Segment's engineering team found themselves ["falling from the microservices tree, hitting every branch on the way down."](https://segment.com/blog/goodbye-microservices/) What started as a sensible migration (one service per integration destination) had become a nightmare. Velocity plummeted. Defect rate exploded. They abandoned microservices and returned to a monolith. Three years later, Twilio acquired them for [$3.2 billion](https://techcrunch.com/2020/10/12/twilio-confirms-it-is-buying-segment-for-3-2b-in-an-all-stock-deal/).

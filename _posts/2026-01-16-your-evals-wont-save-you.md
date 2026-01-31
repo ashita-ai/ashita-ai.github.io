@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Your Evals Won't Save You"
-date: 2025-01-16
+date: 2026-01-16
 ---
 
 In 2024, [42% of companies](https://www.spglobal.com/market-intelligence/en/news-insights/research/ai-experiences-rapid-adoption-but-with-mixed-outcomes-highlights-from-vote-ai-machine-learning) abandoned most of their AI initiatives before reaching production. Up from 17% the year before. Gartner [predicts](https://www.gartner.com/en/newsroom/press-releases/2024-07-29-gartner-predicts-30-percent-of-generative-ai-projects-will-be-abandoned-after-proof-of-concept-by-end-of-2025) 30% of GenAI projects will be abandoned after proof of concept by the end of 2025.

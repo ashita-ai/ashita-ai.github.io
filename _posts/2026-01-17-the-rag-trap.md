@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The RAG Trap"
-date: 2025-01-17
+date: 2026-01-17
 ---
 
 [72% of enterprise RAG implementations](https://ragaboutit.com/why-72-of-enterprise-rag-implementations-fail-in-the-first-year-and-how-to-avoid-the-same-fate/) fail in the first year. A Stanford study found that legal RAG tools from LexisNexis and Thomson Reuters [hallucinate 17-33% of the time](https://dho.stanford.edu/wp-content/uploads/Legal_RAG_Hallucinations.pdf), despite vendor claims that RAG "eliminates" hallucination.

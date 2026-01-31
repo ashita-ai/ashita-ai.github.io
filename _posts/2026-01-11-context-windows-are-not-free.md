@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Context Windows Are Not Free"
-date: 2025-01-11
+date: 2026-01-11
 ---
 
 Gemini offers a 2 million token context window. Claude goes to 200K, with a 1M beta. GPT-4.1 handles 1M tokens.

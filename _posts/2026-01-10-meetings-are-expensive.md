@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Meetings Are Expensive"
-date: 2025-01-10
+date: 2026-01-10
 ---
 
 A one-hour meeting with eight people is not a one-hour meeting. It is eight hours of labor. If those people average $150/hour fully loaded, that meeting costs $1,200.

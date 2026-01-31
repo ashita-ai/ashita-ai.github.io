@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Healthy Metrics, Broken Agent"
-date: 2025-01-13
+date: 2026-01-13
 ---
 
 An infinite agent loop ran undetected for [11 days at GetOnStack](https://www.zenml.io/blog/what-1200-production-deployments-reveal-about-llmops-in-2025). Weekly costs escalated from $127 to $47,000 over four weeks.

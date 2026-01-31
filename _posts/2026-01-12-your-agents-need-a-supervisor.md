@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Your Agents Don't Need to Be Smarter. They Need a Supervisor."
-date: 2025-01-12
+date: 2026-01-12
 ---
 
 Multi-agent LLM systems fail at rates between [41% and 87%](https://www.augmentcode.com/guides/why-multi-agent-llm-systems-fail-and-how-to-fix-them) in production. ChatDev, one of the more hyped multi-agent coding frameworks, achieves [25% correctness](https://arxiv.org/html/2503.13657v1) with GPT-4o.
