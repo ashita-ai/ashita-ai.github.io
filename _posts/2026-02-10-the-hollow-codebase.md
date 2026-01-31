@@ -42,7 +42,7 @@ Junior developers can now produce code they cannot evaluate.
 
 The volume is, in the words of [one analysis](https://addyo.substack.com/p/beyond-the-70-maximizing-the-human), "saturating the ability of midlevel staff to review changes." Seniors are drowning in review queues instead of doing architecture or mentorship. The ratio is broken.
 
-A [Stanford study](https://stackoverflow.blog/2025/12/26/ai-vs-gen-z) found employment for software developers aged 22-25 declined nearly 20% from its 2022 peak. 37% of employers say they would rather "hire" AI than a recent graduate. The economics are obvious in the short term.
+A [Stanford study](https://stackoverflow.blog/2025/12/26/ai-vs-gen-z) found employment for software developers aged 22-25 declined nearly 20% from its 2022 peak. A separate [Workplace Intelligence survey](https://hrdailyadvisor.com/2025/01/22/over-1-3-of-employers-would-rather-hire-a-robot-or-ai-than-a-recent-graduate/) found 37% of employers would rather "hire" AI than a recent graduate. The economics are obvious in the short term.
 
 But someone has to ask the question nobody wants to answer: who reviews AI code in 2035 if nobody was hired as a junior in 2025?
 

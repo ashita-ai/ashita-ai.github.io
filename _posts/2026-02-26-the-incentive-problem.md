@@ -6,7 +6,7 @@ date: 2026-02-26
 
 In 2015, IBM's Watson team cautioned leadership that the system was designed to identify word patterns and predict answers to trivia questions. It was not, as David Ferrucci put it, "an all-purpose answer box ready to take on the commercial world." The warning [fell on deaf ears](https://www.advisory.com/daily-briefing/2021/07/21/ibm-watson). "It wasn't the marketing message," Ferrucci said. He left IBM the following year.
 
-IBM spent four billion dollars acquiring Watson Health companies. The [80% failure rate](https://irjiet.com/common_src/article_file/IRJIET-INSPIRE250191745452424.pdf) in healthcare applications was not a technology problem. The models worked in the lab. What failed was the organizational structure that rewarded announcing AI initiatives over delivering them.
+IBM spent four billion dollars acquiring Watson Health companies. The [pattern of failures](https://spectrum.ieee.org/how-ibm-watson-overpromised-and-underdelivered-on-ai-health-care) in healthcare applications was not a technology problem. At Manipal Comprehensive Cancer Center, Watson achieved only 73% concordance on breast cancer treatment recommendations. At MD Anderson, the project was shelved after $62 million and four years. The models worked in the lab. What failed was the organizational structure that rewarded announcing AI initiatives over delivering them.
 
 This is the incentive problem. AI projects fail not because the technology does not work, but because the people and organizations deploying them are optimized for different outcomes.
 

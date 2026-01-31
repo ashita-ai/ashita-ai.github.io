@@ -4,9 +4,9 @@ title: "The Trust Gap"
 date: 2026-01-27
 ---
 
-Google's [2025 DORA report](https://dora.dev/research/2025/dora-report/) found that 90% of developers now use AI at work. It also found that [30% report little or no trust](https://www.infoq.com/news/2025/09/dora-state-of-ai-in-dev-2025/) in the AI-generated code they are shipping.
+Google's [2025 DORA report](https://dora.dev/research/2025/dora-report/) found that 90% of developers now use AI at work. It also found that [30% report little or no trust](https://www.infoq.com/news/2025/09/dora-state-of-ai-in-dev-2025/) in the AI-generated code they are shipping. Only 24% report trusting it "a lot" or "a great deal." The remaining 49% fall into "somewhat"—the shrug emoji of confidence levels.
 
-Read that again. Nearly a third of production AI systems are deployed by teams who do not trust them.
+Read that again. Nearly a third of developers actively distrust the AI they are deploying. Fewer than one in four actually trust it.
 
 This is not a bug. It is the predictable outcome of an industry that spent fifteen years faking it.
 

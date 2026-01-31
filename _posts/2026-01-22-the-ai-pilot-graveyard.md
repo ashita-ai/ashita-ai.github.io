@@ -16,9 +16,9 @@ This is not a story about pilots failing to reach production. It is a story abou
 
 ## The 95% stat
 
-[MIT research](https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo/) found that 95% of enterprise AI pilots fail to deliver measurable ROI. The number deserves scrutiny. "Measurable ROI" over what timeframe? Measured how? The methodology matters.
+[MIT research](https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo/) found that 95% of enterprise AI pilots fail to deliver measurable ROI. The number deserves scrutiny. The study defined success as P&L impact within six months of pilot launch, based on 52 executive interviews and 153 survey responses. [Critics note](https://www.marketingaiinstitute.com/blog/mit-study-ai-pilots) this ignores efficiency gains, cost reductions, and longer-term value creation. IDC research using different methodology found [$3.70 ROI for every $1 invested](https://www.idc.com/getdoc.jsp?containerId=prUS51765424) in GenAI.
 
-But even if the number is directionally right rather than precisely right, the interesting question is why. The instinct is to read 95% as a failure rate. It is not. It is a design outcome.
+But even if the 95% is directionally right rather than precisely right, the interesting question is why. The instinct is to read it as a failure rate. It is not. It is a design outcome.
 
 Pilots are optimized to not reach production.
 
