@@ -6,7 +6,7 @@ title: Home
 <section class="blog-section">
   <h2>Recent Writing</h2>
   <ul class="blog-list">
-    {% assign posts = site.posts | slice: 0, 7 %}
+    {% assign posts = site.posts | slice: 0, 10 %}
     {% for post in posts %}
     <li>
       <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
