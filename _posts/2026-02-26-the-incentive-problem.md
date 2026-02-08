@@ -24,7 +24,7 @@ The career timeline reinforces this. AI product managers [advance faster](https:
 
 ## The budget incentive
 
-[60% of enterprise AI investment](https://menlovc.com/2024-the-state-of-generative-ai-in-the-enterprise/) comes from innovation budgets—temporary funds earmarked for new projects. Only 40% comes from permanent operational budgets. Innovation budgets are designed to launch things. They are not designed to keep things running.
+[60% of enterprise AI investment](https://menlovc.com/2024-the-state-of-generative-ai-in-the-enterprise/) comes from innovation budgets—temporary funds earmarked for new projects. Only 40% comes from permanent operational budgets. Innovation budgets are designed to launch things. They are not designed to keep things running. The result is [architectural decisions made during cheap pilots that create exponential cost multipliers at scale](/blog/the-token-tax/).
 
 The structural bias toward CapEx over OpEx [compounds the problem](https://www.comarch.com/trade-and-services/ict/news/8-proven-it-cost-reduction-strategies-that-shift-spending-from-capex-to-opex/): "Without a clear plan for IT cost reduction, rising operational costs for legacy systems can consume your entire budget, leaving no room for the strategic projects that drive business growth."
 

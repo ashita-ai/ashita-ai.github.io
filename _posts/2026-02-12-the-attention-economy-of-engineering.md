@@ -14,7 +14,7 @@ One of these showed up in the boardroom. The other showed up in an acqui-hire.
 
 [CB Insights analyzed 101 startup post-mortems](https://www.cbinsights.com/research/report/startup-failure-reasons-top/) and found that 42% failed because they built something nobody wanted. The founders of eCrowds put it bluntly: "We spent way too much time building it for ourselves and not getting feedback from prospects."
 
-There's a name for this pattern when it happens in engineering: [resume-driven development](https://dev.to/hotfixhero/the-resume-driven-development-epidemic-building-for-your-next-job-not-the-business-4e1). Engineers choosing technologies based on what looks good on LinkedIn rather than what solves the problem. Kubernetes for five users. Microservices maintained by two developers. Machine learning where an if-statement would work.
+There's a name for this pattern when it happens in engineering: [resume-driven development](https://dev.to/hotfixhero/the-resume-driven-development-epidemic-building-for-your-next-job-not-the-business-4e1). Engineers choosing technologies based on what looks good on LinkedIn rather than what solves the problem. Kubernetes for five users. [Microservices maintained by two developers](/blog/technical-debt-as-strategy/). Machine learning where an if-statement would work.
 
 This isn't a character flaw. It's a principal-agent problem. Engineers are rationally optimizing for their next job, not their current one.
 

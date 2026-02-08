@@ -32,7 +32,7 @@ A junior developer uses Claude to generate a caching layer. The code works. The 
 
 This is [the hollow codebase problem](/blog/the-hollow-codebase/). AI-assisted developers produce [3-4x more commits](https://apiiro.com/blog/4x-velocity-10x-vulnerabilities-ai-coding-assistants-are-shipping-more-risks/) while generating 10x more security findings. The ratio of code produced to code understood is diverging.
 
-You cannot refactor comprehension debt. Refactoring assumes you understand both the current implementation and the desired implementation. When you do not understand the current implementation, you are not refactoring. You are rewriting blind, likely introducing new comprehension debt in the process.
+You cannot refactor comprehension debt. Refactoring assumes you understand both the current implementation and the desired implementation. When you do not understand the current implementation, you are not refactoring. You are rewriting blind, likely introducing new comprehension debt in the process. The output quality of an agent [depends on the instructions, not the model](/blog/the-intelligence-is-in-the-document/)—and comprehension debt accumulates fastest when nobody writes those instructions down.
 
 The only remediation is to build understanding—or to accept permanent dependency on AI assistance for that part of the system. Neither is free. The first requires slowing down to learn what you skipped. The second means [your seeing problem never gets solved](/blog/the-seeing-problem/).
 

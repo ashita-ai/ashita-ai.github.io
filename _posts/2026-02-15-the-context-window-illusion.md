@@ -46,11 +46,11 @@ The pattern that works: do not use the context window as a database.
 
 First, chunk intelligently. Semantic chunking (splitting on topic boundaries) outperforms fixed-size chunking by 23% in retrieval benchmarks. Aim for 400-512 token chunks. Overlap by 10-15% to preserve context across boundaries.
 
-Second, retrieve precisely. Use embeddings for semantic search, not keyword matching. Hybrid search (combining dense vectors with BM25 sparse retrieval) outperforms either approach alone. Rerank results with a smaller model before sending to your primary LLM.
+Second, retrieve precisely. Use embeddings for semantic search, not keyword matching. [Hybrid search](/blog/the-rag-trap/) (combining dense vectors with BM25 sparse retrieval) outperforms either approach alone. Rerank results with a smaller model before sending to your primary LLM.
 
 Third, compress context. Send summaries instead of raw documents. Use chain-of-thought to make the model process incrementally rather than all-at-once. Research on prompt compression shows significant context reduction is possible without proportional accuracy loss.
 
-Fourth, architect for small contexts. If your system needs 200K tokens to answer a question, your retrieval is broken. The correct answer almost always fits in 8-16K tokens if the semantic work is done correctly.
+Fourth, architect for small contexts. If your system needs 200K tokens to answer a question, your retrieval is broken. The correct answer almost always fits in 8-16K tokens if the semantic work is done correctly. A [CLAUDE.md that encodes project-specific lessons](/blog/the-intelligence-is-in-the-document/) is a concrete example: a few hundred tokens of precisely curated context outperforms dumping the entire repo into the window.
 
 Build a pipeline: embed → search → rerank → compress → query. Each stage filters. The LLM sees 5-10K highly relevant tokens instead of 200K mostly-irrelevant ones.
 

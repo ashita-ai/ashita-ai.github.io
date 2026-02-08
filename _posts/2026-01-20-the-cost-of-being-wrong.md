@@ -28,7 +28,7 @@ In traditional software, the cost of errors follows a predictable curve: cheap i
 
 AI systems break this model. Pre-production testing catches the errors you anticipated. Production reveals the errors you did not. And the errors that matter most are the ones you cannot anticipate because they emerge from the interaction between model behavior and real-world conditions.
 
-A model that passes all your evals can still hallucinate in ways you never tested for. An agent that works perfectly in staging can make catastrophic decisions when user behavior differs from your assumptions. The failure modes are not bugs in the traditional sense. They are emergent properties of systems that do not know what they do not know.
+A model that [passes all your evals](/blog/your-evals-wont-save-you/) can still hallucinate in ways you never tested for. An agent that works perfectly in staging can make catastrophic decisions when user behavior differs from your assumptions. The failure modes are not bugs in the traditional sense. They are emergent properties of systems that do not know what they do not know.
 
 [IBM's 2025 Cost of a Data Breach report](https://www.ibm.com/reports/data-breach) found that 13% of organizations had experienced breaches involving AI models or applications. Of those compromised, 97% reported lacking proper AI access controls. Breaches involving unmonitored "shadow AI" tools cost an [average of $670,000 more](https://www.ibm.com/reports/data-breach) than breaches at organizations with AI governance.
 

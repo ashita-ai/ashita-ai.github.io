@@ -58,7 +58,7 @@ Agents don't refactor toward better abstractions on their own. They add code whe
 
 The quality of agent output is directly proportional to how well you decompose the work. Vague issues produce vague code. "Implement authentication" gets you something. "Implement JWT token generation with refresh tokens, 15-minute access token expiry, 7-day refresh token expiry, and token rotation on refresh" gets you what you want.
 
-**Implication:** Spend more time writing issues than you think you need to. The issue *is* the spec.
+**Implication:** Spend more time writing issues than you think you need to. The issue *is* the spec. This is [the design department problem](/blog/the-factory-without-a-design-department/) at the individual practitioner level.
 
 ### 7. Labels Route the Agent
 

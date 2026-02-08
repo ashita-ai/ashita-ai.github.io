@@ -14,7 +14,7 @@ The industry is over-invested in pre-production evaluation. Evals are demo-able 
 
 But Gartner says projects fail from "poor data quality, inadequate risk controls, escalating costs, unclear business value." Not "our benchmark scores were too low."
 
-The eval-industrial complex exists because evals are easy to build and hard to question. The actual hard problems are messy and cross-functional. Evals are contained and measurable. So we measure what is easy to measure and hope it correlates with what matters.
+The eval-industrial complex exists because evals are easy to build and hard to question. The actual hard problems are messy and cross-functional. Evals are contained and measurable. So we measure what is easy to measure and hope it correlates with what matters. The same trap [repeats in production](/blog/healthy-metrics-broken-agent/): dashboards show green while agents burn money in conversations with themselves.
 
 ## The journey most teams take
 

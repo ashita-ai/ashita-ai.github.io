@@ -56,7 +56,7 @@ The review bottleneck is a systems problem. You cannot solve it by telling senio
 
 **Clear priority signals.** Not every PR needs the same scrutiny. Payment code, security boundaries, core business logic: senior review. Boilerplate, tests, documentation: move faster. Attention is the constraint. Allocate it deliberately.
 
-**Smaller PRs.** AI-generated PRs are [154% larger](https://www.faros.ai/blog/ai-software-engineering) on average. Larger PRs get worse reviews. Enforce size limits.
+**Smaller PRs.** AI-generated PRs are [154% larger](https://www.faros.ai/blog/ai-software-engineering) on average. Larger PRs get worse reviews. [Enforce size limits](/blog/what-i-learned-building-four-tools-with-ai-agents/).
 
 **AI-assisted review for the patterns.** Tools like [CodeRabbit](https://www.coderabbit.ai/) catch null handling, style inconsistencies, common security issues. One team tracked every comment over a month and found [72% of findings were relevant](https://www.deployhq.com/blog/ai-code-review-before-you-deploy-our-experience-with-coderabbit), but only 3% were security-critical. Use them to clear the brush so humans can focus on judgment.
 

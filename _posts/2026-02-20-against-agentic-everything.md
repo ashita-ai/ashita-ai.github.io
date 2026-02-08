@@ -16,7 +16,7 @@ A decade. Not a quarter. Not a roadmap item. A co-founder of OpenAI saying the t
 
 [Berkeley researchers](https://arxiv.org/abs/2503.13657) analyzed 1,600 execution traces across seven multi-agent frameworks. Failure rates ranged from 41% to 86.7%.
 
-The compounding is what kills you. At a 20% error rate per action, a five-step workflow drops to 32% success. Even at 99% per-step reliability—which nobody has—you only get 82% success over 20 steps.
+The compounding is what kills you. At a 20% error rate per action, a five-step workflow drops to 32% success. Even at 99% per-step reliability—which nobody has—you only get 82% success over 20 steps. [Error cascades](/blog/your-agents-need-a-supervisor/) are the mechanism: one agent makes a small mistake, the next accepts it, and by the fourth step the output is confidently wrong.
 
 Production systems need 99.9%+. The math does not work.
 
