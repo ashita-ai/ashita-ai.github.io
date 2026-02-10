@@ -48,7 +48,7 @@ Palantir's [FedStart program](https://www.kavout.com/market-lens/palantirs-ai-dr
 
 ## The economics
 
-SOC 2 certification costs [$30,000 to $150,000](https://scytale.ai/center/soc-2/how-much-does-soc-2-compliance-cost/) for most small to mid-sized companies. ISO 27001 runs [$50,000 to $200,000](https://scytale.ai/resources/iso-27001-certification-costs/) and takes 3 to 18 months. Fortune 500 companies average [$2.5 million](https://introl.com/blog/compliance-frameworks-ai-infrastructure-soc2-iso27001-gdpr) for AI infrastructure compliance.
+SOC 2 certification costs [$30,000 to $150,000](https://scytale.ai/center/soc-2/how-much-does-soc-2-compliance-cost/) for most small to mid-sized companies. ISO 27001 runs [$50,000 to $200,000](https://scytale.ai/resources/iso-27001-certification-costs/) and takes 3 to 18 months. [ISO 42001](/blog/i-read-iso-42001-so-you-dont-have-to/)—the first certifiable standard specifically for AI management systems—bolts onto existing ISO 27001 infrastructure at 30–50% lower cost. Fortune 500 companies average [$2.5 million](https://introl.com/blog/compliance-frameworks-ai-infrastructure-soc2-iso27001-gdpr) for AI infrastructure compliance.
 
 The costs are front-loaded. The benefits compound.
 

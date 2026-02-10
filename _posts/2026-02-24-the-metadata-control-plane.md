@@ -40,7 +40,7 @@ In August 2024, the SEC [fined 26 firms a combined $392.75 million](https://www.
 
 [FINRA's 2026 report](https://www.finra.org/rules-guidance/guidance/reports/2026-finra-annual-regulatory-oversight-report/gen-ai) expects prompt and output logging, tracking which model version produced which output, and human-in-the-loop oversight. OCC's model risk management framework requires comprehensive model inventories with standardized metadata—approval takes 9-12 months at most U.S. financial institutions.
 
-The pattern: you need to know what data you have, where it came from, who can access it, what AI systems consume it, and what those systems output. Without that, you cannot demonstrate compliance.
+The pattern: you need to know what data you have, where it came from, who can access it, what AI systems consume it, and what those systems output. [ISO 42001](/blog/i-read-iso-42001-so-you-dont-have-to/) codifies these exact requirements into 38 auditable controls—data provenance, event logging, documentation by audience. Without that infrastructure, you cannot demonstrate compliance.
 
 ## The counterargument
 

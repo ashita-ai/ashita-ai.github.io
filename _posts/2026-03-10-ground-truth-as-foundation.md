@@ -54,7 +54,7 @@ First, the training data for the next generation of models is being poisoned by 
 
 Second, the paradigm will shift. Transformers will give way to something else. Embedding-based retrieval will be replaced. The [vector databases and agent frameworks](/blog/the-properties-that-survive/) being built right now are coupled to the current architecture. When the architecture changes, all of it breaks. What survives the shift is not the model or the framework. It is the data underneath—if it means what it says it means.
 
-Third, regulation is arriving. The [EU AI Act](https://en.wikipedia.org/wiki/Artificial_Intelligence_Act) requires explainability and risk assessment for high-risk AI systems. The companies deploying AI in healthcare, hiring, insurance, and finance will need to demonstrate that their systems' decisions trace back to verifiable ground truth. The companies that [skipped the governance layer](/blog/the-compliance-moat/) because it was "overhead" will discover it was a prerequisite.
+Third, regulation is arriving. The [EU AI Act](https://en.wikipedia.org/wiki/Artificial_Intelligence_Act) requires explainability and risk assessment for high-risk AI systems. The companies deploying AI in healthcare, hiring, insurance, and finance will need to demonstrate that their systems' decisions trace back to verifiable ground truth. [ISO 42001](/blog/i-read-iso-42001-so-you-dont-have-to/) already requires data provenance tracking across the AI system lifecycle. The companies that [skipped the governance layer](/blog/the-compliance-moat/) because it was "overhead" will discover it was a prerequisite.
 
 ## What survives
 
