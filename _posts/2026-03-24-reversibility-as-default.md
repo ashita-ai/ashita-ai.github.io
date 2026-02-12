@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Reversibility as Default"
-date: 2026-03-31
+date: 2026-03-24
 ---
 
 On the night of January 27, 1986, engineers at Morton Thiokol held a teleconference with NASA about the planned launch of Space Shuttle Challenger the next morning. Roger Boisjoly [presented data](https://www.uml.edu/engineering/research/engineering-solutions/roger-boisjoly-challenger.aspx) showing that O-ring resilience degraded at low temperatures. He and his colleagues recommended against launching. NASA officials pressured Morton Thiokol to reverse its position.

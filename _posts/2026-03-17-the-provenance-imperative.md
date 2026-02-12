@@ -68,4 +68,4 @@ A single pigment trace exposed Beltracchi. A 165-year-old gallery collapsed beca
 
 The principle predates every technology involved. Evidence, art, science, food, software, currency: every domain that requires trust requires provenance. AI is not exempt. It is the newest domain where the oldest principle applies.
 
-[Ground truth](/blog/ground-truth-as-foundation/) establishes the foundation: the data means what it says. Provenance traces the chain: every derived fact leads back to its source. Contracts, how you enforce the boundaries between systems, are [next](/blog/contracts-as-infrastructure/).
+[Ground truth](/blog/ground-truth-as-foundation/) establishes the foundation: the data means what it says. Provenance traces the chain: every derived fact leads back to its source. Contracts, how you enforce the boundaries between systems, are next.

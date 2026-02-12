@@ -84,4 +84,4 @@ On November 16, 2018, sixty nations voted to retire Le Grand K. The ground truth
 
 The kilogram's fix took 130 years. AI does not have 130 years. The systems being deployed today are making decisions about health insurance, criminal risk, hiring, and medical treatment. The ground truth underneath those decisions is worse than Le Grand K's—it is not just drifting. In many cases, it was never established.
 
-The foundation comes first. Provenance, how you trace it, is [next](/blog/the-provenance-imperative/).
+The foundation comes first. Provenance, how you trace it, is next.

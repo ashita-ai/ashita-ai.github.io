@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Contracts as Infrastructure"
-date: 2026-03-24
+date: 2026-03-19
 ---
 
 On April 26, 1956, a converted World War II tanker named the Ideal X sailed from Newark, New Jersey to Houston, Texas carrying 58 aluminum truck bodies on a specially constructed spar deck. Loading loose cargo onto a medium-sized ship cost [$5.83 per ton](https://press.princeton.edu/books/paperback/9780691170817/the-box). Loading the Ideal X cost 15.8 cents per ton. A 97% reduction.
@@ -58,4 +58,4 @@ Whether AI systems can even have stable contracts. A traditional API contract sp
 
 On April 26, 1956, the Ideal X proved that standardizing the interface was worth more than optimizing the implementation. Behind ISO 668's dimensions, the entire global logistics industry rebuilt itself multiple times. The contract, unchanged since 1968, outlasted every ship, every crane, and every port it was designed for.
 
-[Ground truth](/blog/ground-truth-as-foundation/) establishes the foundation. [Provenance](/blog/the-provenance-imperative/) traces the chain. Contracts enforce the boundaries. The last property, reversibility, determines whether you survive your first production failure. That is [next](/blog/reversibility-as-default/).
+[Ground truth](/blog/ground-truth-as-foundation/) establishes the foundation. [Provenance](/blog/the-provenance-imperative/) traces the chain. Contracts enforce the boundaries. The last property, reversibility, determines whether you survive your first production failure. That is next.
