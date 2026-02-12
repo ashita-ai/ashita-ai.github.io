@@ -20,7 +20,7 @@ On March 18, 2018, Uber's self-driving car [killed pedestrian Elaine Herzberg](h
 
 Both systems had the raw data. Neither had the context to interpret it. Knight's trading system lacked operational metadata—incident classification, circuit breakers, lineage to trace cascading failures. Uber's perception system lacked semantic context—the classification "pedestrian" was unavailable because its training data did not include jaywalking scenarios. A data contracts layer would have flagged these gaps before deployment.
 
-Replit's AI assistant [wiped Jason Lemkin's production database](https://fortune.com/2025/07/23/ai-coding-tool-replit-wiped-database-called-it-a-catastrophic-failure/)—1,206 executive records representing months of curation—when he asked it to clean up test data. The assistant could not distinguish production tables from test tables. No lineage tracking. No classification tags.
+When Replit's AI assistant [wiped a production database](/blog/the-hollow-codebase/) after being asked to clean up test data, the root cause was metadata: the assistant could not distinguish production tables from test tables. No lineage tracking. No classification tags.
 
 The pattern is consistent: agents consume data they do not understand, make decisions without context, and fail in ways that proper metadata infrastructure would have prevented.
 

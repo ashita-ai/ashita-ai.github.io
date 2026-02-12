@@ -4,29 +4,17 @@ title: "The Context Window Illusion"
 date: 2026-02-15
 ---
 
-When GPT-3.5-Turbo processes a 20-document corpus, its accuracy depends on where the answer sits. If the relevant information is at the beginning or end of the context window, performance is 75%. [Put it in the middle, and accuracy drops to 56.1%](https://arxiv.org/abs/2307.03172)—worse than closed-book performance with no context at all.
+[Context windows are not free.](/blog/context-windows-are-not-free/) The cost is quadratic. The accuracy degrades in the middle. Multi-turn conversations compound the problem. That post covered why bigger context windows make things worse.
 
-The model performed better when it had *no documents* than when the answer was buried in the middle of twenty.
+This post is about what to do instead.
 
-This is the context window illusion. Million-token windows sold us a lie: that bigger is better. The research says otherwise.
+## Context Rot
 
-## The U-Shaped Attention Curve
+Chroma's 2025 [Context Rot study](https://research.trychroma.com/context-rot) tested 18 production LLMs with realistic workloads and named the phenomenon: "context rot." As context length increases, retrieval accuracy drops, latency spikes, and costs balloon. Models do not use context uniformly. They barely process what sits in the middle.
 
-This is not a GPT quirk. Liu et al.'s [peer-reviewed TACL paper](https://direct.mit.edu/tacl/article/doi/10.1162/tacl_a_00638/119630) tested this across transformer architectures. Every model showed the same U-shaped attention curve. Models are excellent at processing what they see first and last, mediocre at everything between.
+The degradation threshold varies by model. Claude maintains coherence longer than most. Gemini 2.5 Pro appears to maintain performance further into its context window than competitors in benchmarks. But every model has a cliff, and that cliff comes well before the advertised maximum.
 
-The degradation threshold varies by model. Claude maintains coherence longer than most—advertised at 200K tokens, though performance degrades before hitting that limit. Gemini 2.5 Pro appears to maintain performance further into its context window than competitors in benchmarks.
-
-But here is what matters: every model has a cliff. Performance does not degrade gradually. It breaks suddenly. And that cliff comes well before the advertised maximum.
-
-## Context Rot at Scale
-
-Chroma's 2025 [Context Rot study](https://research.trychroma.com/context-rot) tested 18 production LLMs with realistic workloads. The finding was consistent: models do not use context uniformly. As context length increases, retrieval accuracy drops, latency spikes, and costs balloon.
-
-This is "context rot"—the invisible decay of model performance as you approach maximum capacity. You are paying for tokens the model barely processes.
-
-The economics are worse than they appear. Attention mechanisms scale at O(n²). Double your context length and you quadruple compute costs. Claude's pricing reflects this: [a 2x input cost premium and 1.5x output premium for contexts over 200K tokens](https://www.anthropic.com/pricing). Sparse attention architectures achieve 250x fewer operations at 64K tokens compared to dense attention, but sparse attention is not what you are getting in the API.
-
-Organizations are paying 4x more for degraded performance because "use the whole context window" became the default.
+Liu et al.'s [peer-reviewed TACL paper](https://direct.mit.edu/tacl/article/doi/10.1162/tacl_a_00638/119630) confirmed this is architectural, not model-specific: every transformer they tested showed the same U-shaped attention curve. Performance does not degrade gradually. It breaks suddenly.
 
 ## The Confidence Trap
 
@@ -71,7 +59,7 @@ Symptom: "The model seems confident, ship it."
 Cost: Invisible failures from corrupted/contradictory context.
 Fix: Semantic entropy checks, confidence calibration, citation verification.
 
-## What I'm Still Figuring Out
+## What I am still figuring out
 
 The research is clear that more context degrades performance. What is less clear: when is long-form context actually necessary?
 
@@ -80,7 +68,6 @@ Legal contracts, medical records, and codebases have structure that does not com
 Gemini 2.5 Pro's performance at 192K tokens suggests the degradation is not fundamental—it is architectural. Will sparse attention, sliding windows, or hierarchical transformers solve this? Or is the solution always "use less context"?
 
 The long tail is also uncertain. Benchmarks measure average-case performance. Production systems fail on edge cases. How do you validate context strategies for the 1% of queries that break your assumptions?
-
 
 ---
 

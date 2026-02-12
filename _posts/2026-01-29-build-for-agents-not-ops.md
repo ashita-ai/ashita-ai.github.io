@@ -34,19 +34,13 @@ The reliability tax assumed humans do the ops. If agents do the ops, the multipl
 
 That is the theory. The evidence is more mixed than the case studies suggest.
 
-## The paradox
+## The split
 
 McKinsey's [State of AI 2025](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai) found that 80% of companies deployed generative AI. It also found that 80% report no material impact on earnings. Deployment went up. Results did not follow.
 
-A [randomized controlled trial by METR](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/)—the most rigorous study methodology—gave 16 experienced open-source developers 246 real issues. The developers with AI tools were 19% slower than those without. Not faster. Slower.
+The evidence on AI-assisted development is [split along a clear line](/blog/the-build-is-not-the-hard-part/): agents excel at structured, repeatable work and struggle with judgment-heavy complexity. Nubank's 6-million-line ETL migration was mechanical. The gains were real. The [METR randomized trial](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/) tested experienced developers on complex, context-heavy tasks. They were 19% slower with AI tools.
 
-Other studies show the opposite. [Research on an AI coding platform](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5713646) found a 39% increase in weekly code merges. [Turing reported](https://blog.marcnuri.com/boosting-developer-productivity-ai-2025) 33% productivity gains using Gemini Code Assist. The Nubank and security vulnerability numbers above are real.
-
-What explains the contradiction?
-
-The METR study used experienced developers on familiar codebases doing complex, judgment-heavy work. The positive studies often measured less experienced developers, unfamiliar codebases, or more routine tasks. The pattern suggests that AI agents excel at structured, repeatable work and struggle with the messy complexity that senior engineers handle.
-
-AI removes work that was easy to review and adds work that is hard to review. The Nubank migration was largely mechanical—exactly the kind of work agents handle well. The METR study involved the judgment-heavy long tail.
+The implication for ops is direct: if your operational work is structured and repeatable, agents can handle it. If it requires deep institutional context and judgment, they cannot. The question is not whether agents can do ops. It is whether your ops are designed so that agents can.
 
 ## The real question
 
@@ -78,11 +72,7 @@ Accept that the tax exists today. Budget for human ops while building for agent 
 
 ## What I am still figuring out
 
-The METR study troubles me. If experienced developers are slower with AI tools on complex work, the implications are significant. Either the tools are not ready for senior-level judgment work, or we have not figured out how to use them effectively for that work, or the work itself resists automation in ways we do not fully understand.
-
-The optimistic read: agents handle the 80% that is mechanical, and humans focus on the 20% that requires judgment. The pessimistic read: the mechanical 80% was never the bottleneck. The judgment-heavy 20% is where the real operational complexity lives, and that may resist automation for years.
-
-I do not know which is true. I suspect it varies by system. The companies building structured, well-documented systems with clear separation between mechanical and judgment-heavy work will see the biggest gains. The companies with sprawling legacy systems full of tribal knowledge will struggle regardless of how good the agents get.
+The mechanical 80% may not be the bottleneck. If the judgment-heavy 20% is where the real operational complexity lives, then automating the easy part changes the economics without changing the outcome. The companies building structured, well-documented systems with clear separation between mechanical and judgment-heavy work will see the biggest gains. The companies with sprawling legacy systems full of tribal knowledge will struggle regardless of how good the agents get.
 
 ---
 

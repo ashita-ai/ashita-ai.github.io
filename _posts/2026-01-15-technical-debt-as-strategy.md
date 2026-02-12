@@ -36,7 +36,7 @@ Some teams treat debt as a temporary evil. Others treat it as the baseline.
 
 Etsy deploys to production [more than 20 times a day](https://www.simform.com/blog/etsy-devops-case-study/). Their philosophy: "developers are happy when they're shipping product." Speed is not a phase they will grow out of. Speed is the product.
 
-Basecamp runs a [9-year-old Rails monolith](https://dev.37signals.com/vanilla-rails-is-plenty/) with 400 controllers and 500 models, serving millions of users daily. DHH calls it the "majestic monolith." Their advice: stay in it as long as you can.
+Basecamp runs a [Rails monolith over a decade old](https://dev.37signals.com/vanilla-rails-is-plenty/) with 400 controllers and 500 models, serving millions of users daily. DHH calls it the "majestic monolith." Their advice: stay in it as long as you can.
 
 These are not companies that failed to modernize. They are companies that decided the modernization treadmill was the trap.
 

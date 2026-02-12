@@ -52,13 +52,11 @@ The only model that reliably works is the "Hive": multidisciplinary teams that t
 
 ## What works
 
-BCG's research on AI transformation is unambiguous about the solution: [10% algorithms, 20% technology and data, 70% people and processes](https://www.bcg.com/press/24october2024-ai-adoption-in-2024-74-of-companies-struggle-to-achieve-and-scale-value). The companies that scale AI spend most of their effort on organizational change, not technical implementation.
+The [companies that scale AI](/blog/when-ai-actually-works/) share a pattern: they restructure incentives so that launching and maintaining are the same team's job.
 
-McKinsey [found](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai) that high performers are three times more likely to fundamentally redesign workflows rather than just adding AI to existing processes. They establish employee incentives that reinforce adoption. They empower line managers rather than keeping decisions centralized in corporate AI labs.
+This means eliminating the handoff. If the team that builds the pilot also owns production, the pilot incentive disappears. If the budget comes from operational funds rather than innovation funds, the budget incentive disappears. If vendor contracts are tied to outcomes rather than seats, the vendor incentive aligns with yours.
 
-The 5% that succeed [share common characteristics](https://loris.ai/blog/mit-study-95-of-ai-projects-fail/): they pick one pain point, execute well, and partner smartly. They push AI decisions down to the people who understand the work. They measure business outcomes, not technical performance. [The companies that actually work](/blog/when-ai-actually-works/)—Wendy's, Netflix, Uber, Stripe—spent the effort on deployment infrastructure, not model capability.
-
-The MIT NANDA research [found something else](https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo/): purchasing AI tools from specialized vendors succeeds 67% of the time, while internal builds succeed only one-third as often. The difference is not capability—it is focus. Successful partnerships treat AI vendors like business service providers rather than software suppliers. The vendor's incentive is tied to outcomes, not seats.
+McKinsey [found](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai) that high performers are three times more likely to fundamentally redesign workflows rather than just adding AI to existing processes. They establish employee incentives that reinforce adoption. They empower line managers rather than keeping decisions centralized in corporate AI labs. The common thread is pushing ownership down to the people who do the work and measuring what matters to the business, not what looks good in a demo.
 
 ## What I am still figuring out
 

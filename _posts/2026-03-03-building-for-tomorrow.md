@@ -14,21 +14,13 @@ This is the central paradox of infrastructure: it must be stable enough to rely 
 
 What does it mean to build for tomorrow when tomorrow keeps moving?
 
-## What survives
+## What dies
 
-Some things survive paradigm shifts. Not the models—GPT-4 will be a footnote by 2030. Not the frameworks—LangChain and LlamaIndex will be replaced by whatever comes next. Not even the architectures—RAG pipelines may look as dated as MapReduce within five years.
+GPT-4 will be a footnote by 2030. LangChain and LlamaIndex will be replaced by whatever comes next. RAG pipelines may look as dated as MapReduce within five years. The models, frameworks, and architectures are furniture. They are supposed to be replaced.
 
-What survives is more fundamental:
+The infrastructure that dies with them is the problem. Airbnb's feature stores were coupled to a specific ML paradigm. When that paradigm shifted, the infrastructure became a constraint rather than a foundation. The same coupling is happening right now: vector databases tightly bound to current embedding models, agent frameworks coupled to today's LLM APIs, prompt engineering patterns optimized for how current models process text.
 
-**Ground truth.** Data that means what it says it means. Data contracts that make semantics explicit. When the models change, the data they consume still needs to be trustworthy. The companies that invested in data quality—not as a compliance checkbox but as infrastructure—can adopt new paradigms without rebuilding from scratch.
-
-**Provenance.** Knowing where things came from. Memory systems that track lineage, not just content. When a model hallucinates, you need to know which sources contributed. When a decision is challenged, you need an audit trail. Provenance is the foundation of trust, and trust is what lets you move fast later.
-
-**Contracts.** Explicit agreements about interfaces. Not just API schemas, but semantic contracts—what this field means, what values are valid, what downstream systems depend on it. When you change one thing, contracts tell you what else breaks. Without them, every change is a gamble.
-
-**Reversibility.** The ability to undo. Circuit breakers that cut off failing systems before they cascade. Model versioning with rollback. Feature flags that let you retreat. The companies that [deploy with automatic pullback](/blog/the-ai-pilot-graveyard/) can experiment aggressively because failure is recoverable.
-
-These are not AI capabilities. They are infrastructure properties. They were valuable before LLMs, and they will be valuable after whatever comes next.
+The question is what to build that does not die with the current paradigm. Not models, not frameworks, not architectures. Something more fundamental: infrastructure properties that were valuable before LLMs and will be valuable after whatever comes next.
 
 ## The two traps
 
@@ -38,7 +30,7 @@ Most organizations fall into one of two traps.
 
 **Trap two: Building for never.** They recognize that the landscape is changing too fast, so they do not build infrastructure at all. They use off-the-shelf tools, avoid commitments, stay flexible. But flexibility without foundation is chaos. They cannot deploy AI at scale because they have no [governance infrastructure](/blog/the-metadata-control-plane/), no data quality guarantees, no way to trace what went wrong.
 
-The path between these traps is building infrastructure that embodies properties rather than implements patterns. Ground truth, provenance, contracts, reversibility—these are properties. Fine-tuning pipelines and vector databases are patterns. Properties survive. Patterns become legacy.
+The path between these traps is building infrastructure that embodies properties rather than implements patterns. Fine-tuning pipelines and vector databases are patterns, coupled to a specific moment. The infrastructure that [survived previous paradigm shifts](/blog/the-properties-that-survive/) had structural properties that were independent of any particular technology. Properties survive. Patterns become legacy.
 
 ## The questions ahead
 
@@ -46,7 +38,7 @@ The next question is harder than documenting what is broken: what survives?
 
 I do not have complete answers. But I have four areas worth exploring:
 
-**The uncertainty stack.** What infrastructure properties are truly paradigm-independent? I have named four—ground truth, provenance, contracts, reversibility—but there may be more, and I may be wrong about some. What can we learn from infrastructure that survived previous technology transitions? What makes systems future-proof rather than future-fragile?
+**The uncertainty stack.** What infrastructure properties are truly paradigm-independent? What can we learn from infrastructure that survived previous technology transitions, from the [protocol wars](https://en.wikipedia.org/wiki/Protocol_Wars) to the Hadoop boom and bust? What makes systems future-proof rather than future-fragile?
 
 **The institutional memory problem.** Organizations forget. The engineer who understood the system leaves. The documentation rots. AI accelerates this—[comprehension debt](/blog/the-three-debts/) compounds, codebases hollow out. What does institutional memory look like when both humans and machines are unreliable narrators? How do you preserve understanding across time?
 
@@ -56,14 +48,12 @@ I do not have complete answers. But I have four areas worth exploring:
 
 ## What I am still figuring out
 
-Whether properties are enough. Ground truth, provenance, contracts, reversibility—these feel right. But I do not know if they are complete. There may be infrastructure properties I have not identified that will turn out to be critical. There may be properties I have named that turn out to be less fundamental than I think.
+Whether paradigm-independence is even possible. Maybe every infrastructure investment is a bet on a particular future, and the best you can do is bet wisely. Maybe the companies that seem paradigm-independent just got lucky: their bets happened to align with where the industry went.
 
-Whether paradigm-independence is even possible. Maybe every infrastructure investment is a bet on a particular future, and the best you can do is bet wisely. Maybe the companies that seem paradigm-independent just got lucky—their bets happened to align with where the industry went.
+Whether the current infrastructure boom is building structure or furniture. Hundreds of billions flowing into GPU clusters, vector databases, and agent frameworks. Some of it will last. Most of it is coupled to a paradigm that has a shelf life. The question is which is which, and whether you can tell the difference before the paradigm shifts.
 
 ---
 
-The models will change. The frameworks will change. The architectures will change.
-
-Ground truth, provenance, contracts, reversibility—these will still matter.
+The models will change. The frameworks will change. The architectures will change. The companies that confuse furniture for structure will start over every time.
 
 Build for properties, not patterns. That is how you build for tomorrow.

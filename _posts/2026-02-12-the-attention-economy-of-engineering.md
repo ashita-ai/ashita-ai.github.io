@@ -24,35 +24,35 @@ Interesting problems attract engineering attention naturally. They're conference
 
 Conference talks don't compound. Decisions do.
 
+## AI makes this worse
+
+When building was expensive, misallocated attention was self-limiting. You could only build so many wrong things per quarter. AI [removed that constraint](/blog/the-build-is-not-the-hard-part/). An engineer can now ship a Kubernetes deployment, a microservices migration, and a custom ML pipeline in the time it used to take to ship one. The principal-agent problem scales with velocity.
+
+The result: teams build more of the wrong thing, faster. The [factory runs without a design department](/blog/the-factory-without-a-design-department/). The scraper gets more sophisticated. The Netflix pipeline still does not get built.
+
+This is the attention economy of engineering in the AI era. The constraint is no longer how fast you can build. It is whether anyone is asking if you should.
+
 ## What actually helps
 
 If you want engineers to allocate attention to important problems instead of interesting ones, you have to make important work rewarding.
 
-**Align their upside with yours.** Engineers optimize for their resume when that's their only portable asset. Give them something better to optimize for.
+**Align their upside with yours.** Engineers optimize for their resume when that's their only portable asset. Give them something better to optimize for. At startups, this means equity that is real, growth opportunities they could not get at a big company, and problems that matter. When engineers believe that winning for the company means winning for themselves, they stop building for LinkedIn and start building for the mission. [Research on job security](https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2021.727363/full) confirms: insecure employees operate in survival mode, completing daily tasks instead of investing in projects that compound.
 
-At startups, this means equity that's real, not a lottery ticket buried in legalese. It means growth opportunities they couldn't get at a big company. It means working on problems that matter, with mentorship that accelerates their careers whether the startup succeeds or fails. When engineers believe that winning for the company means winning for themselves, they stop building for LinkedIn and start building for the mission.
+**Connect their work to business outcomes.** The Netflix pipeline shaped how I thought about engineering because I understood what it enabled. Studio executives made better decisions. Shows got greenlit or cancelled based on data we provided. That connection was not accidental. It was built into how the work was framed and reviewed.
 
-At larger companies, the math is different but the principle holds. Sun Microsystems [tracked this directly](https://www.mentorcliq.com/blog/mentoring-stats): mentored employees had 72% retention vs 49% for the general population, with ROI exceeding 1000%. But the real return wasn't retention - it was what those engineers built while they stayed. [Research on job security](https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2021.727363/full) shows that insecure employees operate in survival mode, completing daily tasks instead of investing in projects that compound. When people believe they'll be around to see the consequences of their decisions, they make different decisions.
-
-**Connect their work to business outcomes.** The Netflix pipeline shaped how I thought about engineering because I understood what it enabled. Studio executives made better decisions. Shows got greenlit or cancelled based on data we provided. That connection wasn't accidental - it was built into how the work was framed and reviewed. When engineers see the business impact of their work, they start optimizing for impact.
-
-**Make important work visible.** Resume-driven development thrives because interesting work gets recognized and important work doesn't. If promotions go to engineers who shipped Kubernetes, expect more Kubernetes. If promotions go to engineers whose work showed up in the boardroom, expect different choices.
-
-You get the behavior you reward.
+**Make important work visible.** Resume-driven development thrives because interesting work gets recognized and important work does not. If promotions go to engineers who shipped Kubernetes, expect more Kubernetes. If promotions go to engineers whose work showed up in the boardroom, expect different choices. You get the behavior you reward.
 
 ## Counterargument
 
-Sometimes the technically interesting problem is the important one. Scale can be a real constraint, not an imagined one. That startup I worked for needed a good scraper - the technology was the product.
+Sometimes the technically interesting problem is the important one. Scale can be a real constraint, not an imagined one. That startup I worked for needed a good scraper: the technology was the product.
 
-The failure mode is not spending attention on hard problems. It is spending attention on hard problems that do not matter yet, for an audience that will not use the product. [AI makes this worse](/blog/the-build-is-not-the-hard-part/) by making building cheap. When velocity is free, the discipline of choosing what to build erodes. This post is about *why* teams build the wrong thing (incentives). That post is about *what happens* when building becomes cheap (the velocity trap).
+The failure mode is not spending attention on hard problems. It is spending attention on hard problems that do not matter yet, for an audience that will not use the product.
 
 ## What I am still figuring out
 
 The line between resume-driven development and legitimate technical investment is blurry. Sometimes you need Kubernetes. Sometimes microservices are the right architecture. The same choice can be correct technical judgment or cargo culting depending on context. I do not have a reliable test for distinguishing them in advance. The closest I have is asking whether the engineer can explain the decision without referencing what other companies do.
 
-## The compounding effect
-
-The difference is not the technology. It is the decisions made in the first year that compound for the next five.
+---
 
 That startup's impressive infrastructure showed up in an acqui-hire. Less than a million dollars. The Netflix pipeline (hundreds of rows, technically boring) compounded into executive trust, better decisions, and shows that got made because the data was right.
 
