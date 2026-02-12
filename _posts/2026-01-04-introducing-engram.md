@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Building a Memory System That Doesn't Lie to You"
+title: "Building a Memory System That Does Not Lie to You"
 date: 2026-01-04
 ---
 
@@ -24,7 +24,7 @@ The fix is conceptually simple: do not throw away the original.
 
 Store raw conversations verbatim, as immutable episodic memories. These are the ground truth. All derived knowledge (facts, preferences, semantic connections) traces back to specific episodes. If the system believes something incorrect, you can find where that belief came from and correct it.
 
-This seems obvious in retrospect. It's how you would design any system where accuracy matters. But it is not how most AI memory systems work. They optimize for storage efficiency over correctness, which is a choice that compounds poorly over time.
+This seems obvious in retrospect. It is how you would design any system where accuracy matters. But it is not how most AI memory systems work. They optimize for storage efficiency over correctness, which is a choice that compounds poorly over time.
 
 ## Confidence as a first-class concept
 
@@ -86,6 +86,12 @@ I am building this because I need it. The AI applications I want to build requir
 
 If this problem interests you, [the repo is on GitHub](https://github.com/ashita-ai/engram). It is early, but the architecture docs explain the reasoning. I will be writing more as the implementation progresses.
 
+## What I am still figuring out
+
+Whether biological memory analogies are useful or misleading for engineering systems. The testing effect and retrieval-induced forgetting have clear computational analogs, but memory consolidation during sleep does not map cleanly to batch jobs. I may be pattern-matching more than reasoning.
+
+The optimal confidence thresholds for filtering queries are also unclear. Too strict and the system is useless for exploratory questions. Too lenient and it returns inferences it should not trust. I do not have a principled way to set the boundary.
+
 ---
 
-*This is the first in a series of posts about the tools I am building at Ashita AI. Next: Tessera, data contract coordination for warehouses.*
+*This is the first in a series of posts about the tools I am building at Ashita AI. Next: Tessera, data contract coordination for warehouses. For why ground truth preservation matters at the infrastructure level, see [Ground Truth as Foundation](/blog/ground-truth-as-foundation/).*

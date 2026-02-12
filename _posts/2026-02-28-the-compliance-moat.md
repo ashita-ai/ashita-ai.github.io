@@ -4,7 +4,7 @@ title: "The Compliance Moat"
 date: 2026-02-28
 ---
 
-A startup [lost a $50 million deal](https://introl.com/blog/compliance-frameworks-ai-infrastructure-soc2-iso27001-gdpr) over SOC 2 failure. Another founder spent six months and $150,000 on ISO 27001 only to discover their prospects wanted SOC 2—and [still couldn't close US enterprise deals](https://pentesterworld.com/articles/iso-27001-vs-other-security-standards-detailed-comparison).
+A startup [lost a $50 million deal](https://introl.com/blog/compliance-frameworks-ai-infrastructure-soc2-iso27001-gdpr) over SOC 2 failure. Another founder spent six months and $150,000 on ISO 27001 only to discover their prospects wanted SOC 2—and [still could not close US enterprise deals](https://pentesterworld.com/articles/iso-27001-vs-other-security-standards-detailed-comparison).
 
 The conventional view is that compliance is overhead—a cost center that slows you down while competitors move fast. The opposite is true. The infrastructure that compliance requires is the same infrastructure that makes AI work in production. Build it first, and you have a moat.
 

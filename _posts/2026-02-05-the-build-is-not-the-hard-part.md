@@ -32,14 +32,6 @@ The 67% stat reflects decision quality, not construction difficulty. Vendors for
 
 AI tools make the construction cheaper. They do not make the decisions better. If anything, they make bad decisions faster. You can now build the wrong thing in weeks instead of months.
 
-## The questions that matter
-
-Before you build anything, answer this: what is your actual advantage?
-
-The case for building is strongest when you have something vendors cannot replicate—proprietary data, domain-specific workflows, or integration patterns unique to your business. If you are using the same data and workflows as everyone else, you are building commodity infrastructure at custom prices.
-
-Then: what is the path to production? The build is not the expensive part. Integration, maintenance, monitoring, retraining, incident response—these are the costs that compound. [Annual AI maintenance](https://xenoss.io/blog/total-cost-of-ownership-for-enterprise-ai) accounts for 15-30% of total infrastructure cost. Legacy system integration can [add 40-60% to implementation costs](https://www.coherentsolutions.com/insights/ai-development-cost-estimation-pricing-structure-roi). If you cannot answer how this reaches production, AI tools will help you build an expensive orphan faster.
-
 ## What AI tools actually change
 
 AI tools collapse the cost of routine work: migrations, boilerplate, greenfield projects, repetitive refactoring. Nubank's 8-12x efficiency gains came from exactly this kind of work.
@@ -49,14 +41,6 @@ They do not collapse the cost of understanding complex systems. The METR develop
 They do not make good decisions for you. AI tools do not tell you whether the feature should exist. They do not tell you whether the architecture will scale. They do not tell you whether anyone will use this. [The industry built the factory but forgot the design department](/blog/the-factory-without-a-design-department/).
 
 And they do not help you reach production. [The pilot graveyard](/blog/the-ai-pilot-graveyard/) is full of systems that worked in development and died before deployment. AI tools accelerate development. They do not accelerate the organizational decisions required to ship.
-
-## The hybrid approach
-
-The companies getting this right are not asking "build or buy." They are asking "what should we build and what should we buy?"
-
-The pattern: buy infrastructure, build differentiation. Use Snowflake for your warehouse but build custom models on your proprietary data. Use off-the-shelf monitoring but build custom agents for your specific workflows. Buy the foundation, build the layer that makes you different.
-
-AI tools make the building layer cheaper. Use them there. Do not use them to rebuild infrastructure that vendors have already solved.
 
 ## The real risk
 

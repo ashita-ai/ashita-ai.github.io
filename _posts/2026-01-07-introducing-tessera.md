@@ -37,10 +37,10 @@ Tessera diffs schemas to detect incompatible changes. The compatibility model is
 
 | Mode | Breaking if... |
 |------|----------------|
-| backward | Consumers of old schema can't read new data |
-| forward | Producers of old schema can't write to new format |
+| backward | Consumers of old schema cannot read new data |
+| forward | Producers of old schema cannot write to new format |
 | full | Any structural change |
-| none | Just notify, don't block |
+| none | Just notify, do not block |
 
 Most teams want backward compatibility: new data should work with existing consumers. Removing a field breaks backward compatibility. Adding an optional field does not.
 
@@ -84,6 +84,10 @@ The roadmap includes tighter integration with agent frameworks. If your agent wr
 
 If this problem interests you, [the repo is on GitHub](https://github.com/ashita-ai/tessera). There is also a [Python SDK](https://github.com/ashita-ai/tessera-python) for programmatic access.
 
+## What I am still figuring out
+
+Whether data contracts slow teams down more than they save, especially at small scale. The coordination overhead is real. For a five-person team with three data sources, Tessera might be overhead. For a fifty-person team with fifty sources, the overhead pays for itself. The breakeven point is not clear, and it likely depends on how frequently schemas change and how costly downstream breakage is.
+
 ---
 
-*This is part of a series on the tools I am building at Ashita AI. Previously: [Engram](/blog/introducing-engram/), memory that does not lie.*
+*This is part of a series on the tools I am building at Ashita AI. Previously: [Engram](/blog/introducing-engram/), memory that does not lie. For why data contracts are the AI control plane, see [The Metadata Layer as Your AI Control Plane](/blog/the-metadata-control-plane/).*

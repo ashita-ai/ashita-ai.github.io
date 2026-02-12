@@ -68,6 +68,10 @@ That pipeline has all the problems of any data pipeline. [Schema drift](/blog/in
 
 Most RAG failures are not retrieval failures. They are data failures wearing a retrieval costume.
 
+## What I am still figuring out
+
+Whether the 72% failure rate is a RAG problem or a data quality problem wearing a RAG costume. If most failures trace back to ingestion rather than retrieval, the entire framing of "RAG improvement" is misdirected. The research points this way, but the industry keeps investing in better retrieval rather than better data curation. I do not know if this is because retrieval is easier to improve or because teams genuinely believe retrieval is the bottleneck.
+
 ---
 
 Before you add another embedding model, another reranker, another retrieval strategy: is the answer even in your documents?

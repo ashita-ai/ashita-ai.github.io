@@ -66,7 +66,11 @@ Worse: when single-agent baseline performance exceeds roughly 45% accuracy, addi
 
 This suggests multi-agent systems are only worth the complexity for tasks that genuinely decompose into parallel, independent subtasks. For sequential reasoning chains, a single well-prompted agent with good tooling might outperform a fleet of specialists.
 
-I am still working through when the complexity is justified. The answer is not "always" and it is not "never." It depends on the task structure in ways that are not yet well characterized.
+## What I am still figuring out
+
+When the complexity of multi-agent systems is justified. The answer is not "always" and it is not "never." It depends on the task structure in ways that are not yet well characterized.
+
+The 45% accuracy threshold, above which adding agents yields diminishing returns, is from one study. Whether that number holds across domains is unclear. Tasks that decompose into genuinely parallel subtasks (code generation, data analysis) might benefit more than tasks that are inherently sequential (planning, negotiation). I do not have enough data points to draw the boundary.
 
 ---
 

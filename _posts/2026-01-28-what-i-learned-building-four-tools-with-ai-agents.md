@@ -14,9 +14,9 @@ Every project started the same way.
 
 **Step 1: Write the CLAUDE.md file.** Before any code, I wrote an agent constitution. What the project is. What the agent's role is. What it should always do, what it should ask about first, and what it should never do. This file became the project's source of truth.
 
-**Step 2: Create GitHub Issues for coordination.** I used issues as durable state. Each issue had clear acceptance criteria with checkboxes. Labels routed work: `focus:core-functionality`, `phase-1-foundation`, `priority:high`. The agent couldn't close an issue until every checkbox was checked.
+**Step 2: Create GitHub Issues for coordination.** I used issues as durable state. Each issue had clear acceptance criteria with checkboxes. Labels routed work: `focus:core-functionality`, `phase-1-foundation`, `priority:high`. The agent could not close an issue until every checkbox was checked.
 
-**Step 3: Let the agent build.** I'd point the agent at an issue, it would work, open a PR, and I'd review. Repeat.
+**Step 3: Let the agent build.** I would point the agent at an issue, it would work, open a PR, and I would review. Repeat.
 
 The workflow sounds simple. Getting it to work required learning some lessons the hard way.
 
@@ -24,15 +24,15 @@ The workflow sounds simple. Getting it to work required learning some lessons th
 
 ### 1. Design for Deletion
 
-Across the four projects, 20-30% of agent-written code was eventually removed. Not because it was wrong—because it was unnecessary. The agent builds what you ask for, including scaffolding you didn't need, abstractions that never got reused, and edge case handling for cases that never happened.
+Across the four projects, 20-30% of agent-written code was eventually removed. Not because it was wrong—because it was unnecessary. The agent builds what you ask for, including scaffolding you did not need, abstractions that never got reused, and edge case handling for cases that never happened.
 
 **Implication:** Small, deletable modules beat monoliths. When you delete agent code, you want to delete a file, not untangle a dependency graph.
 
-### 2. Security Can't Be Retrofitted
+### 2. Security Cannot Be Retrofitted
 
-In all four projects, security improvements came late. Path traversal protection, input validation, authentication hardening—these arrived in the final 20% of commits. The pattern was consistent: build functionality first, realize it's exposed, add protection.
+In all four projects, security improvements came late. Path traversal protection, input validation, authentication hardening—these arrived in the final 20% of commits. The pattern was consistent: build functionality first, realize it is exposed, add protection.
 
-This was my fault, not the agent's. I didn't specify security requirements upfront. The agent built exactly what I asked for.
+This was my fault, not the agent's. I did not specify security requirements upfront. The agent built exactly what I asked for.
 
 **Implication:** Security constraints belong in the CLAUDE.md file and the first issues, not the last ones.
 
@@ -48,9 +48,9 @@ The same pattern in every repo: core logic first, then features, then validation
 
 **Implication:** Write issues that require validation as part of acceptance criteria, not as follow-up work.
 
-### 5. Modules Don't Emerge Naturally
+### 5. Modules Do Not Emerge Naturally
 
-Agents don't refactor toward better abstractions on their own. They add code where you point them. If you don't explicitly create module boundaries, you get files that grow until they're unmaintainable. One Conduit file hit 800 lines before I noticed.
+Agents do not refactor toward better abstractions on their own. They add code where you point them. If you do not explicitly create module boundaries, you get files that grow until they are unmaintainable. One Conduit file hit 800 lines before I noticed.
 
 **Implication:** Create the module structure yourself. Tell the agent where new code belongs.
 
@@ -62,7 +62,7 @@ The quality of agent output is directly proportional to how well you decompose t
 
 ### 7. Labels Route the Agent
 
-I started with three labels. By the end, I had a taxonomy: `focus:` for domain, `phase-` for project stage, `priority:` for urgency. The labels weren't just for organization—they gave the agent context about what kind of work this was.
+I started with three labels. By the end, I had a taxonomy: `focus:` for domain, `phase-` for project stage, `priority:` for urgency. The labels were not just for organization. They gave the agent context about what kind of work this was.
 
 **Implication:** Design your label system deliberately. Labels are hints to the agent about how to approach the work.
 
@@ -72,7 +72,7 @@ Agents forget. Context windows fill up. Sessions end. GitHub Issues persist. Eve
 
 **Implication:** Write issues as if explaining to a new team member. Because the agent is always a new team member.
 
-## What I'd Do Differently
+## What I Would Do Differently
 
 **Enforce PR size limits.** Some PRs bundled multiple issues for convenience. The convenience of bundling made review more difficult. Smaller PRs are easier to understand, review, and revert.
 
@@ -140,9 +140,13 @@ Before creating an issue, I ask:
 
 If any answer is no, decompose further.
 
+## What I am still figuring out
+
+Whether this workflow scales beyond solo development. One person reviewing AI-generated PRs works because the reviewer holds the full mental model. Two people reviewing introduces coordination: who owns which modules, what conventions matter, how to resolve disagreements about the CLAUDE.md. The document becomes a shared governance artifact rather than a personal operating guide. I have not tested this with a team and do not know where it breaks.
+
 ---
 
-Building with agents is not pair programming. It's more like managing a very fast, very literal contractor who has no institutional memory. The systems that work are the ones designed for that constraint: explicit specifications, durable state, clear boundaries, and the assumption that everything will need to be reviewed.
+Building with agents is not pair programming. It is more like managing a very fast, very literal contractor who has no institutional memory. The systems that work are the ones designed for that constraint: explicit specifications, durable state, clear boundaries, and the assumption that everything will need to be reviewed.
 
 The agents did most of the typing. The architecture was still my job.
 

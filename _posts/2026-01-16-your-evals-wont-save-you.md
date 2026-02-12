@@ -52,6 +52,10 @@ Netflix does not pre-eval all possible recommendations. The system learns from w
 
 The teams that win will not be the ones with the best pre-production evals. They will be the ones whose systems learn fastest from real users.
 
+## What I am still figuring out
+
+Whether the adaptive clinical trial analogy holds for LLM systems. Clinical trials have well-defined outcomes (patient survives, tumor shrinks). LLM quality is multidimensional and context-dependent. The multi-armed bandit framing assumes you can define a reward signal. For many LLM applications, the reward signal is itself the hard problem.
+
 ---
 
 Invest more in evaluatable systems than in evaluations. A system that learns from feedback will outperform a system that passed all your evals but cannot adapt.

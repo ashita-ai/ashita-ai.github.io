@@ -14,15 +14,15 @@ One of these showed up in the boardroom. The other showed up in an acqui-hire.
 
 [CB Insights analyzed 101 startup post-mortems](https://www.cbinsights.com/research/report/startup-failure-reasons-top/) and found that 42% failed because they built something nobody wanted. The founders of eCrowds put it bluntly: "We spent way too much time building it for ourselves and not getting feedback from prospects."
 
-There's a name for this pattern when it happens in engineering: [resume-driven development](https://dev.to/hotfixhero/the-resume-driven-development-epidemic-building-for-your-next-job-not-the-business-4e1). Engineers choosing technologies based on what looks good on LinkedIn rather than what solves the problem. Kubernetes for five users. [Microservices maintained by two developers](/blog/technical-debt-as-strategy/). Machine learning where an if-statement would work.
+There is a name for this pattern when it happens in engineering: [resume-driven development](https://dev.to/hotfixhero/the-resume-driven-development-epidemic-building-for-your-next-job-not-the-business-4e1). Engineers choosing technologies based on what looks good on LinkedIn rather than what solves the problem. Kubernetes for five users. [Microservices maintained by two developers](/blog/technical-debt-as-strategy/). Machine learning where an if-statement would work.
 
-This isn't a character flaw. It's a principal-agent problem. Engineers are rationally optimizing for their next job, not their current one.
+This is not a character flaw. It is a principal-agent problem. Engineers are rationally optimizing for their next job, not their current one.
 
 Carnegie Mellon's Software Engineering Institute has [studied failing software programs](https://insights.sei.cmu.edu/blog/reducing-project-failures-by-aligning-acquisition-strategy-and-software-architecture-with-stakeholder-needs-second-in-a-series/) and found a recurring pattern: misaligned incentives. The problems are rarely purely technical. They are about people optimizing for the wrong things.
 
-Interesting problems attract engineering attention naturally. They're conference talks, blog posts, promotions. Important problems often don't. The Netflix pipeline wasn't going to get anyone a speaking slot. It just needed to be right.
+Interesting problems attract engineering attention naturally. They are conference talks, blog posts, promotions. Important problems often do not. The Netflix pipeline was not going to get anyone a speaking slot. It just needed to be right.
 
-Conference talks don't compound. Decisions do.
+Conference talks do not compound. Decisions do.
 
 ## AI makes this worse
 
@@ -36,7 +36,7 @@ This is the attention economy of engineering in the AI era. The constraint is no
 
 If you want engineers to allocate attention to important problems instead of interesting ones, you have to make important work rewarding.
 
-**Align their upside with yours.** Engineers optimize for their resume when that's their only portable asset. Give them something better to optimize for. At startups, this means equity that is real, growth opportunities they could not get at a big company, and problems that matter. When engineers believe that winning for the company means winning for themselves, they stop building for LinkedIn and start building for the mission. [Research on job security](https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2021.727363/full) confirms: insecure employees operate in survival mode, completing daily tasks instead of investing in projects that compound.
+**Align their upside with yours.** Engineers optimize for their resume when that is their only portable asset. Give them something better to optimize for. At startups, this means equity that is real, growth opportunities they could not get at a big company, and problems that matter. When engineers believe that winning for the company means winning for themselves, they stop building for LinkedIn and start building for the mission. [Research on job security](https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2021.727363/full) confirms: insecure employees operate in survival mode, completing daily tasks instead of investing in projects that compound.
 
 **Connect their work to business outcomes.** The Netflix pipeline shaped how I thought about engineering because I understood what it enabled. Studio executives made better decisions. Shows got greenlit or cancelled based on data we provided. That connection was not accidental. It was built into how the work was framed and reviewed.
 

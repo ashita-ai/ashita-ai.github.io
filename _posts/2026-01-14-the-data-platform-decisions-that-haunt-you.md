@@ -74,6 +74,10 @@ For brownfield platforms, the [strangler fig pattern](https://martinfowler.com/b
 
 The trap is perfectionism. "We will add data quality once we have time" means never. "We will add it to this one pipeline this sprint" means progress.
 
+## What I am still figuring out
+
+Whether the Critical Data Elements approach scales during fast growth. Identifying 50-100 critical elements works for a company with known data flows. Companies adding data sources faster than they can assess criticality face a moving target. The strangler fig pattern assumes you can identify which pipeline to fix next. When everything is partially broken, prioritization becomes the bottleneck, not execution.
+
 ---
 
 No one gets haunted by their warehouse choice. They get haunted by the pipeline no one owned.

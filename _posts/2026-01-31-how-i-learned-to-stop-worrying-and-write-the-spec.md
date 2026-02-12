@@ -48,6 +48,10 @@ And I am a domain expert. My answers were detailed because I have thought about 
 
 Elenchus catches contradictions between explicit statements. It cannot catch contradictions between stated requirements and unstated assumptions. If I never mentioned authentication, the spec would not include it. The tool surfaces conflicts in what you say. It cannot surface conflicts with what you forgot to say. This is a variant of [the seeing problem](/blog/the-seeing-problem/): the gap between what was specified and what was assumed.
 
+## What I am still figuring out
+
+Whether adversarial interrogation scales to teams. One person answering questions produces one coherent perspective. Five people answering questions produces five perspectives with different assumptions, terminology, and priorities. The contradiction detection would need to handle not just logical contradictions but semantic disagreements about what words mean. This is a harder problem than catching "zero-config vs. requires pipeline_id."
+
 This is one data point. I do not know if it generalizes.
 
 ---

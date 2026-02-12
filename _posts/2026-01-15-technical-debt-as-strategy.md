@@ -66,6 +66,10 @@ Watch for these:
 
 By the time velocity drops, you are already in crisis. The leading indicators show up months earlier, in how engineers *behave* around the code.
 
+## What I am still figuring out
+
+Where the line is between strategic debt and reckless debt. Segment's microservices migration was reckless debt disguised as strategic investment. Their monolith was strategic debt that looked irresponsible. I do not have a reliable way to distinguish the two in advance. The leading indicators help, but by the time onboarding takes a month, the debt is already compounding. Earlier signals would be more useful, and I do not know what they are.
+
 ---
 
 The best architecture is the one that ships. The leading indicator that you have waited too long: engineers route around the codebase instead of through it.

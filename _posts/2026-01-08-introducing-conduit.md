@@ -81,7 +81,7 @@ For each query, algorithms route to one of the available models, then receive fe
 | Thompson Sampling | $2.61 | 90.3% |
 | Static model (GPT-4-turbo) | $0.20 | 82.0% |
 
-**GSM8K (1319 queries)** - 8 models: Claude Haiku/Sonnet/Opus 4.5, Gemini 2.5 Flash/Pro, GPT-5 Mini/Nano/5.1
+**GSM8K (1319 queries)** - 8 models: Claude Haiku/Sonnet/Opus 4.5, Gemini 2.5 Flash/Pro, GPT-5 Mini/Nano/5
 
 | Algorithm | Total Cost | Quality |
 |-----------|------------|---------|
@@ -143,6 +143,12 @@ asyncio.run(main())
 
 The [repo is on GitHub](https://github.com/ashita-ai/conduit). It is not pip installable yet - clone the repo and install with `uv sync`. Again: this is alpha software. The API will change. But if you are tired of overpaying for simple queries, it might be worth a look.
 
+## What I am still figuring out
+
+The cold start problem. Conduit needs traffic to learn, but it routes poorly before it has learned. The exploration phase, where it deliberately tries suboptimal models to gather data, costs real money on real queries. I do not have a good answer for how long the exploration phase lasts or how much it costs relative to steady-state savings.
+
+Model providers also update pricing and capabilities without notice. Whether bandit algorithms can adapt fast enough to track provider-side changes is an open question.
+
 ---
 
-*This is part of a series on the tools I am building at Ashita AI. See also: [Engram](/blog/introducing-engram/), memory that does not lie. [Tessera](/blog/introducing-tessera/), data contracts for agentic engineering.*
+*This is part of a series on the tools I am building at Ashita AI. See also: [Engram](/blog/introducing-engram/), memory that does not lie. [Tessera](/blog/introducing-tessera/), data contracts for agentic engineering. For the cost problem Conduit addresses, see [The Token Tax](/blog/the-token-tax/).*

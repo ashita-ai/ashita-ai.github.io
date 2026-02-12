@@ -50,6 +50,8 @@ The debt was in the decision itself—engineering attention allocated to technic
 
 Decision debt is invisible in the codebase. The code is fine. The architecture might even be elegant. The debt is in what you chose to build, when you chose to build it, and why. It surfaces years later when you realize the decisions made in year one have [compounded into constraints](/blog/the-data-platform-decisions-that-haunt-you/) you cannot escape without starting over.
 
+Zillow's algorithmic home-buying program is the clearest example. The Zestimate algorithm worked. The ML infrastructure was sound. The engineering was competent. The decision to use an algorithm that [consistently overvalued properties](https://www.gsb.stanford.edu/insights/flip-flop-why-zillows-algorithmic-home-buying-venture-imploded) in a cooling market cost [$881 million](https://re-brokerage.com/zillow-offers-lost-881m-in-2021-shutdown/), 2,000 jobs, and the entire iBuying division. No amount of code refactoring could have saved it. The code was not the problem. The decision was.
+
 28% of executives cannot name their company's strategic priorities. The decisions being made are not aligned with any coherent strategy. Each decision is locally rational, individually defensible, and collectively incoherent. The debt compounds with every sprint.
 
 You cannot refactor decision debt. You cannot improve your way out of building the wrong thing. Sony's Concord game [cost $200 million to develop and lasted 14 days](https://medium.com/javarevisited/the-biggest-software-failures-of-2024-8e9413350f4c) after launch before being pulled. The code worked. The decisions did not.
@@ -89,6 +91,12 @@ But the intervention determines the outcome. CodeScene found that developers spe
 When you treat comprehension debt as technical debt, you refactor code you do not understand into different code you do not understand. When you treat decision debt as technical debt, you polish implementations of the wrong thing. The debt remains. The interest compounds.
 
 Precise diagnosis enables precise treatment. Vague diagnosis produces vague effort.
+
+## What I am still figuring out
+
+Whether comprehension debt is temporary. If AI tools improve to the point where they can explain their own code reliably, comprehension debt might self-resolve. But this requires the same models that introduce the debt to also clear it, which seems circular.
+
+The decision debt taxonomy is also less rigorous than I would like. The line between "wrong decision" and "right decision that aged badly" is often only visible in hindsight. Sony's Concord might have been a reasonable bet when it was funded. The $200 million loss does not prove the decision was wrong when it was made.
 
 ---
 

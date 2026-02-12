@@ -118,7 +118,7 @@ Arbiter makes sense if:
 - You want to build custom evaluators without reinventing infrastructure
 - You prefer libraries over platforms.
 
-It doesn't make sense if:
+It does not make sense if:
 
 - You need a visual dashboard (use a platform instead)
 - You run evaluations rarely enough that cost does not matter
@@ -150,6 +150,12 @@ asyncio.run(main())
 
 The [repo is on GitHub](https://github.com/ashita-ai/arbiter). Documentation includes 25+ examples covering basic usage through advanced patterns. The test suite has 96% coverage if you want to see how things work.
 
+## What I am still figuring out
+
+Whether cost-per-eval is the right metric to optimize around. Some teams run evals rarely enough that cost does not matter. Others run them so frequently that cost dominates. The framework treats both the same.
+
+I am also uncertain about LLM-as-judge reliability for subjective evaluations. Factuality has a ground truth. Tone does not. The evaluator scores feel precise but may not be accurate for criteria without clear right answers.
+
 ---
 
-*This is part of a series on the tools I am building at Ashita AI. See also: [Engram](/blog/introducing-engram/), memory that does not lie. [Tessera](/blog/introducing-tessera/), data contracts for agentic engineering. [Conduit](/blog/introducing-conduit/), intelligent LLM routing.*
+*This is part of a series on the tools I am building at Ashita AI. See also: [Engram](/blog/introducing-engram/), memory that does not lie. [Tessera](/blog/introducing-tessera/), data contracts for agentic engineering. [Conduit](/blog/introducing-conduit/), intelligent LLM routing. For why evals alone are not enough, see [Your Evals Won't Save You](/blog/your-evals-wont-save-you/).*

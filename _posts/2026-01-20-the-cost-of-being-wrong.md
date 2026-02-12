@@ -82,6 +82,10 @@ A lawyer reviewing ten cases will notice a fabricated citation. A legal AI gener
 
 The cost of being wrong scales with autonomy. An AI that suggests and a human who approves has bounded downside. An AI that decides and executes has unbounded downside limited only by the blast radius of its permissions.
 
+## What I am still figuring out
+
+The boundary between "AI should not be trusted with this" and "AI is the only way to scale this." Radiology is the canonical example: AI catches patterns humans miss, but also hallucinates patterns that do not exist. The net benefit depends on error rates for both humans and machines, and those rates shift as the technology improves. I do not have a reliable framework for deciding when autonomous AI saves more than it costs in a given domain.
+
 ---
 
 The Deloitte hallucinations ran for three months. Then six months. The lawyers' fake citations are still being discovered. The enterprise decisions based on hallucinated content have already been made.

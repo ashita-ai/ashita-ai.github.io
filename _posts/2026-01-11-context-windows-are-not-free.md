@@ -12,7 +12,7 @@ This is expensive, slow, and often wrong.
 
 ## The bill adds up fast
 
-Token pricing looks cheap until you multiply. A 100K context query generating a 2K response on Claude Sonnet costs $0.33. Run that 1,000 times a day and you're spending $10K/month on a single query type.
+Token pricing looks cheap until you multiply. A 100K context query generating a 2K response on Claude Sonnet costs $0.33. Run that 1,000 times a day and you are spending $10K/month on a single query type.
 
 The compute cost is worse. Transformer attention is [quadratic](https://towardsdatascience.com/extending-context-length-in-large-language-models-74e59201b51f/). Double the context, quadruple the compute. Long context windows consume enormous GPU memory for the KV cache alone.
 
@@ -62,3 +62,11 @@ Lund [recommends](https://fastpaca.com/blog/failure-case-memory-layout/) categor
 Most systems treat all tokens equally, evicting whatever is oldest. This guarantees that something important will eventually be lost. [Designing explicit eviction policies](/blog/introducing-engram/) based on what information matters is harder but more honest about the tradeoffs.
 
 The question is not how much you can fit. It is what happens when something has to go.
+
+## What I am still figuring out
+
+When long context is genuinely necessary versus when it is a convenience that degrades quality. Codebase analysis, legal document review, and multi-document synthesis seem to require holding large amounts of text simultaneously. But I do not have good data on whether hierarchical summarization or structured chunking could achieve the same results at a fraction of the cost. The answer likely depends on the task, and the taxonomy of tasks that actually require long context is not well defined.
+
+---
+
+The pitch is bigger windows, more tokens, dump everything in. The reality is quadratic costs, degraded accuracy, and silent failures in the middle. Design for what the model can actually use, not what the spec sheet claims.
