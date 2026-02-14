@@ -14,7 +14,7 @@ Two Sigma's problem was not AI capability. It was metadata infrastructure—the 
 
 ## The failures that metadata would have caught
 
-On August 1, 2012, Knight Capital [deployed a routine software update](https://www.sec.gov/newsroom/press-releases/2013-222) to participate in the NYSE's new Retail Liquidity Program. The update accidentally reactivated dormant code. Knight had no kill switch, no documented incident response procedures, no way to trace what the system was doing. In 45 minutes, the algorithm executed 4 million erroneous trades across 154 stocks. Loss: $440 million. Knight's stock dropped 70%. The company was acquired within months.
+On August 1, 2012, Knight Capital [deployed a routine software update](https://www.sec.gov/newsroom/press-releases/2013-222) to participate in the NYSE's new Retail Liquidity Program. The update accidentally reactivated dormant code. Knight had no kill switch, no documented incident response procedures, no way to trace what the system was doing. In 45 minutes, the algorithm executed 4 million erroneous trades across 154 stocks. Loss: $460 million. Knight's stock dropped 70%. The company was acquired within months.
 
 On March 18, 2018, Uber's self-driving car [killed pedestrian Elaine Herzberg](https://www.ntsb.gov/investigations/accidentreports/reports/har1903.pdf) in Tempe, Arizona. The NTSB found the system detected her nearly six seconds before impact but never classified her correctly. The algorithm could not conceive of a pedestrian outside a crosswalk. It alternated between "vehicle," "bicycle," and "unknown object"—each reclassification resetting her predicted path. The car decided to brake 1.3 seconds before impact.
 
