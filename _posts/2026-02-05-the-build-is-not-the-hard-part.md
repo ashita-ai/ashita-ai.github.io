@@ -4,7 +4,7 @@ title: "The Build Is Not the Hard Part"
 date: 2026-02-05
 ---
 
-Nubank used [Devin to migrate their core ETL](https://devin.ai/customers/nubank) (a 6-million line monolith) and reported 8-12x efficiency improvement and over 20x cost savings. GitHub Copilot now [writes 46% of code](https://medium.com/@aminsiddique95/ai-is-writing-46-of-all-code-github-copilots-real-impact-on-15-million-developers-787d789fcfdc) for its 20 million active users, reaching 61% in Java projects.
+Nubank used [Devin to migrate their core ETL](https://devin.ai/customers/nubank) (a 6-million line monolith) and reported 8-12x efficiency improvement and over 20x cost savings. GitHub Copilot now [writes 46% of code](https://medium.com/@aminsiddique95/ai-is-writing-46-of-all-code-github-copilots-real-impact-on-15-million-developers-787d789fcfdc) for its 20 million users, reaching 61% in Java projects.
 
 The narrative writes itself: AI makes building cheaper. Custom development should finally beat buying off-the-shelf.
 
@@ -24,7 +24,7 @@ AI tools excel at the former. They struggle with the latter.
 
 ## What the 67% stat actually means
 
-[MIT research](https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo/) found that purchased AI tools succeed 67% of the time, while internal builds succeed about half as often. (The study measured P&L impact within six months—a narrow but useful frame.) The instinct is to read this as "building is hard." It is not.
+[MIT research](https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo/) found that purchased AI tools succeed 67% of the time, while internal builds succeed about one-third as often. (The study measured P&L impact within six months—a narrow but useful frame.) The instinct is to read this as "building is hard." It is not.
 
 Building is cheap. Building the right thing is hard.
 

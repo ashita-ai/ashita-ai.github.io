@@ -10,7 +10,7 @@ The attackers did not need a sophisticated multi-agent framework. They needed on
 
 Andrej Karpathy called the current state of AI agents ["slop."](https://www.dwarkesh.com/p/andrej-karpathy) "The reason you don't do it today is because they just don't work. They don't have enough intelligence, they're not multimodal enough, they can't do computer use... It will take about a decade to work through all of those issues."
 
-A decade. Not a quarter. Not a roadmap item. A co-founder of OpenAI saying the technology his industry is selling does not work yet.
+A decade. Not a quarter. Not a roadmap item. A founding member of OpenAI saying the technology his industry is selling does not work yet.
 
 ## The math
 
@@ -32,7 +32,7 @@ The Arup attack exploited exactly this. The agent was a human employee. The prom
 
 ## The data problem
 
-Marina Danilevsky, IBM's senior research manager for NLP, [put it bluntly](https://www.bloomberg.com/news/articles/2025-04-08/ai-agents-could-reshape-how-we-work-but-don-t-believe-the-hype): "I'm still struggling to truly believe that this is all that different from just orchestration."
+Marina Danilevsky, a senior research scientist at IBM Research, [put it bluntly](https://www.bloomberg.com/news/articles/2025-04-08/ai-agents-could-reshape-how-we-work-but-don-t-believe-the-hype): "I'm still struggling to truly believe that this is all that different from just orchestration."
 
 The disconnect is between what agents promise and what data infrastructure exists. Joe Reis [asked the right question](https://joereis.substack.com/p/ai-agents-and-the-pesky-problem-of): "Would you stick an LLM on top of your corporate data set today? Would you bet your job on it?"
 
@@ -44,7 +44,7 @@ The data readiness problem has not been solved. It has been papered over with de
 
 ## The fraud problem
 
-The SEC [charged](https://www.sec.gov/newsroom/press-releases/2025-15) Presto Automation with claiming its AI drive-thru "eliminated the need for human order taking." Reality: over 70% of orders required human agents in the Philippines.
+The SEC charged Presto Automation with claiming its AI drive-thru "eliminated the need for human order taking." Reality: over 70% of orders required human agents in the Philippines.
 
 The SEC and DOJ charged Albert Saniger of Nate Inc. with fraud. He raised $42 million claiming AI automation. Actual automation rate: zero percent. Hundreds of contractors in a Philippine call center manually completed purchases. He faces up to 40 years if convicted.
 

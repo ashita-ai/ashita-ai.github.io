@@ -6,7 +6,7 @@ date: 2026-02-02
 
 Wendy's launched their AI drive-thru in a single Columbus, Ohio restaurant in June 2023. They spent a year in that one location before expanding to four stores. Another year to reach 36. They had people camped in the dining room for thousands of hours, talking to crews and customers. By 2025, they were [planning 500 locations](https://www.restaurantdive.com/news/wendys-deploy-digital-menu-boards-drive-thru-ai-500-restaurants-2025/746977/).
 
-McDonald's took a different path. They deployed their IBM partnership to [over 100 restaurants](https://www.restaurantbusinessonline.com/technology/mcdonalds-ending-its-drive-thru-ai-test) in two years. Viral videos showed the system adding bacon to ice cream and ordering nine sweet teas instead of one. In July 2024, they shut it down entirely.
+McDonald's took a different path. They deployed their IBM partnership to [over 100 restaurants](https://www.restaurantbusinessonline.com/technology/mcdonalds-ending-its-drive-thru-ai-test) in two years. Viral videos showed the system adding bacon to ice cream and ordering nine sweet teas instead of one. In June 2024, they shut it down entirely.
 
 Same technology category. Same industry. Same use case. Opposite outcomes.
 
@@ -26,7 +26,7 @@ These companies did not build better models. They built better deployment infras
 
 The AI implementations that work are not general-purpose. They are narrow, bounded, and boring.
 
-H&M's customer support chatbot handles [order tracking, return policies, and sizing assistance](https://www.vktr.com/ai-disruption/5-ai-case-studies-in-customer-service-and-support/)—repetitive queries that overwhelmed their human team. Response time dropped from minutes to seconds. Operational costs fell by an estimated 30%. Available 24/7 in 15 languages.
+H&M's customer support chatbot handles [order tracking, return policies, and sizing assistance](https://www.vktr.com/ai-disruption/5-ai-case-studies-in-customer-service-and-support/)—repetitive queries that overwhelmed their human team. Response time dropped from minutes to seconds. Operational costs fell by an estimated 30%. Available 24/7 in over 30 languages.
 
 Amazon's predictive inventory system achieved a [35% reduction in stockouts](https://superagi.com/real-world-success-stories-how-top-companies-are-optimizing-inventory-with-ai-in-2025/). Walmart's FAST Unloader increased worker productivity by 25% and reduced inventory errors by up to 90%. Mavi, a Turkish retailer, [boosted revenue 9.6%](https://www.invent.ai/case-study/mavi-case-study-how-invent-ai-inventory-optimization-solutions-helped-increase-revenue-by-9.6) with AI-powered inventory optimization across 439 stores.
 
@@ -66,7 +66,7 @@ The MIT NANDA research [found](https://fortune.com/2025/08/18/mit-report-95-perc
 
 A [Capital One survey](https://www.capitalone.com/tech/ai/ai-readiness-survey/) of nearly 4,000 business leaders found that 73% identified data quality and completeness as the primary barrier to AI success—ranking it above model accuracy, computing costs, and talent shortages.
 
-BCG's [10-20-70 principle](https://www.bcg.com/publications/2025/closing-the-ai-impact-gap) summarizes it: 10% algorithms, 20% data and technology, 70% people, processes, and cultural transformation. A RAND report found that [80% of AI projects fail](https://agility-at-scale.com/implementing/human-side-of-ai-transformation/) due to people issues, not technical ones.
+BCG's [10-20-70 principle](https://www.bcg.com/publications/2025/closing-the-ai-impact-gap) summarizes it: 10% algorithms, 20% data and technology, 70% people, processes, and cultural transformation. A [RAND report](https://www.rand.org/pubs/research_reports/RRA2680-1.html) found that AI projects fail at twice the rate of other IT projects, with root causes spanning miscommunication, data issues, infrastructure problems, and unrealistic expectations.
 
 ## What I am still figuring out
 

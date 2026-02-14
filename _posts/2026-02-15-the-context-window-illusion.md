@@ -32,7 +32,7 @@ More context hurts.
 
 The pattern that works: do not use the context window as a database.
 
-First, chunk intelligently. Semantic chunking (splitting on topic boundaries) outperforms fixed-size chunking by 23% in retrieval benchmarks. Aim for 400-512 token chunks. Overlap by 10-15% to preserve context across boundaries.
+First, chunk intelligently. Semantic chunking (splitting on topic boundaries) outperforms fixed-size chunking in retrieval benchmarks. Aim for 400-512 token chunks. Overlap by 10-15% to preserve context across boundaries.
 
 Second, retrieve precisely. Use embeddings for semantic search, not keyword matching. [Hybrid search](/blog/the-rag-trap/) (combining dense vectors with BM25 sparse retrieval) outperforms either approach alone. Rerank results with a smaller model before sending to your primary LLM.
 
