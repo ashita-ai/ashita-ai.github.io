@@ -30,7 +30,7 @@ The structural bias toward CapEx over OpEx [compounds the problem](https://www.c
 
 This creates a perverse dynamic. The budget exists to start AI projects. Once they ship, they compete for maintenance dollars against everything else. The team that launched the pilot has moved on. The team inheriting it has no incentive to keep it alive—doing so drains resources from their own projects.
 
-Big Tech is [pouring hundreds of billions](https://introl.com/blog/ai-infrastructure-financing-capex-opex-gpu-investment-guide-2025) into AI infrastructure: Amazon at $100–125B, Microsoft at $80B, Alphabet at $75–85B. Yet 80–95% of AI projects fail to deliver expected value. The money is there. The incentive to see projects through is not.
+Big Tech is [pouring hundreds of billions](https://introl.com/blog/ai-infrastructure-financing-capex-opex-gpu-investment-guide-2025) into AI infrastructure: Amazon at $100–125B, Microsoft at $80B, Alphabet at $75–91B. Yet 80–95% of AI projects fail to deliver expected value. The money is there. The incentive to see projects through is not.
 
 ## The vendor incentive
 

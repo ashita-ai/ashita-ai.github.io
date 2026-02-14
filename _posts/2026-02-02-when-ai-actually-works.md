@@ -28,7 +28,7 @@ The AI implementations that work are not general-purpose. They are narrow, bound
 
 H&M's customer support chatbot handles [order tracking, return policies, and sizing assistance](https://www.vktr.com/ai-disruption/5-ai-case-studies-in-customer-service-and-support/)—repetitive queries that overwhelmed their human team. Response time dropped from minutes to seconds. Operational costs fell by an estimated 30%. Available 24/7 in over 30 languages.
 
-Amazon's predictive inventory system achieved a [35% reduction in stockouts](https://superagi.com/real-world-success-stories-how-top-companies-are-optimizing-inventory-with-ai-in-2025/). Walmart's FAST Unloader increased worker productivity by 25% and reduced inventory errors by up to 90%. Mavi, a Turkish retailer, [boosted revenue 9.6%](https://www.invent.ai/case-study/mavi-case-study-how-invent-ai-inventory-optimization-solutions-helped-increase-revenue-by-9.6) with AI-powered inventory optimization across 439 stores.
+Mavi, a Turkish retailer, [boosted revenue 9.6%](https://www.invent.ai/case-study/mavi-case-study-how-invent-ai-inventory-optimization-solutions-helped-increase-revenue-by-9.6) with AI-powered inventory optimization across 439 stores. Amazon and Walmart report significant improvements from predictive inventory systems, though the specific figures are difficult to verify independently.
 
 IT ticketing systems see [40–60% ticket deflection](https://www.moveworks.com/us/en/resources/blog/helpdesk-ticketing-system-ai-automation) within 90 days and 25–40% faster resolution for escalated cases. The key insight: 60–70% of inbound volume is repetitive, low-complexity work that does not require human judgment. Those are the ideal candidates for automation—not the complex cases, not the edge cases, just the boring repetitive volume.
 
@@ -40,7 +40,7 @@ A Harvard and BCG [study on consultants](https://mitsloan.mit.edu/ideas-made-to-
 
 The researchers identified two working styles: "centaurs" who divided tasks between AI and themselves, and "cyborgs" who fully integrated their workflow with AI. Both patterns succeeded when the human understood where the AI's competence ended.
 
-Medical diagnosis platforms using [human-in-the-loop approaches](https://parseur.com/blog/human-in-the-loop-ai) achieved 97% accuracy—compared to 85% AI-only and 89% human-only. The combination outperformed both. Diagnosis time dropped 60%.
+Medical diagnosis platforms using human-in-the-loop approaches consistently outperform both AI-only and human-only baselines. The combination catches what either would miss alone.
 
 The lesson is not that AI needs babysitting. The lesson is that humans and AI have complementary failure modes. AI fails on edge cases, novel situations, and context that was not in the training data. Humans fail on attention, consistency, and volume. The combination catches what either would miss alone.
 
@@ -64,7 +64,7 @@ High performers are [three times more likely](https://www.mckinsey.com/capabilit
 
 The MIT NANDA research [found](https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo/) that purchasing AI tools from specialized vendors succeeds 67% of the time, while internal builds succeed only one-third as often. The successful companies treated vendors like business service providers rather than software suppliers—deep customization, outcome-based evaluation, co-evolutionary development.
 
-A [Capital One survey](https://www.capitalone.com/tech/ai/ai-readiness-survey/) of nearly 4,000 business leaders found that 73% identified data quality and completeness as the primary barrier to AI success—ranking it above model accuracy, computing costs, and talent shortages.
+A [Capital One survey](https://www.capitalone.com/tech/ai/ai-readiness-survey/) of nearly 4,000 business leaders found that 73% identified data quality and completeness as a top barrier to AI success, ranking it alongside data security and above model accuracy, computing costs, and talent shortages.
 
 BCG's [10-20-70 principle](https://www.bcg.com/publications/2025/closing-the-ai-impact-gap) summarizes it: 10% algorithms, 20% data and technology, 70% people, processes, and cultural transformation. A [RAND report](https://www.rand.org/pubs/research_reports/RRA2680-1.html) found that AI projects fail at twice the rate of other IT projects, with root causes spanning miscommunication, data issues, infrastructure problems, and unrealistic expectations.
 
