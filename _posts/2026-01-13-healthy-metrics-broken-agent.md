@@ -38,7 +38,7 @@ Zillow's overvaluation would have been caught by tracking predicted-vs-actual sp
 
 The common thread: measure the outcome, not the operation. Cost per query tells you the system is running. Revenue per decision tells you the system is working. The gap between these two measurements is where hundreds of millions of dollars disappear.
 
-LLM tracing tools (Langfuse, Arize Phoenix, LangSmith, Pydantic Logfire) are maturing, but they solve a different problem. They trace what happened in the model's reasoning. They do not tell you whether the reasoning produced the right business result. That requires connecting model outputs to downstream outcomes, which requires the kind of [data lineage](/blog/the-metadata-control-plane/) most organizations do not have.
+LLM tracing tools (Langfuse, Arize Phoenix, LangSmith, Pydantic Logfire) are maturing, but they solve a different problem. They trace what happened in the model's reasoning. They do not tell you whether the reasoning produced the right business result. That requires connecting model outputs to downstream outcomes, which requires data lineage most organizations do not have.
 
 ## What I am still figuring out
 

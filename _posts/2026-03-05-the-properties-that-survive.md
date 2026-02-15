@@ -86,4 +86,4 @@ The OSI model was technically superior, formally specified, and backed by govern
 
 OSI implemented a pattern: a comprehensive model designed for a particular vision of how networking should work. TCP/IP embodied properties: layered abstraction, explicit contracts at each boundary, backward compatibility across every version.
 
-The pattern lost. The properties survived. The same bet is being placed right now, at much larger scale, across AI infrastructure. Most of it is pattern. The next four posts test what it means to build for properties instead—starting with [ground truth](/blog/ground-truth-as-foundation/).
+The pattern lost. The properties survived. The same bet is being placed right now, at much larger scale, across AI infrastructure. Most of it is pattern. The next four posts test what it means to build for properties instead—starting with ground truth.

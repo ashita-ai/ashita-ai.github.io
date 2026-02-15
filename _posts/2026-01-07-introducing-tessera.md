@@ -90,4 +90,4 @@ Whether data contracts slow teams down more than they save, especially at small 
 
 ---
 
-*This is part of a series on the tools I am building at Ashita AI. Previously: [Engram](/blog/introducing-engram/), memory that does not lie. For why data contracts are the AI control plane, see [The Metadata Layer as Your AI Control Plane](/blog/the-metadata-control-plane/).*
+*This is part of a series on the tools I am building at Ashita AI. Previously: [Engram](/blog/introducing-engram/), memory that does not lie.*

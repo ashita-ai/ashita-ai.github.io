@@ -30,7 +30,7 @@ Most organizations fall into one of two traps.
 
 **Trap two: Building for never.** They recognize that the landscape is changing too fast, so they do not build infrastructure at all. They use off-the-shelf tools, avoid commitments, stay flexible. But flexibility without foundation is chaos. They cannot deploy AI at scale because they have no [governance infrastructure](/blog/the-metadata-control-plane/), no data quality guarantees, no way to trace what went wrong.
 
-The path between these traps is building infrastructure that embodies properties rather than implements patterns. Fine-tuning pipelines and vector databases are patterns, coupled to a specific moment. The infrastructure that [survived previous paradigm shifts](/blog/the-properties-that-survive/) had structural properties that were independent of any particular technology. Properties survive. Patterns become legacy.
+The path between these traps is building infrastructure that embodies properties rather than implements patterns. Fine-tuning pipelines and vector databases are patterns, coupled to a specific moment. The infrastructure that survived previous paradigm shifts had structural properties that were independent of any particular technology. Properties survive. Patterns become legacy.
 
 ## The questions ahead
 

@@ -94,4 +94,4 @@ The optimal confidence thresholds for filtering queries are also unclear. Too st
 
 ---
 
-*This is the first in a series of posts about the tools I am building at Ashita AI. Next: Tessera, data contract coordination for warehouses. For why ground truth preservation matters at the infrastructure level, see [Ground Truth as Foundation](/blog/ground-truth-as-foundation/).*
+*This is the first in a series of posts about the tools I am building at Ashita AI. Next: Tessera, data contract coordination for warehouses.*
