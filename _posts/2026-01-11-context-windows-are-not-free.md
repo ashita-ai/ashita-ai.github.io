@@ -65,8 +65,10 @@ The question is not how much you can fit. It is what happens when something has 
 
 ## What I am still figuring out
 
-When long context is genuinely necessary versus when it is a convenience that degrades quality. Codebase analysis, legal document review, and multi-document synthesis seem to require holding large amounts of text simultaneously. But I do not have good data on whether hierarchical summarization or structured chunking could achieve the same results at a fraction of the cost. The answer likely depends on the task, and the taxonomy of tasks that actually require long context is not well defined.
+Whether the degradation research has a shelf life. Every study I cited tested models available at the time of publication. Model architectures change. Attention mechanisms improve. The U-shaped curve might flatten as architectures evolve, or it might be fundamental to how transformers process sequential information. If it is fundamental, the long-context marketing will always be misleading. If it is architectural, next year's models might genuinely handle 2 million tokens. I do not know which is true, and the answer determines whether retrieval pipelines are a permanent necessity or a temporary workaround.
 
 ---
 
-The pitch is bigger windows, more tokens, dump everything in. The reality is quadratic costs, degraded accuracy, and silent failures in the middle. Design for what the model can actually use, not what the spec sheet claims.
+Gemini's 2 million tokens, Claude's 200K, GPT-4.1's 1 million: the numbers keep climbing. The research keeps showing the same result. More context degrades accuracy, inflates costs, and hides failures in the middle where nobody checks.
+
+The pitch is that bigger windows mean fewer engineering decisions. The reality is the opposite. The bigger the window, the more carefully you must decide what goes in it.

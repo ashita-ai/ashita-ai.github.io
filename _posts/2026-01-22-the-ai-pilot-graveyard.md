@@ -76,11 +76,11 @@ Kill pilots that have run longer than 90 days. The MIT data is clear: [successfu
 
 Deploy to limited production with real users. Not friendly internal users. Real customers who will use your AI in ways you did not anticipate and complain when it breaks.
 
-Build automated guardrails before you build the model. Not dashboards. Triggers. The Opendoor pattern: when predicted-vs-actual spread exceeds threshold, tighten offers automatically. No human in the loop. [The decisions you make about monitoring and rollback](/blog/the-data-platform-decisions-that-haunt-you/) matter more than the decisions you make about model architecture. This is what separates [healthy metrics from broken agents](/blog/healthy-metrics-broken-agent/).
+Build automated guardrails before you build the model. Not dashboards. Triggers. The Opendoor pattern: when predicted-vs-actual spread exceeds threshold, tighten offers automatically. No human in the loop. The decisions you make about monitoring and rollback matter more than the decisions you make about model architecture.
 
 ## What I am still figuring out
 
-The 90-day boundary is clearer than I expected, but the causation is not. Pilots may run long because they are already struggling, not vice versa. The extended timeline could be a symptom rather than a cause. The best proxy I have for distinguishing "legitimate extended validation" from "pilot purgatory" is external accountability: if someone outside your company can force a deadline, it is probably real. If your only deadlines are internal, it is probably theater.
+Whether the "skip pilots, deploy with guardrails" advice applies to internal tools. The entire framework assumes an external user whose behavior you need to observe. For internal analytics, research tools, or back-office automation, the pilot and the limited production deployment look identical. The 90-day boundary may not apply when there is no market test. The harder question is whether internal deployments have their own version of pilot purgatory: tools that are "in use" but never change a decision. That pattern may not even be detectable without the forcing function of customer complaints.
 
 ---
 

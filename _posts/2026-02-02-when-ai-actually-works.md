@@ -78,8 +78,6 @@ The narrow-scope pattern is consistent, but the boundary is not obvious. How nar
 
 ---
 
-Wendy's spent a year with people camping in one restaurant's dining room. McDonald's deployed to 100 locations and got bacon on ice cream.
+Wendy's and McDonald's used the same technology for the same use case in the same industry. Wendy's spent a year building the ability to learn in production. McDonald's spent two years building the ability to deploy at scale.
 
-The [AI pilot graveyard](/blog/the-ai-pilot-graveyard/) is full of projects that scaled before they were ready. The companies that work—Netflix, Uber, Stripe, Wendy's—built the infrastructure first: shadow deployment, automatic rollback, narrow scope, human oversight.
-
-The model is not the hard part. The system that keeps the model honest is the hard part.
+Deployment without learning scales the mistakes. Learning without deployment wastes the insight. Wendy's got the order right.

@@ -88,6 +88,6 @@ The boundary between "AI should not be trusted with this" and "AI is the only wa
 
 ---
 
-The Deloitte hallucinations ran for three months. Then six months. The lawyers' fake citations are still being discovered. The enterprise decisions based on hallucinated content have already been made.
+The Deloitte report was 237 pages of confident, well-formatted hallucination. Nobody caught it for three months because nothing about it looked wrong.
 
-Traditional software taught us to invest in catching errors before production. AI requires catching errors during production—because that is when confident wrongness finally becomes visible.
+That is the cost of being wrong in the AI era. Not the error itself, but the time between the error and the discovery. Every day of confident wrongness is a day of decisions built on fabricated foundations. The system cannot tell you it is wrong. You have to build something that can.

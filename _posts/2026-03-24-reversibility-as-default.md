@@ -48,11 +48,11 @@ UnitedHealthcare's subsidiary NaviHealth used an algorithm called nH Predict to 
 
 The UN Secretary-General has called lethal autonomous weapons "[politically unacceptable and morally repugnant](https://news.un.org/en/story/2025/05/1163256)." The debate centers on levels of human involvement: human-in-the-loop (system selects targets, human authorizes force), human-on-the-loop (system acts autonomously under human supervision), and human-out-of-the-loop (no human involvement). The core concern is that a fully autonomous lethal decision is absolutely irreversible.
 
-The AI systems making the [most consequential decisions](/blog/the-build-is-not-the-hard-part/) are the ones with the least reversibility. Insurance denials at 1.2 seconds. Self-driving decisions at millisecond latency. Autonomous weapons without human authorization. The higher the stakes, the more reversibility matters, and the less of it these systems have.
+The AI systems making the most consequential decisions are the ones with the least reversibility. Insurance denials at 1.2 seconds. Self-driving decisions at millisecond latency. Autonomous weapons without human authorization. The higher the stakes, the more reversibility matters, and the less of it these systems have.
 
 ## What to build
 
-The [companies deploying AI that works](/blog/when-ai-actually-works/) build rollback first. Shadow deployment, automatic pullback, circuit breakers. They assume the system will fail and engineer the ability to recover. The companies in the [pilot graveyard](/blog/the-ai-pilot-graveyard/) assume the system will work and are surprised when it does not.
+The companies deploying AI that works build rollback first. Shadow deployment, automatic pullback, circuit breakers. They assume the system will fail and engineer the ability to recover. The companies that skip this step assume the system will work and are surprised when it does not.
 
 Clinical trial phases offer a model: graduated reversibility gates where each phase has stopping rules, safety review, and a go/no-go decision before proceeding. [Phase I](https://med.uc.edu/depart/psychiatry/research/clinical-research/crm/trial-phases-1-2-3-defined) (20-100 volunteers, safety only) is designed to be stopped at any time. Phase III involves thousands of patients but still has mandatory stopping rules. Every gate is a chance to reverse course.
 

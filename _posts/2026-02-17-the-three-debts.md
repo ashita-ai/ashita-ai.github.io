@@ -32,9 +32,9 @@ A junior developer uses Claude to generate a caching layer. The code works. The 
 
 This is [the hollow codebase problem](/blog/the-hollow-codebase/). AI-assisted developers produce [3-4x more commits](https://apiiro.com/blog/4x-velocity-10x-vulnerabilities-ai-coding-assistants-are-shipping-more-risks/) while generating 10x more security findings. The ratio of code produced to code understood is diverging.
 
-You cannot refactor comprehension debt. Refactoring assumes you understand both the current implementation and the desired implementation. When you do not understand the current implementation, you are not refactoring. You are rewriting blind, likely introducing new comprehension debt in the process. The output quality of an agent [depends on the instructions, not the model](/blog/the-intelligence-is-in-the-document/)—and comprehension debt accumulates fastest when nobody writes those instructions down.
+You cannot refactor comprehension debt. Refactoring assumes you understand both the current implementation and the desired implementation. When you do not understand the current implementation, you are not refactoring. You are rewriting blind, likely introducing new comprehension debt in the process. The output quality of an agent depends on the instructions, not the model, and comprehension debt accumulates fastest when nobody writes those instructions down.
 
-The only remediation is to build understanding—or to accept permanent dependency on AI assistance for that part of the system. Neither is free. The first requires slowing down to learn what you skipped. The second means [your seeing problem never gets solved](/blog/the-seeing-problem/).
+The only remediation is to build understanding—or to accept permanent dependency on AI assistance for that part of the system. Neither is free. The first requires slowing down to learn what you skipped. The second means your seeing problem never gets solved.
 
 **Comprehension debt is code that nobody understood when written, and that accumulates interest every time someone touches it without understanding it.**
 
@@ -46,11 +46,11 @@ The [first startup I worked for](/blog/the-attention-economy-of-engineering/) bu
 
 The company was acquired for less than a million dollars.
 
-The debt was in the decision itself—engineering attention allocated to technically interesting infrastructure instead of the product that would determine whether anyone cared. This is [resume-driven development](/blog/the-attention-economy-of-engineering/) at the organizational level: building what looks impressive instead of what matters.
+The debt was in the decision itself—engineering attention allocated to technically interesting infrastructure instead of the product that would determine whether anyone cared. This is resume-driven development at the organizational level: building what looks impressive instead of what matters.
 
-Decision debt is invisible in the codebase. The code is fine. The architecture might even be elegant. The debt is in what you chose to build, when you chose to build it, and why. It surfaces years later when you realize the decisions made in year one have [compounded into constraints](/blog/the-data-platform-decisions-that-haunt-you/) you cannot escape without starting over.
+Decision debt is invisible in the codebase. The code is fine. The architecture might even be elegant. The debt is in what you chose to build, when you chose to build it, and why. It surfaces years later when you realize the decisions made in year one have compounded into constraints you cannot escape without starting over.
 
-Zillow's algorithmic home-buying program is the clearest example. The Zestimate algorithm worked. The ML infrastructure was sound. The engineering was competent. The decision to use an algorithm that [consistently overvalued properties](https://www.gsb.stanford.edu/insights/flip-flop-why-zillows-algorithmic-home-buying-venture-imploded) in a cooling market cost [$881 million](https://re-brokerage.com/zillow-offers-lost-881m-in-2021-shutdown/), 2,000 jobs, and the entire iBuying division. No amount of code refactoring could have saved it. The code was not the problem. The decision was.
+Quibi is the clearest example. Jeffrey Katzenberg raised $1.75 billion for a mobile-only premium streaming service. The Turnstyle technology (seamless portrait-to-landscape switching) was genuinely innovative. Content budgets ran $100,000 per minute. The engineering was competent. The decision to charge for short-form video when YouTube and TikTok already owned the format cost everything. [Six months after launch, Quibi shut down](https://www.cnbc.com/2020/10/21/quibi-to-shut-down-after-just-6-months.html). No amount of refactoring could have saved it. The technology was not the problem. The decision was.
 
 Only [28% of executives and middle managers](https://sloanreview.mit.edu/article/no-one-knows-your-strategy-not-even-your-top-leaders/) responsible for executing strategy could list three of their company's strategic priorities. The decisions being made are not aligned with any coherent strategy. Each decision is locally rational, individually defensible, and collectively incoherent. The debt compounds with every sprint.
 
@@ -78,7 +78,7 @@ The intervention must match the debt type:
 
 - **Technical debt** responds to engineering effort. Refactor, pay it down, move on.
 - **Comprehension debt** responds to learning. Slow down, understand the system, or accept the dependency.
-- **Decision debt** responds only to strategic change. No amount of engineering excellence fixes building the wrong thing. [The factory works. The design department does not.](/blog/the-factory-without-a-design-department/)
+- **Decision debt** responds only to strategic change. No amount of engineering excellence fixes building the wrong thing.
 
 Most organizations have all three. The dangerous ones are the invisible debts—comprehension debt hiding in AI-generated code, decision debt hiding in locally-rational choices.
 

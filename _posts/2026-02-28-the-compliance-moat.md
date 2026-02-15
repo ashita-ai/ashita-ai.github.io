@@ -72,6 +72,6 @@ The regulators are not asking for busywork. They are asking for [the same infras
 
 The companies that build it first can deploy AI where competitors cannot. The companies that treat compliance as overhead are building the infrastructure anyway—just without the market access that comes from doing it intentionally.
 
-[Gartner predicts](/blog/against-agentic-everything/) 40% of agentic AI projects will be cancelled by 2027 due to escalating costs, unclear business value, and inadequate risk controls. The companies with compliance infrastructure have the risk controls. The rest will join the [pilot graveyard](/blog/the-ai-pilot-graveyard/).
+The companies with compliance infrastructure can deploy where competitors cannot. The companies treating it as overhead will discover that the market access, the regulatory approval, and the enterprise trust were never separable from the infrastructure itself.
 
 The governance is not overhead. The governance is the moat.

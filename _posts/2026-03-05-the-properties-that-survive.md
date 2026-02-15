@@ -14,7 +14,7 @@ OSI was better specified. TCP/IP was better at surviving.
 
 ## The AI infrastructure bubble
 
-[Hundreds of billions of dollars](/blog/the-incentive-problem/) are flowing into AI infrastructure right now—GPU clusters, model training pipelines, vector databases, agent frameworks. Most of it is optimized for the current paradigm: transformer architectures, embedding-based retrieval, prompt engineering patterns.
+Hundreds of billions of dollars are flowing into AI infrastructure right now—GPU clusters, model training pipelines, vector databases, agent frameworks. Most of it is optimized for the current paradigm: transformer architectures, embedding-based retrieval, prompt engineering patterns.
 
 The paradigm always shifts. And most of what gets built for a specific paradigm dies with it.
 
@@ -36,7 +36,7 @@ They are not better engineered than the casualties. CORBA's type system was more
 
 ## The four properties
 
-**Ground truth.** RAG pipelines retrieve garbage when nobody verified the source documents. Models hallucinate because [the ground truth was never established](/blog/the-cost-of-being-wrong/). The embedding model is new. The problem—data that does not mean what you think it means—is the oldest problem in computing.
+**Ground truth.** RAG pipelines retrieve garbage when nobody verified the source documents. Models hallucinate because the ground truth was never established. The embedding model is new. The problem—data that does not mean what you think it means—is the oldest problem in computing.
 
 The survivors preserve the meaning of data without hiding it behind abstractions. SQL's ACID guarantees ensure that data means what it says—transactions complete or they do not, no partial states, no ambiguity. DNS maps names to addresses through a hierarchy where every record has an authoritative source you can trace. Codd [stated the design goal](https://dl.acm.org/doi/10.1145/362384.362685) in 1970: "Future users of large data banks must be protected from having to know how the data is organized in the machine." Protect users from implementation details, not from truth. CORBA abstracted away where things ran until nobody knew. ORMs hid the relational model behind object graphs until the [abstraction leaked](https://en.wikipedia.org/wiki/Object%E2%80%93relational_impedance_mismatch) under production load.
 
@@ -48,13 +48,13 @@ The survivors make it possible to trace how you got here. HTTP's stateless model
 
 AI infrastructure that cannot trace a decision back to its source will not survive regulation, will not survive debugging, and will not survive the next architecture.
 
-**Contracts.** LLM APIs are the opposite of stable contracts. Model behaviors change between versions without notice. Prompts that worked last month fail after an update. [Agent systems that chain multiple calls](/blog/against-agentic-everything/) compound the instability—every link in the chain is a contract that might break silently.
+**Contracts.** LLM APIs are the opposite of stable contracts. Model behaviors change between versions without notice. Prompts that worked last month fail after an update. Agent systems that chain multiple calls compound the instability—every link in the chain is a contract that might break silently.
 
 The survivors define stable interfaces that implementations can change behind. SQL is a contract: you declare what you want, not how to get it. The query optimizer can improve across decades without changing your application. POSIX is a contract: applications write to the standard, not to the kernel. The S3 API became so stable that competitors implement it—Cloudflare R2, Backblaze B2, MinIO—because the [contract is more valuable](https://www.architecting.it/blog/object-storage-standardising-on-the-s3-api/) than any implementation behind it. CORBA's contracts broke between revisions. Hadoop's Java API coupled applications to a specific framework version. Without stable contracts, every upgrade is a migration.
 
 The AI infrastructure that survives will have contracts that mean the same thing regardless of which model sits behind them.
 
-**Reversibility.** The companies shipping AI without a path back are betting that their first deployment will be their best. It will not be. The AI deployments that [actually work](/blog/when-ai-actually-works/)—Wendy's, Netflix, Uber, Stripe—all built rollback first. Shadow deployment, automatic pullback, circuit breakers.
+**Reversibility.** The companies shipping AI without a path back are betting that their first deployment will be their best. It will not be. The AI deployments that actually work—Wendy's, Netflix, Uber, Stripe—all built rollback first. Shadow deployment, automatic pullback, circuit breakers.
 
 The survivors can evolve without destroying what came before. HTTP/3 replaced TCP with QUIC while maintaining backward compatibility through [protocol negotiation](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Evolution_of_HTTP). DNS added [extension mechanisms](https://en.wikipedia.org/wiki/Extension_Mechanisms_for_DNS) that older resolvers simply ignore. Flash had no fallback. When Steve Jobs published ["Thoughts on Flash"](https://en.wikipedia.org/wiki/Thoughts_on_Flash) in 2010, Flash could not degrade gracefully—you either had the plugin or you got nothing. HTML5 rendered everywhere. The survivors gave you a path back. The casualties burned the bridge.
 
@@ -68,7 +68,7 @@ His key insight: "An adaptive building has to allow slippage between the differe
 
 GPT-4 is furniture. It will be replaced, probably soon. RAG pipelines are furniture. Prompt engineering is furniture. The data quality infrastructure that feeds these systems, the audit trails that trace their decisions, the contracts that define what the data means, the rollback mechanisms that recover from failures—those are structure.
 
-The forty percent of agentic AI projects that Gartner predicts will be scrapped by 2027 are mostly projects that invested in AI furniture while ignoring the structure underneath. This is the distinction from [Building for Tomorrow](/blog/building-for-tomorrow/). Patterns are furniture—implementation choices that should change as technology evolves. Properties are structure—the load-bearing decisions everything else depends on. Confusing the two is how you build infrastructure that works for three years and [constrains you for ten](/blog/the-data-platform-decisions-that-haunt-you/).
+The agentic AI projects being scrapped are mostly projects that invested in AI furniture while ignoring the structure underneath. This is the distinction from [Building for Tomorrow](/blog/building-for-tomorrow/). Patterns are furniture—implementation choices that should change as technology evolves. Properties are structure—the load-bearing decisions everything else depends on. Confusing the two is how you build infrastructure that works for three years and constrains you for ten.
 
 The companies that separate structure from furniture now will swap models, architectures, and paradigms without starting over. The companies that do not will be starting over every time the furniture changes.
 

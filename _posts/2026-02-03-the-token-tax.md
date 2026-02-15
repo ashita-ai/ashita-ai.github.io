@@ -76,9 +76,7 @@ The invoice arrived in 2025. It showed up as missed margin targets, budget overr
 
 ## What I am still figuring out
 
-Prompt caching reduces costs by 90% in Anthropic's examples, but those examples are optimized demos. Production systems have more complex call patterns. The real savings are probably lower. I have not seen enough public data to know how much lower.
-
-The Perplexity revenue-to-infrastructure ratio (164%) is extreme, but it may not be representative. They are a search company, which means every query hits retrieval + LLM + reranking. Most AI applications have lower per-query costs. The 164% figure is a warning, not a baseline.
+Whether reasoning models change the entire cost calculus. The three types of waste I identified (repeated context, irrelevant retrieval, redundant reasoning) assume the expensive tokens are the wasteful ones. Reasoning models like o3 and DeepSeek R1 generate thousands of internal chain-of-thought tokens that are neither repeated, irrelevant, nor redundant. They are novel reasoning, and they are expensive. The architectural solutions I described (caching, stateful context, selective retrieval) do not help with them. If reasoning models become the default, the token tax may shift from an architecture problem to a fundamental cost-of-intelligence problem with a different set of levers.
 
 ---
 

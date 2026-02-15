@@ -14,7 +14,7 @@ GetOnStack is not unique. The pattern is older than AI and more expensive than m
 
 In 2022, Unity's ad-targeting algorithm ingested corrupted training data from a single client. The model continued serving predictions with normal latency and zero errors. Ad targeting quality degraded silently. The failure surfaced at quarterly earnings: an estimated [$110 million in lost revenue](https://www.datachecks.io/post/unity-technologies-110m-ad-targeting-error). CEO John Riccitiello called it a "self-inflicted wound." The stock dropped 40%.
 
-Zillow's Zestimate had a median error rate of 1.9%, a strong aggregate metric. But the algorithm systematically [overvalued properties it bid on](https://www.gsb.stanford.edu/insights/flip-flop-why-zillows-algorithmic-home-buying-venture-imploded). Nine out of ten homes Zillow purchased were eventually listed below purchase price. The median looked great. The tail was catastrophic. The [loss was $881 million](https://re-brokerage.com/zillow-offers-lost-881m-in-2021-shutdown/).
+A healthcare algorithm used by major insurers [assigned the same risk scores](https://www.science.org/doi/10.1126/science.aax2342) to Black patients who had 26.3% more chronic conditions than white patients at the same score. Aggregate accuracy looked strong. But the algorithm used healthcare spending as a proxy for health needs, and Black patients spent $1,800 less per year due to systemic access barriers. The metric was accurate. The proxy was wrong. The algorithm affected an estimated 70 million patients; similar commercial risk-prediction tools were applied to roughly 200 million Americans.
 
 This pattern predates AI. Knight Capital [lost $460 million in 45 minutes](https://en.wikipedia.org/wiki/Knight_Capital_Group#2012_stock_trading_disruption) in 2012 when a deployment activated dead code on one of eight servers. Monitoring reported a successful deployment. The algorithm traded in the wrong direction four million times before anyone noticed. The British Post Office's Horizon software [created phantom shortfalls](https://en.wikipedia.org/wiki/British_Post_Office_scandal) for twenty-five years while system-level metrics balanced.
 
@@ -34,7 +34,7 @@ GetOnStack's loop would have been caught by a cost anomaly detector: weekly spen
 
 Unity's degradation would have been caught by continuous A/B testing: comparing model predictions against a holdout group on business metrics (revenue per impression), not operational metrics (latency, throughput).
 
-Zillow's overvaluation would have been caught by tracking predicted-vs-actual spread over time, not just median error across all predictions. The [aggregate hid the tail](/blog/the-ai-pilot-graveyard/).
+The healthcare algorithm's racial bias would have been caught by disaggregating performance metrics by demographic group, not just measuring aggregate accuracy. The [aggregate hid the disparity](/blog/the-ai-pilot-graveyard/).
 
 The common thread: measure the outcome, not the operation. Cost per query tells you the system is running. Revenue per decision tells you the system is working. The gap between these two measurements is where hundreds of millions of dollars disappear.
 
@@ -48,7 +48,7 @@ Whether outcome metrics are even possible for some AI applications. Ad targeting
 
 ---
 
-GetOnStack's agents burned $47,000 in a conversation with themselves. Unity lost $110 million to silently degraded ad targeting. Zillow lost $881 million to a median that hid the tail. Knight Capital lost $460 million in 45 minutes to dead code on one server.
+GetOnStack's agents burned $47,000 in a conversation with themselves. Unity lost $110 million to silently degraded ad targeting. A healthcare algorithm covering 70 million patients used spending as a proxy for sickness, underserving Black patients with 26% more chronic conditions at the same risk score. Knight Capital lost $460 million in 45 minutes to dead code on one server.
 
 The dashboards were green. The businesses were not.
 

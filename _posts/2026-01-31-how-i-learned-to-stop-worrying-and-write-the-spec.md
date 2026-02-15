@@ -56,7 +56,7 @@ This is one data point. I do not know if it generalizes.
 
 ---
 
-[Augment Code found](https://www.augmentcode.com/guides/why-multi-agent-llm-systems-fail-and-how-to-fix-them) that 41.77% of agent failures are specification problems. Another 36.94% are coordination failures. The industry builds better orchestration engines—Cursor, Devin, CrewAI, LangGraph. This addresses the 36.94%. It ignores the 41.77%. We are building [factories without design departments](/blog/the-factory-without-a-design-department/).
+[Augment Code found](https://www.augmentcode.com/guides/why-multi-agent-llm-systems-fail-and-how-to-fix-them) that 41.77% of agent failures are specification problems. Another 36.94% are coordination failures. The industry builds better orchestration engines—Cursor, Devin, CrewAI, LangGraph. This addresses the 36.94%. It ignores the 41.77%.
 
 The response should not be "get better at writing specs." It should be "build tools that extract specs from people who know what they want but cannot write it down."
 

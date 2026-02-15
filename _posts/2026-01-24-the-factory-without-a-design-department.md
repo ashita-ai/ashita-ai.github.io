@@ -62,7 +62,7 @@ Steve Yegge's [Gas Town](https://maggieappleton.com/gastown) orchestrates dozens
 
 Anthropic's [official guidance](https://www.anthropic.com/research/building-effective-agents) is to find "the simplest solution possible, and only increase complexity when needed." For most applications, a single agent is enough. The bottleneck is not the factory. The bottleneck is [knowing what to build](/blog/the-data-platform-decisions-that-haunt-you/).
 
-Multi-agent systems use [approximately 15x more tokens](https://www.anthropic.com/engineering/multi-agent-research-system) than single-agent interactions. Each additional agent multiplies the opportunities for blueprint errors to propagate. If your specifications are ambiguous, one agent might misinterpret them. Twenty agents will misinterpret them in twenty different ways.
+Each additional agent multiplies the opportunities for blueprint errors to propagate. If your specifications are ambiguous, one agent might misinterpret them. Twenty agents will misinterpret them in twenty different ways.
 
 This is the same dynamic that [kills AI pilots](/blog/the-ai-pilot-graveyard/). The factory works. The design department does not keep pace.
 

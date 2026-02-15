@@ -54,7 +54,7 @@ The teams that win will not be the ones with the best pre-production evals. They
 
 ## What I am still figuring out
 
-Whether the adaptive clinical trial analogy holds for LLM systems. Clinical trials have well-defined outcomes (patient survives, tumor shrinks). LLM quality is multidimensional and context-dependent. The multi-armed bandit framing assumes you can define a reward signal. For many LLM applications, the reward signal is itself the hard problem.
+Whether the adaptive clinical trial analogy holds for LLM systems. Clinical trials have well-defined outcomes (patient survives, tumor shrinks). LLM quality is multidimensional and context-dependent. The multi-armed bandit framing assumes you can define a reward signal. For many LLM applications, the reward signal is itself the hard problem. This is not a minor caveat. If you cannot define what "better" means in production, production learning does not work either. The recommendation to invest in feedback loops over evals assumes the feedback loop has something to measure. When it does not, pre-production evals may be the only option, even if they are insufficient.
 
 ---
 

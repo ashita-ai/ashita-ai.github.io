@@ -20,7 +20,7 @@ The incentive structure is working exactly as designed. It is just not designed 
 
 Pilot teams are rewarded for novelty and speed. A fast prototype that generates excitement is a career win. Whether that prototype survives the handoff to operations is someone else's problem. [Research on misaligned incentives](https://agility-at-scale.com/implementing/scaling-ai-projects/) in AI projects confirms: "If the pilot team is rewarded for fast prototype delivery, not long-term adoption, they may neglect production considerations."
 
-The career timeline reinforces this. AI-skilled workers command a [56% wage premium](https://www.pwc.com/gx/en/news-room/press-releases/2025/ai-linked-to-a-fourfold-increase-in-productivity-growth.html) over peers in similar roles, according to PwC's analysis of a billion job postings. The fastest path up is launching initiatives, not maintaining them. This is why [healthy metrics can coexist with broken agents](/blog/healthy-metrics-broken-agent/)—the people measuring are optimizing for different outcomes than the people using.
+The career timeline reinforces this. AI-skilled workers command a [56% wage premium](https://www.pwc.com/gx/en/news-room/press-releases/2025/ai-linked-to-a-fourfold-increase-in-productivity-growth.html) over peers in similar roles, according to PwC's analysis of a billion job postings. The fastest path up is launching initiatives, not maintaining them. This is why healthy metrics can coexist with broken agents: the people measuring are optimizing for different outcomes than the people using.
 
 ## The budget incentive
 
@@ -52,7 +52,7 @@ The only model that reliably works is the "Hive": multidisciplinary teams that t
 
 ## What works
 
-The [companies that scale AI](/blog/when-ai-actually-works/) share a pattern: they restructure incentives so that launching and maintaining are the same team's job.
+The companies that scale AI share a pattern: they restructure incentives so that launching and maintaining are the same team's job.
 
 This means eliminating the handoff. If the team that builds the pilot also owns production, the pilot incentive disappears. If the budget comes from operational funds rather than innovation funds, the budget incentive disappears. If vendor contracts are tied to outcomes rather than seats, the vendor incentive aligns with yours.
 

@@ -38,9 +38,9 @@ Curtis Northcutt and colleagues [found](https://arxiv.org/abs/2103.14749) that 6
 
 A database with a corrupted record has a localized problem. A model trained on corrupted data has a systemic one—distributed across billions of parameters, impossible to localize, difficult to detect.
 
-This compounds. Most AI memory systems and [RAG pipelines](/blog/the-rag-trap/) extract "important" facts from raw data, then [discard the original](/blog/introducing-engram/). Each extraction introduces errors. Each summarization loses detail. The [HaluMem study](https://arxiv.org/abs/2511.03506) found memory system accuracies below 70%. After a few passes, you are querying a game of telephone.
+This compounds. Most AI memory systems and RAG pipelines extract "important" facts from raw data, then discard the original. Each extraction introduces errors. Each summarization loses detail. The [HaluMem study](https://arxiv.org/abs/2511.03506) found memory system accuracies below 70%. After a few passes, you are querying a game of telephone.
 
-And when a database has a type mismatch, it throws an error. When an LLM encounters something outside its training data, it [generates a plausible response with high confidence](/blog/the-cost-of-being-wrong/). There is no error code for "this is fabricated." The system proceeds because nothing technically failed.
+And when a database has a type mismatch, it throws an error. When an LLM encounters something outside its training data, it generates a plausible response with high confidence. There is no error code for "this is fabricated." The system proceeds because nothing technically failed.
 
 ## What is coming
 
@@ -54,7 +54,7 @@ First, the training data for the next generation of models is being poisoned by 
 
 Second, the paradigm will shift. Transformers will give way to something else. Embedding-based retrieval will be replaced. The [vector databases and agent frameworks](/blog/the-properties-that-survive/) being built right now are coupled to the current architecture. When the architecture changes, all of it breaks. What survives the shift is not the model or the framework. It is the data underneath—if it means what it says it means.
 
-Third, regulation is arriving. The [EU AI Act](https://en.wikipedia.org/wiki/Artificial_Intelligence_Act) requires explainability and risk assessment for high-risk AI systems. The companies deploying AI in healthcare, hiring, insurance, and finance will need to demonstrate that their systems' decisions trace back to verifiable ground truth. [ISO 42001](/blog/i-read-iso-42001-so-you-dont-have-to/) already requires data provenance tracking across the AI system lifecycle. The companies that [skipped the governance layer](/blog/the-compliance-moat/) because it was "overhead" will discover it was a prerequisite.
+Third, regulation is arriving. The [EU AI Act](https://en.wikipedia.org/wiki/Artificial_Intelligence_Act) requires explainability and risk assessment for high-risk AI systems. The companies deploying AI in healthcare, hiring, insurance, and finance will need to demonstrate that their systems' decisions trace back to verifiable ground truth. ISO 42001 already requires data provenance tracking across the AI system lifecycle. The companies that skipped the governance layer because it was "overhead" will discover it was a prerequisite.
 
 ## What survives
 
@@ -64,7 +64,7 @@ Immutable sources at the bottom. The Planck constant does not drift. Immutable r
 
 Documented derivations from source to output. The International Vocabulary of Metrology [defines](https://jcgm.bipm.org/vim/en/2.41.html) traceability as "a documented unbroken chain of calibrations, each contributing to the measurement uncertainty." In data systems, every derived fact traces to the record it came from. When something goes wrong, you can find out why. This is not a feature of a particular framework. It is a property of any system that needs to be debuggable.
 
-Quantified uncertainty. Metrological traceability does not claim perfect accuracy. It claims known accuracy. In data systems, this means tracking confidence: was this directly observed, pattern-extracted, or LLM-inferred? A system that knows what it does not know is more useful than one that is [confidently wrong](/blog/the-cost-of-being-wrong/).
+Quantified uncertainty. Metrological traceability does not claim perfect accuracy. It claims known accuracy. In data systems, this means tracking confidence: was this directly observed, pattern-extracted, or LLM-inferred? A system that knows what it does not know is more useful than one that is confidently wrong.
 
 Continuous verification. National metrology institutes submit to the [CIPM Mutual Recognition Arrangement](https://www.bipm.org/en/cipm-mra)—international comparison and audit. Without enforcement, ground truth degrades into opinion. In data systems, this means [data contracts](/blog/the-metadata-control-plane/), schema validation, and automated checks that verify continuously—not once.
 

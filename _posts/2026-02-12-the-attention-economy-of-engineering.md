@@ -28,7 +28,7 @@ Conference talks do not compound. Decisions do.
 
 When building was expensive, misallocated attention was self-limiting. You could only build so many wrong things per quarter. AI [removed that constraint](/blog/the-build-is-not-the-hard-part/). An engineer can now ship a Kubernetes deployment, a microservices migration, and a custom ML pipeline in the time it used to take to ship one. The principal-agent problem scales with velocity.
 
-The result: teams build more of the wrong thing, faster. The [factory runs without a design department](/blog/the-factory-without-a-design-department/). The scraper gets more sophisticated. The Netflix pipeline still does not get built.
+The result: teams build more of the wrong thing, faster. The scraper gets more sophisticated. The Netflix pipeline still does not get built.
 
 This is the attention economy of engineering in the AI era. The constraint is no longer how fast you can build. It is whether anyone is asking if you should.
 

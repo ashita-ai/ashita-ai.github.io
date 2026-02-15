@@ -10,11 +10,9 @@ Google had the largest information corpus ever assembled. The model was not the 
 
 ## Context rot
 
-Chroma's 2025 [Context Rot study](https://research.trychroma.com/context-rot) tested 18 production LLMs with realistic workloads and named the phenomenon: "context rot." As context length increases, retrieval accuracy drops, latency spikes, and costs balloon. Models do not use context uniformly. They barely process what sits in the middle.
+Context windows do not degrade gracefully. [The research is consistent](/blog/context-windows-are-not-free/): as context grows, accuracy drops, latency spikes, and costs balloon. Models process beginnings and endings but barely touch what sits in the middle. Every model has a cliff, and that cliff comes well before the advertised maximum.
 
-Liu et al.'s [peer-reviewed TACL paper](https://direct.mit.edu/tacl/article/doi/10.1162/tacl_a_00638/119630) confirmed this is architectural, not model-specific: every transformer they tested showed the same U-shaped attention curve. Performance does not degrade gradually. It breaks suddenly.
-
-Every model has a cliff, and that cliff comes well before the advertised maximum.
+The problem is not performance. Performance you can measure. The problem is what happens to confidence when the context rots.
 
 ## The confidence trap
 
@@ -53,16 +51,10 @@ Fix: Semantic entropy checks, confidence calibration, citation verification.
 
 ## What I am still figuring out
 
-The research is clear that more context degrades performance. What is less clear: when is long-form context actually necessary?
-
-Legal contracts, medical records, and codebases have structure that does not compress well. You need continuity across sections. Does that justify 100K+ tokens, or is there a better chunking approach I have not seen?
-
-Whether the degradation curve is fixed or moving. Some architectures maintain performance at longer contexts than others. If the ceiling keeps rising, the retrieval-versus-stuffing trade-off changes. But the ceiling has been rising for three years, and the research keeps showing the same U-shaped curve.
-
-The long tail is also uncertain. Benchmarks measure average-case performance. Production systems fail on edge cases. How do you validate context strategies for the 1% of queries that break your assumptions?
+Whether retrieval pipelines just move the problem. Context dumping fails because the model processes irrelevant information. Chunked retrieval can fail because the chunking strategy drops relevant information. Both are context quality problems. The difference is that context dumping fails visibly (high cost, degraded answers) while retrieval failures are silent: the relevant chunk was never retrieved, so the model confidently answers from what it has. I am not sure the second failure mode is easier to detect than the first.
 
 ---
 
-Google indexed the entire internet and could not tell a satirical article from a nutrition guide. The context window was not the problem. What was in it was.
+Google had the largest information corpus ever assembled. The context window was not the problem. What was in it was. An AI researcher asked how many Muslim presidents the US has had and got a confident, cited answer: one.
 
-The model does not need everything you have. It needs the right things, retrieved precisely, filtered aggressively. Design for that window, not the one on the spec sheet.
+The pitch is that bigger windows mean fewer engineering decisions. The reality is the opposite. The bigger the window, the more carefully you must choose what goes in it.

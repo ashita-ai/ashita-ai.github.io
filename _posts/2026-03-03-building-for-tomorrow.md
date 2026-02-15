@@ -54,6 +54,6 @@ Whether the current infrastructure boom is building structure or furniture. Hund
 
 ---
 
-The models will change. The frameworks will change. The architectures will change. The companies that confuse furniture for structure will start over every time.
+Airbnb's feature stores were perfectly designed for gradient-boosted trees. They were furniture. But the data quality standards that powered them, the governance infrastructure underneath—those transfer to any paradigm. The furniture had to be replaced. The discipline underneath it did not.
 
-Build for properties, not patterns. That is how you build for tomorrow.
+The question is not whether your infrastructure will become obsolete. It will. The question is whether anything survives when it does.
