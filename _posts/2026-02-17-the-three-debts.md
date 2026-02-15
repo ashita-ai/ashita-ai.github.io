@@ -52,9 +52,9 @@ Decision debt is invisible in the codebase. The code is fine. The architecture m
 
 Zillow's algorithmic home-buying program is the clearest example. The Zestimate algorithm worked. The ML infrastructure was sound. The engineering was competent. The decision to use an algorithm that [consistently overvalued properties](https://www.gsb.stanford.edu/insights/flip-flop-why-zillows-algorithmic-home-buying-venture-imploded) in a cooling market cost [$881 million](https://re-brokerage.com/zillow-offers-lost-881m-in-2021-shutdown/), 2,000 jobs, and the entire iBuying division. No amount of code refactoring could have saved it. The code was not the problem. The decision was.
 
-Only 28% of executives can name their company's strategic priorities. The decisions being made are not aligned with any coherent strategy. Each decision is locally rational, individually defensible, and collectively incoherent. The debt compounds with every sprint.
+Only [28% of executives and middle managers](https://sloanreview.mit.edu/article/no-one-knows-your-strategy-not-even-your-top-leaders/) responsible for executing strategy could list three of their company's strategic priorities. The decisions being made are not aligned with any coherent strategy. Each decision is locally rational, individually defensible, and collectively incoherent. The debt compounds with every sprint.
 
-You cannot refactor decision debt. You cannot improve your way out of building the wrong thing. Sony's Concord game [cost $200 million to develop and lasted 14 days](https://medium.com/javarevisited/the-biggest-software-failures-of-2024-8e9413350f4c) after launch before being pulled. The code worked. The decisions did not.
+You cannot refactor decision debt. You cannot improve your way out of building the wrong thing. Sony's Concord game [cost over $200 million to develop](https://kotaku.com/firewalk-studios-concord-ps5-sony-live-service-shutdown-1851684290) and lasted 14 days after launch before being pulled. The code worked. The decisions did not.
 
 **Decision debt is the cost of choices made for the wrong reasons, compounding silently until the consequences become unavoidable.**
 

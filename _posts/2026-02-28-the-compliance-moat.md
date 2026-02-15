@@ -24,7 +24,7 @@ The requirements sound burdensome until you realize they are describing the [met
 
 ## The infrastructure that becomes a moat
 
-**Audit logs.** Every AI response tagged with confidence scores and regulatory classification at inference time. Every query, every model inference, every agent action logged with timestamp, user, and context. Financial institutions without this infrastructure face [averaging $5–10M in fines](https://lawrence-emenike.medium.com/audit-trails-and-explainability-for-compliance-building-the-transparency-layer-financial-services-d24961bad987) for AI governance failures.
+**Audit logs.** Every AI response tagged with confidence scores and regulatory classification at inference time. Every query, every model inference, every agent action logged with timestamp, user, and context. The OCC [fined Citibank $75 million](https://www.occ.gov/news-issuances/news-releases/2024/nr-occ-2024-76.html) in 2024 for persistent failures in data governance and risk management controls, including inadequate audit infrastructure.
 
 **Data lineage.** The path from source to transformation to model to output, recorded automatically. [Databricks found](https://www.databricks.com/glossary/data-lineage) that lineage is essential for GDPR, CCPA, HIPAA, BCBS 239, and SOX compliance—but also for debugging, for understanding model behavior, for tracing errors back to their source. Compliance requires what good engineering requires.
 
