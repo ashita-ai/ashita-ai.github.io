@@ -52,7 +52,7 @@ Nakamoto [defined](https://www.ussc.gov/sites/default/files/pdf/training/annual-
 
 Most deployed AI systems cannot trace how they produced their outputs. When a model hallucinates, which training data contributed? When an agent makes a bad decision, what was the reasoning chain? When a [RAG pipeline](/blog/the-rag-trap/) returns garbage, was the problem in retrieval, in chunking, in the source document, or in the model's synthesis?
 
-This is the [seeing problem](/blog/the-seeing-problem/) at the infrastructure level. [Comprehension debt](/blog/the-three-debts/) accumulates in code nobody understood when written. Provenance debt accumulates in systems where nobody can trace how an output was produced. It compounds every time the output is used as input to another system, and it compounds faster when [the hollow codebase](/blog/the-hollow-codebase/) means nobody can audit the pipeline that produced it.
+Provenance debt accumulates in systems where nobody can trace how an output was produced. It compounds every time the output is used as input to another system. And unlike a database query that fails visibly when provenance breaks, an LLM generates a plausible response. Nothing technically fails. The system proceeds.
 
 [ISO 42001](/blog/i-read-iso-42001-so-you-dont-have-to/) already requires data provenance tracking across the AI system lifecycle. The [EU AI Act](https://en.wikipedia.org/wiki/Artificial_Intelligence_Act) requires explainability for high-risk systems. The companies deploying AI without provenance are building systems that cannot survive regulatory scrutiny, cannot be debugged in production, and cannot be trusted when the stakes are high.
 
@@ -68,4 +68,4 @@ A single pigment trace exposed Beltracchi. A 165-year-old gallery collapsed beca
 
 The principle predates every technology involved. Evidence, art, science, food, software, currency: every domain that requires trust requires provenance. AI is not exempt. It is the newest domain where the oldest principle applies.
 
-[Ground truth](/blog/ground-truth-as-foundation/) establishes the foundation: the data means what it says. Provenance traces the chain: every derived fact leads back to its source. Contracts, how you enforce the boundaries between systems, are next.
+[Ground truth](/blog/ground-truth-as-foundation/) establishes the foundation: the data means what it says. Provenance traces the chain: every derived fact leads back to its source. Without both, AI systems are selling paintings without provenance, and the reckoning, when it comes, will be swift.

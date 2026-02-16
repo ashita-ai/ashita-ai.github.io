@@ -44,7 +44,7 @@ LLM APIs are the [opposite of stable contracts](/blog/against-agentic-everything
 
 The AI infrastructure that survives will define stable interfaces that implementations can change behind. The model behind the contract will be replaced. The embedding architecture will be replaced. The agent framework will be replaced. The contract, if it is well-designed, will not.
 
-This is what Tessera is [building toward](/blog/introducing-tessera/): explicit agreements about data interfaces where consumers register dependencies, producers see who depends on them, and breaking changes require acknowledgment before they proceed. It is what schema registries promised but never delivered, because they validated structure without coordinating change.
+The infrastructure that survives will look like schema registries done right: explicit agreements about data interfaces where consumers register dependencies, producers see who depends on them, and breaking changes require acknowledgment before they proceed. Schema registries promised this but never delivered, because they validated structure without coordinating change.
 
 The shipping container did not standardize ships. It standardized the interface between ships, trucks, and cranes. The contract freed everything behind it to evolve independently. AI infrastructure needs the same: stable boundaries that let the components behind them change without breaking everything downstream.
 
@@ -58,4 +58,4 @@ Whether AI systems can even have stable contracts. A traditional API contract sp
 
 On April 26, 1956, the Ideal X proved that standardizing the interface was worth more than optimizing the implementation. Behind ISO 668's dimensions, the entire global logistics industry rebuilt itself multiple times. The contract, unchanged since 1968, outlasted every ship, every crane, and every port it was designed for.
 
-[Ground truth](/blog/ground-truth-as-foundation/) establishes the foundation. [Provenance](/blog/the-provenance-imperative/) traces the chain. Contracts enforce the boundaries. The last property, reversibility, determines whether you survive your first production failure. That is next.
+[Ground truth](/blog/ground-truth-as-foundation/) establishes the foundation. [Provenance](/blog/the-provenance-imperative/) traces the chain. Contracts enforce the boundaries. The contract, unchanged since 1968, outlasted every ship, crane, and port it was designed for. The AI contracts that matter will outlast every model they were designed for too.
