@@ -4,21 +4,19 @@ title: "Against Agentic Everything"
 date: 2026-02-20
 ---
 
-In February 2024, an employee at Arup's Hong Kong office joined a video call with the company's CFO and other senior executives. The CFO instructed them to transfer funds. They complied. The deepfake agents on the call were AI-generated. The [loss was $25 million](https://fortune.com/europe/2024/05/17/arup-deepfake-fraud-scam-victim-hong-kong-25-million-cfo/).
+In 2023, Air Canada deployed an AI chatbot to handle customer inquiries. When Jake Moffatt asked about bereavement fares after his grandmother died, the chatbot told him he could book at full price and apply for a retroactive discount within 90 days. The policy did not exist. Air Canada refused the refund and [argued the chatbot was a separate legal entity](https://www.cbsnews.com/news/aircanada-chatbot-discount-customer/) responsible for its own actions. A tribunal disagreed.
 
-The attackers did not need a sophisticated multi-agent framework. They needed one agent good enough to impersonate a CFO for fifteen minutes.
+The chatbot did exactly what it was designed to do: answer questions autonomously, without human oversight, at scale. Nobody had designed for what happens when it answers confidently and wrong.
 
-Andrej Karpathy called the current state of AI agents ["slop."](https://www.dwarkesh.com/p/andrej-karpathy) "The reason you don't do it today is because they just don't work. They don't have enough intelligence, they're not multimodal enough, they can't do computer use... It will take about a decade to work through all of those issues."
-
-A decade. Not a quarter. Not a roadmap item. A founding member of OpenAI saying the technology his industry is selling does not work yet.
+Andrej Karpathy [put it directly](https://www.dwarkesh.com/p/andrej-karpathy): "It will take about a decade to work through all of those issues." Not a quarter. Not a roadmap item. A founding member of OpenAI saying the technology his industry is selling does not work yet.
 
 ## The math
 
 [Berkeley researchers](https://arxiv.org/abs/2503.13657) analyzed 1,600 execution traces across seven multi-agent frameworks. Failure rates ranged from 41% to 86.7%.
 
-The compounding is what kills you. At a 20% error rate per action, a five-step workflow drops to 32% success. Even at 99% per-step reliability—which nobody has—you only get 82% success over 20 steps. [Error cascades](/blog/your-agents-need-a-supervisor/) are the mechanism: one agent makes a small mistake, the next accepts it, and by the fourth step the output is confidently wrong.
+The compounding is what kills you. At a 20% error rate per action, a five-step workflow drops to 32% success. Even at 99% per-step reliability (which nobody has) you only get 82% success over 20 steps. [Error cascades](/blog/your-agents-need-a-supervisor/) are the mechanism: one agent makes a small mistake, the next accepts it, and by the fourth step the output is confidently wrong.
 
-Production systems need 99.9%+. The math does not work.
+Multi-step production workflows need reliability that current agents cannot provide. The math does not work.
 
 ## The gullibility problem
 
@@ -28,17 +26,13 @@ The core problem is that LLMs believe anything you tell them. They cannot distin
 
 "Do I really trust a language model that believes the literal truth of anything that's presented to it to go out and do those things?"
 
-The Arup attack exploited exactly this. The agent was a human employee. The prompt injection was a deepfake video call. The exfiltration was a wire transfer. The pattern is the same whether the agent runs on silicon or carbon.
-
 ## The data problem
 
 Marina Danilevsky, a senior research scientist at IBM Research, [put it bluntly](https://www.bloomberg.com/news/articles/2025-04-08/ai-agents-could-reshape-how-we-work-but-don-t-believe-the-hype): "I'm still struggling to truly believe that this is all that different from just orchestration."
 
-The disconnect is between what agents promise and what data infrastructure exists. Joe Reis [asked the right question](https://joereis.substack.com/p/ai-agents-and-the-pesky-problem-of): "Would you stick an LLM on top of your corporate data set today? Would you bet your job on it?"
+The disconnect is between what agents promise and what data infrastructure exists. As Joe Reis [observed](https://joereis.substack.com/p/ai-agents-and-the-pesky-problem-of), very few people raise their hands when he asks audiences if they would put an LLM on top of their existing data.
 
-Nobody raises their hand.
-
-This is why I built [Tessera](/blog/introducing-tessera/). Before you deploy an agent, you need to know what your data means. [Data contracts](/blog/the-data-platform-decisions-that-haunt-you/) are not optional infrastructure—they are the prerequisite for anything autonomous. Most corporate datasets are what Reis calls "utter hellscapes"—poorly named columns, janky data models, timestamps without timezones because "everyone knows it's Eastern."
+Before you deploy an agent, you need to know what your data means. [Data contracts](/blog/the-data-platform-decisions-that-haunt-you/) are not optional infrastructure. They are the prerequisite for anything autonomous. Most corporate datasets are what Reis calls "utter hellscapes": poorly named columns, janky data models, timestamps without timezones because "everyone knows it's Eastern."
 
 The data readiness problem has not been solved. It has been papered over with demos.
 
@@ -54,22 +48,24 @@ Gartner [estimates](https://www.gartner.com/en/newsroom/press-releases/2025-06-2
 
 The pattern in every success is the same: narrow, internal, supervised.
 
-Customer service with escalation paths. Inventory optimization with human approval. IT ticket routing with fallback queues. The winning implementations are hybrid: LLM reasoning combined with deterministic guardrails and human-in-the-loop oversight.
+Klarna deployed an AI assistant for customer service in early 2024. Within a month it handled [2.3 million conversations](https://www.klarna.com/international/press/klarna-ai-assistant-handles-two-thirds-of-customer-service-chats-in-its-first-month/), two-thirds of all customer chats, with resolution times dropping from 15 minutes to 2. Then they pushed further. They cut staff by 40% and let AI handle increasingly complex queries. Quality dropped. Complaints rose. By 2025, CEO Sebastian Siemiatkowski [acknowledged they had gone too far](https://fortune.com/2025/05/09/klarna-ai-humans-return-on-investment/) and began rehiring human agents.
 
-The failures are broad, external, and autonomous. General-purpose agents making decisions without oversight. Autonomy is a design choice, not a goal.
+The initial deployment worked because it was narrow: routine inquiries with clear escalation paths. The expansion failed because it crossed into territory requiring judgment, empathy, and context that LLMs cannot reliably provide. The line between the two is where every agentic deployment succeeds or fails.
+
+The winning implementations are hybrid: LLM reasoning combined with deterministic guardrails and human-in-the-loop oversight. The failures are broad, external, and autonomous. Autonomy is a design choice, not a goal.
 
 ## What I am still figuring out
 
 The decade timeline feels right but the path is unclear. Current agents fail on multi-step tasks, but the failure modes are not improving predictably. Some capabilities are advancing (coding, research). Others are stuck (reliable tool use, long-horizon planning).
 
-The question I cannot answer: is this a capabilities problem that more compute will solve, or an architectural problem that requires a different approach? Karpathy thinks capabilities. Yann LeCun thinks architecture. If LeCun is right, the current wave of agent investments is building on the wrong foundation.
+The question I cannot answer: is this a capabilities problem that more compute will solve, or an architectural problem that requires a different approach? Karpathy thinks capabilities. Yann LeCun [thinks architecture](https://techcrunch.com/2025/01/23/metas-yann-lecun-predicts-a-new-ai-architectures-paradigm-within-5-years-and-decade-of-robotics/), predicting the current LLM paradigm has a shelf life of three to five years. If LeCun is right, the current wave of agent investments is building on the wrong foundation.
 
 Either way, the companies deploying agents today are running the experiment with their own money. Some will learn. Most will join the [pilot graveyard](/blog/the-ai-pilot-graveyard/).
 
 ---
 
-The problem is not AI. The problem is "agentic everything"—the assumption that autonomy is progress, that removing humans is the objective, that governance can come later.
+The problem is not AI. The problem is "agentic everything": the assumption that autonomy is progress, that removing humans is the objective, that governance can come later.
 
-The governance cannot come later. The companies shipping agents without controls are building the next incident. The companies building [data contracts](/blog/introducing-tessera/), audit logs, and kill switches first are building something that might actually work.
+The governance cannot come later. The companies shipping agents without controls are building the next incident. The companies building data contracts, audit logs, and kill switches first are building something that might actually work.
 
 Karpathy thinks it will take a decade. I think he is right.

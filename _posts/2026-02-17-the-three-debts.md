@@ -28,13 +28,9 @@ Researchers have recently [identified a new form of debt](https://arxiv.org/abs/
 
 The distinction from technical debt is fundamental. Technical debt means someone understood the code when it was written. Comprehension debt means nobody ever did.
 
-A junior developer uses Claude to generate a caching layer. The code works. The tests pass. Six months later, the cache starts returning stale data under load. The developer who wrote it cannot debug it because they never understood how it worked. They understood what it did, not why.
+A developer uses Claude to generate a caching layer. The code works. The tests pass. Six months later, the cache returns stale data under load. The developer cannot debug it because they never understood how it worked. They understood what it did, not why.
 
-This is [the hollow codebase problem](/blog/the-hollow-codebase/). AI-assisted developers produce [3-4x more commits](https://apiiro.com/blog/4x-velocity-10x-vulnerabilities-ai-coding-assistants-are-shipping-more-risks/) while generating 10x more security findings. The ratio of code produced to code understood is diverging.
-
-You cannot refactor comprehension debt. Refactoring assumes you understand both the current implementation and the desired implementation. When you do not understand the current implementation, you are not refactoring. You are rewriting blind, likely introducing new comprehension debt in the process. The output quality of an agent depends on the instructions, not the model, and comprehension debt accumulates fastest when nobody writes those instructions down.
-
-The only remediation is to build understanding—or to accept permanent dependency on AI assistance for that part of the system. Neither is free. The first requires slowing down to learn what you skipped. The second means your seeing problem never gets solved.
+You cannot refactor comprehension debt. Refactoring assumes understanding of both the current and desired implementation. Without that, you are rewriting blind, likely introducing new comprehension debt in the process. The only remediation is to build understanding or accept permanent dependency on AI assistance for that part of the system. Neither is free.
 
 **Comprehension debt is code that nobody understood when written, and that accumulates interest every time someone touches it without understanding it.**
 
@@ -46,9 +42,9 @@ The [first startup I worked for](/blog/the-attention-economy-of-engineering/) bu
 
 The company was acquired for less than a million dollars.
 
-The debt was in the decision itself—engineering attention allocated to technically interesting infrastructure instead of the product that would determine whether anyone cared. This is resume-driven development at the organizational level: building what looks impressive instead of what matters.
+The debt was in the decision itself: engineering attention allocated to technically interesting infrastructure instead of the product that would determine whether anyone cared. This is resume-driven development at the organizational level, building what looks impressive instead of what matters.
 
-Decision debt is invisible in the codebase. The code is fine. The architecture might even be elegant. The debt is in what you chose to build, when you chose to build it, and why. It surfaces years later when you realize the decisions made in year one have compounded into constraints you cannot escape without starting over.
+Decision debt is invisible in the codebase. The code is fine. The architecture might even be elegant. The debt is in what you chose to build, when you chose to build it, and why. It compounds through a specific mechanism: each decision constrains future decisions, and the constraints are invisible until they bind. A team that chose the wrong abstraction in month one builds six months of features on top of it. By month seven, the cost of changing course includes not just the abstraction but everything built on the assumption that it was right. The original debt was one bad choice. The compounded debt is an entire system shaped by that choice.
 
 Quibi is the clearest example. Jeffrey Katzenberg raised $1.75 billion for a mobile-only premium streaming service. The Turnstyle technology (seamless portrait-to-landscape switching) was genuinely innovative. Content budgets ran $100,000 per minute. The engineering was competent. The decision to charge for short-form video when YouTube and TikTok already owned the format cost everything. [Six months after launch, Quibi shut down](https://www.cnbc.com/2020/10/21/quibi-to-shut-down-after-just-6-months.html). No amount of refactoring could have saved it. The technology was not the problem. The decision was.
 
@@ -72,7 +68,7 @@ Teams misdiagnose debt constantly.
 
 A system built with AI assistance starts failing in production. Leadership authorizes a refactoring sprint. Engineers spend weeks cleaning up code they still do not understand. The system fails again. The problem was comprehension debt, not technical debt. The intervention made no difference.
 
-A product loses market share. Leadership authorizes a "modernization" initiative. Engineers rebuild the platform with better architecture. Market share continues declining. The problem was decision debt—the product strategy was wrong. Better code did not fix the strategy.
+A product loses market share. Leadership authorizes a "modernization" initiative. Engineers rebuild the platform with better architecture. Market share continues declining. The problem was decision debt: the product strategy was wrong. Better code did not fix the strategy.
 
 The intervention must match the debt type:
 
@@ -80,17 +76,15 @@ The intervention must match the debt type:
 - **Comprehension debt** responds to learning. Slow down, understand the system, or accept the dependency.
 - **Decision debt** responds only to strategic change. No amount of engineering excellence fixes building the wrong thing.
 
-Most organizations have all three. The dangerous ones are the invisible debts—comprehension debt hiding in AI-generated code, decision debt hiding in locally-rational choices.
+Most organizations have all three. The dangerous ones are the invisible debts: comprehension debt hiding in AI-generated code, decision debt hiding in locally-rational choices.
 
-## The objection
+## The objections
 
-The obvious critique: this is splitting hairs. Debt is debt. Just pay it down.
+The first: this is splitting hairs. Debt is debt. Just pay it down. But the intervention determines the outcome. When you treat comprehension debt as technical debt, you refactor code you do not understand into different code you do not understand. When you treat decision debt as technical debt, you polish implementations of the wrong thing.
 
-But the intervention determines the outcome. CodeScene found that developers spend [23-42% of their time](https://codescene.com/hubfs/calculate-business-costs-of-technical-debt.pdf) dealing with technical debt. That is the debt they can see. Comprehension debt and decision debt do not show up in static analysis. They do not trigger code quality alerts. They surface as production incidents, market failures, and strategic confusion.
+The stronger critique: comprehension debt resolves itself through maintenance, converging with technical debt over time. And decision debt is just bad product management wearing a metaphor.
 
-When you treat comprehension debt as technical debt, you refactor code you do not understand into different code you do not understand. When you treat decision debt as technical debt, you polish implementations of the wrong thing. The debt remains. The interest compounds.
-
-Precise diagnosis enables precise treatment. Vague diagnosis produces vague effort.
+The convergence argument has merit for small systems. A team that maintains a codebase long enough will eventually understand it. But when generating code costs nearly nothing, the rate of accumulation outpaces the rate of understanding. And the "bad product management" framing misses what the debt metaphor captures: compounding. A bad decision is a one-time mistake. Decision debt is a series of locally reasonable choices, each constraining the next, accumulating interest that only becomes visible when it is too expensive to pay down. CodeScene found that developers spend [23-42% of their time](https://codescene.com/hubfs/calculate-business-costs-of-technical-debt.pdf) dealing with technical debt, the debt they can see. Comprehension debt and decision debt do not show up in static analysis. They surface as production incidents, market failures, and strategic confusion.
 
 ## What I am still figuring out
 
@@ -104,4 +98,4 @@ Cunningham's original insight was that debt is not inherently bad. Taking on deb
 
 Technical debt is visible. Comprehension debt hides in code that works until it does not. Decision debt hides in roadmaps that feel productive until they are not.
 
-The Pivotal engineers spent three years building. The code shipped. The project was scrapped. Somewhere in those three years, someone should have asked which debt they were accumulating—and whether anyone would ever want to pay it off.
+The Pivotal engineers spent three years building. The code shipped. The project was scrapped. Somewhere in those three years, someone should have asked which debt they were accumulating, and whether anyone would ever want to pay it off.
