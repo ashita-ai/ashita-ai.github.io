@@ -62,14 +62,6 @@ You cannot refactor decision debt. You cannot improve your way out of building t
 | **Comprehension** | Code nobody ever understood | Production incidents, debugging time | Build understanding or accept dependency |
 | **Decision** | Choices made for wrong reasons | Market feedback, strategic review | Live with it or rewrite entirely |
 
-## Why the distinction matters
-
-Teams misdiagnose debt constantly.
-
-A system built with AI assistance starts failing in production. Leadership authorizes a refactoring sprint. Engineers spend weeks cleaning up code they still do not understand. The system fails again. The problem was comprehension debt, not technical debt. The intervention made no difference.
-
-A product loses market share. Leadership authorizes a "modernization" initiative. Engineers rebuild the platform with better architecture. Market share continues declining. The problem was decision debt: the product strategy was wrong. Better code did not fix the strategy.
-
 The intervention must match the debt type:
 
 - **Technical debt** responds to engineering effort. Refactor, pay it down, move on.

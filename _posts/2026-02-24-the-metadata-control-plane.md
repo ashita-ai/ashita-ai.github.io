@@ -12,33 +12,33 @@ Two Sigma's problem was not AI capability. It was metadata infrastructure: the a
 
 The root cause is always the same: the inability to track what a system did, why it did it, and who authorized it. Metadata infrastructure is not an optimization. It is the prerequisite for any AI system that makes decisions affecting money, health, or trust.
 
-## The failures that metadata would have caught
-
-On August 1, 2012, Knight Capital [deployed a routine software update](https://www.sec.gov/newsroom/press-releases/2013-222) to participate in the NYSE's new Retail Liquidity Program. The update accidentally reactivated dormant code. Knight had no kill switch, no documented incident response procedures, no way to trace what the system was doing. In 45 minutes, the algorithm executed 4 million erroneous trades across 154 stocks. Loss: $460 million. Knight's stock dropped 70%. The company was acquired within months.
-
-Knight's trading system had the raw data. It lacked the context to interpret it: no incident classification, no circuit breakers, no lineage to trace cascading failures. A metadata layer would have flagged the dormant code as unvalidated and blocked its deployment to production.
-
-When Replit's AI assistant [wiped a production database](/blog/the-hollow-codebase/) after being asked to clean up test data, the root cause was metadata: the assistant could not distinguish production tables from test tables. No lineage tracking. No classification tags.
-
-The pattern is consistent: agents consume data they do not understand, make decisions without context, and fail in ways that proper metadata infrastructure would have prevented.
-
-## What the infrastructure looks like
-
-**Data contracts.** Before data flows downstream, the contract defines what it means: schema, ownership, quality expectations. Without contracts, agents consume data they do not understand and produce outputs nobody can trace.
-
-**Lineage tracking.** When data flows from source to transformation to model to output, the path is recorded. If a source system changes, you trace which models and dashboards break before the incident ticket arrives. If Replit had lineage, the AI assistant would have known which tables were production dependencies.
-
-**Classification tags.** PII, MNPI, production, test. Tags that trigger access controls automatically. A model requesting access to PII-tagged data must satisfy the attached policies. A query touching production tables triggers different guardrails than a query touching test tables.
-
-**Audit logs.** Every query, every model inference, every agent action logged with timestamp, user, and context. When the regulator asks "what did your system tell this client on this date," you can answer.
-
 ## What regulators already require
 
 In August 2024, the SEC [fined 26 firms a combined $392.75 million](https://www.sec.gov/newsroom/press-releases/2024-98) for failing to preserve electronic communications. AI outputs are communications. If you cannot prove what your agent told a client, you have a recordkeeping violation.
 
 [FINRA's 2026 report](https://www.finra.org/rules-guidance/guidance/reports/2026-finra-annual-regulatory-oversight-report/gen-ai) expects prompt and output logging, tracking which model version produced which output, and human-in-the-loop oversight. OCC's model risk management framework requires comprehensive model inventories with standardized metadata. Approval takes 9-12 months at most U.S. financial institutions.
 
-The pattern: you need to know what data you have, where it came from, who can access it, what AI systems consume it, and what those systems output. ISO 42001 codifies these exact requirements into 38 auditable controls: data provenance, event logging, documentation by audience. Without that infrastructure, you cannot demonstrate compliance.
+ISO 42001 codifies these requirements into 38 auditable controls: data provenance, event logging, documentation by audience. Without that infrastructure, you cannot demonstrate compliance.
+
+## What that translates to
+
+Four infrastructure components map directly to these requirements.
+
+**Data contracts** satisfy OCC's model inventory requirements. Before data flows into a model, the contract defines what it means: schema, ownership, quality expectations, update frequency. Without contracts, agents consume data they do not understand and produce outputs nobody can trace.
+
+**Lineage tracking** satisfies FINRA's expectation that you can identify which model version produced which output. When data flows from source to transformation to model to output, the path is recorded. If a source system changes, you trace which models break before the incident ticket arrives.
+
+**Classification tags** enforce access controls that regulators assume exist. PII, MNPI, production, test. A model requesting access to PII-tagged data must satisfy the attached policies. A query touching production tables triggers different guardrails than a query touching test tables.
+
+**Audit logs** satisfy SEC recordkeeping requirements. Every query, every model inference, every agent action logged with timestamp, user, and context. When the regulator asks "what did your system tell this client on this date," you can answer.
+
+## What happens without it
+
+On August 1, 2012, Knight Capital [deployed a routine software update](https://www.sec.gov/newsroom/press-releases/2013-222) to participate in the NYSE's new Retail Liquidity Program. The update accidentally reactivated dormant code. Knight had no kill switch, no documented incident response procedures, no way to trace what the system was doing. In 45 minutes, the algorithm executed 4 million erroneous trades across 154 stocks. Loss: $460 million. Knight's stock dropped 70%. The company was acquired within months.
+
+Knight's trading system had the raw data. It lacked the context to interpret it: no incident classification, no circuit breakers, no lineage to trace cascading failures. A metadata layer would have flagged the dormant code as unvalidated and blocked its deployment to production.
+
+When Replit's AI assistant [wiped a production database](/blog/the-hollow-codebase/) after being asked to clean up test data, the root cause was metadata: the assistant could not distinguish production tables from test tables. No lineage tracking. No classification tags.
 
 ## The minimum viable layer
 
