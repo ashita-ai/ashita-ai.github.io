@@ -6,7 +6,7 @@ date: 2026-02-26
 
 After Watson's 2011 Jeopardy victory, IBM's Watson team cautioned leadership that the system was designed to identify word patterns and predict answers to trivia questions. It was not, as David Ferrucci put it, "an all-purpose answer box ready to take on the commercial world." The warning [fell on deaf ears](https://www.advisory.com/daily-briefing/2021/07/21/ibm-watson). "It wasn't the marketing message," Ferrucci said. He left IBM in 2012.
 
-IBM spent four billion dollars acquiring Watson Health companies. The [pattern of failures](https://spectrum.ieee.org/how-ibm-watson-overpromised-and-underdelivered-on-ai-health-care) in healthcare applications was not a technology problem. At Manipal Comprehensive Cancer Center, Watson achieved only 73% concordance on breast cancer treatment recommendations. At MD Anderson, the project was shelved after $62 million and four years. The models worked in the lab. What failed was the organizational structure that rewarded announcing AI initiatives over delivering them.
+IBM spent four billion dollars acquiring Watson Health companies. The [pattern of failures](https://spectrum.ieee.org/how-ibm-watson-overpromised-and-underdelivered-on-ai-health-care) in healthcare applications was not a technology problem. At Manipal Comprehensive Cancer Center, Watson achieved only 73% concordance on breast cancer treatment recommendations. At MD Anderson, the project was shelved after $62 million and four years. The technology showed promise in narrow applications but never matched the marketing. What failed faster was the organizational structure that rewarded announcing AI initiatives over delivering them.
 
 This is the incentive problem. AI projects fail not because the technology does not work, but because the people and organizations deploying them are optimized for different outcomes.
 
@@ -24,19 +24,17 @@ The career timeline reinforces this. AI-skilled workers command a [56% wage prem
 
 ## The budget incentive
 
-[60% of enterprise AI investment](https://menlovc.com/2024-the-state-of-generative-ai-in-the-enterprise/) comes from innovation budgets—temporary funds earmarked for new projects. Only 40% comes from permanent operational budgets. Innovation budgets are designed to launch things. They are not designed to keep things running. The result is [architectural decisions made during cheap pilots that create exponential cost multipliers at scale](/blog/the-token-tax/).
+[60% of enterprise AI investment](https://menlovc.com/2024-the-state-of-generative-ai-in-the-enterprise/) comes from innovation budgets, temporary funds earmarked for new projects. Only 40% comes from permanent operational budgets. Innovation budgets are designed to launch things. They are not designed to keep things running. The result is [architectural decisions made during cheap pilots that create exponential cost multipliers at scale](/blog/the-token-tax/).
 
-The structural bias toward CapEx over OpEx [compounds the problem](https://www.comarch.com/trade-and-services/ict/news/8-proven-it-cost-reduction-strategies-that-shift-spending-from-capex-to-opex/): "Without a clear plan for IT cost reduction, rising operational costs for legacy systems can consume your entire budget, leaving no room for the strategic projects that drive business growth."
+This creates a perverse dynamic. The budget exists to start AI projects. Once they ship, they compete for maintenance dollars against everything else. The team that launched the pilot has moved on. The team inheriting it has no incentive to keep it alive. Doing so drains resources from their own projects.
 
-This creates a perverse dynamic. The budget exists to start AI projects. Once they ship, they compete for maintenance dollars against everything else. The team that launched the pilot has moved on. The team inheriting it has no incentive to keep it alive—doing so drains resources from their own projects.
-
-Big Tech is [pouring hundreds of billions](https://introl.com/blog/ai-infrastructure-financing-capex-opex-gpu-investment-guide-2025) into AI infrastructure: Amazon at $100–125B, Microsoft at $80B, Alphabet at $75–91B. Yet 80–95% of AI projects fail to deliver expected value. The money is there. The incentive to see projects through is not.
+Big Tech is [pouring hundreds of billions](https://introl.com/blog/ai-infrastructure-financing-capex-opex-gpu-investment-guide-2025) into AI infrastructure: Amazon at $100–125B, Microsoft at $80B, Alphabet at $75–91B. Yet RAND [found](https://www.rand.org/pubs/research_reports/RRA2680-1.html) that more than 80% of AI projects fail to deliver expected value, twice the failure rate of non-AI technology projects. The money is there. The incentive to see projects through is not.
 
 ## The vendor incentive
 
 The vendors selling AI tools have their own misalignment.
 
-Seat-based pricing—the dominant SaaS model—[creates a trap](https://www.starthawk.io/blog/post/the-death-of-the-seat-based-license-pricing-for-outcomes-in-an-automated-world): "If you make your product better (more automated), you get paid less." A CRM with AI that automates what twenty salespeople did now requires only two. If you charge per seat, your revenue drops 90% even though your product is ten times more powerful.
+Seat-based pricing, the dominant SaaS model, [creates a trap](https://www.starthawk.io/blog/post/the-death-of-the-seat-based-license-pricing-for-outcomes-in-an-automated-world): "If you make your product better (more automated), you get paid less." A CRM with AI that automates what twenty salespeople did now requires only two. If you charge per seat, your revenue drops 90% even though your product is ten times more powerful.
 
 Sierra's pricing analysis [makes the conflict explicit](https://sierra.ai/blog/outcome-based-pricing-for-ai-agents): "Legacy customer experience providers face a dilemma. Their revenue models depend on seat-based pricing. While these vendors may promote AI agents that autonomously resolve cases, they're trapped in a conflict: the more effective their AI becomes, the fewer contact center seats their clients need—undermining the provider's own revenue model."
 
@@ -44,11 +42,11 @@ The market is responding. Seat-based pricing [dropped from 21% to 15%](https://w
 
 ## The handoff incentive
 
-Harvard Business Review [documented five models](https://hbr.org/2018/08/how-to-hand-off-an-innovation-project-from-one-team-to-another) for handing off innovation projects to execution teams. The most common—the "Owner's Manual," where the innovation team documents their work and hands it over—is also the least effective. The execution team usually never reads the documentation.
+Harvard Business Review [documented five models](https://hbr.org/2018/08/how-to-hand-off-an-innovation-project-from-one-team-to-another) for handing off innovation projects to execution teams. The most common (the "Owner's Manual," where the innovation team documents their work and hands it over) is also the least effective. The execution team usually never reads the documentation.
 
 "You can have the right portfolio of investments, the right metrics and governance, the right stage-gate development process, and the right talent on the right teams," the authors write, "but if you don't design the right handoffs between your teams, all of that planning falls apart."
 
-The only model that reliably works is the "Hive": multidisciplinary teams that tackle challenges across the entire lifecycle, essentially eliminating the handoff. But most organizations are not structured this way. Innovation teams are measured on novelty. Execution teams are measured on reliability. When an innovation team succeeds and hands off to execution, the execution team [has zero incentive to adopt it](https://pmc.ncbi.nlm.nih.gov/articles/PMC8483614/). It disrupts their metrics. The innovation dies in the handoff, not in the lab.
+The only model that reliably works is the "Hive": multidisciplinary teams that tackle challenges across the entire lifecycle, essentially eliminating the handoff. But most organizations are not structured this way. Innovation teams are measured on novelty. Execution teams are measured on reliability. When an innovation team succeeds and hands off to execution, the execution team has no incentive to adopt it. It disrupts their metrics. The innovation dies in the handoff, not in the lab.
 
 ## What works
 
@@ -60,7 +58,7 @@ McKinsey [found](https://www.mckinsey.com/capabilities/quantumblack/our-insights
 
 ## What I am still figuring out
 
-The career incentive data is weaker than I expected. Plenty of anecdotal evidence that pilot launchers advance faster than production deliverers, but no rigorous longitudinal studies tracking promotion rates. The pattern is visible in behavior—people leave before production—but the causal mechanism is assumed rather than proven.
+The career incentive data is weaker than I expected. Plenty of anecdotal evidence that pilot launchers advance faster than production deliverers, but no rigorous longitudinal studies tracking promotion rates. The pattern is visible in behavior (people leave before production) but the causal mechanism is assumed rather than proven.
 
 The organizational structure problem may be deeper than incentives alone. O'Reilly and Tushman's research on [organizational ambidexterity](https://journals.aom.org/doi/10.5465/amp.2013.0025) suggests that exploration and exploitation require fundamentally different capabilities: flexibility versus control, autonomy versus efficiency. Aligning incentives may not be enough if the organizational structure makes it impossible for the same team to do both.
 
