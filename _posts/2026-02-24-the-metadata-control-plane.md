@@ -10,7 +10,7 @@ The models worked. The governance did not.
 
 Two Sigma's problem was not AI capability. It was metadata infrastructure: the ability to track who changed what, when, with what authorization. The vulnerability was identified in March 2019. It was not addressed until August 2023.
 
-[Against agentic everything](/blog/against-agentic-everything/), I argued the current wave of AI deployments is failing because governance infrastructure should have come first. This post is about what that infrastructure looks like.
+The root cause is always the same: the inability to track what a system did, why it did it, and who authorized it. Metadata infrastructure is not an optimization. It is the prerequisite for any AI system that makes decisions affecting money, health, or trust.
 
 ## The failures that metadata would have caught
 
@@ -40,21 +40,21 @@ In August 2024, the SEC [fined 26 firms a combined $392.75 million](https://www.
 
 The pattern: you need to know what data you have, where it came from, who can access it, what AI systems consume it, and what those systems output. ISO 42001 codifies these exact requirements into 38 auditable controls: data provenance, event logging, documentation by audience. Without that infrastructure, you cannot demonstrate compliance.
 
-## The counterargument
+## The minimum viable layer
 
-The obvious objection: expensive overhead that slows teams down.
+The obvious objection: this is expensive overhead that slows teams down. The answer depends on what your AI touches.
 
-For startups without regulatory requirements, the calculus is different. You do not need enterprise tooling. You need a spreadsheet tracking your models and their training data, ownership documented somewhere findable, and a plan for when you scale into regulated verticals.
+A seed-stage startup building internal tools needs a spreadsheet tracking its models and their training data, ownership documented somewhere findable, and a plan for when it scales into regulated verticals.
 
-But if AI decisions affect people's money, health, or rights, the infrastructure is not optional. The regulators will ask. The auditors will ask. You will either have answers or you will have penalties.
+A company with 50 data sources and 10 AI applications needs more: lineage tracking for critical paths, classification tags on sensitive data, and audit logs for any AI output that reaches a customer.
+
+A financial services firm deploying AI that touches client assets needs everything described above, with the rigor to withstand regulatory examination. There is no shortcut.
+
+The question is not whether you need metadata infrastructure. It is how much. The companies that get this wrong in year one spend year three discovering their AI systems are ungovernable.
 
 ## What I am still figuring out
 
-The economics of metadata infrastructure are clear for regulated industries. The ROI calculation for everyone else is murkier.
-
-The companies that invested in data contracts early report significant error reduction. But the investment is front-loaded and the payoff is invisible. Nobody celebrates the production incident that did not happen.
-
-The question I keep returning to: what is the minimum viable metadata layer? A full data catalog is overkill for a seed-stage startup. A spreadsheet is insufficient for a company with 50 data sources and 10 AI applications. Somewhere in between is the right answer, and it probably looks different for every organization.
+The economics of metadata infrastructure are clear for regulated industries. The ROI calculation for everyone else is murkier. The investment is front-loaded and the payoff is invisible. Nobody celebrates the production incident that did not happen.
 
 The decisions you make about data quality in year one determine whether your AI works in year three. I am increasingly convinced the same is true for metadata.
 

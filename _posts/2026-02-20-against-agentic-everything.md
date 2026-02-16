@@ -10,6 +10,8 @@ The chatbot did exactly what it was designed to do: answer questions autonomousl
 
 Andrej Karpathy [put it directly](https://www.dwarkesh.com/p/andrej-karpathy): "It will take about a decade to work through all of those issues." Not a quarter. Not a roadmap item. A founding member of OpenAI saying the technology his industry is selling does not work yet.
 
+The problems are compounding. The reliability math does not work. The security architecture is fundamentally vulnerable. The data infrastructure does not exist. And much of what the industry is selling is fraud.
+
 ## The math
 
 [Berkeley researchers](https://arxiv.org/abs/2503.13657) analyzed 1,600 execution traces across seven multi-agent frameworks. Failure rates ranged from 41% to 86.7%.
@@ -18,7 +20,7 @@ The compounding is what kills you. At a 20% error rate per action, a five-step w
 
 Multi-step production workflows need reliability that current agents cannot provide. The math does not work.
 
-## The gullibility problem
+## The security problem
 
 Simon Willison [identified](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/) "the lethal trifecta" for AI agents: access to private data, exposure to untrusted content, and the ability to communicate externally. Combine all three and an attacker can trick your agent into exfiltrating your data.
 
@@ -28,9 +30,7 @@ The core problem is that LLMs believe anything you tell them. They cannot distin
 
 ## The data problem
 
-Marina Danilevsky, a senior research scientist at IBM Research, [put it bluntly](https://www.bloomberg.com/news/articles/2025-04-08/ai-agents-could-reshape-how-we-work-but-don-t-believe-the-hype): "I'm still struggling to truly believe that this is all that different from just orchestration."
-
-The disconnect is between what agents promise and what data infrastructure exists. As Joe Reis [observed](https://joereis.substack.com/p/ai-agents-and-the-pesky-problem-of), very few people raise their hands when he asks audiences if they would put an LLM on top of their existing data.
+The disconnect is between what agents promise and what data infrastructure supports. Joe Reis [observed](https://joereis.substack.com/p/ai-agents-and-the-pesky-problem-of) that very few people raise their hands when he asks audiences if they would put an LLM on top of their existing data.
 
 Before you deploy an agent, you need to know what your data means. [Data contracts](/blog/the-data-platform-decisions-that-haunt-you/) are not optional infrastructure. They are the prerequisite for anything autonomous. Most corporate datasets are what Reis calls "utter hellscapes": poorly named columns, janky data models, timestamps without timezones because "everyone knows it's Eastern."
 
