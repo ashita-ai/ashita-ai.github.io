@@ -24,7 +24,7 @@ AI tools excel at the former. They struggle with the latter.
 
 ## What the 67% stat actually means
 
-[MIT research](https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo/) found that purchased AI tools succeed 67% of the time, while internal builds succeed about one-third as often. (The study measured P&L impact within six months—a narrow but useful frame.) The instinct is to read this as "building is hard." It is not.
+[MIT research](https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo/) found that purchased AI tools succeed 67% of the time, while internal builds succeed about one-third as often. (The study measured P&L impact within six months, a narrow but useful frame.) The instinct is to read this as "building is hard." It is not.
 
 Building is cheap. Building the right thing is hard.
 
@@ -48,7 +48,7 @@ The risk is not that AI makes building too expensive. The risk is that AI makes 
 
 When building is expensive, you are forced to prioritize. You cannot build everything, so you have to decide what matters. When building is cheap, you can build everything. And you will. And most of it will be wrong.
 
-The discipline that came from scarcity—clear requirements, defined success criteria, commitment to production—does not automatically transfer to abundance. Teams that could barely ship one feature per quarter will use AI to ship five features per quarter, learn nothing five times faster, and wonder why success rates have not improved.
+The discipline that came from scarcity (clear requirements, defined success criteria, commitment to production) does not automatically transfer to abundance. Teams that could barely ship one feature per quarter will use AI to ship five features per quarter, learn nothing five times faster, and wonder why success rates have not improved.
 
 ## What I am still figuring out
 

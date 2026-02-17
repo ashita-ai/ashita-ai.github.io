@@ -6,13 +6,13 @@ date: 2026-02-08
 
 Three CI failures in one afternoon. Same project. Same root cause every time.
 
-I was building Akashi, a decision trace layer for multi-agent systems — Go, Postgres, Atlas migrations. The agent was fast. The agent was confident. The agent pushed code that failed CI three times in a row.
+I was building Akashi, a decision trace layer for multi-agent systems (Go, Postgres, Atlas migrations). The agent was fast. The agent was confident. The agent pushed code that failed CI three times in a row.
 
 **First failure:** dependency drift. The agent imported `godotenv` directly but `go.mod` still listed it as indirect. CI runs `go mod tidy && git diff --exit-code go.mod go.sum`. Failed.
 
 **Second failure:** migration checksum mismatch. A previous session added a migration file without running `atlas migrate hash`. CI runs `atlas migrate validate`. Failed.
 
-**Third failure:** linter catch. `golangci-lint` found an ineffectual variable assignment — incrementing a counter after its last use. The linter was not installed locally, let alone listed in the pre-commit checklist.
+**Third failure:** linter catch. `golangci-lint` found an ineffectual variable assignment, incrementing a counter after its last use. The linter was not installed locally, let alone listed in the pre-commit checklist.
 
 Every one of these checks existed somewhere. CI had them. The Makefile had them. The agent had read the Makefile. The agent still did not run the checks.
 
@@ -54,15 +54,15 @@ The quality of autonomous code generation is directly proportional to the qualit
 
 A perfect CLAUDE.md does not mean the agent is smart. It means the human did great curation. Agent quality scales with document quality, not model quality. This reframes "AI replacing developers" into something more precise: AI executing developer-curated instructions at scale. The human's job shifts from writing code to curating the context that makes agents write good code.
 
-That shift is still a lot of work. But it compounds. Today's failures are tomorrow's guardrails. The context improves with each session — not because the model improved, but because the document improved.
+That shift is still a lot of work. But it compounds. Today's failures are tomorrow's guardrails. The context improves with each session, not because the model improved, but because the document improved.
 
 [I wrote previously](/blog/what-i-learned-building-four-tools-with-ai-agents/) about the CLAUDE.md evolving across four open-source projects. The pattern held: early versions were skeletal. Later versions had anti-pattern lists, pre-commit detection commands, common mistakes sections, self-improvement protocols. The skeleton survived. The guardrails got more specific with each failure.
 
-A good CLAUDE.md is operational, not aspirational. Not "we use TDD" but `go test -race ./...` before every commit. Not "run the linter" but the exact command with the exact flags. [Anthropic's own guidance](https://code.claude.com/docs/en/best-practices) recommends including only what the agent "can't infer from code alone" — and keeping it concise enough that the agent actually follows it. Bloat defeats the purpose. An agents.md that reads like a novel gets ignored the same way a 40-page onboarding doc gets ignored.
+A good CLAUDE.md is operational, not aspirational. Not "we use TDD" but `go test -race ./...` before every commit. Not "run the linter" but the exact command with the exact flags. [Anthropic's own guidance](https://code.claude.com/docs/en/best-practices) recommends including only what the agent "can't infer from code alone," and keeping it concise enough that the agent actually follows it. Bloat defeats the purpose. An agents.md that reads like a novel gets ignored the same way a 40-page onboarding doc gets ignored.
 
 ## What I am still figuring out
 
-Can agents update their own CLAUDE.md proactively? In Akashi, the agent updated the file when told to after a failure. It did not update it on its own. The curation loop is still human-driven — human frustration is the training signal. Closing that loop is the obvious next step. I do not know if current models can do it reliably without drifting the document toward noise. An agent that appends every lesson it encounters will produce a CLAUDE.md that is too long to follow within two weeks. The curation itself requires judgment about what matters.
+Can agents update their own CLAUDE.md proactively? In Akashi, the agent updated the file when told to after a failure. It did not update it on its own. The curation loop is still human-driven. Human frustration is the training signal. Closing that loop is the obvious next step. I do not know if current models can do it reliably without drifting the document toward noise. An agent that appends every lesson it encounters will produce a CLAUDE.md that is too long to follow within two weeks. The curation itself requires judgment about what matters.
 
 Is there a convergent CLAUDE.md for a given stack? Every Go project with Atlas migrations probably needs the same five pre-commit checks. But the footguns are repo-specific. Maybe 60% is boilerplate and 40% is hard-won project knowledge. I do not have enough data points to know the ratio.
 

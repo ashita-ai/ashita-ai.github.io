@@ -4,7 +4,7 @@ title: "The Cost of Being Wrong"
 date: 2026-01-20
 ---
 
-Deloitte used GPT to help prepare a 237-page Australian government report on safety standards. When the document was reviewed three months later, analysts discovered fabricated references, incorrect standards, and citations to sources that did not exist. The company [refunded part of the AU$440,000 contract](https://clod.io/blog/ai-control-failures-2025). The following month, a separate Deloitte report—a [CA$1.6 million health plan for a Canadian province](https://fortune.com/2025/11/25/deloitte-caught-fabricated-ai-generated-research-million-dollar-report-canada-government/)—was found to contain four more fake citations. That one had been in circulation for six months.
+Deloitte used GPT to help prepare a 237-page Australian government report on safety standards. When the document was reviewed three months later, analysts discovered fabricated references, incorrect standards, and citations to sources that did not exist. The company [refunded part of the AU$440,000 contract](https://clod.io/blog/ai-control-failures-2025). The following month, a separate Deloitte report, a [CA$1.6 million health plan for a Canadian province](https://fortune.com/2025/11/25/deloitte-caught-fabricated-ai-generated-research-million-dollar-report-canada-government/), was found to contain four more fake citations. That one had been in circulation for six months.
 
 The model did not crash. It did not throw an error. It produced 237 pages of confident, well-formatted, professionally structured hallucination.
 

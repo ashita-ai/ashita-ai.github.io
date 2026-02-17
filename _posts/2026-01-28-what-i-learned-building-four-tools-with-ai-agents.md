@@ -24,13 +24,13 @@ The workflow sounds simple. Getting it to work required learning some lessons th
 
 ### 1. Design for Deletion
 
-Across the four projects, 20-30% of agent-written code was eventually removed. Not because it was wrong—because it was unnecessary. The agent builds what you ask for, including scaffolding you did not need, abstractions that never got reused, and edge case handling for cases that never happened.
+Across the four projects, 20-30% of agent-written code was eventually removed. Not because it was wrong, but because it was unnecessary. The agent builds what you ask for, including scaffolding you did not need, abstractions that never got reused, and edge case handling for cases that never happened.
 
 **Implication:** Small, deletable modules beat monoliths. When you delete agent code, you want to delete a file, not untangle a dependency graph.
 
 ### 2. Security Cannot Be Retrofitted
 
-In all four projects, security improvements came late. Path traversal protection, input validation, authentication hardening—these arrived in the final 20% of commits. The pattern was consistent: build functionality first, realize it is exposed, add protection.
+In all four projects, security improvements came late. Path traversal protection, input validation, authentication hardening. These arrived in the final 20% of commits. The pattern was consistent: build functionality first, realize it is exposed, add protection.
 
 This was my fault, not the agent's. I did not specify security requirements upfront. The agent built exactly what I asked for.
 

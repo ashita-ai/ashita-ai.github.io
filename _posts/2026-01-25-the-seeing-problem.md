@@ -46,13 +46,13 @@ The [Cortex engineering benchmark](https://www.coderabbit.ai/blog/state-of-ai-vs
 
 The UUID bug is a simple case. The failure modes getting worse are the ones current tools cannot see.
 
-**Slopsquatting.** [A USENIX study](https://www.usenix.org/publications/loginonline/we-have-package-you-comprehensive-analysis-package-hallucinations-code) found that 19.6% of AI-suggested package dependencies do not exist. The packages are hallucinated. Gemini's hallucination rate reaches 64.5%, with 58% of hallucinated packages repeated consistently—making them predictable targets.
+**Slopsquatting.** [A USENIX study](https://www.usenix.org/publications/loginonline/we-have-package-you-comprehensive-analysis-package-hallucinations-code) found that 19.6% of AI-suggested package dependencies do not exist. The packages are hallucinated. Gemini's hallucination rate reaches 64.5%, with 58% of hallucinated packages repeated consistently, making them predictable targets.
 
 Attackers noticed. Security researcher Bar Lanyado [created a package](https://incidentdatabase.ai/cite/731) called `huggingface-cli` after seeing it hallucinated repeatedly. Alibaba incorporated it into their production documentation. The fake package was downloaded 30,000 times in three months.
 
 Dependency scanners like Snyk check for known vulnerabilities in existing packages. They cannot detect when a package does not exist at generation time but gets maliciously registered later. The attack surface emerges after code generation but before deployment.
 
-**Model drift.** The same AI produces different quality code over time. [Stanford and UC Berkeley researchers found](https://arxiv.org/abs/2307.09009) GPT-4's accuracy on prime number identification dropped from 84% to 51% in three months—a 33 percentage point drop. [Developers report](https://spectrum.ieee.org/ai-coding-degrades) tasks that took five hours with AI assistance in 2024 now take longer because quality has degraded.
+**Model drift.** The same AI produces different quality code over time. [Stanford and UC Berkeley researchers found](https://arxiv.org/abs/2307.09009) GPT-4's accuracy on prime number identification dropped from 84% to 51% in three months, a 33 percentage point drop. [Developers report](https://spectrum.ieee.org/ai-coding-degrades) tasks that took five hours with AI assistance in 2024 now take longer because quality has degraded.
 
 LLM observability tools track individual API calls. They do not maintain version-controlled baselines of generated code quality for identical prompts across model versions. They see API success but not subtle quality decay.
 
@@ -74,7 +74,7 @@ The startup's five-day outage was not inevitable. Several approaches would have 
 
 **Static analysis for duplicated literals.** Tools like [SonarQube](https://rules.sonarsource.com/c/rspec-109/) flag hardcoded constants that appear multiple times. If the UUID appeared in multiple signup flows or test files, the duplication would have triggered review.
 
-**AI code provenance tracking.** Emerging tools like [git-ai](https://www.blog.brightcoding.dev/2025/12/14/the-ai-code-tracking-revolution-how-to-automatically-identify-ai-generated-code-in-your-git-repositories/) fingerprint AI-generated code and prioritize it for human review. [Research shows](https://arxiv.org/html/2405.16081) developers perform better when they know code is AI-generated—they search more, test more, and catch bugs faster.
+**AI code provenance tracking.** Emerging tools like [git-ai](https://www.blog.brightcoding.dev/2025/12/14/the-ai-code-tracking-revolution-how-to-automatically-identify-ai-generated-code-in-your-git-repositories/) fingerprint AI-generated code and prioritize it for human review. [Research shows](https://arxiv.org/html/2405.16081) developers perform better when they know code is AI-generated: they search more, test more, and catch bugs faster.
 
 None of these are LLM observability tools. They are development-time verification tools. The category that needs to exist for AI-generated code is not runtime monitoring. It is pre-production comprehension.
 
@@ -104,7 +104,7 @@ First, the code itself may be non-deterministic in origin. The same prompt to th
 
 Second, comprehension debt compounds. Each AI-generated module you do not understand makes the next one harder to evaluate. The codebase becomes a black box assembled from black boxes.
 
-I do not know what the right abstraction is. Maybe it is provenance tracking that logs which model version generated which code. Maybe it is mandatory property-based testing for any AI-generated module touching critical paths. Maybe it is Martin Kleppmann's prediction that [AI will make formal verification mainstream](https://martin.kleppmann.com/2025/12/08/ai-formal-verification.html)—LLMs propose invariants, theorem provers guarantee correctness.
+I do not know what the right abstraction is. Maybe it is provenance tracking that logs which model version generated which code. Maybe it is mandatory property-based testing for any AI-generated module touching critical paths. Maybe it is Martin Kleppmann's prediction that [AI will make formal verification mainstream](https://martin.kleppmann.com/2025/12/08/ai-formal-verification.html): LLMs propose invariants, theorem provers guarantee correctness.
 
 What I do know: the answer is not "add Datadog LLM Observability." That solves a different problem. The seeing problem for AI-generated code is a development-time comprehension problem, not a runtime monitoring problem. The tools that solve it do not exist yet, or exist in fragments that nobody has assembled into a coherent practice.
 

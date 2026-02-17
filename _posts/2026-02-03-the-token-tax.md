@@ -20,11 +20,11 @@ The invoice tripled because the invoice changed form.
 
 ## Where the cost moved
 
-GPT-4's training cost was [around $100 million](https://www.techradar.com/pro/openai-spent-usd80m-to-usd100m-training-gpt-4-chinese-firm-claims-it-trained-its-rival-ai-model-for-usd3-million-using-just-2-000-gpus). OpenAI spent roughly [$2 billion on inference compute](https://epoch.ai/data-insights/openai-compute-spend) in 2024—twenty times the original training cost. Training happens once. Inference costs compound with every query, forever.
+GPT-4's training cost was [around $100 million](https://www.techradar.com/pro/openai-spent-usd80m-to-usd100m-training-gpt-4-chinese-firm-claims-it-trained-its-rival-ai-model-for-usd3-million-using-just-2-000-gpus). OpenAI spent roughly [$2 billion on inference compute](https://epoch.ai/data-insights/openai-compute-spend) in 2024, twenty times the original training cost. Training happens once. Inference costs compound with every query, forever.
 
 But inference is not where organizations are bleeding. The real multipliers are invisible:
 
-A significant fraction of tokens in production LLM deployments are redundant—Anthropic's [prompt caching documentation](https://www.anthropic.com/news/prompt-caching) shows that cached prefixes can reduce costs by up to 90%, implying most of what gets sent is repeated context. System prompts get repeated with every call because the architecture is stateless. [Context windows scale quadratically](/blog/context-windows-are-not-free/) due to the attention mechanism: doubling context length quadruples compute cost. Organizations routinely discover their API costs are multiples of what they budgeted because inefficient context management compounds with scale.
+A significant fraction of tokens in production LLM deployments are redundant. Anthropic's [prompt caching documentation](https://www.anthropic.com/news/prompt-caching) shows that cached prefixes can reduce costs by up to 90%, implying most of what gets sent is repeated context. System prompts get repeated with every call because the architecture is stateless. [Context windows scale quadratically](/blog/context-windows-are-not-free/) due to the attention mechanism: doubling context length quadruples compute cost. Organizations routinely discover their API costs are multiples of what they budgeted because inefficient context management compounds with scale.
 
 Meanwhile, data scientists spend [50-80% of their time](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai) on data preparation before any model sees the data. Infrastructure consumes [roughly half of total AI spend](https://menlovc.com/2025-the-state-of-generative-ai-in-the-enterprise/). Compliance and governance are line items that did not exist two years ago.
 
@@ -34,7 +34,7 @@ The token got cheaper. Everything around the token got expensive.
 
 The decisions made during early pilots create exponential multipliers at scale.
 
-[84% of enterprises](https://www.mavvrik.ai/ai-cost-governance-report/) report AI costs cutting gross margins by more than 6%—with over a quarter seeing hits of 16% or more. [Only 48% of AI projects](https://www.gartner.com/en/newsroom/press-releases/2024-10-21-gartner-identifies-four-emerging-challenges-to-delivering-value-from-ai-safely-and-at-scale) make it into production, and [85% of companies](https://www.prnewswire.com/news-releases/2025-state-of-ai-cost-management-research-finds-85-of-companies-miss-ai-forecasts-by-10-302551947.html) miss their AI cost forecasts by more than 10%. Gartner warned that CIOs who do not understand GenAI cost scaling could make [500%-1,000% errors](https://www.gartner.com/en/newsroom/press-releases/2024-08-19-gartner-identifies-top-three-genai-risks-for-cios-and-it-leaders) in budget calculations.
+[84% of enterprises](https://www.mavvrik.ai/ai-cost-governance-report/) report AI costs cutting gross margins by more than 6%, with over a quarter seeing hits of 16% or more. [Only 48% of AI projects](https://www.gartner.com/en/newsroom/press-releases/2024-10-21-gartner-identifies-four-emerging-challenges-to-delivering-value-from-ai-safely-and-at-scale) make it into production, and [85% of companies](https://www.prnewswire.com/news-releases/2025-state-of-ai-cost-management-research-finds-85-of-companies-miss-ai-forecasts-by-10-302551947.html) miss their AI cost forecasts by more than 10%. Gartner warned that CIOs who do not understand GenAI cost scaling could make [500%-1,000% errors](https://www.gartner.com/en/newsroom/press-releases/2024-08-19-gartner-identifies-top-three-genai-risks-for-cios-and-it-leaders) in budget calculations.
 
 The pattern is consistent: pilot with synthetic data, prove the model works, scale to production, discover the architecture does not. The cost structure that worked for 100 queries per day collapses at 100,000.
 
@@ -58,7 +58,7 @@ Multi-agent systems use [approximately 15x more tokens](https://www.anthropic.co
 
 **Structured outputs.** JSON mode, function calling, and structured generation reduce token waste from retry loops. When the model outputs malformed JSON, you pay to re-generate. Structured outputs eliminate the failure mode. The token savings are small per request but compound over millions of calls.
 
-**Stateful context.** Maintaining state between turns eliminates repeated transmission of conversation history. A stateless system sends the full conversation with every message. A stateful system sends only the delta. The difference at scale is not marginal—it is the difference between profitability and burning 164% of revenue.
+**Stateful context.** Maintaining state between turns eliminates repeated transmission of conversation history. A stateless system sends the full conversation with every message. A stateful system sends only the delta. The difference at scale is not marginal. It is the difference between profitability and burning 164% of revenue.
 
 **Selective retrieval.** Hybrid search (BM25 + vector embeddings + reranking) costs more per query but retrieves fewer irrelevant documents. You pay more for retrieval and less for processing. The net is often cheaper because you are not paying the LLM to ignore junk.
 
@@ -70,7 +70,7 @@ You built a stateless system because stateless is simple. You skipped caching be
 
 They are not rational at $500,000/month.
 
-The companies that survive are not the ones with the best models. They are the ones that designed for cost from the beginning. Netflix, Stripe, and Uber deploy models constantly because their infrastructure was built to make deployment cheap. [Shadow deployments, automated rollback, and guardrails](/blog/the-ai-pilot-graveyard/) are not features—they are cost controls dressed up as reliability engineering.
+The companies that survive are not the ones with the best models. They are the ones that designed for cost from the beginning. Netflix, Stripe, and Uber deploy models constantly because their infrastructure was built to make deployment cheap. [Shadow deployments, automated rollback, and guardrails](/blog/the-ai-pilot-graveyard/) are not features. They are cost controls dressed up as reliability engineering.
 
 The invoice arrived in 2025. It showed up as missed margin targets, budget overruns, and AI initiatives that worked technically but failed economically.
 

@@ -20,13 +20,13 @@ The conventional response is to staff up: hire ML engineers, build monitoring da
 
 It is not working. For the first time in five years, [operational toil increased](https://runframe.io/blog/state-of-incident-management-2025): from 25% to 30% of developer time. That is roughly $37,500 wasted per engineer annually. For a 250-person engineering team, $9.4 million in human labor spent on tasks that should not require humans.
 
-The expectation was that AI would reduce toil, not exacerbate it. But [69% of AI-powered decisions](https://www.dynatrace.com/news/press-release/state-of-observability-2025/) still require human verification. Organizations added new monitoring layers, alerts, and code review burdens without removing equivalent work. [73% experienced outages](https://www.splunk.com/en_us/blog/observability/state-of-observability-2025.html) caused by ignored or suppressed alerts—alert fatigue means teams miss real incidents.
+The expectation was that AI would reduce toil, not exacerbate it. But [69% of AI-powered decisions](https://www.dynatrace.com/news/press-release/state-of-observability-2025/) still require human verification. Organizations added new monitoring layers, alerts, and code review burdens without removing equivalent work. [73% experienced outages](https://www.splunk.com/en_us/blog/observability/state-of-observability-2025.html) caused by ignored or suppressed alerts. Alert fatigue means teams miss real incidents.
 
 Google's research team called ML systems ["the high-interest credit card of technical debt"](https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/43146.pdf) in 2015. For a decade, the answer was to pay down that debt with human labor. That approach is hitting a ceiling.
 
 ## The new model
 
-[Devin](https://devin.ai/) writes code, debugs it, runs tests, and fixes issues autonomously. Goldman Sachs treats it ["like a new employee"](https://www.ibm.com/think/news/goldman-sachs-first-ai-employee-devin) in their hybrid AI workforce. Nubank used it for migrating their core ETL—a 6-million line monolith—and reported [12x efficiency improvement and 20x cost savings](https://devin.ai/customers/nubank). For security vulnerabilities, one organization saw [20x efficiency gains](https://cognition.ai/blog/devin-annual-performance-review-2025): human developers averaged 30 minutes per fix, Devin averaged 1.5 minutes.
+[Devin](https://devin.ai/) writes code, debugs it, runs tests, and fixes issues autonomously. Goldman Sachs treats it ["like a new employee"](https://www.ibm.com/think/news/goldman-sachs-first-ai-employee-devin) in their hybrid AI workforce. For security vulnerabilities, one organization saw [20x efficiency gains](https://cognition.ai/blog/devin-annual-performance-review-2025): human developers averaged 30 minutes per fix, Devin averaged 1.5 minutes.
 
 Claude Code reads logs, diagnoses issues, and fixes code. Cursor and Windsurf do the same. [Ardent](https://tryardent.com/) builds AI agents that handle engineering workflows end-to-end. These are not research demos. They are production tools that thousands of engineers use daily.
 
@@ -38,7 +38,7 @@ That is the theory. The evidence is more mixed than the case studies suggest.
 
 McKinsey's [State of AI 2025](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai) found that 80% of companies deployed generative AI. It also found that 80% report no material impact on earnings. Deployment went up. Results did not follow.
 
-The evidence on AI-assisted development is [split along a clear line](/blog/the-build-is-not-the-hard-part/): agents excel at structured, repeatable work and struggle with judgment-heavy complexity. Nubank's 6-million-line ETL migration was mechanical. The gains were real. The [METR randomized trial](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/) tested experienced developers on complex, context-heavy tasks. They were 19% slower with AI tools.
+The evidence on AI-assisted development is [split along a clear line](/blog/the-build-is-not-the-hard-part/): agents excel at structured, repeatable work and struggle with judgment-heavy complexity. Mechanical migrations show order-of-magnitude gains. The [METR randomized trial](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/) tested experienced developers on complex, context-heavy tasks. They were 19% slower with AI tools.
 
 The implication for ops is direct: if your operational work is structured and repeatable, agents can handle it. If it requires deep institutional context and judgment, they cannot. The question is not whether agents can do ops. It is whether your ops are designed so that agents can.
 
@@ -64,7 +64,7 @@ Do not staff for permanent human ops. Staff for the transition. Build the system
 
 Measure agent maintainability, not just human maintainability. Can Claude Code understand your codebase? Can Devin reproduce your bugs? If not, you are building a system that will require expensive human labor forever.
 
-Invest in structured observability. [Organizations waste 32% of cloud budgets](https://www.datastackhub.com/insights/cloud-wastage-statistics/) on unused or misconfigured resources—[$44.5 billion projected for 2025](https://www.prnewswire.com/news-releases/44-5-billion-in-infrastructure-cloud-waste-projected-for-2025-due-to-finops-and-developer-disconnect-finds-finops-in-focus-report-from-harness-302385580.html). [54% of executives](https://www.anodot.com/news-item/survey-nearly-50-of-businesses-are-struggling-to-control-cloud-costs/) cite lack of visibility as the primary cause. Fix visibility first.
+Invest in structured observability. [Organizations waste 32% of cloud budgets](https://www.datastackhub.com/insights/cloud-wastage-statistics/) on unused or misconfigured resources, [$44.5 billion projected for 2025](https://www.prnewswire.com/news-releases/44-5-billion-in-infrastructure-cloud-waste-projected-for-2025-due-to-finops-and-developer-disconnect-finds-finops-in-focus-report-from-harness-302385580.html). [54% of executives](https://www.anodot.com/news-item/survey-nearly-50-of-businesses-are-struggling-to-control-cloud-costs/) cite lack of visibility as the primary cause. Fix visibility first.
 
 Separate the mechanical from the judgment-heavy. Agents are not general-purpose replacements for senior engineers. They are force multipliers for structured work. Design your operations so the mechanical parts are clearly delineated and agent-friendly.
 
@@ -78,4 +78,4 @@ The mechanical 80% may not be the bottleneck. If the judgment-heavy 20% is where
 
 In 2015, Google called ML the "high-interest credit card of technical debt." For a decade, organizations paid that debt with human labor. The interest kept compounding: 25% became 30%, and $9.4 million in toil became the cost of doing business.
 
-The debt is still real. But the payment method is changing—for some kinds of work, for some kinds of systems. The question is not whether agents can do ops. It is whether your system is built so that they can.
+The debt is still real. But the payment method is changing, for some kinds of work, for some kinds of systems. The question is not whether agents can do ops. It is whether your system is built so that they can.

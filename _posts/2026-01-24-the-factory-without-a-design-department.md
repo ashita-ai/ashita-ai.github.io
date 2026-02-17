@@ -8,13 +8,13 @@ date: 2026-01-24
 
 Cursor ran [production experiments](https://cursor.com/blog/scaling-agents) with hundreds of concurrent agents over weeks. Their initial architecture used flat coordination: equal-status agents with shared-file locking. Twenty agents produced the effective throughput of two or three.
 
-Meanwhile, a developer using Geoffrey Huntley's "Ralph" technique [shipped a $50K contract for $297 in compute costs](https://ghuntley.com/ralph/). The architecture is a bash loop. One agent. One task per iteration. State persisted to a markdown file between iterations. (The $297 reflects API spend only—specification work, debugging, and review are not included.)
+Meanwhile, a developer using Geoffrey Huntley's "Ralph" technique [shipped a $50K contract for $297 in compute costs](https://ghuntley.com/ralph/). The architecture is a bash loop. One agent. One task per iteration. State persisted to a markdown file between iterations. (The $297 reflects API spend only. Specification work, debugging, and review are not included.)
 
 Same underlying models. Radically different results. Cursor built a complex factory floor and it failed. Huntley built a simple one and invested in blueprints instead.
 
 ## The missing department
 
-The industry is building factories. Cursor, Devin, Claude Code, CrewAI, LangGraph, AutoGen—all orchestration engines. [Gartner reported](https://www.gartner.com/en/articles/multiagent-systems) a 1,445% surge in multi-agent system inquiries from Q1 2024 to Q2 2025. Two-thirds of enterprise AI implementations now use multi-agent architectures.
+The industry is building factories. Cursor, Devin, Claude Code, CrewAI, LangGraph, AutoGen. All orchestration engines. [Gartner reported](https://www.gartner.com/en/articles/multiagent-systems) a 1,445% surge in multi-agent system inquiries from Q1 2024 to Q2 2025. Two-thirds of enterprise AI implementations now use multi-agent architectures.
 
 The same industry reports high failure rates for production multi-agent systems. The majority of failures originate from specification and coordination issues rather than technical implementation.
 
@@ -68,16 +68,16 @@ This is the same dynamic that [kills AI pilots](/blog/the-ai-pilot-graveyard/). 
 
 ## What I am still figuring out
 
-The Socratic design department is conceptually clean but I have not seen it built. The closest examples are design docs reviewed by senior engineers—but that is expensive human time, not tooling. There may be a reason nobody has built this. Blueprints are contextual in ways that resist automation.
+The Socratic design department is conceptually clean but I have not seen it built. The closest examples are design docs reviewed by senior engineers, but that is expensive human time, not tooling. There may be a reason nobody has built this. Blueprints are contextual in ways that resist automation.
 
 The 66% multi-agent adoption stat comes from enterprise surveys. I suspect it is inflated. If routing between specialized prompts counts as "multi-agent," the number is meaningless. If it means genuine autonomous coordination, 66% seems implausibly high.
 
-Huntley's results are striking but specific to his context. He has years of experience tuning these loops. The technique may not transfer to teams without that foundation—which brings us back to the tooling gap. If the skill is rare and hard to teach, the tool matters even more.
+Huntley's results are striking but specific to his context. He has years of experience tuning these loops. The technique may not transfer to teams without that foundation, which brings us back to the tooling gap. If the skill is rare and hard to teach, the tool matters even more.
 
 ---
 
 Cursor's fix was not a better factory. It was less factory. The integrator role they added "created more bottlenecks than it solved."
 
-The lesson is not about factory architecture. It is about where to invest. The industry has invested in orchestration. The constraint is specification. [Evals alone will not save you](/blog/your-evals-wont-save-you/)—you cannot evaluate your way out of building the wrong thing.
+The lesson is not about factory architecture. It is about where to invest. The industry has invested in orchestration. The constraint is specification. [Evals alone will not save you](/blog/your-evals-wont-save-you/). You cannot evaluate your way out of building the wrong thing.
 
 Build the design department. The blueprints matter more than the factory.

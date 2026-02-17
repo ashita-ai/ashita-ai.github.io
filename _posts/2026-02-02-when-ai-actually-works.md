@@ -18,7 +18,7 @@ Uber [runs shadow testing](https://www.uber.com/blog/raising-the-bar-on-ml-model
 
 Netflix [compares 1,000+ metrics](https://netflixtechblog.com/deploying-the-netflix-api-79b6176cc3f0) between baseline and canary code, generating a confidence score that indicates how likely the canary is to succeed in production. Their deployment strategy: 1% of traffic, then 5%, then 25%, over 14 hours. Before they built this infrastructure, going from project start to deployment took four months. Now the [median is seven days](https://valohai.com/blog/building-machine-learning-infrastructure-at-netflix/).
 
-Stripe's fraud detection [assesses over 1,000 characteristics](https://stripe.com/guides/primer-on-machine-learning-for-fraud-protection) per transaction and makes a decision in under 100 milliseconds. Out of billions of legitimate payments, Radar incorrectly blocks just 0.1%. Their feature freshness runs at [150ms p99](https://stripe.com/blog/shepherd-how-stripe-adapted-chronon-to-scale-ml-feature-development)—nearly real-time response to changing fraud patterns.
+Stripe's fraud detection [assesses over 1,000 characteristics](https://stripe.com/guides/primer-on-machine-learning-for-fraud-protection) per transaction and makes a decision in under 100 milliseconds. Out of billions of legitimate payments, Radar incorrectly blocks just 0.1%. Their feature freshness runs at [150ms p99](https://stripe.com/blog/shepherd-how-stripe-adapted-chronon-to-scale-ml-feature-development), nearly real-time response to changing fraud patterns.
 
 These companies did not build better models. They built better deployment infrastructure. The model is not the product. The system that validates, monitors, and rolls back the model is the product.
 
@@ -26,11 +26,11 @@ These companies did not build better models. They built better deployment infras
 
 The AI implementations that work are not general-purpose. They are narrow, bounded, and boring.
 
-H&M's customer support chatbot handles [order tracking, return policies, and sizing assistance](https://www.vktr.com/ai-disruption/5-ai-case-studies-in-customer-service-and-support/)—repetitive queries that overwhelmed their human team. Response time dropped from minutes to seconds. Operational costs fell by an estimated 30%. Available 24/7 in over 30 languages.
+H&M's customer support chatbot handles [order tracking, return policies, and sizing assistance](https://www.vktr.com/ai-disruption/5-ai-case-studies-in-customer-service-and-support/), repetitive queries that overwhelmed their human team. Response time dropped from minutes to seconds. Operational costs fell by an estimated 30%. Available 24/7 in over 30 languages.
 
 Mavi, a Turkish retailer, [boosted revenue 9.6%](https://www.invent.ai/case-study/mavi-case-study-how-invent-ai-inventory-optimization-solutions-helped-increase-revenue-by-9.6) with AI-powered inventory optimization across 439 stores. Amazon and Walmart report significant improvements from predictive inventory systems, though the specific figures are difficult to verify independently.
 
-IT ticketing systems see [40–60% ticket deflection](https://www.moveworks.com/us/en/resources/blog/helpdesk-ticketing-system-ai-automation) within 90 days and 25–40% faster resolution for escalated cases. The key insight: 60–70% of inbound volume is repetitive, low-complexity work that does not require human judgment. Those are the ideal candidates for automation—not the complex cases, not the edge cases, just the boring repetitive volume.
+IT ticketing systems see [40–60% ticket deflection](https://www.moveworks.com/us/en/resources/blog/helpdesk-ticketing-system-ai-automation) within 90 days and 25–40% faster resolution for escalated cases. The key insight: 60–70% of inbound volume is repetitive, low-complexity work that does not require human judgment. Those are the ideal candidates for automation, not the complex cases, not the edge cases, just the boring repetitive volume.
 
 The scope determines the outcome. Broad, autonomous, general-purpose deployments fail. Narrow, supervised, specific deployments work.
 
@@ -39,8 +39,6 @@ The scope determines the outcome. Broad, autonomous, general-purpose deployments
 A Harvard and BCG [study on consultants](https://mitsloan.mit.edu/ideas-made-to-matter/how-generative-ai-can-boost-highly-skilled-workers-productivity) using AI found a 40% productivity increase when AI was used within its capability boundary. When used outside that boundary, performance dropped by 19 percentage points.
 
 The researchers identified two working styles: "centaurs" who divided tasks between AI and themselves, and "cyborgs" who fully integrated their workflow with AI. Both patterns succeeded when the human understood where the AI's competence ended.
-
-Medical diagnosis platforms using human-in-the-loop approaches consistently outperform both AI-only and human-only baselines. The combination catches what either would miss alone.
 
 The lesson is not that AI needs babysitting. The lesson is that humans and AI have complementary failure modes. AI fails on edge cases, novel situations, and context that was not in the training data. Humans fail on attention, consistency, and volume. The combination catches what either would miss alone.
 
@@ -52,8 +50,6 @@ Uber's auto-rollback [fires on three signals](https://www.uber.com/blog/raising-
 
 Industrial AI implementations now require [mapped failure modes, tabletop rollback tests within 90 days, and emergency stops independent of the AI](https://xmpro.com/the-top-10-challenges-preventing-industrial-ai-at-scale-and-exactly-how-to-beat-them/). The kill switch is not optional. It is the prerequisite.
 
-This is what separated [Opendoor from Zillow](/blog/the-ai-pilot-graveyard/). Both used AI to value homes. Opendoor's system automatically tightened offers when predicted-vs-actual spreads exceeded thresholds. No human intervention needed. Zillow's executives overrode the algorithm to hit growth targets. By the time humans noticed the market had turned, Zillow owned 7,000 homes they could not sell.
-
 A rollback is not a dashboard someone checks. It is a trigger that fires before the damage compounds.
 
 ## What the 5% do differently
@@ -62,7 +58,7 @@ McKinsey [found](https://www.mckinsey.com/capabilities/quantumblack/our-insights
 
 High performers are [three times more likely](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai) to redesign workflows rather than just adding AI to existing processes. 55% fundamentally redesigned individual workflows, compared to 20% of other companies.
 
-The MIT NANDA research [found](https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo/) that purchasing AI tools from specialized vendors succeeds 67% of the time, while internal builds succeed only one-third as often. The successful companies treated vendors like business service providers rather than software suppliers—deep customization, outcome-based evaluation, co-evolutionary development.
+The MIT NANDA research [found](https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo/) that purchasing AI tools from specialized vendors succeeds 67% of the time, while internal builds succeed only one-third as often. The successful companies treated vendors like business service providers rather than software suppliers: deep customization, outcome-based evaluation, co-evolutionary development.
 
 A [Capital One survey](https://www.capitalone.com/tech/ai/ai-readiness-survey/) of nearly 4,000 business leaders found that 73% identified data quality and completeness as a top barrier to AI success, ranking it alongside data security and above model accuracy, computing costs, and talent shortages.
 
@@ -70,7 +66,7 @@ BCG's [10-20-70 principle](https://www.bcg.com/publications/2025/closing-the-ai-
 
 ## What I am still figuring out
 
-The Wendy's-vs-McDonald's comparison is clean, but the sample size is small. Two companies is not a pattern. The rollout speed seems to matter—Wendy's spent a year in one location, McDonald's scaled to 100—but there could be confounding factors: different vendor partnerships, different menu complexity, different customer bases.
+The Wendy's-vs-McDonald's comparison is clean, but the sample size is small. Two companies is not a pattern. The rollout speed seems to matter: Wendy's spent a year in one location, McDonald's scaled to 100. But there could be confounding factors: different vendor partnerships, different menu complexity, different customer bases.
 
 The 67% vendor success rate versus 33% internal build rate is striking, but the causation is unclear. Do vendors succeed because they have better technology, because they bring operational discipline, or because buying a product is a forcing function that prevents scope creep?
 
