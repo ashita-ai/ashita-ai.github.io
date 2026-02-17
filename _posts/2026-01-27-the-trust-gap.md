@@ -64,7 +64,7 @@ Instead of redesigning hardware, Boeing relied on software (the MCAS system) to 
 
 The pattern is identical to what DORA describes. Engineers knew the system was not ready. Competitive pressure overrode safety concerns. The code shipped anyway.
 
-Boeing's lesson applies directly to AI: "Even the best companies can fall prey to competitive pressures as they seek to stay financially viable, grow faster, or profit by shipping products more quickly and cheaply."
+The lesson applies directly to AI. Even the best companies fall prey to competitive pressures that drive them to ship products more quickly and cheaply than the engineering supports.
 
 The aviation industry relies on public trust. So does AI. Every high-profile failure erodes the foundation: UnitedHealthcare's algorithm denying care with a [90% error rate on appeals](https://www.cbsnews.com/news/unitedhealth-lawsuit-ai-deny-claims-medicare-advantage-health-insurance-denials/), a Cruise robotaxi [dragging a pedestrian over 20 feet](https://www.justice.gov/usao-ndca/pr/cruise-admits-submitting-false-report-influence-federal-investigation-and-agrees-pay), chatbots confidently hallucinating legal citations.
 

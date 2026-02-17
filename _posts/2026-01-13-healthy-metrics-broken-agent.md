@@ -42,7 +42,7 @@ LLM tracing tools (Langfuse, Arize Phoenix, LangSmith, Pydantic Logfire) are mat
 
 ## What I am still figuring out
 
-The tradeoff between observability depth and cost is unclear. Structural tracing is cheap (under 3% overhead). [Semantic evaluation](/blog/introducing-arbiter/) (LLM judging each step) is expensive and scales with workflow length. For high-stakes workflows, semantic evaluation probably pays for itself. For high-volume queries, maybe not. I do not have a principled way to decide where the threshold is.
+The tradeoff between observability depth and cost is unclear. Structural tracing is cheap (under 3% overhead). Semantic evaluation (LLM judging each step) is expensive and scales with workflow length. For high-stakes workflows, semantic evaluation probably pays for itself. For high-volume queries, maybe not. I do not have a principled way to decide where the threshold is.
 
 Whether outcome metrics are even possible for some AI applications. Ad targeting can measure revenue per impression. Legal research can measure citation accuracy. But what is the "outcome metric" for a code generation tool? Lines that compile? Lines that survive code review? Lines that are still in the codebase a year later? The metric depends on the time horizon, and the right time horizon is not obvious.
 

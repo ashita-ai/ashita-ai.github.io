@@ -4,7 +4,7 @@ title: "The Data Platform Decisions That Haunt You in Year 3"
 date: 2026-01-14
 ---
 
-In 2022, Unity Technologies ingested bad data from a client into their ad-targeting ML model. They did not notice until revenue started dropping. By the time they found it, the damage was [$110 million](https://www.montecarlodata.com/blog-bad-data-quality-examples/), a 37% stock crash, a class action lawsuit, and 4% of the workforce laid off.
+In 2022, Unity Technologies ingested bad data from a client into their ad-targeting ML model. They did not notice until revenue started dropping. By the time they found it, the damage was [$110 million](https://www.montecarlodata.com/blog-bad-data-quality-examples/), a nearly 40% stock crash, a class action lawsuit, and 4% of the workforce laid off.
 
 The pipeline ran fine. The schema validated. The data was poison.
 
@@ -34,7 +34,7 @@ You cannot measure the cost of decisions made on bad data or decisions not made 
 
 ## What compounds badly
 
-**[No data contracts.](/blog/introducing-tessera/)** Schema changes upstream break pipelines downstream. You discover this when a dashboard goes blank or when numbers silently change.
+**No data contracts.** Schema changes upstream break pipelines downstream. You discover this when a dashboard goes blank or when numbers silently change.
 
 **No lineage.** When something breaks, you cannot trace the impact. Debugging becomes archaeology.
 

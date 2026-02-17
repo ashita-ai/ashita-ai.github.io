@@ -28,7 +28,7 @@ Google's research team called ML systems ["the high-interest credit card of tech
 
 [Devin](https://devin.ai/) writes code, debugs it, runs tests, and fixes issues autonomously. Goldman Sachs treats it ["like a new employee"](https://www.ibm.com/think/news/goldman-sachs-first-ai-employee-devin) in their hybrid AI workforce. For security vulnerabilities, one organization saw [20x efficiency gains](https://cognition.ai/blog/devin-annual-performance-review-2025): human developers averaged 30 minutes per fix, Devin averaged 1.5 minutes.
 
-Claude Code reads logs, diagnoses issues, and fixes code. Cursor and Windsurf do the same. [Ardent](https://tryardent.com/) builds AI agents that handle engineering workflows end-to-end. These are not research demos. They are production tools that thousands of engineers use daily.
+Claude Code reads logs, diagnoses issues, and fixes code. Cursor and Windsurf do the same. These are not research demos. They are production tools that thousands of engineers use daily.
 
 The reliability tax assumed humans do the ops. If agents do the ops, the multiplier collapses.
 
@@ -78,4 +78,4 @@ The mechanical 80% may not be the bottleneck. If the judgment-heavy 20% is where
 
 In 2015, Google called ML the "high-interest credit card of technical debt." For a decade, organizations paid that debt with human labor. The interest kept compounding: 25% became 30%, and $9.4 million in toil became the cost of doing business.
 
-The debt is still real. But the payment method is changing, for some kinds of work, for some kinds of systems. The question is not whether agents can do ops. It is whether your system is built so that they can.
+The debt is still real. But for some kinds of work, for some kinds of systems, the payment method is changing. The question is not whether agents can do ops. It is whether your system is built so that they can.

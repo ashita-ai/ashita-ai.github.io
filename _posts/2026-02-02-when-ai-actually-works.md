@@ -14,7 +14,7 @@ The pattern in every AI success is the same: narrow scope, human oversight, auto
 
 ## Shadow deployment
 
-Uber [runs shadow testing](https://www.uber.com/blog/raising-the-bar-on-ml-model-deployment-safety/) on 75% of critical online use cases, with plans to reach 100%. New models process real traffic alongside production models, but only the current model's predictions reach users. If error rates, latency, or CPU utilization breach thresholds, auto-rollback reverts to the last known good version. No human intervention required.
+Uber [runs shadow testing](https://www.uber.com/blog/raising-the-bar-on-ml-model-deployment-safety/) on 75% of critical online use cases, with plans to reach 100%. New models process real traffic alongside production models, but only the current model's predictions reach users. Auto-rollback reverts to the last known good version if error rates, latency, or CPU utilization breach thresholds.
 
 Netflix [compares 1,000+ metrics](https://netflixtechblog.com/deploying-the-netflix-api-79b6176cc3f0) between baseline and canary code, generating a confidence score that indicates how likely the canary is to succeed in production. Their deployment strategy: 1% of traffic, then 5%, then 25%, over 14 hours. Before they built this infrastructure, going from project start to deployment took four months. Now the [median is seven days](https://valohai.com/blog/building-machine-learning-infrastructure-at-netflix/).
 
@@ -30,7 +30,7 @@ H&M's customer support chatbot handles [order tracking, return policies, and siz
 
 Mavi, a Turkish retailer, [boosted revenue 9.6%](https://www.invent.ai/case-study/mavi-case-study-how-invent-ai-inventory-optimization-solutions-helped-increase-revenue-by-9.6) with AI-powered inventory optimization across 439 stores. Amazon and Walmart report significant improvements from predictive inventory systems, though the specific figures are difficult to verify independently.
 
-IT ticketing systems see [40–60% ticket deflection](https://www.moveworks.com/us/en/resources/blog/helpdesk-ticketing-system-ai-automation) within 90 days and 25–40% faster resolution for escalated cases. The key insight: 60–70% of inbound volume is repetitive, low-complexity work that does not require human judgment. Those are the ideal candidates for automation, not the complex cases, not the edge cases, just the boring repetitive volume.
+IT ticketing systems see [40–60% ticket deflection](https://www.moveworks.com/us/en/resources/blog/helpdesk-ticketing-system-ai-automation) within 90 days and 25–40% faster resolution for escalated cases. The key insight: 60–70% of inbound volume is repetitive, low-complexity work that does not require human judgment. Those are the ideal candidates for automation. Not the complex cases, not the edge cases. The boring repetitive volume.
 
 The scope determines the outcome. Broad, autonomous, general-purpose deployments fail. Narrow, supervised, specific deployments work.
 
@@ -52,7 +52,7 @@ Industrial AI implementations now require [mapped failure modes, tabletop rollba
 
 A rollback is not a dashboard someone checks. It is a trigger that fires before the damage compounds.
 
-## What the 5% do differently
+## What the 6% do differently
 
 McKinsey [found](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai) that 88% of organizations now use AI in at least one business function. Only 6% qualify as "high performers" achieving significant profit impact. The gap is not technology.
 

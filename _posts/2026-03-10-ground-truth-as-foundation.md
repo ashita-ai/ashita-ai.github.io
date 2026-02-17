@@ -8,7 +8,7 @@ On November 16, 2018, representatives from sixty nations [voted](https://en.wiki
 
 Le Grand K was drifting. It had [lost approximately fifty micrograms](https://phys.org/news/2019-05-adieu-le-grand-kilogram-redefined.html) relative to its official copies over a century. Nobody could determine whether Le Grand K was gaining mass or its copies were losing it, because Le Grand K was, by definition, exactly one kilogram.
 
-The ground truth was changing. Everything calibrated against it was changing too. Invisibly..
+The ground truth was changing. Everything calibrated against it was changing too. Invisibly.
 
 The fix was not a better cylinder. It was redefining mass in terms of the Planck constant, a property of the universe that does not drift.
 

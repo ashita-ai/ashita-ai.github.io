@@ -42,7 +42,7 @@ The companies that scale AI are not running better pilots. They are skipping pil
 
 They deploy to limited production immediately. They accept that some deployments will fail visibly. They build systems with guardrails that detect when conditions change and pull back automatically.
 
-Netflix, Stripe, and Uber all deploy new ML models constantly. Not after six-month pilots. Constantly. Their pattern is called [shadow deployment](https://www.qwak.com/post/shadow-deployment-vs-canary-release-of-machine-learning-models): the new model runs alongside production, processes the same requests, but only the current model's predictions reach users. You get real production data before real exposure. Shadow deployment lets you test with real production data before real exposure. That is not a pilot. That is continuous deployment with training wheels.
+Netflix, Stripe, and Uber all deploy new ML models constantly. Not after six-month pilots. Constantly. Their pattern is called [shadow deployment](https://www.qwak.com/post/shadow-deployment-vs-canary-release-of-machine-learning-models): the new model runs alongside production, processes the same requests, but only the current model's predictions reach users. You get real production data before real exposure. That is not a pilot. That is continuous deployment with training wheels.
 
 This is what separated Opendoor from Zillow. Both used AI to value homes. Both deployed to production. But the guardrails were different.
 

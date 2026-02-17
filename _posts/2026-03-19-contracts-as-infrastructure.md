@@ -58,4 +58,4 @@ Whether AI systems can even have stable contracts. A traditional API contract sp
 
 On April 26, 1956, the Ideal X proved that standardizing the interface was worth more than optimizing the implementation. Behind ISO 668's dimensions, the entire global logistics industry rebuilt itself multiple times. The contract, unchanged since 1968, outlasted every ship, every crane, and every port it was designed for.
 
-[Ground truth](/blog/ground-truth-as-foundation/) establishes the foundation. [Provenance](/blog/the-provenance-imperative/) traces the chain. Contracts enforce the boundaries. The contract, unchanged since 1968, outlasted every ship, crane, and port it was designed for. The AI contracts that matter will outlast every model they were designed for too.
+[Ground truth](/blog/ground-truth-as-foundation/) establishes the foundation. [Provenance](/blog/the-provenance-imperative/) traces the chain. Contracts enforce the boundaries. The AI contracts that matter will outlast every model they were designed for.

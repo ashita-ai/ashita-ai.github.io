@@ -66,7 +66,7 @@ In 1994, Stewart Brand published [*How Buildings Learn*](https://en.wikipedia.or
 
 His key insight: "An adaptive building has to allow slippage between the differently-paced systems. Otherwise the slow systems block the flow of the quick ones, and the quick ones tear up the slow ones with their constant change."
 
-GPT-4 is furniture. It will be replaced, probably soon. RAG pipelines are furniture. Prompt engineering is furniture. The data quality infrastructure that feeds these systems, the audit trails that trace their decisions, the contracts that define what the data means, the rollback mechanisms that recover from failures. Those are structure..
+GPT-4 is furniture. It will be replaced, probably soon. RAG pipelines are furniture. Prompt engineering is furniture. The data quality infrastructure that feeds these systems, the audit trails that trace their decisions, the contracts that define what the data means, the rollback mechanisms that recover from failures. Those are structure.
 
 The agentic AI projects being scrapped are mostly projects that invested in AI furniture while ignoring the structure underneath. This is the distinction from [Building for Tomorrow](/blog/building-for-tomorrow/). Patterns are furniture, implementation choices that should change as technology evolves. Properties are structure, the load-bearing decisions everything else depends on. Confusing the two is how you build infrastructure that works for three years and constrains you for ten.
 

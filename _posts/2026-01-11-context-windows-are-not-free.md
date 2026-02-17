@@ -59,7 +59,7 @@ The alternative to stuffing everything into context is deciding what matters.
 
 Lund [recommends](https://fastpaca.com/blog/failure-case-memory-layout/) categorizing information by the consequences of losing it. Some context is sacred (version numbers, security constraints) and must never be dropped. Some is critical and cannot be compressed without losing meaning. Some is expendable and can be reconstructed if needed.
 
-Most systems treat all tokens equally, evicting whatever is oldest. This guarantees that something important will eventually be lost. [Designing explicit eviction policies](/blog/introducing-engram/) based on what information matters is harder but more honest about the tradeoffs.
+Most systems treat all tokens equally, evicting whatever is oldest. This guarantees that something important will eventually be lost. Designing explicit eviction policies based on what information matters is harder but more honest about the tradeoffs.
 
 The question is not how much you can fit. It is what happens when something has to go.
 
