@@ -62,7 +62,7 @@ This leads to a layout with distinct regions:
 
 This is an engineering construct. Most memory systems only store positive knowledge. They have no way to represent that the user does NOT use MongoDB. So they keep suggesting it. Negation facts solve this practical problem.
 
-The neuroscience here is instructive. Memories strengthen through repeated retrieval (the [testing effect](https://pmc.ncbi.nlm.nih.gov/articles/PMC5912918/)) so Engram tracks `consolidation_strength` that increases when memories are linked, refined, or undergo consolidation. [Retrieval-induced forgetting](https://pubmed.ncbi.nlm.nih.gov/7931095/) shows that retrieving some memories actively suppresses related non-retrieved items; Engram implements this via opt-in RIF to naturally prune redundant memories.
+The neuroscience here is instructive. Memories strengthen through repeated retrieval (the [testing effect](https://pmc.ncbi.nlm.nih.gov/articles/PMC5912918/)), so Engram tracks `consolidation_strength` that increases when memories are linked, refined, or undergo consolidation. [Retrieval-induced forgetting](https://pubmed.ncbi.nlm.nih.gov/7931095/) shows that retrieving some memories actively suppresses related non-retrieved items; Engram implements this via opt-in RIF to naturally prune redundant memories.
 
 The linking between memories is inspired by [A-MEM research](https://arxiv.org/abs/2502.12110) showing significant improvement on multi-hop reasoning benchmarks. And the buffer promotion system draws from [Cognitive Workspace](https://arxiv.org/abs/2508.13171) research demonstrating 58.6% memory reuse compared to 0% for naive RAG approaches.
 
@@ -94,4 +94,4 @@ The optimal confidence thresholds for filtering queries are also unclear. Too st
 
 ---
 
-*This is the first in a series of posts about the tools I am building at Ashita AI. Next: Tessera, data contract coordination for warehouses.*
+*This is the first in a series of posts about the tools I am building at Ashita AI.*

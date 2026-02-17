@@ -54,7 +54,7 @@ The companies that scale AI share a pattern: they restructure incentives so that
 
 This means eliminating the handoff. If the team that builds the pilot also owns production, the pilot incentive disappears. If the budget comes from operational funds rather than innovation funds, the budget incentive disappears. If vendor contracts are tied to outcomes rather than seats, the vendor incentive aligns with yours.
 
-McKinsey [found](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai) that high performers are three times more likely to fundamentally redesign workflows rather than just adding AI to existing processes. They establish employee incentives that reinforce adoption. They empower line managers rather than keeping decisions centralized in corporate AI labs. The common thread is pushing ownership down to the people who do the work and measuring what matters to the business, not what looks good in a demo.
+McKinsey's [State of AI data](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai) shows what high performers do differently: they establish employee incentives that reinforce adoption. They empower line managers rather than keeping decisions centralized in corporate AI labs. The common thread is pushing ownership down to the people who do the work and measuring what matters to the business, not what looks good in a demo.
 
 ## What I am still figuring out
 

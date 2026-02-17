@@ -26,7 +26,7 @@ Not all shortcuts are equal.
 
 Architecture debt is recoverable. You can refactor, migrate, rewrite. The code is messy but the outputs are correct.
 
-[Data quality debt](/blog/the-data-platform-decisions-that-haunt-you/) is different. Bad data produces bad decisions. Bad decisions compound. Unity did not have architecture debt. They had data debt: incorrect inputs that [poisoned their ML model](https://www.montecarlodata.com/blog-bad-data-quality-examples/) and cost them $110 million.
+[Data quality debt](/blog/the-data-platform-decisions-that-haunt-you/) is different. Bad data produces bad decisions. Bad decisions compound. The distinction matters: incorrect inputs that [poison ML models](https://www.montecarlodata.com/blog-bad-data-quality-examples/) cost hundreds of millions. The code was fine. The data was not.
 
 Debt on *how* you build is acceptable. Debt on *what you produce* is dangerous. Ship messy code that works. Do not ship systems that produce wrong answers.
 

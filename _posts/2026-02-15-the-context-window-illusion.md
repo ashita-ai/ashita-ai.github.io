@@ -57,4 +57,4 @@ Whether retrieval pipelines just move the problem. Context dumping fails because
 
 Google had the largest information corpus ever assembled. The context window was not the problem. What was in it was. An AI researcher asked how many Muslim presidents the US has had and got a confident, cited answer: one.
 
-The pitch is that bigger windows mean fewer engineering decisions. The reality is the opposite. The bigger the window, the more carefully you must choose what goes in it.
+More context did not produce better answers. It produced more confident wrong ones. The engineering work is not expanding the window. It is filtering what enters it.

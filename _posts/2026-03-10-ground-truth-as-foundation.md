@@ -38,7 +38,7 @@ Curtis Northcutt and colleagues [found](https://arxiv.org/abs/2103.14749) that 6
 
 A database with a corrupted record has a localized problem. A model trained on corrupted data has a systemic one, distributed across billions of parameters, impossible to localize, difficult to detect.
 
-This compounds. Most AI memory systems and RAG pipelines extract "important" facts from raw data, then discard the original. Each extraction introduces errors. Each summarization loses detail. The [HaluMem study](https://arxiv.org/abs/2511.03506) found memory system accuracies below 70%. After a few passes, you are querying a game of telephone.
+This compounds. Most AI memory systems and RAG pipelines extract "important" facts from raw data, then discard the original. Each extraction introduces errors. Each summarization loses detail. The [HaluMem study](https://arxiv.org/abs/2511.03506) found memory system accuracies below 56%. After a few passes, the derived knowledge bears little resemblance to the original.
 
 And when a database has a type mismatch, it throws an error. When an LLM encounters something outside its training data, it generates a plausible response with high confidence. There is no error code for "this is fabricated." The system proceeds because nothing technically failed.
 

@@ -12,7 +12,7 @@ The latency metrics looked fine. Error rates were zero. The dashboard was green.
 
 GetOnStack is not unique. The pattern is older than AI and more expensive than most teams expect.
 
-In 2022, Unity's ad-targeting algorithm ingested corrupted training data from a single client. The model continued serving predictions with normal latency and zero errors. Ad targeting quality degraded silently. The failure surfaced at quarterly earnings: an estimated [$110 million in lost revenue](https://www.datachecks.io/post/unity-technologies-110m-ad-targeting-error). CEO John Riccitiello called it a "self-inflicted wound." The stock dropped 40%.
+In 2022, Unity's ad-targeting algorithm ingested corrupted training data from a single client. The model continued serving predictions with normal latency and zero errors. Ad targeting quality degraded silently. The failure surfaced at quarterly earnings: an estimated [$110 million in lost revenue](https://www.datachecks.io/post/unity-technologies-110m-ad-targeting-error). CEO John Riccitiello called it a "self-inflicted wound." The stock dropped nearly 40%.
 
 A healthcare algorithm used by major insurers [assigned the same risk scores](https://www.science.org/doi/10.1126/science.aax2342) to Black patients who had 26.3% more chronic conditions than white patients at the same score. Aggregate accuracy looked strong. But the algorithm used healthcare spending as a proxy for health needs, and Black patients spent $1,800 less per year due to systemic access barriers. The metric was accurate. The proxy was wrong. The algorithm affected an estimated 70 million patients; similar commercial risk-prediction tools were applied to roughly 200 million Americans.
 
