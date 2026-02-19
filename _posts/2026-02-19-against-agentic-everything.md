@@ -24,9 +24,7 @@ Multi-step production workflows need reliability that current agents cannot prov
 
 Simon Willison [identified](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/) "the lethal trifecta" for AI agents: access to private data, exposure to untrusted content, and the ability to communicate externally. Combine all three and an attacker can trick your agent into exfiltrating your data.
 
-The core problem is that LLMs believe anything you tell them. They cannot distinguish instructions from content. Willison documented this vulnerability in ChatGPT, Amazon Q, GitHub Copilot, Microsoft Copilot, Slack, and Claude. Almost all were fixed by locking down exfiltration. The underlying vulnerability is architectural.
-
-"Do I really trust a language model that believes the literal truth of anything that's presented to it to go out and do those things?"
+The core problem is that LLMs believe anything you tell them. They cannot distinguish instructions from content. Willison documented this vulnerability in ChatGPT, Amazon Q, GitHub Copilot, Microsoft Copilot, Slack, and Claude. Almost all were fixed by locking down exfiltration. The underlying vulnerability is architectural. That is the question every agentic deployment has to answer: whether to trust a model that accepts the literal truth of anything presented to it to go out and act on your behalf.
 
 ## The data problem
 
