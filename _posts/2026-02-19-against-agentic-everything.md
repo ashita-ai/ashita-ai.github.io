@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Against Agentic Everything"
-date: 2026-02-20
+date: 2026-02-19
 ---
 
 In 2023, Air Canada deployed an AI chatbot to handle customer inquiries. When Jake Moffatt asked about bereavement fares after his grandmother died, the chatbot told him he could book at full price and apply for a retroactive discount within 90 days. The policy did not exist. Air Canada refused the refund and [argued the chatbot was a separate legal entity](https://www.cbsnews.com/news/aircanada-chatbot-discount-customer/) responsible for its own actions. A tribunal disagreed.
@@ -14,9 +14,9 @@ The problems are compounding. The reliability math does not work. The security a
 
 ## The math
 
-[Berkeley researchers](https://arxiv.org/abs/2503.13657) analyzed 1,600 execution traces across seven multi-agent frameworks. Failure rates ranged from 41% to 86.7%.
+[Researchers from UC Berkeley and collaborating institutions](https://arxiv.org/abs/2503.13657) analyzed over 1,600 execution traces across five multi-agent frameworks and catalogued 14 distinct failure modes. In some frameworks, failure rates exceeded 75%.
 
-The compounding is what kills you. At a 20% error rate per action, a five-step workflow drops to 32% success. Even at 99% per-step reliability (which nobody has) you only get 82% success over 20 steps. [Error cascades](/blog/your-agents-need-a-supervisor/) are the mechanism: one agent makes a small mistake, the next accepts it, and by the fourth step the output is confidently wrong.
+That number is not surprising once you understand compounding. At a 20% error rate per action, a five-step workflow drops to 32% success. Even at 99% per-step reliability (which nobody has demonstrated in production) you only get 82% success over 20 steps. The researchers found most failures cluster into three categories: system design flaws, inter-agent misalignment, and failures in task verification. [Error cascades](/blog/your-agents-need-a-supervisor/) connect all three: one agent makes a small mistake, the next accepts it as ground truth, and by the fourth step the output is confidently wrong.
 
 Multi-step production workflows need reliability that current agents cannot provide. The math does not work.
 
@@ -42,13 +42,13 @@ The SEC [charged Presto Automation](https://www.sec.gov/enforcement-litigation/a
 
 The SEC and DOJ [charged Albert Saniger](https://www.justice.gov/usao-sdny/pr/tech-ceo-charged-artificial-intelligence-investment-fraud-scheme) of Nate Inc. with fraud. He raised $42 million claiming AI automation. Actual automation rate: zero percent. Hundreds of contractors in call centers in the Philippines and Romania manually completed purchases.
 
-Gartner [estimates](https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027) only 130 of thousands of vendors claiming "agentic AI" are real. The rest are agent-washing: rebranding chatbots without substantial capabilities. The same report predicts over 40% of agentic AI projects will be cancelled by end of 2027.
+Gartner [estimates](https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027) only 130 of thousands of vendors claiming "agentic AI" are real. The rest are agent-washing: rebranding chatbots without substantial capabilities.
 
 ## What works
 
 The pattern in every success is the same: narrow, internal, supervised.
 
-Klarna deployed an AI assistant for customer service in early 2024. Within a month it handled [2.3 million conversations](https://www.klarna.com/international/press/klarna-ai-assistant-handles-two-thirds-of-customer-service-chats-in-its-first-month/), two-thirds of all customer chats, with resolution times dropping from 15 minutes to 2. Then they pushed further. They cut staff by 40% and let AI handle increasingly complex queries. Quality dropped. Complaints rose. By 2025, CEO Sebastian Siemiatkowski [acknowledged they had gone too far](https://fortune.com/2025/05/09/klarna-ai-humans-return-on-investment/) and began rehiring human agents.
+Klarna deployed an AI assistant for customer service in early 2024. Within a month it handled [2.3 million conversations](https://www.klarna.com/international/press/klarna-ai-assistant-handles-two-thirds-of-customer-service-chats-in-its-first-month/), two-thirds of all customer chats, with resolution times dropping from 11 minutes to under 2. Then they pushed further. They cut staff by 40% and let AI handle increasingly complex queries. Quality dropped. Complaints rose. By 2025, CEO Sebastian Siemiatkowski [acknowledged they had gone too far](https://fortune.com/2025/05/09/klarna-ai-humans-return-on-investment/) and began rehiring human agents.
 
 The initial deployment worked because it was narrow: routine inquiries with clear escalation paths. The expansion failed because it crossed into territory requiring judgment, empathy, and context that LLMs cannot reliably provide. The line between the two is where every agentic deployment succeeds or fails.
 
