@@ -46,6 +46,8 @@ Gartner [estimates](https://www.gartner.com/en/newsroom/press-releases/2025-06-2
 
 The pattern in every success is the same: narrow, internal, supervised.
 
+JPMorgan's COiN system does one thing: it reads commercial loan agreements and extracts key data points. [Bloomberg's 2017 reporting](https://www.bloomberg.com/news/articles/2017-02-28/jpmorgan-marshals-an-army-of-developers-to-automate-high-finance) put the output at 12,000 contracts processed in seconds and 360,000 hours of annual legal work automated. The narrowness was not a limitation. It was the design. The system never tried to negotiate contracts, advise on terms, or do anything beyond extraction. That constraint is what made it work.
+
 Klarna deployed an AI assistant for customer service in early 2024. Within a month it handled [2.3 million conversations](https://www.klarna.com/international/press/klarna-ai-assistant-handles-two-thirds-of-customer-service-chats-in-its-first-month/), two-thirds of all customer chats, with resolution times dropping from 11 minutes to under 2. Then they pushed further. They cut staff by 40% and let AI handle increasingly complex queries. Quality dropped. Complaints rose. By 2025, CEO Sebastian Siemiatkowski [acknowledged they had gone too far](https://fortune.com/2025/05/09/klarna-ai-humans-return-on-investment/) and began rehiring human agents.
 
 The initial deployment worked because it was narrow: routine inquiries with clear escalation paths. The expansion failed because it crossed into territory requiring judgment, empathy, and context that LLMs cannot reliably provide. The line between the two is where every agentic deployment succeeds or fails.
