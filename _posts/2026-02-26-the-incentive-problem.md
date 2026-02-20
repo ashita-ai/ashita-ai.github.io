@@ -30,7 +30,7 @@ The only handoff model that reliably works is what HBR calls the "Hive": multidi
 
 The result is predictable. A project ships on innovation dollars. It then competes for maintenance budget against everything else. The team that launched has moved on. The team inheriting it has no incentive to keep it alive — doing so drains resources from their own projects.
 
-RAND [found](https://www.rand.org/pubs/research_reports/RRA2680-1.html) that more than 80% of AI projects fail to deliver expected value, twice the failure rate of non-AI technology projects. The Big Tech capex numbers obscure this: Amazon at $100–125B, Microsoft at $80B, Alphabet at $75–91B. The money exists to build. The budget structures do not exist to sustain.
+RAND [found](https://www.rand.org/pubs/research_reports/RRA2680-1.html) that more than 80% of AI projects fail to deliver expected value, twice the failure rate of non-AI technology projects. The Big Tech capex numbers obscure this: Amazon at $100B, Microsoft at $80B, Alphabet at $91B. The money exists to build. The budget structures do not exist to sustain.
 
 ## The vendor problem
 
@@ -42,7 +42,7 @@ Sierra's pricing analysis [makes the conflict explicit](https://sierra.ai/blog/o
 
 This is not vendor bad faith. It is a rational response to incentives. A vendor on seat-based contracts who builds AI that genuinely works is destroying their own revenue. The rational move is to build AI that looks effective in demos and requires humans to keep it running in production. That is what the incentive structure produces.
 
-The market is beginning to correct. Seat-based pricing [dropped from 21% to 15%](https://www.agilegrowthlabs.com/blog/seat-based-pricing-is-dead-how-ai-first-saas-companies-are-monetizing-with-outcome-based-pricing/) of companies in twelve months. Companies using usage or outcome-based models show 40% better gross margins and 2.3x lower churn than those still on per-seat. But most enterprise contracts have not caught up. Until they do, your vendor's incentives are not your incentives.
+The market is beginning to correct. Seat-based pricing [dropped from 21% to 15%](https://www.growthunhinged.com/p/2025-state-of-b2b-monetization) of companies in twelve months, with hybrid and outcome-based models picking up the difference. But most enterprise contracts have not caught up. Until they do, your vendor's incentives are not your incentives.
 
 ## What works
 
