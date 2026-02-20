@@ -20,7 +20,7 @@ AI systems are being deployed without one.
 
 Regulators are not waiting for the industry to sort this out. The SEC [fined 26 firms a combined $392.75 million](https://www.sec.gov/newsroom/press-releases/2024-98) in 2024 for failing to preserve electronic communications. AI outputs are communications. If you cannot prove what your agent told a client, you have a recordkeeping violation.
 
-[FINRA's 2026 oversight report](https://www.finra.org/rules-guidance/guidance/reports/2026-finra-annual-regulatory-oversight-report/gen-ai) expects prompt and output logging, model version tracking, and human-in-the-loop oversight. OCC's model risk management framework requires comprehensive model inventories with standardized metadata, with approval timelines of 9 to 12 months at most U.S. financial institutions. ISO 42001 codifies 38 auditable controls covering data provenance, event logging, and documentation by audience.
+[FINRA's 2026 oversight report](https://www.finra.org/rules-guidance/guidance/reports/2026-finra-annual-regulatory-oversight-report/gen-ai) expects prompt and output logging, model version tracking, and human-in-the-loop oversight. OCC's model risk management framework requires comprehensive model inventories with standardized metadata. ISO 42001 codifies 38 auditable controls covering data provenance, event logging, and documentation by audience.
 
 The question is not whether regulators will ask. It is whether you can answer.
 
@@ -36,7 +36,7 @@ A metadata control plane gives you three capabilities that governance requires: 
 
 ## What happens without it
 
-On August 1, 2012, Knight Capital [deployed a routine software update](https://www.sec.gov/newsroom/press-releases/2013-222) to participate in the NYSE's new Retail Liquidity Program. The update accidentally reactivated dormant code. In 45 minutes: 4 million erroneous trades across 154 stocks, $460 million in losses, Knight's stock down 70%. The company was acquired within months.
+On August 1, 2012, Knight Capital [deployed a routine software update](https://www.sec.gov/newsroom/press-releases/2013-222) to participate in the NYSE's new Retail Liquidity Program. The update accidentally reactivated dormant code. In 45 minutes: 4 million erroneous trades across 154 stocks, $460 million in losses, Knight's stock down roughly 75%. The company was acquired within months.
 
 Knight's trading system had the raw data. It had no control plane. There was no kill switch, no incident classification, no lineage to trace what the dormant code was doing. A control plane would have flagged the unvalidated code before deployment. It would have detected anomalous order volume within seconds and triggered a circuit breaker. Instead, 45 minutes of invisible operation destroyed a 17-year-old firm.
 

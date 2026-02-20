@@ -38,7 +38,7 @@ The data readiness problem has not been solved. It has been papered over with de
 
 The SEC [charged Presto Automation](https://www.sec.gov/enforcement-litigation/administrative-proceedings/33-11352-s) with claiming its AI drive-thru "eliminated the need for human order taking." Reality: over 70% of orders required human agents in the Philippines and India.
 
-The SEC and DOJ [charged Albert Saniger](https://www.justice.gov/usao-sdny/pr/tech-ceo-charged-artificial-intelligence-investment-fraud-scheme) of Nate Inc. with fraud. He raised $42 million claiming AI automation. Actual automation rate: zero percent. Hundreds of contractors in call centers in the Philippines and Romania manually completed purchases.
+The SEC and DOJ [charged Albert Saniger](https://www.justice.gov/usao-sdny/pr/tech-ceo-charged-artificial-intelligence-investment-fraud-scheme) of Nate Inc. with fraud. He raised $42 million claiming AI automation. Actual automation rate: effectively zero percent. Hundreds of contractors in call centers in the Philippines and Romania manually completed purchases.
 
 Gartner [estimates](https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027) only 130 of thousands of vendors claiming "agentic AI" are real. The rest are agent-washing: rebranding chatbots without substantial capabilities.
 
