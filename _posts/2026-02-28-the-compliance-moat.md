@@ -12,7 +12,7 @@ The conventional view is that compliance is overhead, a cost center that slows y
 
 The requirements converge on the same infrastructure patterns regardless of industry.
 
-**Financial services:** FINRA's [2025 Regulatory Oversight Report](https://www.finra.org/sites/default/files/2025-01/2025-annual-regulatory-oversight-report.pdf) applies existing rules to AI without exception. Model risk management under [SR 11-7](https://www.federalreserve.gov/supervisionreg/srletters/sr1107.htm) covers any quantitative method that processes input data into estimates, which includes LLMs. Banks face [12 to 18 months](https://bpi.com/the-overlooked-risk-in-bank-ai-adoption-regulatory-inaction/) to approve AI tools through model risk reviews, while METR's research shows AI task completion capabilities [doubling roughly every seven months](https://arxiv.org/abs/2503.14499).
+**Financial services:** FINRA's [2025 Regulatory Oversight Report](https://www.finra.org/sites/default/files/2025-01/2025-annual-regulatory-oversight-report.pdf) applies existing rules to AI without exception. Model risk management under [SR 11-7](https://www.federalreserve.gov/supervisionreg/srletters/sr1107.htm) covers any quantitative method that processes input data into estimates, which includes LLMs. Banks engage in [months-long model risk reviews](https://bpi.com/the-overlooked-risk-in-bank-ai-adoption-regulatory-inaction/) before deploying any AI tool, while METR's research shows AI task completion capabilities [doubling roughly every seven months](https://arxiv.org/abs/2503.14499).
 
 **Healthcare:** The FDA has authorized [over 1,250 AI-enabled medical devices](https://pmc.ncbi.nlm.nih.gov/articles/PMC12595527/) as of July 2025, up from just 33 between 1995 and 2015. The December 2024 guidance on [Predetermined Change Control Plans](https://www.fda.gov/news-events/press-announcements/fda-issues-comprehensive-draft-guidance-developers-artificial-intelligence-enabled-medical-devices) requires documented verification methods, risk assessment, and implementation strategy for every model update.
 
@@ -24,9 +24,7 @@ The requirements sound burdensome until you realize they are describing the [met
 
 ## The infrastructure that becomes a moat
 
-The [components are not novel](/blog/the-metadata-control-plane/): audit logs, data lineage, classification tags, access controls. What is novel is what they unlock.
-
-The OCC [fined Citibank $75 million](https://www.occ.gov/news-issuances/news-releases/2024/nr-occ-2024-76.html) in 2024 for persistent failures in data governance and risk management controls. Banks that already have audit infrastructure can deploy AI in compliance-sensitive functions. Banks that do not are locked out until they build it, a process that takes 12 to 18 months under model risk review.
+The OCC [fined Citibank $75 million](https://www.occ.gov/news-issuances/news-releases/2024/nr-occ-2024-76.html) in 2024 for persistent failures in data governance and risk management controls. Banks that already have audit infrastructure can deploy AI in compliance-sensitive functions. Banks that do not are locked out until they build it.
 
 The FDA's Predetermined Change Control Plan guidance requires knowing which model version produced which output and having a documented path to revert. Companies with model versioning can update AI medical devices through a streamlined process. Companies without it face full resubmission for every change.
 
@@ -48,11 +46,11 @@ Palantir's [FedStart program](https://www.kavout.com/market-lens/palantirs-ai-dr
 
 ## The economics
 
-SOC 2 certification costs [$30,000 to $150,000](https://scytale.ai/center/soc-2/how-much-does-soc-2-compliance-cost/) for most small to mid-sized companies. ISO 27001 runs [$50,000 to $200,000](https://scytale.ai/resources/iso-27001-certification-costs/) and takes 3 to 18 months. [ISO 42001](/blog/i-read-iso-42001-so-you-dont-have-to/), the first certifiable standard specifically for AI management systems, bolts onto existing ISO 27001 infrastructure at 30–50% lower cost. Fortune 500 companies average [$2.5 million](https://introl.com/blog/compliance-frameworks-ai-infrastructure-soc2-iso27001-gdpr) for AI infrastructure compliance.
+SOC 2 certification costs [$30,000 to $150,000](https://scytale.ai/center/soc-2/how-much-does-soc-2-compliance-cost/) for most small to mid-sized companies. ISO 27001 runs [$50,000 to $200,000](https://scytale.ai/resources/iso-27001-certification-costs/) and takes 3 to 18 months. [ISO 42001](/blog/i-read-iso-42001-so-you-dont-have-to/), the first certifiable standard specifically for AI management systems, is designed to integrate with existing ISO 27001 infrastructure, reducing implementation effort for organizations already certified. Fortune 500 companies average [$2.5 million](https://introl.com/blog/compliance-frameworks-ai-infrastructure-soc2-iso27001-gdpr) for AI infrastructure compliance.
 
 The costs are front-loaded. The benefits compound.
 
-Many venture capitalists [prefer investing in SOC 2-compliant startups](https://www.ispartnersllc.com/blog/soc-2-for-startups/). McKinsey [found](https://www.mckinsey.com/industries/financial-services/our-insights/the-case-for-compliance-as-a-competitive-advantage-for-banks) that 35% of financial services growth comes from adjacent industries, growth that requires regulatory approval competitors may not have. Palantir rents its moat through FedStart. Banks with audit infrastructure deploy AI where competitors are locked out for 12 to 18 months. The pattern repeats in every regulated vertical.
+Many venture capitalists [prefer investing in SOC 2-compliant startups](https://www.ispartnersllc.com/blog/soc-2-for-startups/). McKinsey [found](https://www.mckinsey.com/industries/financial-services/our-insights/the-case-for-compliance-as-a-competitive-advantage-for-banks) that 35% of financial services growth comes from adjacent industries, growth that requires regulatory approval competitors may not have. Palantir rents its moat through FedStart. Banks with audit infrastructure deploy AI where competitors are blocked by months-long model risk reviews. The pattern repeats in every regulated vertical.
 
 The companies treating compliance as overhead are paying for infrastructure they will need anyway, getting no credit for it, and leaving market opportunity on the table. The companies treating compliance as strategy are building once and selling everywhere. [The incentive structure](/blog/the-incentive-problem/) rewards launching over maintaining, but compliance infrastructure is one of the few investments that pays off in both phases.
 
@@ -68,4 +66,4 @@ The EU AI Act's 10-year record retention and conformity assessment requirements 
 
 The startup that lost a $50 million deal did not lose it on technology. The founder who spent $150,000 on the wrong certification did not fail at engineering. They failed at understanding which gate their buyers needed them to pass through.
 
-The regulators are not asking for busywork. They are asking for [the same infrastructure](/blog/the-metadata-control-plane/) that makes AI work in production: audit trails, lineage tracking, model versioning, access controls. The companies that build it first can deploy where competitors cannot. The governance is not overhead. The governance is the moat.
+The regulators are not asking for busywork. They are asking for the same infrastructure that makes AI work in production: audit trails, lineage tracking, model versioning, access controls. The companies that build it first can deploy where competitors cannot. The governance is not overhead. The governance is the moat.
