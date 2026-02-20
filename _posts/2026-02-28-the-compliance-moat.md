@@ -4,23 +4,21 @@ title: "The Compliance Moat"
 date: 2026-02-28
 ---
 
-A startup [lost a $50 million deal](https://introl.com/blog/compliance-frameworks-ai-infrastructure-soc2-iso27001-gdpr) over SOC 2 failure. Another founder spent six months and $150,000 on ISO 27001 only to discover their prospects wanted SOC 2, and [still could not close US enterprise deals](https://pentesterworld.com/articles/iso-27001-vs-other-security-standards-detailed-comparison).
+Palantir wins government contracts competitors cannot qualify for. Not because their AI outperforms. Because they built compliance infrastructure their competitors have not built.
 
-The conventional view is that compliance is overhead, a cost center that slows you down while competitors move fast. The opposite is true. The infrastructure that compliance requires is the same infrastructure that makes AI work in production. Build it first, and you have a moat.
+A startup [lost a $50 million deal](https://introl.com/blog/compliance-frameworks-ai-infrastructure-soc2-iso27001-gdpr) over SOC 2 failure. Another founder spent six months and $150,000 on ISO 27001 only to discover their prospects wanted SOC 2, and [still could not close US enterprise deals](https://pentesterworld.com/articles/iso-27001-vs-other-security-standards-detailed-comparison). The infrastructure they skipped was the gate their buyers needed them to pass through.
+
+The conventional view is that compliance is overhead: a cost center that slows you down while competitors move fast. The opposite is true. Build the infrastructure compliance requires, and it becomes the moat.
 
 ## What the regulations require
 
-The requirements converge on the same infrastructure patterns regardless of industry.
+FINRA, the FDA, NAIC, and the EU AI Act were written by different agencies, for different industries, across different years. Each arrived independently at the same list: audit logs documenting who changed what and when, lineage connecting model outputs to their inputs, model versioning with rollback paths, and access controls enforced before actions execute.
 
-**Financial services:** FINRA's [2025 Regulatory Oversight Report](https://www.finra.org/sites/default/files/2025-01/2025-annual-regulatory-oversight-report.pdf) applies existing rules to AI without exception. Model risk management under [SR 11-7](https://www.federalreserve.gov/supervisionreg/srletters/sr1107.htm) covers any quantitative method that processes input data into estimates, which includes LLMs. Banks engage in [months-long model risk reviews](https://bpi.com/the-overlooked-risk-in-bank-ai-adoption-regulatory-inaction/) before deploying any AI tool, while METR's research shows AI task completion capabilities [doubling roughly every seven months](https://arxiv.org/abs/2503.14499).
+FINRA's model risk management framework under [SR 11-7](https://www.federalreserve.gov/supervisionreg/srletters/sr1107.htm) covers any quantitative method that processes input into estimates, which includes LLMs. The FDA's [December 2024 Predetermined Change Control Plan guidance](https://www.fda.gov/news-events/press-announcements/fda-issues-comprehensive-draft-guidance-developers-artificial-intelligence-enabled-medical-devices) requires documented verification for every model update; the agency has now authorized [over 1,250 AI-enabled medical devices](https://pmc.ncbi.nlm.nih.gov/articles/PMC12595527/) as of July 2025, up from just 33 between 1995 and 2015. The [NAIC Model Bulletin](https://content.naic.org/sites/default/files/inline-files/2023-12-4%20Model%20Bulletin_Adopted_0.pdf) requires written governance programs spanning business units, actuarial, data science, underwriting, claims, compliance, and legal, adopted in 23 states and Washington D.C., with Colorado's framework [taking effect this month](https://www.agentech.com/resources/articles/naic-ai-model-guidance). The EU AI Act mandates [10-year record retention](https://artificialintelligenceact.eu/assessment/eu-ai-act-compliance-checker/) and conformity assessments for high-risk systems, with fines reaching [€35 million or 7% of global annual turnover](https://www.europarl.europa.eu/topics/en/article/20230601STO93804/eu-ai-act-first-regulation-on-artificial-intelligence) and full enforcement beginning August 2026.
 
-**Healthcare:** The FDA has authorized [over 1,250 AI-enabled medical devices](https://pmc.ncbi.nlm.nih.gov/articles/PMC12595527/) as of July 2025, up from just 33 between 1995 and 2015. The December 2024 guidance on [Predetermined Change Control Plans](https://www.fda.gov/news-events/press-announcements/fda-issues-comprehensive-draft-guidance-developers-artificial-intelligence-enabled-medical-devices) requires documented verification methods, risk assessment, and implementation strategy for every model update.
+Banks engage in [months-long model risk reviews](https://bpi.com/the-overlooked-risk-in-bank-ai-adoption-regulatory-inaction/) before deploying any AI tool, while METR's research shows AI task completion capabilities [doubling roughly every seven months](https://arxiv.org/abs/2503.14499). The companies with this infrastructure in place skip the queue. The companies without it are locked out while they build it.
 
-**Insurance:** 23 states and Washington, D.C. have adopted the [NAIC Model Bulletin on AI Systems](https://content.naic.org/sites/default/files/inline-files/2023-12-4%20Model%20Bulletin_Adopted_0.pdf), requiring written governance programs with representation from business units, actuarial, data science, underwriting, claims, compliance, and legal. Colorado's comprehensive AI framework [takes effect February 1, 2026](https://www.agentech.com/resources/articles/naic-ai-model-guidance).
-
-**EU AI Act:** High-risk systems must register publicly, conduct conformity assessments, maintain records for [10 years after the system has been placed on the market or put into service](https://artificialintelligenceact.eu/assessment/eu-ai-act-compliance-checker/), and implement comprehensive data governance. Fines reach [€35 million or 7% of global annual turnover](https://www.europarl.europa.eu/topics/en/article/20230601STO93804/eu-ai-act-first-regulation-on-artificial-intelligence). Full enforcement begins August 2026.
-
-The requirements sound burdensome until you realize they are describing the [metadata infrastructure](/blog/the-metadata-control-plane/) every AI system needs anyway: audit trails, lineage tracking, model versioning, access controls, human oversight. The regulators are not asking for extra work. They are asking you to build what you should have built first.
+The regulators are not asking for extra work. They are asking you to build what you should have built first.
 
 ## The infrastructure that becomes a moat
 
@@ -56,11 +54,9 @@ The companies treating compliance as overhead are paying for infrastructure they
 
 ## What I am still figuring out
 
-The minimum viable compliance infrastructure for a seed-stage startup versus a regulated enterprise is different. SOC 2 at $30K is accessible. A full regulatory framework at $2.5M is not. The right answer for a Series A company is somewhere between, and I do not have a principled framework for finding it.
+The minimum viable compliance infrastructure is not obvious. SOC 2 at $30K is a startup's entry ticket. A full regulatory framework at $2.5M is an enterprise investment. The right answer for a Series A company is somewhere between, and the threshold is invisible until you are past it — usually inside the incident or the lost deal that would have required it.
 
-The Palantir example is clear, but it may be an outlier. Government contracting is unusually compliance-sensitive. The same moat dynamics may not apply in commercial markets where buyers are less sophisticated about infrastructure requirements.
-
-The EU AI Act's 10-year record retention and conformity assessment requirements are coming but not yet enforced. The full cost of compliance is not yet visible. Companies building infrastructure now are betting on what enforcement will look like, a bet that may or may not pay off.
+The Palantir example is the clearest version of the moat thesis, which may also be its limitation. Government contracting is the most compliance-sensitive market that exists: buyers are sophisticated, requirements are explicit, and compliance is a genuine prerequisite. In commercial markets — where most companies actually compete — buyers are often less demanding. A mid-market software buyer asking "do you have SOC 2?" may not care about data lineage or model versioning at all. The moat is strongest in regulated verticals. Most startups are not in regulated verticals.
 
 ---
 
