@@ -20,25 +20,21 @@ The question is what to build that does not die with the current paradigm. Not m
 
 ## The two traps
 
-Most organizations fall into one of two traps.
+Most organizations fail the same way, in one of two directions.
 
-**Trap one: Building for today.** They adopt the current best practices (fine-tuning, RAG, prompt engineering) and build infrastructure optimized for exactly those patterns. When the paradigm shifts, the infrastructure becomes a constraint. MapReduce pipelines were perfectly designed for the batch processing workflows of 2012. They were not designed for the real-time analytics of 2018.
+The first: they adopt the current best practices (fine-tuning, RAG, prompt engineering) and build infrastructure optimized for exactly those patterns. When the paradigm shifts, the infrastructure becomes a constraint. MapReduce pipelines were the right answer in 2012 for batch processing at scale. They were not the right answer in 2018 when real-time analytics became the expectation. The companies that had invested most heavily in Hadoop infrastructure were the last to move.
 
-**Trap two: Building for never.** They recognize that the landscape is changing too fast, so they do not build infrastructure at all. They use off-the-shelf tools, avoid commitments, stay flexible. But flexibility without foundation is chaos. They cannot deploy AI at scale because they have no [governance infrastructure](/blog/the-metadata-control-plane/), no data quality guarantees, no way to trace what went wrong.
+The second: they recognize that the landscape is changing too fast and do not commit to infrastructure at all. They use off-the-shelf tools, avoid architectural decisions, stay flexible. Flexibility without foundation is chaos. At scale, you cannot trace what went wrong, cannot answer a regulator who asks what your system told a customer on a specific date, cannot onboard a new model without rebuilding the data pipeline from scratch.
 
-The path between these traps is building infrastructure that embodies properties rather than implements patterns. Fine-tuning pipelines and vector databases are patterns, coupled to a specific moment. The infrastructure that survived previous paradigm shifts had structural properties that were independent of any particular technology. Properties survive. Patterns become legacy.
+Both traps have the same outcome: when the paradigm shifts, you are starting over. The path between them is building infrastructure that embodies properties rather than implements patterns. Properties survive. Patterns become legacy.
 
 ## What survives
 
-Four infrastructure properties have survived every previous paradigm shift. They will survive the next one.
+Airbnb did not build Chronon for LLMs. They built it to solve a specific problem: ensuring that the features used to train a model are the same features served in production. That requirement has not changed across three paradigm shifts. The data quality standards, feature consistency guarantees, and lineage tracking that make Chronon useful survived gradient-boosted trees, survived neural networks, and will survive whatever comes next. What did not survive were the model architectures trained on those features, which were replaced each time the paradigm shifted.
 
-**Data quality standards.** Airbnb's data quality tooling survived the transition from gradient-boosted trees to neural networks to LLMs because data quality is paradigm-independent. Models change. The requirement that your data be accurate, timely, and well-documented does not. [Data contracts](/blog/the-data-platform-decisions-that-haunt-you/) that define schema, ownership, and quality expectations transfer to any model architecture.
+The same pattern holds across infrastructure cycles. MapReduce companies invested in Hadoop optimized for batch processing workflows. The underlying requirements (distributed computation, fault tolerance, data durability) survived in Spark and then in managed cloud services. The specific pattern did not. Companies that understood the requirement could migrate. Companies that had optimized for the pattern had to start over.
 
-**Governance infrastructure.** The [metadata layer](/blog/the-metadata-control-plane/) (audit logs, lineage tracking, classification tags, access controls) is required by regulators and by production reality regardless of what models you run. Two Sigma's $90 million penalty was for governance failures in algorithmic trading. The same infrastructure would have prevented failures in LLM deployments. Governance becomes a [competitive moat](/blog/the-compliance-moat/) precisely because it is paradigm-independent.
-
-**Institutional memory.** Organizations that document their decisions, maintain understanding of their systems, and invest in knowledge transfer survive paradigm shifts. Organizations that accumulate [comprehension debt](/blog/the-three-debts/) (code nobody understands) and [decision debt](/blog/the-three-debts/) (choices made for the wrong reasons) do not. The tools for preserving institutional memory will change. The requirement will not.
-
-**Human judgment boundaries.** Every paradigm shift produces a wave of automation enthusiasm followed by a correction. The pattern with [agentic AI](/blog/against-agentic-everything/) is the same: narrow, supervised deployments work; broad, autonomous deployments fail. The boundary between human and machine will move. The need to define that boundary deliberately will not.
+What makes an infrastructure investment paradigm-independent is not its age. It is whether what it embodies holds regardless of which model architecture is reading the data, which framework is executing the workflow, or which vendor is providing the compute. Data that means what it says. Decisions that can be traced. Interfaces that do not change arbitrarily. These properties were requirements before LLMs and will be requirements after whatever replaces them.
 
 ## What I am still figuring out
 

@@ -48,6 +48,8 @@ This is why git became the universal substrate of software development. Not beca
 
 Nakamoto [defined](https://www.ussc.gov/sites/default/files/pdf/training/annual-national-training-seminar/2018/Emerging_Tech_Bitcoin_Crypto.pdf) a digital coin as "a chain of digital signatures." Strip the transaction history from a Bitcoin and you have nothing. The coin has no existence independent of its provenance. The systems that endure share this structural property: provenance is not metadata attached to the thing. Provenance is the thing.
 
+Building provenance into AI systems means applying this model at every transformation step. Data versioning tools like [DVC](https://dvc.org/) treat training datasets the way git treats code: content-addressable versioning where every dataset state has a reproducible identifier, and every model artifact traces to the data version that produced it. SLSA's framework, which Google designed for software supply chains, extends to ML training pipelines by the same logic: attest who ran which training job, when, on which dataset version, producing which model artifact. The principle from git still holds. Provenance that is structural, embedded in the artifact's identity, is harder to fabricate than provenance documented separately and attached afterward.
+
 ## What AI systems lack
 
 Most deployed AI systems cannot trace how they produced their outputs. When a model hallucinates, which training data contributed? When an agent makes a bad decision, what was the reasoning chain? When a [RAG pipeline](/blog/the-rag-trap/) returns garbage, was the problem in retrieval, in chunking, in the source document, or in the model's synthesis?

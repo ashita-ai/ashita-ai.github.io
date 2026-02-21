@@ -44,15 +44,15 @@ The mechanism is always the same: the system acts, the damage accumulates, and n
 
 ## How much you actually need
 
-The obvious objection is that this is expensive overhead. The answer depends on what your AI touches.
+The obvious objection is that this is expensive overhead. The answer depends on blast radius, not company size: what happens when your AI acts without governance?
 
-A seed-stage startup building internal tools needs a spreadsheet tracking its models and their training data, documented ownership, and a plan for when it scales into regulated verticals. That is enough for now.
+Start there. If a classification tag fails to fire and a model queries data it should not, what is the consequence? If an audit log is missing and a regulator asks what the system told a client on a specific date, can you answer? If you cannot answer those questions, you do not know what level of control plane you need.
 
-A company with 50 data sources and 10 AI applications needs lineage tracking for critical paths, classification tags on sensitive data, and audit logs for any output that reaches a customer.
+For most teams, the minimum is a model registry with documented ownership, classification tags on sensitive data, and audit logs for any output that reaches a customer. That is achievable in days and sufficient until the blast radius grows.
 
-A financial services firm deploying AI that touches client assets needs everything described above, with the rigor to survive regulatory examination. There is no shortcut.
+For regulated deployments, every component above needs to survive examination: lineage that a regulator can follow, access controls that a lawyer can audit, logs that answer the precise questions examiners ask. The rigor is not optional when the blast radius includes fines, liability, or patient outcomes.
 
-The question is not whether you need metadata infrastructure. It is how much, and whether you build it before or after your first ungovernable incident.
+The question is not whether you need metadata infrastructure. It is whether you understand your blast radius before or after your first ungovernable incident.
 
 ## What I am still figuring out
 
