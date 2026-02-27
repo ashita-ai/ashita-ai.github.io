@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Contracts as Infrastructure"
-date: 2026-03-19
+date: 2026-04-07
 ---
 
 On April 26, 1956, a converted World War II tanker named the Ideal X sailed from Newark, New Jersey to Houston, Texas carrying 58 aluminum truck bodies on a specially constructed spar deck. Loading loose cargo onto a medium-sized ship cost [$5.83 per ton](https://press.princeton.edu/books/paperback/9780691170817/the-box). Loading the Ideal X cost 15.8 cents per ton. A 97% reduction.

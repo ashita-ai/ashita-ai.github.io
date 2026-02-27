@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Ground Truth as Foundation"
-date: 2026-03-10
+date: 2026-03-24
 ---
 
 On November 16, 2018, representatives from sixty nations [voted](https://en.wikipedia.org/wiki/2019_redefinition_of_the_SI_base_units) to redefine the kilogram. For 130 years, the kilogram had been a platinum-iridium cylinder in a vault outside Paris: Le Grand K. Not a reference for the kilogram. The kilogram itself.

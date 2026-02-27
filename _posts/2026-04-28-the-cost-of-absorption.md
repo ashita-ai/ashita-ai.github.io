@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The Cost of Absorption"
-date: 2026-03-31
+date: 2026-04-28
 ---
 
 In December 2010, Airbus launched the A320neo with new fuel-efficient engines. Boeing faced a choice: design a new narrow-body aircraft from scratch or fit larger engines onto the 737, an airframe that first flew on [April 9, 1967](https://www.historylink.org/file/3569). A clean-sheet design would cost upward of [$10 billion](https://leehamnews.com/2019/03/20/boeing-didnt-want-to-re-engine-the-737-but-had-design-standing-by/) and take a decade. [Re-engining](https://en.wikipedia.org/wiki/Boeing_737_MAX) the 737 would cost $2-3 billion and take four years.

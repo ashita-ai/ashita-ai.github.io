@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The Provenance Imperative"
-date: 2026-03-17
+date: 2026-03-31
 ---
 
 In 2008, forensic analysts found titanium white in a painting attributed to Heinrich Campendonk and dated 1914. Titanium white was not used in paint until the 1920s. A single anachronistic pigment trace collapsed an entire provenance fiction.

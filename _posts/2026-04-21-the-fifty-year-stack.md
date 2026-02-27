@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The Fifty-Year Stack"
-date: 2026-03-26
+date: 2026-04-21
 ---
 
 On June 11, 2009, a developer named Johan Oskarsson organized a meetup in San Francisco to discuss open-source, distributed, non-relational databases. He needed a Twitter hashtag. Eric Evans at Rackspace [suggested](https://martinfowler.com/bliki/NosqlDefinition.html) "#NoSQL." The term, Evans later said, did not have a deep meaning. It was supposed to be used for one meeting.

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Building for Tomorrow"
-date: 2026-03-03
+date: 2026-03-10
 ---
 
 In 2019, Airbnb's data platform was considered state of the art. They had [invested heavily](https://medium.com/airbnb-engineering/data-quality-at-airbnb-870d03080469) in data quality tooling, built sophisticated feature stores, and published papers on their machine learning infrastructure. Since then, the ML paradigm has shifted multiple times: gradient-boosted trees gave way to neural networks, then to foundation models. The feature platform they built, [Chronon](https://www.infoq.com/news/2024/04/airbnb-chronon-open-sourced/), was open-sourced in 2024 and is still in active use. Stripe co-maintains it.
@@ -12,7 +12,7 @@ Tomorrow is uncertain. The models will change. The regulatory landscape will shi
 
 ## What dies
 
-GPT-4 will be a footnote by 2030. LangChain and LlamaIndex will be replaced by whatever comes next. RAG pipelines may look as dated as MapReduce within five years. The models, frameworks, and architectures are furniture. They are supposed to be replaced.
+GPT-4 will likely be a footnote by 2030. LangChain and LlamaIndex will be replaced by whatever comes next. RAG pipelines may look as dated as MapReduce within five years. The models, frameworks, and architectures are furniture. They are supposed to be replaced.
 
 The infrastructure that dies with them is the problem. MapReduce pipelines were state of the art in 2012. By 2018, cloud data warehouses had made most of them obsolete. The same coupling is happening now: vector databases tightly bound to current embedding models, agent frameworks coupled to today's LLM APIs, prompt engineering patterns optimized for how current models process text.
 
@@ -32,9 +32,11 @@ Both traps have the same outcome: when the paradigm shifts, you are starting ove
 
 Airbnb did not build Chronon for LLMs. They built it to solve a specific problem: ensuring that the features used to train a model are the same features served in production. That requirement has not changed across three paradigm shifts. The data quality standards, feature consistency guarantees, and lineage tracking that make Chronon useful survived gradient-boosted trees, survived neural networks, and will survive whatever comes next. What did not survive were the model architectures trained on those features, which were replaced each time the paradigm shifted.
 
-The same pattern holds across infrastructure cycles. MapReduce companies invested in Hadoop optimized for batch processing workflows. The underlying requirements (distributed computation, fault tolerance, data durability) survived in Spark and then in managed cloud services. The specific pattern did not. Companies that understood the requirement could migrate. Companies that had optimized for the pattern had to start over.
+The same pattern holds across infrastructure cycles. Companies that built APIs against versioned, documented contracts could swap implementations underneath without breaking callers. Companies that exposed implementation details directly had to coordinate breaking changes with every consumer each time the internals changed. The implementation was replaced. The contract requirement was not.
 
-What makes an infrastructure investment paradigm-independent is not its age. It is whether what it embodies holds regardless of which model architecture is reading the data, which framework is executing the workflow, or which vendor is providing the compute. Data that means what it says. Decisions that can be traced. Interfaces that do not change arbitrarily. These properties were requirements before LLMs and will be requirements after whatever replaces them.
+What makes an infrastructure investment paradigm-independent — if anything does — is not its age. It is whether what it embodies holds regardless of which model architecture is reading the data, which framework is executing the workflow, or which vendor is providing the compute.
+
+Four properties have held across every cycle examined here. Ground truth: data that means what it says, consistently, across every system that reads it. Provenance: decisions that can be traced to their source — what model, what data, what version. Contracts: interfaces that do not change arbitrarily, so callers do not need to change with them. Reversibility: the ability to undo and roll back when the world changes. These were requirements before LLMs and will be requirements after whatever replaces them. The next posts take each in turn.
 
 ## What I am still figuring out
 
@@ -45,5 +47,3 @@ Whether the current infrastructure boom is building structure or furniture. Hund
 ---
 
 Airbnb's ML paradigm shifted three times. Their data quality infrastructure survived all three, not because anyone predicted the shifts, but because quality standards, governance, and lineage tracking are not coupled to any particular model architecture. The models were furniture. The data discipline was structure.
-
-The question is not whether your infrastructure will become obsolete. Parts of it will. The question is whether you built anything underneath that survives when it does.
