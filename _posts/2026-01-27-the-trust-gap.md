@@ -22,7 +22,7 @@ The tech industry ran the same con.
 
 **Presto Automation** claimed "Presto Voice" eliminated human drive-thru order-taking. In 2025, it became the [SEC's first "AI-washing" enforcement](https://www.sec.gov/enforcement-litigation/administrative-proceedings/33-11352-s) against a public company. Over 70% of orders required human agents in the Philippines. At the majority of locations, 100%.
 
-**Builder.ai**, a UK unicorn valued at hundreds of millions, claimed to "automate software development through cutting-edge AI." In June 2025, [an investigation revealed](https://vaultinum.com/blog/ai-washing-lessons-from-the-builder-ai-collapse) no real AI existed, just 700 human developers doing manual coding. The company collapsed with $37 million in frozen assets. Microsoft had integrated it into Azure.
+**Builder.ai**, a UK unicorn valued at hundreds of millions, claimed to "automate software development through cutting-edge AI." In May 2025, [an investigation revealed](https://vaultinum.com/blog/ai-washing-lessons-from-the-builder-ai-collapse) no real AI existed, just 700 human developers doing manual coding. The company collapsed with $37 million in frozen assets. Microsoft had integrated it into Azure.
 
 **DoNotPay** marketed itself as the "world's first robot lawyer." The FTC [found](https://www.ftc.gov/news-events/news/press-releases/2025/02/ftc-finalizes-order-donotpay-prohibits-deceptive-ai-lawyer-claims-imposes-monetary-relief-requires) the company never tested if AI output matched human lawyer expertise, hired no attorneys, and produced documents that were "often incomplete, inaccurate or otherwise flawed." They settled for $193,000 in February 2025.
 

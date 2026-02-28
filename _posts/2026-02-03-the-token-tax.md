@@ -26,7 +26,7 @@ But inference is not where organizations are bleeding. The real multipliers are 
 
 A significant fraction of tokens in production LLM deployments are redundant. Anthropic's [prompt caching documentation](https://www.anthropic.com/news/prompt-caching) shows that cached prefixes can reduce costs by up to 90%, implying most of what gets sent is repeated context. System prompts get repeated with every call because the architecture is stateless. [Context windows scale quadratically](/blog/context-windows-are-not-free/) due to the attention mechanism: doubling context length quadruples compute cost. Organizations routinely discover their API costs are multiples of what they budgeted because inefficient context management compounds with scale.
 
-Meanwhile, data scientists spend [50-80% of their time](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai) on data preparation before any model sees the data. Infrastructure consumes [roughly half of total AI spend](https://menlovc.com/2025-the-state-of-generative-ai-in-the-enterprise/). Compliance and governance are line items that did not exist two years ago.
+Meanwhile, data scientists spend 50-80% of their time on data preparation before any model sees the data. Infrastructure consumes [roughly half of total AI spend](https://menlovc.com/2025-the-state-of-generative-ai-in-the-enterprise/). Compliance and governance are line items that did not exist two years ago.
 
 The token got cheaper. Everything around the token got expensive.
 
