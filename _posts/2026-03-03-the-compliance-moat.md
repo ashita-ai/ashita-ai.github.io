@@ -6,7 +6,7 @@ date: 2026-03-03
 
 In 2011, Amazon Web Services [built GovCloud](https://aws.amazon.com/govcloud-us/) before they had the government contracts to justify it. By 2013, [they had the CIA](https://www.theregister.com/2013/03/19/aws_allegedly_helps_cia_build_spy_cloud/). By 2021, [the NSA](https://www.nextgov.com/modernization/2021/08/nsa-awards-secret-10-billion-contract-amazon/184390/). Competitors with comparable technology lost those bids. They had not built the infrastructure.
 
-The same investment, misdirected, produces nothing. A recurring pattern: six months and up to $150,000 on ISO 27001, only to discover that enterprise prospects required SOC 2 instead. The infrastructure is real. It is the wrong gate.
+The same dollars spent on the wrong gate produce nothing. It is a common failure: six months and up to $150,000 on ISO 27001, only to discover that enterprise prospects required SOC 2 instead. The infrastructure is real. It opens the wrong door.
 
 The conventional view is that compliance is overhead: a cost center that slows you down while competitors move fast. The opposite is true. Build the infrastructure compliance requires, and it becomes the moat.
 
@@ -18,7 +18,7 @@ The Federal Reserve and OCC's [SR 11-7](https://www.federalreserve.gov/supervisi
 
 The FDA and insurance regulators have arrived at the same place through different routes. The FDA's [December 2024 Predetermined Change Control Plan guidance](https://www.fda.gov/news-events/press-announcements/fda-issues-comprehensive-draft-guidance-developers-artificial-intelligence-enabled-medical-devices) requires documented verification for every model update, a requirement that grows more consequential as the agency has authorized [over 1,250 AI-enabled medical devices](https://pmc.ncbi.nlm.nih.gov/articles/PMC12595527/) as of July 2025, up from 33 between 1995 and 2015. The [NAIC Model Bulletin](https://content.naic.org/sites/default/files/inline-files/2023-12-4%20Model%20Bulletin_Adopted_0.pdf) requires written governance programs across business units, actuarial, data science, underwriting, claims, compliance, and legal, adopted in 24 jurisdictions as of early 2025.
 
-Banks engage in [months-long model risk reviews](https://bpi.com/the-overlooked-risk-in-bank-ai-adoption-regulatory-inaction/) before deploying any AI tool. METR's research shows the length of tasks frontier AI can complete [doubling roughly every seven months](https://arxiv.org/abs/2503.14499) — the gap between AI capability and deployment authorization widens for every month spent in review. The companies with infrastructure already in place skip that queue. The companies without it are locked out while they build it.
+Banks engage in [months-long model risk reviews](https://bpi.com/the-overlooked-risk-in-bank-ai-adoption-regulatory-inaction/) before deploying any AI tool. METR's research shows the length of tasks frontier AI can complete [doubling roughly every seven months](https://arxiv.org/abs/2503.14499) — meaning each month spent in regulatory review is a month falling further behind on capability. The companies with infrastructure already in place skip that queue. The companies without it are locked out while they build it.
 
 The regulators are not asking for extra work. They are asking you to build what you should have built first.
 
@@ -34,7 +34,7 @@ Each component is a gate. The companies that have the infrastructure pass throug
 
 ## The AWS example
 
-The CIA awarded AWS a contract worth [up to $600 million](https://www.theregister.com/2013/03/19/aws_allegedly_helps_cia_build_spy_cloud/), two years after GovCloud launched. IBM protested the award. A federal court overturned the protest. The gap was not the technology. It was compliance infrastructure IBM had not built.
+IBM protested the [CIA award](https://www.theregister.com/2013/03/19/aws_allegedly_helps_cia_build_spy_cloud/). A federal court overturned the protest. The gap was not the technology. It was compliance infrastructure IBM had not built.
 
 In 2021, the NSA awarded AWS a [$10 billion contract](https://www.nextgov.com/modernization/2021/08/nsa-awards-secret-10-billion-contract-amazon/184390/), codenamed "Wild and Stormy." Microsoft protested. The NSA evaluated the protest and re-awarded to AWS. A decade of intelligence community relationships and compliance infrastructure had compounded into an advantage Azure Government — which caught up on the technology — could not close.
 
@@ -48,7 +48,7 @@ SOC 2 certification costs [$30,000 to $150,000](https://scytale.ai/center/soc-2/
 
 The costs are front-loaded. The benefits compound.
 
-McKinsey [found](https://www.mckinsey.com/industries/financial-services/our-insights/the-case-for-compliance-as-a-competitive-advantage-for-banks) that 35% of financial services growth comes from adjacent industries, growth that requires regulatory approval competitors may not have. AWS rents its compliance moat to partners through GovCloud. Banks with audit infrastructure deploy AI where competitors are blocked by months-long model risk reviews. The pattern repeats in every regulated vertical.
+McKinsey [found](https://www.mckinsey.com/industries/financial-services/our-insights/the-case-for-compliance-as-a-competitive-advantage-for-banks) that 35% of financial services growth comes from adjacent industries — growth that requires regulatory approval to pursue. Companies with compliance infrastructure already have it. Companies without it cannot bid while they build it. AWS rents its compliance moat to partners through GovCloud. Banks with audit infrastructure deploy AI where competitors are blocked by months-long model risk reviews. The pattern repeats in every regulated vertical.
 
 The companies treating compliance as overhead are paying for infrastructure they will need anyway, getting no credit for it, and leaving market opportunity on the table. The companies treating compliance as strategy are building once and selling everywhere. [The incentive structure](/blog/the-incentive-problem/) rewards launching over maintaining, but compliance infrastructure is one of the few investments that pays off in both phases.
 
