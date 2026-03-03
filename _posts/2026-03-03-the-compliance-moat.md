@@ -6,7 +6,7 @@ date: 2026-03-03
 
 In 2011, Amazon Web Services [built GovCloud](https://aws.amazon.com/govcloud-us/) before they had the government contracts to justify it. By 2013, [they had the CIA](https://www.theregister.com/2013/03/19/aws_allegedly_helps_cia_build_spy_cloud/). By 2021, [the NSA](https://www.nextgov.com/modernization/2021/08/nsa-awards-secret-10-billion-contract-amazon/184390/). Competitors with comparable technology lost those bids. They had not built the infrastructure.
 
-The same dollars spent on the wrong gate produce nothing. It is a common failure: six months and up to $150,000 on ISO 27001, only to discover that enterprise prospects required SOC 2 instead. The infrastructure is real. It opens the wrong door.
+The same dollars spent on the wrong gate produce nothing. SOC 2 is the default gate for US enterprise buyers. ISO 27001 is the default for European ones. A company that builds for the wrong geography has real infrastructure that opens the wrong door.
 
 The conventional view is that compliance is overhead: a cost center that slows you down while competitors move fast. The opposite is true. Build the infrastructure compliance requires, and it becomes the moat.
 
@@ -60,6 +60,8 @@ The AWS example is the clearest version of the moat thesis, which may also be it
 
 ---
 
-The founder who spent $150,000 on ISO 27001 and still could not close US enterprise deals did not fail at engineering. They failed at understanding which gate their buyers needed them to pass through.
+Veeva launched in 2007 into a market Salesforce already owned. They did not compete on features. They built FDA 21 CFR Part 11 audit trails, GxP validation documentation, and e-signatures directly into the platform. By 2012, they held an estimated 80% of pharmaceutical CRM. Today they serve 47 of the top 50 biopharma companies.
+
+The reason those customers stay is not the software. Switching requires revalidating the replacement system under FDA standards, a process that is slow, expensive, and risky for mission-critical compliance workflows. Salesforce can replicate the features. It cannot give customers pre-validated infrastructure. Veeva built the right gate for the right buyers, before they had the market, and compounded it into a lock-in that a larger and better-funded competitor cannot break.
 
 The regulators are not asking for busywork. They are asking for the same infrastructure that makes AI work in production: audit trails, lineage tracking, model versioning, access controls. In regulated verticals, building it first determines who can bid. Everywhere else, it is still the foundation — just not the moat.
