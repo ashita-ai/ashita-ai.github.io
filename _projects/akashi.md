@@ -1,7 +1,7 @@
 ---
 title: Akashi
 layout: project
-logo: /assets/images/akashi.jpeg
+logo: /assets/images/akashi.png
 github: https://github.com/ashita-ai/akashi
 description: Version control for AI decisions. Coordinate multi-agent systems before contradictions become incidents.
 ---
