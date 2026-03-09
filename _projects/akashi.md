@@ -6,7 +6,7 @@ github: https://github.com/ashita-ai/akashi
 description: Version control for AI decisions. Coordinate multi-agent systems before contradictions become incidents.
 ---
 
-Multi-agent systems have a coordination.
+Multi-agent systems have a coordination problem.
 
 Agents contradict each other. They re-litigate decisions that were already made. They have no shared memory of what was settled and why. The result is drift: two agents, running independently, converging on incompatible conclusions with no record of how either got there. Akashi is the coordination layer that prevents it.
 
