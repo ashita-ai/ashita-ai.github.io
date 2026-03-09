@@ -4,6 +4,7 @@ layout: project
 logo: /assets/images/arbiter.jpg
 github: https://github.com/ashita-ai/arbiter
 description: LLM evaluation with cost transparency. Know what your evals cost before the invoice arrives.
+listed: false
 ---
 
 The only LLM evaluation framework that shows you exactly what your evaluations cost.

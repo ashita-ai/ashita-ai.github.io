@@ -4,7 +4,6 @@ layout: project
 logo: /assets/images/engram.jpg
 github: https://github.com/ashita-ai/engram
 description: AI memory that preserves ground truth. Because most memory systems hallucinate more than the models they serve.
-listed: false
 ---
 
 Memory is strange.
