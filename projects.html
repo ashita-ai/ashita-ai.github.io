@@ -6,7 +6,7 @@ permalink: /projects/
 
 <p>Open source tools for the problems that don't have clean solutions.</p>
 
-{% for project in site.projects %}
+{% for project in site.projects %}{% unless project.listed == false %}
 <article class="project-card">
   {% if project.logo %}
   <img src="{{ project.logo | relative_url }}" alt="{{ project.title }}" class="project-logo">
@@ -17,4 +17,4 @@ permalink: /projects/
     <a href="{{ project.url | relative_url }}" class="project-link">Learn more →</a>
   </div>
 </article>
-{% endfor %}
+{% endunless %}{% endfor %}

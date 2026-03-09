@@ -4,6 +4,7 @@ layout: project
 logo: /assets/images/conduit.jpg
 github: https://github.com/ashita-ai/conduit
 description: LLM routing that learns which model works best for each query. Stop overpaying for simple tasks.
+listed: false
 ---
 
 Conduit learns which LLM works best for each type of query.
