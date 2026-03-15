@@ -6,7 +6,7 @@ date: 2026-03-17
 
 In August 1988, the United States government published [FIPS 146](https://en.wikipedia.org/wiki/Government_Open_Systems_Interconnection_Profile), mandating that all federal agencies purchase networking equipment compliant with OSI protocols. Several allied governments issued comparable mandates. The International Organization for Standardization had spent over a decade designing a comprehensive seven-layer networking model that was more rigorous, more formally specified, and more theoretically complete than anything TCP/IP offered.
 
-TCP/IP, the protocol that DARPA researchers had built over the preceding decade, the one already running the actual internet, had none of these advantages. It was messy, underspecified, and built by people who [prioritized working code](https://web.mit.edu/saltzer/www/publications/endtoend/endtoend.pdf) over comprehensive standards.
+TCP/IP, the protocol that DARPA researchers had built over the preceding decade, the one already running the actual internet, had none of these advantages. It was messy, underspecified, and built by people who [prioritized working code](https://dl.acm.org/doi/10.1145/52324.52336) over comprehensive standards.
 
 TCP/IP [won anyway](https://en.wikipedia.org/wiki/Protocol_Wars). By 1995, GOSIP had collapsed. The mandate was withdrawn. OSI became a classroom diagram. The wrong protocol won, by every criteria except the one that mattered.
 
