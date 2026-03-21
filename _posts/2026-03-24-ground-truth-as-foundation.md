@@ -16,7 +16,7 @@ The ground truth underneath AI systems today is drifting too. Unlike Le Grand K,
 
 ## The pattern
 
-Ground truth is not data quality. Data quality is a spectrum. Ground truth is binary: the data corresponds to the reality it claims to represent, or it does not. Edgar Codd [stated](https://dl.acm.org/doi/10.1145/362384.362685) the principle in 1970: all information represented in exactly one way, by values in tables. One representation. No ambiguity. No hidden meaning.
+Ground truth is not data quality. Data quality is a spectrum. Ground truth is binary: the data corresponds to the reality it claims to represent, or it does not. Le Grand K is a special case: the ground truth was definitionally self-consistent but anchored to something that changed. That is its own failure mode. Edgar Codd [argued](https://dl.acm.org/doi/10.1145/362384.362685) for the principle in 1970: all information represented in exactly one way, by values in tables. One representation. No ambiguity. No hidden meaning.
 
 When ground truth fails, it fails in one of three ways. The data is correct but means the wrong thing. The data claims to represent reality but does not. Or the data represents one reality and is applied to another. Each has killed people, cost billions, or both.
 
