@@ -56,11 +56,21 @@ COBOL systems violate [reversibility](/blog/reversibility-as-default/). They can
 
 When absorption preserves these properties, the system grows stronger. When absorption violates them, the system grows more fragile. The difference between PostgreSQL absorbing JSONB and Boeing absorbing MCAS is not a difference of ambition or engineering talent. It is a difference of structural integrity. PostgreSQL added document storage as an option alongside relational tables: ground truth preserved, contract unbroken, fully reversible. Boeing hid changed aerodynamics behind software: ground truth obscured, pilot contract violated, failure irreversible at the moment it mattered.
 
+## What this means for AI
+
+The workaround stack in AI systems has a structural resemblance to NAT.
+
+Fine-tuning patches a foundation model for a specific task, compensating for training distribution mismatches without changing the model's underlying knowledge architecture. Prompt engineering patches the gap between what a model can do and what you need it to do: system prompts, few-shot examples, chain-of-thought instructions all work around the model's defaults rather than addressing them. [RAG](/blog/the-rag-trap/) patches the model's lack of current or proprietary knowledge by attaching retrieval at query time rather than fixing the training data problem structurally.
+
+Each technique is individually reasonable. Collectively, they are accumulation. The transformer architecture has a training cutoff, a context limit, a tendency toward hallucination, and a lack of traceable reasoning. Each workaround addresses one symptom without touching the underlying design constraint. And each workaround creates dependencies: production systems built on fine-tuned models built on base models, with prompt engineering mediating between the application and model layers, with RAG managing knowledge freshness, with guardrails compensating for safety failures the model cannot reliably prevent on its own.
+
+If the next paradigm renders transformers obsolete — and the industry is actively researching alternatives — these workaround layers become the COBOL of AI infrastructure: critical systems running on architecture nobody fully understands, whose behavior nobody can fully predict, that nobody can affordably replace. The [provenance](/blog/the-provenance-imperative/) of a fine-tuned model trained on proprietary data using a closed base model is nearly impossible to reconstruct. The [contracts](/blog/contracts-as-infrastructure/) between application, prompt, model, and retrieval layer are implicit. The [reversibility](/blog/reversibility-as-default/) of a system whose prompt engineering has been tuned over months to compensate for specific model behavior is minimal: change the model and the tuning breaks.
+
+The question is whether anyone is building the IPv6 of AI infrastructure — the clean design for the next paradigm — or whether the industry is collectively building NAT. The honest answer is that most of the investment is in workarounds, because workarounds ship faster. The clean design exists in research papers. IPv6 also existed in a specification for twenty years before adoption reached fifty percent.
+
 ## What I am still figuring out
 
 Whether there is a reliable signal that distinguishes "absorb this" from "replace this" before the costs compound. The 737 MAX problems seem obvious in hindsight. In 2011, re-engining was the industry-standard approach. Airbus did the same with the A320neo, and it worked, because the A320's higher wing mounting gave its engines more clearance. Boeing's absorption failed not because the strategy was wrong in general, but because the specific airframe had less margin. Margin is hard to measure from the outside, and the consequences of misjudging it are not evenly distributed.
-
-Whether AI systems are already accumulating rather than absorbing. Fine-tuning patches a foundation model for a specific task. Prompt engineering patches the gap between what a model can do and what you need it to do. [RAG](/blog/the-rag-trap/) patches the model's lack of current or proprietary knowledge. Each technique works around a limitation without addressing it structurally. If the next paradigm renders transformers obsolete, these workarounds become the COBOL of AI: critical systems running on architecture nobody fully understands and nobody can affordably replace. The question is whether anyone is building the IPv6 of AI infrastructure, the clean design for the next era, or whether the industry is collectively building NAT.
 
 ---
 
@@ -68,4 +78,6 @@ In 2011, Boeing's engineers could have designed a new aircraft. The limitations 
 
 The [four properties](/blog/the-properties-that-survive/) do not just predict which systems survive paradigm shifts. They diagnose when survival has become fragility. Ground truth preserved or obscured. Contracts honored or eroded. Reversibility maintained or foreclosed. When absorption starts violating the properties that made it possible, you are no longer growing stronger. You are accumulating debt that compounds until something breaks.
 
-The cost of absorption is never zero. The question is whether you are paying for capability or for debt. The four properties tell you which.
+The cost of absorption is never zero. Boeing's engineers thought they were paying for capability. NAT's authors knew they were incurring debt and did it anyway. The difference between the two was not engineering competence. It was whether the systems underneath had the structural properties that make absorption reversible: ground truth that stays visible, contracts that hold, the ability to roll back when things go wrong.
+
+The four properties do not give you a clean answer to the absorb-or-replace question. They give you the right questions to ask before the airframe's margin runs out.

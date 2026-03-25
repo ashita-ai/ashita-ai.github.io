@@ -38,7 +38,11 @@ The interface between data producers and AI consumers is a contract: the schema,
 
 Unity's ad-targeting algorithm ingested corrupted data from a single client in 2022 and lost an estimated [$110 million in revenue](https://www.datachecks.io/post/unity-technologies-110m-ad-targeting-error). The data contract (expected schema, expected value ranges, expected semantic meaning) was not enforced at the boundary. Apple made App Tracking Transparency mandatory in iOS 14.5, unilaterally changing the de facto data contract between its platform and the advertising ecosystem. Meta reported a [$10 billion revenue impact](https://appleinsider.com/articles/22/02/03/facebook-rebuilding-ad-platform-due-to-app-tracking-transparency-data-laws) for 2022. In each case, the failure was at the contract boundary. Not in the algorithm. Not in the infrastructure. At the interface.
 
-LLM APIs are the [opposite of stable contracts](/blog/against-agentic-everything/). Model behaviors change between versions without notice. Prompts that worked last month fail after an update. Agent systems that chain multiple calls compound the instability: every link in the chain is a contract that might break silently. This is why [data contracts](/blog/the-metadata-control-plane/) are not bureaucracy. They are the thing that separates infrastructure that survives from infrastructure that [constrains you for a decade](/blog/the-data-platform-decisions-that-haunt-you/).
+LLM APIs are the [opposite of stable contracts](/blog/against-agentic-everything/). Model behaviors change between versions without notice. Prompts that worked last month fail after an update. Agent systems that chain multiple calls compound the instability: every link in the chain is a contract that might break silently.
+
+OpenAI's model versioning illustrates the mechanism. Developers who built on `gpt-3.5-turbo` discovered that the model behind the endpoint changed without their applications changing: safety filtering, instruction-following behavior, and output formatting all shifting between updates. OpenAI introduced snapshot versions (`gpt-3.5-turbo-0301`, `gpt-3.5-turbo-0613`) because the unversioned endpoint had become unreliable for production use. But snapshot versions deprecate on rolling schedules, typically with 90 days notice. A contract that requires active maintenance to honor is not a contract. It is a truce.
+
+This is why [data contracts](/blog/the-metadata-control-plane/) are not bureaucracy. They are the thing that separates infrastructure that survives from infrastructure that [constrains you for a decade](/blog/the-data-platform-decisions-that-haunt-you/).
 
 ## What survives
 
@@ -47,6 +51,8 @@ The AI infrastructure that survives will define stable interfaces that implement
 The infrastructure that survives will look like schema registries done right: explicit agreements about data interfaces where consumers register dependencies, producers see who depends on them, and breaking changes require acknowledgment before they proceed. Schema registries promised this but never delivered, because they validated structure without coordinating change.
 
 The shipping container did not standardize ships. It standardized the interface between ships, trucks, and cranes. The contract freed everything behind it to evolve independently. AI infrastructure needs the same: stable boundaries that let the components behind them change without breaking everything downstream.
+
+The S3 case suggests what this looks like in practice. Amazon did not design S3 to be a standard. It became one because it was stable enough that competitors found it cheaper to implement it than to fight it. Cloudflare R2, Backblaze B2, MinIO — none of them joined a standards body. They read the spec and shipped. The contract acquired gravity through demonstrated stability. That is the test for AI infrastructure contracts: not whether they are declared as standards, but whether they are stable enough that competitors implement them rather than fight them. So far, nothing in AI infrastructure has passed that test.
 
 ## What I am still figuring out
 
