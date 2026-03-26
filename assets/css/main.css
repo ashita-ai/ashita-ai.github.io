@@ -12,6 +12,7 @@
   --color-accent: #2c4a6e; /* Indigo from logo */
   --max-width: 660px;
   --font-mono: 'JetBrains Mono', monospace;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 /* Reset & Base */
@@ -27,7 +28,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: 0.9375rem;
   line-height: 1.7;
   color: var(--color-black);
@@ -36,6 +37,7 @@ body {
 
 /* Typography */
 h1, h2, h3, h4 {
+  font-family: var(--font-mono);
   font-weight: 600;
   line-height: 1.3;
   margin: 0 0 1rem 0;
@@ -111,6 +113,7 @@ main {
 
 .nav-links a {
   color: var(--color-black);
+  font-family: var(--font-mono);
   font-size: 0.875rem;
   font-weight: 500;
 }
@@ -137,6 +140,7 @@ main {
 .copyright {
   margin: 0;
   color: var(--color-gray);
+  font-family: var(--font-mono);
   font-size: 0.8125rem;
 }
 
@@ -150,6 +154,7 @@ main {
 
 .footer-links a {
   color: var(--color-gray);
+  font-family: var(--font-mono);
   font-size: 0.8125rem;
 }
 
@@ -166,6 +171,7 @@ main {
 }
 
 .hero h1 {
+  font-family: var(--font-mono);
   font-size: 1.25rem;
   font-weight: 400;
   color: var(--color-gray);
@@ -207,12 +213,14 @@ main {
 }
 
 .blog-list .post-date {
+  font-family: var(--font-mono);
   font-size: 0.8125rem;
   color: var(--color-gray);
   flex-shrink: 0;
 }
 
 .section-link {
+  font-family: var(--font-mono);
   font-size: 0.875rem;
   font-weight: 500;
 }
@@ -266,6 +274,7 @@ main {
 }
 
 .project-link {
+  font-family: var(--font-mono);
   font-size: 0.875rem;
   font-weight: 500;
 }
@@ -283,6 +292,7 @@ main {
 }
 
 .post-meta {
+  font-family: var(--font-mono);
   font-size: 0.8125rem;
   color: var(--color-gray);
   margin-bottom: 0.25rem;
@@ -452,6 +462,7 @@ pre code {
 }
 
 .about-tagline {
+  font-family: var(--font-mono);
   font-size: 1.125rem;
   font-weight: 600;
   margin-bottom: 2rem;
