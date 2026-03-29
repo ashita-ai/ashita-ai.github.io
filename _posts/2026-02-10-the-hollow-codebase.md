@@ -1,14 +1,15 @@
 ---
 layout: post
-title: "The Hollow Codebase"
+title: "Hollow Codebases"
 date: 2026-02-10
+category: "ai-failures"
 ---
 
 In July 2025, Jason Lemkin was building a web app for SaaStr using Replit's AI coding agent. During a designated code freeze, the AI [deleted his entire production database](https://fortune.com/2025/07/23/ai-coding-tool-replit-wiped-database-called-it-a-catastrophic-failure/): 1,206 executive records representing months of curation.
 
 The CEO called it a "catastrophic failure." Lemkin had told the AI eleven times, in all caps, not to make changes.
 
-This is not a story about a rogue AI. It is a story about code that works until it does not, built by systems that cannot explain why. [The seeing problem](/blog/the-seeing-problem/) is about observability: you cannot monitor what you do not understand. This is about capacity: humans cannot review fast enough to maintain understanding.
+This is not a story about a rogue AI. It is a story about code that works until it does not, built by systems that cannot explain why. [Comprehension debt](/blog/the-seeing-problem/) is about understanding: you cannot fix what you do not understand. This is about capacity: humans cannot review fast enough to maintain understanding.
 
 ## The bottleneck moved
 
@@ -52,15 +53,7 @@ The junior-to-senior pipeline is how organizations build review capacity. Cut th
 
 The review bottleneck is a systems problem. You cannot solve it by telling seniors to review faster.
 
-**Dedicated review time.** We run a daily review thread in Slack. Every engineer allocates at least an hour to PR reviews. The work has to be scheduled or it does not happen.
-
-**Clear priority signals.** Not every PR needs the same scrutiny. Payment code, security boundaries, core business logic: senior review. Boilerplate, tests, documentation: move faster. Attention is the constraint. Allocate it deliberately.
-
-**Smaller PRs.** AI-generated PRs are [154% larger](https://www.faros.ai/blog/ai-software-engineering) on average. Larger PRs get worse reviews. [Enforce size limits](/blog/what-i-learned-building-four-tools-with-ai-agents/).
-
-**AI-assisted review for the patterns.** Tools like [CodeRabbit](https://www.coderabbit.ai/) catch null handling, style inconsistencies, common security issues. One team [tracked every comment over a month](https://www.deployhq.com/blog/ai-code-review-before-you-deploy-our-experience-with-coderabbit) and found most findings were relevant, but only a small fraction were security-critical. Use them to clear the brush so humans can focus on judgment.
-
-**Intentional mentorship.** Junior developers need structured opportunities to understand code, not just produce it. Pair programming. Design reviews. Occasionally implementing something without AI assistance. The skills atrophy if they are never exercised.
+We run a daily review thread in Slack. Every engineer blocks at least an hour for PR reviews, because if review time is not scheduled it does not happen. Not every PR needs the same depth — payment code and security boundaries get senior review, boilerplate moves faster. Attention is the constraint, so we allocate it deliberately. AI-generated PRs are [154% larger](https://www.faros.ai/blog/ai-software-engineering) on average, and larger PRs get worse reviews, so we [enforce size limits](/blog/what-i-learned-building-four-tools-with-ai-agents/). Tools like [CodeRabbit](https://www.coderabbit.ai/) clear the brush — null handling, style inconsistencies, common security issues — so humans can focus on the judgment calls that actually matter. And junior developers get structured time understanding code without AI assistance, because the skills atrophy if they are never exercised.
 
 ## What I am still figuring out
 

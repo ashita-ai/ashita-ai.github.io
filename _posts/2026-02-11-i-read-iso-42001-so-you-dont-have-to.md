@@ -2,6 +2,7 @@
 layout: post
 title: "I Read ISO 42001 So You Don't Have To"
 date: 2026-02-11
+category: "regulation"
 ---
 
 In November 2024, AWS [became](https://aws.amazon.com/blogs/machine-learning/aws-achieves-iso-iec-420012023-artificial-intelligence-management-system-accredited-certification/) the first major cloud provider to certify against ISO/IEC 42001, a 53-page standard for AI management systems published eleven months earlier. Google Cloud [followed](https://cloud.google.com/blog/products/identity-security/google-clouds-commitment-to-responsible-ai-is-now-iso-iec-certified) in December. Anthropic [in January 2025](https://www.anthropic.com/news/anthropic-achieves-iso-42001-certification-for-responsible-ai). Microsoft [in March](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/microsoft-365-copilot-achieves-isoiec-420012023-certification/4397144).

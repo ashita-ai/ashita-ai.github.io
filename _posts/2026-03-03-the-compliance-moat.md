@@ -2,6 +2,7 @@
 layout: post
 title: "The Compliance Moat"
 date: 2026-03-03
+category: "regulation"
 ---
 
 In 2011, Amazon Web Services [built GovCloud](https://aws.amazon.com/govcloud-us/) before they had the government contracts to justify it. By 2013, [they had the CIA](https://www.theregister.com/2013/03/19/aws_allegedly_helps_cia_build_spy_cloud/). By 2021, [the NSA](https://www.nextgov.com/modernization/2021/08/nsa-awards-secret-10-billion-contract-amazon/184390/). Competitors with comparable technology lost those bids. They had not built the infrastructure.

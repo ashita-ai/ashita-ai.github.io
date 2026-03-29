@@ -2,6 +2,8 @@
 layout: post
 title: "Ground Truth as Foundation"
 date: 2026-03-24
+category: "properties-series"
+series: "the-properties-that-survive"
 ---
 
 On November 16, 2018, representatives from sixty nations [voted](https://en.wikipedia.org/wiki/2019_redefinition_of_the_SI_base_units) to redefine the kilogram. For 130 years, the kilogram had been a platinum-iridium cylinder in a vault outside Paris: Le Grand K. Not a reference for the kilogram. The kilogram itself.
@@ -69,6 +71,8 @@ Quantified uncertainty. Metrological traceability does not claim perfect accurac
 Continuous verification. National metrology institutes submit to the [CIPM Mutual Recognition Arrangement](https://www.bipm.org/en/cipm-mra), which requires international comparison and audit. Without enforcement, ground truth degrades into opinion. In data systems, this means [data contracts](/blog/the-metadata-control-plane/), schema validation, and automated checks that verify continuously, not once.
 
 These are not features of a current system. They are properties of any system that will still work after the paradigm shifts.
+
+This is why I built [Engram](/projects/engram/) with a strict confidence hierarchy: verbatim episode storage at the bottom, extracted facts in the middle, inferred knowledge at the top. Each layer knows where it came from and how much to trust itself. I had watched too many RAG systems treat every retrieved fact with equal confidence — a direct quote from a user and a pattern-matched inference stored side by side, indistinguishable. When the inference was wrong, there was no way to trace it back to the extraction that produced it, and no way to know it was an inference at all. The ground truth had been flattened into a single layer. Engram's design is opinionated about this because the alternative is a system that lies to you without knowing it.
 
 ## What I am still figuring out
 

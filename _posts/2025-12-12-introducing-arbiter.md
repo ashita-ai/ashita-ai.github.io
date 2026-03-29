@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "LLM Evals Should Not Be a Black Box"
-date: 2026-01-09
+date: 2025-12-12
+category: "architecture"
 ---
 
 *Arbiter is available on PyPI. Install with `pip install arbiter-ai`.*

@@ -2,6 +2,7 @@
 layout: post
 title: "The Build Is Not the Hard Part"
 date: 2026-02-05
+category: "architecture"
 ---
 
 Nubank used [Devin to migrate their core ETL](https://devin.ai/customers/nubank) (a 6-million line monolith) and reported 8-12x efficiency improvement and over 20x cost savings. GitHub Copilot now [writes 46% of code](https://techcrunch.com/2025/07/30/github-copilot-crosses-20-million-all-time-users/) for its 20 million users, reaching 61% in Java projects.

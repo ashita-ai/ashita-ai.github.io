@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "Data Contracts for the Age of Agentic Engineering"
-date: 2026-01-07
+date: 2025-12-05
+category: "data-infrastructure"
 ---
 
 I have been thinking about what happens when AI agents write data engineering code.

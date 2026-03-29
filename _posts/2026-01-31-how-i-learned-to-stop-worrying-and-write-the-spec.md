@@ -2,6 +2,7 @@
 layout: post
 title: "How I Learned to Stop Worrying and Write the Spec"
 date: 2026-01-31
+category: "building-with-agents"
 ---
 
 I answered questions for an hour. Then I said "implement this" and walked away. I came back to a working library: Python SDK, TypeScript SDK, FastAPI collector, TimescaleDB migrations, 63 passing tests.
@@ -56,8 +57,6 @@ This is one data point. I do not know if it generalizes.
 
 ---
 
-[Augment Code found](https://www.augmentcode.com/guides/why-multi-agent-llm-systems-fail-and-how-to-fix-them) that 41.77% of agent failures are specification problems. Another 36.94% are coordination failures. The industry builds better orchestration engines: Cursor, Devin, CrewAI, LangGraph. This addresses the 36.94%. It ignores the 41.77%.
-
-The response should not be "get better at writing specs." It should be "build tools that extract specs from people who know what they want but cannot write it down."
+I answered questions for an hour. I got a working library. The hard part was not the implementation. The hard part was the hour of reckoning with my own contradictions.
 
 The [code](https://github.com/evanvolgas/hikari) and [extracted premises](https://github.com/evanvolgas/hikari/blob/main/docs/elenchus-spec.json) are public.

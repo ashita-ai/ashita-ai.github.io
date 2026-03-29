@@ -2,6 +2,8 @@
 layout: post
 title: "The Cost of Absorption"
 date: 2026-04-28
+category: "properties-series"
+series: "the-properties-that-survive"
 ---
 
 In December 2010, Airbus launched the A320neo with new fuel-efficient engines. Boeing faced a choice: design a new narrow-body aircraft from scratch or fit larger engines onto the 737, an airframe that first flew on [April 9, 1967](https://www.historylink.org/file/3569). A clean-sheet design would cost upward of [$10 billion](https://leehamnews.com/2019/03/20/boeing-didnt-want-to-re-engine-the-737-but-had-design-standing-by/) and take a decade. [Re-engining](https://en.wikipedia.org/wiki/Boeing_737_MAX) the 737 would cost $2-3 billion and take four years.
@@ -67,6 +69,8 @@ Each technique is individually reasonable. Collectively, they are accumulation. 
 If the next paradigm renders transformers obsolete — and the industry is actively researching alternatives — these workaround layers become the COBOL of AI infrastructure: critical systems running on architecture nobody fully understands, whose behavior nobody can fully predict, that nobody can affordably replace. The [provenance](/blog/the-provenance-imperative/) of a fine-tuned model trained on proprietary data using a closed base model is nearly impossible to reconstruct. The [contracts](/blog/contracts-as-infrastructure/) between application, prompt, model, and retrieval layer are implicit. The [reversibility](/blog/reversibility-as-default/) of a system whose prompt engineering has been tuned over months to compensate for specific model behavior is minimal: change the model and the tuning breaks.
 
 The question is whether anyone is building the IPv6 of AI infrastructure — the clean design for the next paradigm — or whether the industry is collectively building NAT. The honest answer is that most of the investment is in workarounds, because workarounds ship faster. The clean design exists in research papers. IPv6 also existed in a specification for twenty years before adoption reached fifty percent.
+
+I watch this pattern at work every day. At Nitrogen, we build AI-enabled data infrastructure for wealth management — a domain where regulators will eventually ask how every recommendation was produced. The temptation is always to add another workaround: another prompt tweak, another retrieval hack, another guardrail on top of a guardrail. Each one solves today's problem and makes tomorrow's replacement harder. The tools I have been building at Ashita — [Akashi](/projects/akashi/) for decision provenance, [Tessera](/projects/tessera/) for data contracts, [Engram](/projects/engram/) for ground truth — are my attempt to build the structural layer underneath the workarounds. Whether that is IPv6 or just another layer of NAT, I will not know for years.
 
 ## What I am still figuring out
 

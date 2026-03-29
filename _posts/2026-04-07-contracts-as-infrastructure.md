@@ -2,6 +2,8 @@
 layout: post
 title: "Contracts as Infrastructure"
 date: 2026-04-07
+category: "properties-series"
+series: "the-properties-that-survive"
 ---
 
 On April 26, 1956, a converted World War II tanker named the Ideal X sailed from Newark, New Jersey to Houston, Texas carrying 58 aluminum truck bodies on a specially constructed spar deck. Loading loose cargo onto a medium-sized ship cost [$5.83 per ton](https://press.princeton.edu/books/paperback/9780691170817/the-box). Loading the Ideal X cost 15.8 cents per ton. A 97% reduction.
@@ -51,6 +53,8 @@ The AI infrastructure that survives will define stable interfaces that implement
 The infrastructure that survives will look like schema registries done right: explicit agreements about data interfaces where consumers register dependencies, producers see who depends on them, and breaking changes require acknowledgment before they proceed. Schema registries promised this but never delivered, because they validated structure without coordinating change.
 
 The shipping container did not standardize ships. It standardized the interface between ships, trucks, and cranes. The contract freed everything behind it to evolve independently. AI infrastructure needs the same: stable boundaries that let the components behind them change without breaking everything downstream.
+
+This is the problem [Tessera](/projects/tessera/) exists to solve. When I was running data pipelines at scale, the most expensive failures were always contract violations: someone upstream dropped a column, changed a type, or redefined what a field meant without telling anyone downstream. The pipeline did not crash. It produced wrong numbers, quietly, for days. Tessera makes schema relationships into dependency relationships — consumers register, producers see who depends on them, breaking changes require acknowledgment. It is not a clever system. It is the boring contract enforcement that shipping containers got right in 1968.
 
 The S3 case suggests what this looks like in practice. Amazon did not design S3 to be a standard. It became one because it was stable enough that competitors found it cheaper to implement it than to fight it. Cloudflare R2, Backblaze B2, MinIO — none of them joined a standards body. They read the spec and shipped. The contract acquired gravity through demonstrated stability. That is the test for AI infrastructure contracts: not whether they are declared as standards, but whether they are stable enough that competitors implement them rather than fight them. So far, nothing in AI infrastructure has passed that test.
 

@@ -2,6 +2,8 @@
 layout: post
 title: "The Provenance Imperative"
 date: 2026-03-31
+series: "the-properties-that-survive"
+category: "properties-series"
 ---
 
 In 2008, forensic analysts found titanium white in a painting attributed to Heinrich Campendonk and dated 1914. Titanium white was not available as an artist's pigment until the early 1920s. A single anachronistic pigment trace collapsed an entire provenance fiction.
@@ -37,6 +39,8 @@ Log4Shell (disclosed December 2021) was not a supply chain attack. It was a [pro
 The XZ Utils backdoor (discovered March 2024) exploited the trust model of open-source maintenance. An entity using the name "Jia Tan" spent [approximately two years building trust](https://en.wikipedia.org/wiki/XZ_Utils_backdoor) within the project, gradually becoming co-maintainer as the original developer cited burnout. In February 2024, they inserted a backdoor giving remote code execution on affected Linux systems. Andres Freund, a Microsoft engineer, caught it by accident: he noticed a 500-millisecond latency regression and traced it to the compromised package. The commit history looked legitimate because the attacker had legitimate access. The social provenance was manufactured.
 
 Three attacks, three failure modes. SolarWinds: build provenance corrupted upstream of attestation. Log4Shell: dependency provenance unknown. XZ Utils: human provenance chain fabricated. Signing alone is not enough. Dependency scanning alone is not enough. Code review alone is not enough. Google responded with [SLSA](https://slsa.dev/) (Supply-chain Levels for Software Artifacts), defining provenance as "verifiable information about software artifacts describing where, when and how something was produced." The industry recognized that provenance is not a feature to add. It is the architecture.
+
+This is what led me to build [Akashi](/projects/akashi/). I was running multiple AI coding agents against the same codebase and kept hitting a specific failure mode: two agents would make contradictory decisions — one choosing connection pooling, the other choosing per-request connections — and neither could explain why. There was no trail. The codebase just accumulated silent contradictions until something broke in CI, and I would spend an hour reconstructing which agent had decided what, when, and based on what context. The problem was not that the agents were wrong. The problem was that I could not trace how they got there. Akashi records every decision with its reasoning, confidence, and lineage so that the next agent — or the next human — can see the chain before deciding. It is a small version of the same principle: if the provenance is not structural, it does not exist.
 
 ## Provenance as architecture
 

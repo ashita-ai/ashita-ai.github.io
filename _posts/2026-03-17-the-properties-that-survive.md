@@ -2,6 +2,8 @@
 layout: post
 title: "The Properties That Survive"
 date: 2026-03-17
+category: "properties-series"
+series: "the-properties-that-survive"
 ---
 
 In August 1988, the United States government published [FIPS 146](https://en.wikipedia.org/wiki/Government_Open_Systems_Interconnection_Profile), mandating that all federal agencies purchase networking equipment compliant with OSI protocols. Several allied governments issued comparable mandates. The International Organization for Standardization had spent over a decade designing a comprehensive seven-layer networking model that was more rigorous, more formally specified, and more theoretically complete than anything TCP/IP offered.

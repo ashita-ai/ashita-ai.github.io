@@ -11,4 +11,39 @@ layout: default
   <div class="post-content">
     {{ content }}
   </div>
+
+  {% if page.series %}
+  {% assign series_posts = site.posts | where: "series", page.series | sort: "date" %}
+  {% if series_posts.size > 1 %}
+  <nav class="series-nav">
+    <p class="series-label">Part of <strong>{{ page.series | replace: "-", " " | capitalize }}</strong></p>
+    <ol class="series-list">
+      {% for s in series_posts %}
+      <li{% if s.url == page.url %} class="series-current"{% endif %}>
+        {% if s.url == page.url %}
+          {{ s.title }}
+        {% else %}
+          <a href="{{ s.url | relative_url }}">{{ s.title }}</a>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ol>
+    <div class="series-links">
+      {% for s in series_posts %}
+        {% if s.url == page.url %}
+          {% assign current_index = forloop.index0 %}
+        {% endif %}
+      {% endfor %}
+      {% if current_index > 0 %}
+        {% assign prev_index = current_index | minus: 1 %}
+        <a href="{{ series_posts[prev_index].url | relative_url }}" class="series-prev">&larr; {{ series_posts[prev_index].title }}</a>
+      {% endif %}
+      {% assign next_index = current_index | plus: 1 %}
+      {% if next_index < series_posts.size %}
+        <a href="{{ series_posts[next_index].url | relative_url }}" class="series-next">{{ series_posts[next_index].title }} &rarr;</a>
+      {% endif %}
+    </div>
+  </nav>
+  {% endif %}
+  {% endif %}
 </article>

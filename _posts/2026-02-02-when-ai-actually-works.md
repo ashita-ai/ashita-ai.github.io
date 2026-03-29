@@ -2,6 +2,7 @@
 layout: post
 title: "When AI Actually Works"
 date: 2026-02-02
+category: "architecture"
 ---
 
 Wendy's launched their AI drive-thru in a single Columbus, Ohio restaurant in June 2023. They spent a year in that one location before expanding to four stores. Another year to reach 36. They had people camped in the dining room for thousands of hours, talking to crews and customers. By 2025, they were [planning 500 locations](https://www.restaurantdive.com/news/wendys-deploy-digital-menu-boards-drive-thru-ai-500-restaurants-2025/746977/).

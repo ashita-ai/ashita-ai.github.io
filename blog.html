@@ -6,10 +6,21 @@ pagination:
   enabled: true
 ---
 
+<nav class="category-filter">
+  <a href="/blog/" class="category-tag category-all">All</a>
+  {% assign categories = "ai-failures,building-with-agents,data-infrastructure,architecture,regulation,economics,properties-series" | split: "," %}
+  {% for cat in categories %}
+    {% assign cat_posts = site.posts | where: "category", cat %}
+    {% if cat_posts.size > 0 %}
+      <a href="#" class="category-tag" data-category="{{ cat }}">{{ cat | replace: "-", " " }}</a>
+    {% endif %}
+  {% endfor %}
+</nav>
+
 {% if paginator.posts.size > 0 %}
-<ul class="post-list">
+<ul class="post-list" id="post-list">
   {% for post in paginator.posts %}
-  <li class="post-item">
+  <li class="post-item" data-category="{{ post.category }}">
     <p class="post-meta">{{ post.date | date: "%B %d, %Y" }}</p>
     <h3 class="post-title">
       <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
@@ -66,3 +77,30 @@ pagination:
   font-size: 0.9rem;
 }
 </style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var tags = document.querySelectorAll('.category-tag');
+  var items = document.querySelectorAll('.post-item');
+
+  tags.forEach(function(tag) {
+    tag.addEventListener('click', function(e) {
+      e.preventDefault();
+      var cat = this.getAttribute('data-category');
+
+      tags.forEach(function(t) { t.classList.remove('active'); });
+      this.classList.add('active');
+
+      if (!cat) {
+        items.forEach(function(item) { item.style.display = ''; });
+      } else {
+        items.forEach(function(item) {
+          item.style.display = item.getAttribute('data-category') === cat ? '' : 'none';
+        });
+      }
+    });
+  });
+
+  document.querySelector('.category-all').classList.add('active');
+});
+</script>
