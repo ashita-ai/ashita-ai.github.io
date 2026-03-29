@@ -2,6 +2,8 @@
 layout: post
 title: "Building for Tomorrow"
 date: 2026-03-10
+category: "properties-series"
+series: "the-properties-that-survive"
 ---
 
 By 2019, Airbnb's ML infrastructure was among the most sophisticated in production use. They had built Bighead, an end-to-end machine learning platform presented at Strata in 2018 and Data Council in 2019. They had also built an internal feature platform called Zipline, designed to solve a specific problem: ensuring that the features used to train a model are identical to the features served in production. Since then, the ML paradigm has shifted multiple times: gradient-boosted trees gave way to neural networks, then to foundation models. The feature platform they built, renamed and [open-sourced in 2024 as Chronon](https://www.infoq.com/news/2024/04/airbnb-chronon-open-sourced/), is still in active use. Stripe co-maintains it.
@@ -36,7 +38,9 @@ The same pattern holds across infrastructure cycles. Stripe has [maintained comp
 
 What makes an infrastructure investment paradigm-independent is not its age. It is whether what it embodies holds regardless of which model architecture is reading the data, which framework is executing the workflow, or which vendor is providing the compute.
 
-Four properties have held across every cycle examined here. Ground truth: data that means what it says, consistently, across every system that reads it (what Chronon enforces when it guarantees identical computation at training time and serving time). Provenance: the ability to trace any decision back to what model, what data, what version produced it (a requirement for debugging, auditing, and the regulator who asks what your system said on a specific date). Contracts: interfaces that absorb implementation changes without breaking callers (the difference between swapping an embedding model transparently and coordinating a breaking change across every downstream system). Reversibility: the ability to roll back when the world changes (to reprocess with corrected data, return to a known state, undo what should not have been done). These were requirements before LLMs and will be requirements after whatever replaces them. The next posts take each in turn.
+Four properties have held across every cycle examined here. Ground truth: data that means what it says, consistently, across every system that reads it (what Chronon enforces when it guarantees identical computation at training time and serving time). Provenance: the ability to trace any decision back to what model, what data, what version produced it (a requirement for debugging, auditing, and the regulator who asks what your system said on a specific date). Contracts: interfaces that absorb implementation changes without breaking callers (the difference between swapping an embedding model transparently and coordinating a breaking change across every downstream system). Reversibility: the ability to roll back when the world changes (to reprocess with corrected data, return to a known state, undo what should not have been done). These were requirements before LLMs and will be requirements after whatever replaces them.
+
+I have worked at enough places to know this from the wreckage. At Netflix, the data infrastructure that outlasted my tenure was not the clever streaming pipelines — it was the boring data quality checks and schema contracts that nobody wanted to write. At a startup that no longer exists, I watched a team rebuild their entire analytics stack three times in two years because they had optimized for a specific framework each time and never invested in the properties underneath. The framework changed. The data contracts, had they existed, would not have. The next posts take each property in turn.
 
 ## What I am still figuring out
 

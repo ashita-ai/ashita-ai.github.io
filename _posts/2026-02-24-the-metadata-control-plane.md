@@ -1,7 +1,8 @@
 ---
 layout: post
-title: "The Metadata Control Plane"
+title: "Metadata as Control Plane"
 date: 2026-02-24
+category: "regulation"
 ---
 
 In January 2025, the SEC [fined Two Sigma $90 million](https://www.sec.gov/files/litigation/admin/2025/34-102207.pdf) for failing to address security vulnerabilities in its algorithmic trading models. An employee modified live-trading models without approval for nearly two years. Some funds overperformed by $400 million. Others underperformed by $165 million.

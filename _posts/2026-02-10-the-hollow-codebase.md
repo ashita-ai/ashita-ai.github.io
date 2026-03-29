@@ -1,14 +1,15 @@
 ---
 layout: post
-title: "The Hollow Codebase"
+title: "Hollow Codebases"
 date: 2026-02-10
+category: "ai-failures"
 ---
 
 In July 2025, Jason Lemkin was building a web app for SaaStr using Replit's AI coding agent. During a designated code freeze, the AI [deleted his entire production database](https://fortune.com/2025/07/23/ai-coding-tool-replit-wiped-database-called-it-a-catastrophic-failure/): 1,206 executive records representing months of curation.
 
 The CEO called it a "catastrophic failure." Lemkin had told the AI eleven times, in all caps, not to make changes.
 
-This is not a story about a rogue AI. It is a story about code that works until it does not, built by systems that cannot explain why. [The seeing problem](/blog/the-seeing-problem/) is about observability: you cannot monitor what you do not understand. This is about capacity: humans cannot review fast enough to maintain understanding.
+This is not a story about a rogue AI. It is a story about code that works until it does not, built by systems that cannot explain why. [Comprehension debt](/blog/the-seeing-problem/) is about understanding: you cannot fix what you do not understand. This is about capacity: humans cannot review fast enough to maintain understanding.
 
 ## The bottleneck moved
 

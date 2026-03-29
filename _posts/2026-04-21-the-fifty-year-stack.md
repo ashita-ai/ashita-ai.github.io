@@ -2,6 +2,8 @@
 layout: post
 title: "The Fifty-Year Stack"
 date: 2026-04-21
+category: "properties-series"
+series: "the-properties-that-survive"
 ---
 
 On June 11, 2009, a developer named Johan Oskarsson organized a meetup in San Francisco to discuss open-source, distributed, non-relational databases. He needed a Twitter hashtag. Eric Evans at Rackspace [suggested](https://martinfowler.com/bliki/NosqlDefinition.html) "#NoSQL." The term, Evans later said, did not have a deep meaning. It was supposed to be used for one meeting.
@@ -93,6 +95,8 @@ The four properties from the previous posts (ground truth, provenance, contracts
 ## What I am still figuring out
 
 Whether absorption is always better than replacement. TCP/IP absorbed ATM, but the IPv4-to-IPv6 transition has taken [almost thirty years](https://en.wikipedia.org/wiki/IPv6) and is still incomplete. NAT and CIDR extended IPv4's life far beyond what anyone expected, but they also created layers of complexity that the clean replacement (IPv6) was designed to eliminate. Sometimes the fifty-year system's ability to absorb workarounds delays a necessary replacement.
+
+Twenty years of building data systems has given me a strong opinion about what lasts. The PostgreSQL instances I set up at my first startup are still running, maintained by people I have never met. The custom frameworks, the clever abstractions, the "this will save us time" middleware — all gone. Replaced twice over. The boring relational database outlived everything built on top of it because it never pretended to be more than what it was: a reliable place to put data that means what it says.
 
 Whether today's AI infrastructure has anything with fifty-year potential. PostgreSQL will still be running in 2060. TCP/IP will be. Linux will be. The question for AI infrastructure is whether anything being built right now has the structural properties to absorb the paradigm shift that comes after transformers. Pgvector is interesting precisely because it embeds vector search inside a fifty-year system rather than building a standalone alternative. Over 80% of databases provisioned on Neon are now [created by AI agents](https://www.databricks.com/company/newsroom/press-releases/databricks-agrees-acquire-neon-help-developers-deliver-ai-systems), not humans. The agents are choosing the fifty-year stack.
 

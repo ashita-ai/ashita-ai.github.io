@@ -3,18 +3,33 @@ layout: default
 title: Home
 ---
 
-<section class="blog-section">
-  <h2>Recent Writing</h2>
-  <ul class="blog-list">
-    {% assign posts = site.posts | slice: 0, 5 %}
-    {% for post in posts %}
+<section class="series-feature">
+  <h2>The Properties That Survive</h2>
+  <p class="series-description">A series on the structural properties that outlast paradigm shifts: ground truth, provenance, contracts, and reversibility.</p>
+  <ul class="series-feature-list">
+    {% assign series_posts = site.posts | where: "series", "the-properties-that-survive" | sort: "date" %}
+    {% for post in series_posts %}
     <li>
       <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
       <span class="post-date">{{ post.date | date: "%b %d, %Y" }}</span>
     </li>
     {% endfor %}
   </ul>
-  <a href="{{ '/blog/' | relative_url }}" class="section-link">All posts →</a>
+</section>
+
+<section class="blog-section">
+  <h2>Recent Writing</h2>
+  <ul class="blog-list">
+    {% assign non_series = site.posts | where_exp: "post", "post.series != 'the-properties-that-survive'" %}
+    {% assign recent = non_series | slice: 0, 5 %}
+    {% for post in recent %}
+    <li>
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      <span class="post-date">{{ post.date | date: "%b %d, %Y" }}</span>
+    </li>
+    {% endfor %}
+  </ul>
+  <a href="{{ '/blog/' | relative_url }}" class="section-link">All posts &rarr;</a>
 </section>
 
 <section class="projects-section">
@@ -25,7 +40,7 @@ title: Home
     <div class="project-content">
       <h3><a href="{{ '/projects/akashi/' | relative_url }}">Akashi</a></h3>
       <p>Version control for AI decisions. Coordinate multi-agent systems before contradictions become incidents.</p>
-      <a href="{{ '/projects/akashi/' | relative_url }}" class="project-link">Learn more →</a>
+      <a href="{{ '/projects/akashi/' | relative_url }}" class="project-link">Learn more &rarr;</a>
     </div>
   </article>
 
@@ -34,7 +49,7 @@ title: Home
     <div class="project-content">
       <h3><a href="{{ '/projects/tessera/' | relative_url }}">Tessera</a></h3>
       <p>Data contract coordination. No more 3am surprises when someone upstream drops a column.</p>
-      <a href="{{ '/projects/tessera/' | relative_url }}" class="project-link">Learn more →</a>
+      <a href="{{ '/projects/tessera/' | relative_url }}" class="project-link">Learn more &rarr;</a>
     </div>
   </article>
 

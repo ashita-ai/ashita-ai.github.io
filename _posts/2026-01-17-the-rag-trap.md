@@ -1,7 +1,8 @@
 ---
 layout: post
-title: "The RAG Trap"
+title: "Why RAG Fails at Seven Points"
 date: 2026-01-17
+category: "ai-failures"
 ---
 
 In February 2024, Jake Moffatt's grandmother died. He went to Air Canada's website to book a flight for the funeral. The airline's chatbot told him he could book a full-fare ticket now and apply for the bereavement discount retroactively within 90 days.

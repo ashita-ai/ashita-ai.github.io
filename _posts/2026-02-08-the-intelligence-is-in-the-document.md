@@ -2,6 +2,7 @@
 layout: post
 title: "The Intelligence Is in the Document, Not the Model"
 date: 2026-02-08
+category: "building-with-agents"
 ---
 
 Three CI failures in one afternoon. Same project. Same root cause every time.

@@ -1,7 +1,8 @@
 ---
 layout: post
-title: "The Incentive Problem"
+title: "Incentives Eat Architecture"
 date: 2026-02-26
+category: "economics"
 ---
 
 After Watson's 2011 Jeopardy victory, IBM's Watson team cautioned leadership that the system was designed to identify word patterns and predict answers to trivia questions. It was not, as David Ferrucci put it, "an all-purpose answer box ready to take on the commercial world." The warning [fell on deaf ears](https://www.advisory.com/daily-briefing/2021/07/21/ibm-watson). "It wasn't the marketing message," Ferrucci said. He left IBM in 2012.

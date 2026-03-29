@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "Route Smarter, Not Harder"
-date: 2026-01-08
+date: 2025-12-09
+category: "architecture"
 ---
 
 *Conduit is alpha software. Use at your own risk, expect breaking changes, and please report bugs.*

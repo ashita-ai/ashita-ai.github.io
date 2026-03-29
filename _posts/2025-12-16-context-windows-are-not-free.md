@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "Context Windows Are Not Free"
-date: 2026-01-11
+date: 2025-12-16
+category: "ai-failures"
 ---
 
 Gemini offers a 2 million token context window. Claude goes to 200K, with a 1M beta. GPT-4.1 handles 1M tokens.
@@ -17,6 +18,12 @@ Token pricing looks cheap until you multiply. A 100K context query generating a 
 The compute cost is worse. Transformer attention is [quadratic](https://towardsdatascience.com/extending-context-length-in-large-language-models-74e59201b51f/). Double the context, quadruple the compute. Long context windows consume enormous GPU memory for the KV cache alone.
 
 But money and latency are problems you can throw resources at. The accuracy problem is different.
+
+## The confidence trap
+
+In May 2024, Google rolled out AI Overviews to hundreds of millions of search users. Within days, the system was [telling people to add glue to pizza sauce](https://www.washingtonpost.com/technology/2024/05/24/google-ai-overviews-wrong/) (sourced from a decade-old Reddit joke) and to [eat rocks for minerals](https://searchengineland.com/google-ai-overview-fails-442575) (from a satirical Onion article republished on a geology company's website). Google had the largest information corpus ever assembled. The model was not the problem. The system could not tell a joke from a recipe.
+
+When Melanie Mitchell, an AI researcher at the Santa Fe Institute, [asked Google](https://www.cnbc.com/2024/05/24/google-criticized-as-ai-overview-makes-errors-like-saying-president-obama-is-muslim.html) how many Muslim presidents the US has had, AI Overviews answered: one, Barack Hussein Obama. The system cited an academic chapter analyzing the conspiracy theory as evidence for it. It did not flag uncertainty. It presented a confident answer with a scholarly citation. More context did not produce better answers. It produced more confident wrong ones.
 
 ## The spec sheet lies
 

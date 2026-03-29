@@ -2,6 +2,7 @@
 layout: post
 title: "Against Agentic Everything"
 date: 2026-02-19
+category: "ai-failures"
 ---
 
 In 2023, Air Canada deployed an AI chatbot to handle customer inquiries. When Jake Moffatt asked about bereavement fares after his grandmother died, the chatbot told him he could book at full price and apply for a retroactive discount within 90 days. The policy did not exist. Air Canada refused the refund and [argued the chatbot was a separate legal entity](https://www.cbsnews.com/news/aircanada-chatbot-discount-customer/) responsible for its own actions. A tribunal disagreed.

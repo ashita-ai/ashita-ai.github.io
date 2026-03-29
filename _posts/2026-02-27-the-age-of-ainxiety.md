@@ -2,6 +2,7 @@
 layout: post
 title: "The Age of A(I)nxiety"
 date: 2026-02-27
+category: "economics"
 ---
 
 On February 26, 2026, Jack Dorsey announced Block would cut about 4,000 employees — nearly half its workforce. He cited AI explicitly. Block's stock surged 24% in extended trading. On an analyst call, Dorsey said he expects "a majority of companies" to reach the same conclusion within a year.

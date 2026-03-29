@@ -1,7 +1,8 @@
 ---
 layout: post
-title: "The Three Debts"
+title: "Three Debts You Already Have"
 date: 2026-02-17
+category: "data-infrastructure"
 ---
 
 Three engineers at Pivotal Software spent three years building a system without ever talking to potential users. When it shipped, it did not fulfill user needs. [After nine months trying to salvage it, management scrapped the project](https://link.springer.com/chapter/10.1007/978-1-4842-4221-6_19).

@@ -468,6 +468,134 @@ pre code {
   margin-bottom: 2rem;
 }
 
+/* Series Navigation */
+.series-nav {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-black);
+}
+
+.series-label {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--color-gray);
+  margin-bottom: 0.75rem;
+}
+
+.series-list {
+  list-style: decimal;
+  padding-left: 1.25rem;
+  margin: 0 0 1.5rem 0;
+  font-size: 0.875rem;
+}
+
+.series-list li {
+  padding: 0.25rem 0;
+}
+
+.series-list li a {
+  color: var(--color-accent);
+}
+
+.series-current {
+  font-weight: 600;
+  color: var(--color-black);
+}
+
+.series-links {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.series-links a {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--color-accent);
+}
+
+.series-next {
+  margin-left: auto;
+}
+
+/* Category Filter */
+.category-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e0dbd3;
+}
+
+.category-tag {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  padding: 0.25rem 0.75rem;
+  border: 1px solid #e0dbd3;
+  color: var(--color-gray);
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: all 0.15s;
+}
+
+.category-tag:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.category-tag.active {
+  background: var(--color-black);
+  border-color: var(--color-black);
+  color: var(--color-white);
+}
+
+/* Series Feature (Homepage) */
+.series-feature {
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--color-black);
+}
+
+.series-feature h2 {
+  margin-bottom: 0.5rem;
+}
+
+.series-description {
+  color: var(--color-gray);
+  font-size: 0.9375rem;
+  margin-bottom: 1.5rem;
+}
+
+.series-feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.series-feature-list li {
+  padding: 0.5rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.series-feature-list a {
+  color: var(--color-black);
+}
+
+.series-feature-list a:hover {
+  color: var(--color-accent);
+}
+
+.series-feature-list .post-date {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--color-gray);
+  flex-shrink: 0;
+}
+
 /* Responsive */
 @media (max-width: 600px) {
   .nav-container {
