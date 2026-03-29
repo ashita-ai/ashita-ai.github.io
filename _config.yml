@@ -17,7 +17,7 @@ pagination:
   sort_reverse: true
 
 # Build settings
-future: true
+future: false
 markdown: kramdown
 highlighter: rouge
 permalink: /blog/:slug/
