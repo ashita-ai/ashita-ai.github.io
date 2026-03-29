@@ -54,8 +54,6 @@ The AI systems making the most consequential decisions are the ones with the lea
 
 The companies deploying AI that works build rollback first. Shadow deployment, automatic pullback, circuit breakers. They assume the system will fail and engineer the ability to recover. The companies that skip this step assume the system will work and are surprised when it does not.
 
-I learned this the hard way at a previous role, deploying a model that scored leads for a sales team. We shipped it without a kill switch because the model looked good in eval. Within a week it was routing garbage to the top of the queue and the sales team stopped trusting any of our scores — not just the bad ones, all of them. Trust, once lost, took months to rebuild. A feature flag that could have turned the model off in seconds would have contained the damage to a day. Instead, we spent a quarter earning back credibility. Every system I have built since has a rollback path before it has a feature.
-
 Clinical trial phases offer a model: graduated reversibility gates where each phase has stopping rules, safety review, and a go/no-go decision before proceeding. [Phase I](https://med.uc.edu/depart/psychiatry/research/clinical-research/crm/trial-phases-1-2-3-defined) (20-100 volunteers, safety only) is designed to be stopped at any time. Phase III involves thousands of patients but still has mandatory stopping rules. Every gate is a chance to reverse course.
 
 AI deployment should work the same way. Not "deploy and see what happens." Deploy to 1% of traffic. Monitor. Expand or roll back. Feature flags, canary releases, automated monitoring, and kill switches are not overhead. They are the infrastructure that determines whether a failure is recoverable or permanent.
