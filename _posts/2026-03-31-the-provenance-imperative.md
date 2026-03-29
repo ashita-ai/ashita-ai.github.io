@@ -14,7 +14,7 @@ Across New York, the Knoedler Gallery (founded 1846, the oldest commercial art g
 
 The paintings were not the problem. The provenance was the problem. Without it, nothing else mattered.
 
-AI systems today have the same vulnerability. They produce outputs without traceability. When they fail, nobody can trace how they got there.
+Every AI system deployed today has the same structural vulnerability. The outputs look competent — fluent text, plausible code, confident recommendations. But ask how the system produced a specific output and you are in the same position as the collectors who bought Beltracchi's paintings: holding something that looks right with no way to verify that it is.
 
 ## The pattern
 
@@ -52,7 +52,7 @@ This is why git became the universal substrate of software development. Not beca
 
 Nakamoto [defined](https://www.ussc.gov/sites/default/files/pdf/training/annual-national-training-seminar/2018/Emerging_Tech_Bitcoin_Crypto.pdf) a digital coin as "a chain of digital signatures." Strip the transaction history from a Bitcoin and you have nothing. The coin has no existence independent of its provenance. The systems that endure share this structural property: the provenance is not a layer on top. Strip it away and there is nothing left.
 
-Building provenance into AI systems means applying this model at every transformation step. Data versioning tools like [DVC](https://dvc.org/) treat training datasets the way git treats code: content-addressable versioning where every dataset state has a reproducible identifier, and every model artifact traces to the data version that produced it. SLSA's framework, which Google designed for software supply chains, extends to ML training pipelines by the same logic: attest who ran which training job, when, on which dataset version, producing which model artifact. The principle from git still holds. Provenance that is structural, embedded in the artifact's identity, is harder to fabricate than provenance documented separately and attached afterward.
+Building provenance into AI systems means applying this principle at every transformation step. A training dataset should be content-addressable: change a single record and the identifier changes, just as changing a single line in git changes every subsequent commit hash. A model artifact should be inseparable from the dataset version, hyperparameters, and training run that produced it. A prediction should carry the model version, retrieval context, and prompt that generated it. At each stage, the same structural question: can you strip the provenance and still have something meaningful? If yes, the provenance is documentation. If no, the provenance is architecture. Documentation gets lost. Architecture survives.
 
 ## What AI systems lack
 
@@ -80,4 +80,4 @@ A single pigment trace exposed Beltracchi. A 165-year-old gallery collapsed beca
 
 The principle predates every technology involved. Evidence, art, science, food, software, currency: every domain that requires trust requires provenance. AI is not exempt. It is the newest domain where the oldest principle applies.
 
-[Ground truth](/blog/ground-truth-as-foundation/) establishes the foundation: the data means what it says. Provenance traces the chain: every derived fact leads back to its source. Without both, AI systems are selling paintings without provenance, and the reckoning, when it comes, will be swift.
+[Ground truth](/blog/ground-truth-as-foundation/) establishes the foundation: the data means what it says. Provenance traces the chain: every derived fact leads back to its source. Without both, AI systems are selling paintings without provenance — and the collectors, eventually, will check the pigment.
