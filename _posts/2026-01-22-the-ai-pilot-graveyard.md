@@ -73,7 +73,7 @@ The companies that scale AI do not ask "does this model perform well?" They ask 
 
 ## What to do instead
 
-Kill pilots that have run longer than 90 days. The MIT data is clear: [successful pilots transition to production in about 90 days](https://loris.ai/blog/mit-study-95-of-ai-projects-fail/). Failed ones take nine months or longer. The 90-day mark is the boundary between "scaling" and "pilot purgatory." After that, sunk cost psychology takes over and the pilot becomes harder to kill than to keep funding.
+Kill pilots that are not producing measurable value. [95% of enterprise AI pilots](https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo/) fail to deliver measurable ROI. The longer a pilot runs without clear production metrics, the deeper into "pilot purgatory" it sinks. Sunk cost psychology takes over and the pilot becomes harder to kill than to keep funding.
 
 Deploy to limited production with real users. Not friendly internal users. Real customers who will use your AI in ways you did not anticipate and complain when it breaks.
 
