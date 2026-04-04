@@ -5,9 +5,7 @@ date: 2026-05-26
 category: "properties-series"
 ---
 
-In 2009, a developer organized a meetup in San Francisco and needed a Twitter hashtag. Eric Evans suggested "#NoSQL." Within five years, MongoDB was valued at [$1.2 billion](https://venturebeat.com/2013/10/04/mongodb-grabs-150m-in-funding-now-top-nyc-startup-at-1-2b-valuation/) and the relational model was declared dead.
-
-Fifteen years later, 55.6% of developers use PostgreSQL. Databricks paid $1 billion for Neon. Snowflake paid $250 million for Crunchy Data. [The pattern holds](/blog/the-fifty-year-stack/): PostgreSQL ate NoSQL. Linux ate containers. TCP/IP ate ATM. The mechanism was not endurance. It was absorption. The survivor incorporates what is useful from each challenger and discards what is noise. The challenger's best ideas become features in the survivor. The challenger itself becomes unnecessary.
+The [fifty-year stack](/blog/the-fifty-year-stack/) absorbs its challengers. PostgreSQL ate NoSQL. Linux ate containers. TCP/IP ate ATM. In each case, the survivor incorporated what was useful and discarded what was noise. The challenger's best ideas became features. The challenger itself became unnecessary.
 
 The previous posts in this series examined [four structural properties](/blog/the-properties-that-survive/) — [ground truth](/blog/ground-truth-as-foundation/), [provenance](/blog/the-provenance-imperative/), [contracts](/blog/contracts-as-infrastructure/), [reversibility](/blog/reversibility-as-default/) — and argued they outlast paradigm shifts. [The cost of absorption](/blog/the-cost-of-absorption/) showed what happens when systems try to absorb change without them: Boeing's 737 MAX ran out of margin after fifty-four years, and 346 people died. The forward-looking question: where are the four properties in the absorption cycle right now? Which are becoming invisible infrastructure, and which still require deliberate investment?
 
