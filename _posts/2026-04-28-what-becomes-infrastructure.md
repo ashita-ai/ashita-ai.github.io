@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "What Becomes Infrastructure"
-date: 2026-05-02
+date: 2026-04-28
 category: "properties-series"
 ---
 
