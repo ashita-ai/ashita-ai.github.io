@@ -31,23 +31,15 @@ AI systems break this model. Pre-production testing catches the errors you antic
 
 A model that [passes all your evals](/blog/your-evals-wont-save-you/) can still hallucinate in ways you never tested for. An agent that works perfectly in staging can make catastrophic decisions when user behavior differs from your assumptions. The failure modes are not bugs in the traditional sense. They are emergent properties of systems that do not know what they do not know.
 
-[IBM's 2025 Cost of a Data Breach report](https://www.ibm.com/reports/data-breach) found that 13% of organizations had experienced breaches involving AI models or applications. Of those compromised, 97% reported lacking proper AI access controls. Breaches involving unmonitored "shadow AI" tools cost an [average of $670,000 more](https://www.ibm.com/reports/data-breach) than breaches at organizations with AI governance.
-
-The premium is not because AI attacks are more sophisticated. It is because they run longer before detection.
+[IBM's 2025 Cost of a Data Breach report](https://www.ibm.com/reports/data-breach) found that 13% of organizations had experienced breaches involving AI models or applications. Of those compromised, 97% reported lacking proper AI access controls. Breaches involving unmonitored "shadow AI" tools cost an [average of $670,000 more](https://www.ibm.com/reports/data-breach) than breaches at organizations with AI governance. The premium is not because AI attacks are more sophisticated. It is because they run longer before detection.
 
 Google's 2025 DORA report found that [90% of developers now use AI in production](https://www.relyance.ai/blog/ai-trust-paradox-dora-report), but only 70% trust what they are deploying. Do the math: 27% of developers are shipping AI they do not trust.
 
-## The counterargument deserves a real answer
+## The novel failure mode
 
-The obvious objection: traditional software has silent failures too. Off-by-one errors in financial calculations. Race conditions that corrupt data intermittently. Memory leaks that degrade performance slowly. The failure modes I am describing are not unique to AI.
+The obvious objection: traditional software has silent failures too. Off-by-one errors in financial calculations. Race conditions that corrupt data intermittently. Many incidents attributed to "AI" are infrastructure failures wearing an AI costume — when McDonald's hiring chatbot ["Olivia" exposed 64 million applicants](https://madhulsachdeva.com/blog/2025/08/25/ai-security-lessons-2025/) in 2025, the root cause was that researchers guessed the admin password: "123456."
 
-This is partially true.
-
-When McDonald's AI hiring chatbot ["Olivia" was breached](https://madhulsachdeva.com/blog/2025/08/25/ai-security-lessons-2025/) in 2025, exposing data on 64 million job applicants, the root cause was that security researchers guessed the admin password: "123456." That is not an AI failure. That is forgetting Security 101. Many incidents attributed to "AI" are actually infrastructure failures, deployment mistakes, or basic security hygiene problems wearing an AI costume.
-
-But the novel failure mode is real: confident wrongness at scale. Traditional silent failures degrade performance or corrupt data incrementally. AI failures produce fluent, structured, authoritative-looking outputs that are substantively wrong. The system does not know it is wrong, cannot signal that it is wrong, and will continue being wrong until a human catches it.
-
-The 93% confidence on a wrong answer is not a bug. It is the system working as designed.
+But the novel failure mode is real: confident wrongness at scale. Traditional silent failures degrade performance or corrupt data incrementally. AI failures produce fluent, structured, authoritative-looking outputs that are substantively wrong. The system does not know it is wrong, cannot signal that it is wrong, and will continue being wrong until a human catches it. The 93% confidence on a wrong answer is not a bug. It is the system working as designed.
 
 ## Where the cost compounds
 
@@ -74,14 +66,6 @@ If failures are confident and expensive, you need systems designed to surface th
 **Outcome monitoring, not just operational monitoring.** Latency and error rates tell you the system is running. They do not tell you the system is right. Track business metrics that surface when AI decisions diverge from expected outcomes. A [dashboard can show green while the system burns money](/blog/healthy-metrics-broken-agent/).
 
 **Confidence calibration at the application layer.** Models do not reliably self-report uncertainty. Build uncertainty into the application: thresholds below which the system escalates to humans, ranges outside which it refuses to act. Abstention is cheaper than confident wrongness.
-
-## The scale asymmetry
-
-The pitch for AI is that it handles tasks humans cannot scale. This is true. It also means AI makes mistakes humans cannot catch.
-
-A lawyer reviewing ten cases will notice a fabricated citation. A legal AI generating ten thousand briefs embeds hallucinations that surface years later, in appeals, when someone finally checks. The error rate might be identical. The blast radius is not.
-
-The cost of being wrong scales with autonomy. An AI that suggests and a human who approves has bounded downside. An AI that decides and executes has unbounded downside limited only by the blast radius of its permissions.
 
 ## What I am still figuring out
 

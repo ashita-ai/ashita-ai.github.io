@@ -1,13 +1,13 @@
 ---
 layout: post
 title: "What Becomes Infrastructure"
-date: 2026-05-26
+date: 2026-05-02
 category: "properties-series"
 ---
 
 The [fifty-year stack](/blog/the-fifty-year-stack/) absorbs its challengers. PostgreSQL ate NoSQL. Linux ate containers. TCP/IP ate ATM. In each case, the survivor incorporated what was useful and discarded what was noise. The challenger's best ideas became features. The challenger itself became unnecessary.
 
-The previous posts in this series examined [four structural properties](/blog/the-properties-that-survive/) — [ground truth](/blog/ground-truth-as-foundation/), [provenance](/blog/the-provenance-imperative/), [contracts](/blog/contracts-as-infrastructure/), [reversibility](/blog/reversibility-as-default/) — and argued they outlast paradigm shifts. [The cost of absorption](/blog/the-cost-of-absorption/) showed what happens when systems try to absorb change without them: Boeing's 737 MAX ran out of margin after fifty-four years, and 346 people died. The forward-looking question: where are the four properties in the absorption cycle right now? Which are becoming invisible infrastructure, and which still require deliberate investment?
+The previous posts in this series examined [four structural properties](/blog/the-properties-that-survive/) — [ground truth](/blog/ground-truth-as-foundation/), [provenance](/blog/the-provenance-imperative/), [contracts](/blog/contracts-as-infrastructure/), [reversibility](/blog/reversibility-as-default/) — and argued they outlast paradigm shifts. The reverse case is just as instructive. Boeing's 737 ran the absorption strategy for fifty-four years, taking on heavier engines, fly-by-wire elements, and increasingly aggressive aerodynamic compensation, all without renegotiating the underlying contracts of the airframe. The MAX ran out of margin and 346 people died. Absorption without the four properties is not free; it is debt that compounds invisibly until it doesn't. The forward-looking question: where are the four properties in the absorption cycle right now? Which are becoming invisible infrastructure, and which still require deliberate investment?
 
 ## What is already commoditizing
 

@@ -11,7 +11,7 @@ Meanwhile, their competitors Opendoor and Offerpad used similar AI and survived.
 
 McDonald's made the same mistake with different technology. Their AI drive-thru pilot with IBM [reached 100 locations](https://www.cnbc.com/2024/06/17/mcdonalds-to-end-ibm-ai-drive-thru-test.html) in three years. It processed real orders. It scaled. And in June 2024, they shut it down. Order accuracy hovered around [85%](https://www.restaurantdive.com/news/mcdonalds-ai-drive-thru-voice-ordering-accuracy/625923/) (they needed 95% for broader rollout). The viral videos (bacon on ice cream, nine sweet teas when a customer ordered none) were symptoms, not the disease. The pilot validated that the technology could take orders. It did not validate that customers would tolerate the experience.
 
-Meanwhile, [Wendy's used the same underlying technology](https://fortune.com/2024/10/15/wendy-google-ai-drive-thru-expansion/) (Google Cloud AI) and is still expanding. The difference: Wendy's started with one location in Columbus, Ohio. After a year, they had 36 restaurants. They are planning 500 by end of 2025. Same technology. Different execution philosophy. The pattern repeats.
+Meanwhile, [Wendy's used the same underlying technology](https://fortune.com/2024/10/15/wendy-google-ai-drive-thru-expansion/) (Google Cloud AI) and is still expanding. The difference: Wendy's started with one location in Columbus, Ohio. After a year, they had 36 restaurants. They are planning 500 by end of 2025. Same technology. Different execution philosophy.
 
 This is not a story about pilots failing to reach production. It is a story about what happens when they scale too fast.
 
@@ -23,19 +23,9 @@ But even if the 95% is directionally right rather than precisely right, the inte
 
 Pilots are optimized to not reach production.
 
-A pilot with synthetic data and friendly internal users tells you nothing about how your AI will behave when customers use it in ways you did not anticipate. A pilot that runs for six months generates board decks and justifies headcount. A pilot that "succeeds" on narrow metrics gives everyone permission to declare victory without shipping anything.
+A pilot with synthetic data and friendly internal users tells you nothing about how your AI will behave when customers use it in ways you did not anticipate. A pilot that runs for six months generates board decks and justifies headcount. A pilot that "succeeds" on narrow metrics gives everyone permission to declare victory without shipping anything. Steve Blank [calls this innovation theater](https://steveblank.com/2019/10/15/between-a-rock-and-a-hard-place-organizational-and-innovation-theater/): activities that shape culture but rarely ship. The tell is the timeline. If your pilot has been running for six months and nobody can name the ship date, it is theater.
 
 The [S&P Global data](https://www.ciodive.com/news/AI-project-fail-data-SPGlobal/742590/) confirms it: 42% of companies abandoned most of their AI initiatives in 2025, up from 17% in 2024. These are not technical failures. The models work. What fails is the organizational willingness to put AI in front of real users with real stakes.
-
-## Innovation theater
-
-Steve Blank [coined the term](https://steveblank.com/2019/10/15/between-a-rock-and-a-hard-place-organizational-and-innovation-theater/) "innovation theater" for activities that shape culture but rarely ship: hackathons, design thinking workshops, AI labs that generate press releases but not production systems.
-
-AI pilots are innovation theater's most expensive production. They justify Chief AI Officer hires. They look like progress in quarterly updates. They give executives air cover for not making decisions. And they almost never ship.
-
-The reason is structural. Innovation teams are measured on novelty: new capabilities, impressive demos, press coverage. Execution teams are measured on reliability: uptime, cost control, operational stability. When an innovation team succeeds and hands off to execution, the execution team has zero incentive to adopt it. It disrupts their metrics. The innovation dies in the handoff, not in the lab.
-
-The tell is the timeline. If your pilot has been running for six months and nobody can name the ship date, it is theater. If the success criteria document is longer than the implementation plan, it is theater. If more people attend the steering committee than write code, it is theater.
 
 ## What the 5% do differently
 
@@ -53,14 +43,6 @@ Zillow's executives [overrode the algorithm](https://www.gsb.stanford.edu/insigh
 
 The lesson is not "deploy faster." The lesson is "deploy with automatic pullback." A guardrail is not a dashboard someone checks. It is a trigger that fires without human intervention.
 
-## When pilots are legitimate
-
-Regulated industries have legitimate compliance gates. Healthcare AI needs FDA clearance. Financial models need regulatory approval. These are not pilots. A compliance gate has external accountability, a clear definition of "done," and a regulatory body that will shut you down if you skip it. A pilot has none of these.
-
-The difference matters. MD Anderson's [IBM Watson oncology project](https://spectrum.ieee.org/how-ibm-watson-overpromised-and-underdelivered-on-ai-health-care) spent four years and over $62 million before being quietly shelved. That was not regulatory compliance. That was a pilot with no kill switch and no external accountability, dressed up as medical research.
-
-The tell is simple: if your pilot has external deadlines enforced by someone who can shut you down, it is compliance. If your pilot has been "waiting for legal review" for six months, the bottleneck is not legal.
-
 ## The real problem
 
 Pilots fail because they test the wrong things. This is different from the [eval problem](/blog/your-evals-wont-save-you/). Evals test whether the model works. Pilots test whether the organization will use it. Both fail for the same reason: they validate capability when they should validate adoption.
@@ -73,7 +55,7 @@ The companies that scale AI do not ask "does this model perform well?" They ask 
 
 ## What to do instead
 
-Kill pilots that are not producing measurable value. [95% of enterprise AI pilots](https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo/) fail to deliver measurable ROI. The longer a pilot runs without clear production metrics, the deeper into "pilot purgatory" it sinks. Sunk cost psychology takes over and the pilot becomes harder to kill than to keep funding.
+Kill pilots that are not producing measurable value. The longer a pilot runs without clear production metrics, the deeper into pilot purgatory it sinks. Sunk cost psychology takes over and the pilot becomes harder to kill than to keep funding.
 
 Deploy to limited production with real users. Not friendly internal users. Real customers who will use your AI in ways you did not anticipate and complain when it breaks.
 
@@ -81,7 +63,7 @@ Build automated guardrails before you build the model. Not dashboards. Triggers.
 
 ## What I am still figuring out
 
-Whether the "skip pilots, deploy with guardrails" advice applies to internal tools. The entire framework assumes an external user whose behavior you need to observe. For internal analytics, research tools, or back-office automation, the pilot and the limited production deployment look identical. The 90-day boundary may not apply when there is no market test. The harder question is whether internal deployments have their own version of pilot purgatory: tools that are "in use" but never change a decision. That pattern may not even be detectable without the forcing function of customer complaints.
+Whether the "skip pilots, deploy with guardrails" advice applies to internal tools. The entire framework assumes an external user whose behavior you need to observe. For internal analytics, research tools, or back-office automation, the pilot and the limited production deployment look identical. The harder question is whether internal deployments have their own version of pilot purgatory: tools that are "in use" but never change a decision. That pattern may not even be detectable without the forcing function of customer complaints.
 
 ---
 
