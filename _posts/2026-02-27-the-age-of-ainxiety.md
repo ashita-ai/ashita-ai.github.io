@@ -5,11 +5,9 @@ date: 2026-02-27
 category: "economics"
 ---
 
-On February 26, 2026, Jack Dorsey announced Block would cut about 4,000 employees — nearly half its workforce. He cited AI explicitly. Block's stock surged 24% in extended trading. On an analyst call, Dorsey said he expects "a majority of companies" to reach the same conclusion within a year.
+On February 26, 2026, Jack Dorsey announced Block would cut about 4,000 employees, nearly half its workforce. He cited AI explicitly. Block's stock surged 24% in extended trading. On an analyst call, Dorsey said he expects "a majority of companies" to reach the same conclusion within a year.
 
-The following day, the Trump administration ordered every federal agency to immediately cease using Anthropic's products. Anthropic had refused to remove contractual restrictions barring Claude from autonomous weapons systems and mass surveillance. Defense Secretary Hegseth called the position incompatible with "American principles." Anthropic was declared a supply chain risk. Agencies have six months to phase out its products.
-
-One story is about AI eliminating jobs. The other is about AI becoming too powerful to deploy without restrictions. Both anxieties are real. They arrived within 24 hours of each other.
+The market rewarded him for it. That is the part to pay attention to.
 
 ## The fear is real
 
@@ -43,18 +41,6 @@ The behavioral paradox runs deepest among workers most native to AI tools. [Fort
 
 This is what [the DORA data looked like from the developer side](/blog/the-trust-gap/): 30% of developers actively distrust the AI they are shipping, and yet it ships. The distrust does not stop the deployment. The anxiety does not stop the adoption. The coercion is structural.
 
-## The other anxiety
-
-While the job displacement conversation dominates, a second anxiety was being validated at the same time.
-
-Since Anthropic's founding, the company has maintained that certain applications are categorically too dangerous to enable: systems that make targeting decisions without human involvement, systems that surveil entire civilian populations. Those commitments were embedded in its government contracts.
-
-On February 24, 2026, one day before the Pentagon issued its specific ultimatum, Anthropic [quietly published Responsible Scaling Policy Version 3.0](https://time.com/7380854/exclusive-anthropic-drops-flagship-safety-pledge/), removing the hard requirement that had barred the company from training more capable models without proven safety measures in place. The prior policy included a binary pause trigger: reach a capability threshold, stop training until safety is demonstrated. That requirement is gone. Anthropic's stated reasoning: if one developer pauses while others proceed, developers with the weakest protections set the pace.
-
-Two days later, Dario Amodei [wrote](https://www.anthropic.com/news/statement-department-of-war): "We cannot in good conscience accede to their request." The company held the line against autonomous weapons and mass surveillance. The Pentagon called Amodei "a liar with a God complex." The Trump administration banned Anthropic from government systems.
-
-The two moves sit in tension. Under enough commercial and governmental pressure, Anthropic softened its own limits. Then refused to cross a different one. The point is not to adjudicate which decision was right. The point is that the safety researchers who worried that AI institutions would buckle under pressure were not wrong. The institutions themselves feel it.
-
 ## The historical reflex
 
 The instinct when confronted with technology anxiety is to reach for the ATM.
@@ -69,14 +55,12 @@ There is also the entry-level problem the ATM analogy does not address. When ATM
 
 ## What I am still figuring out
 
-Whether the third-person effect is protective or dangerous. If people systematically underestimate their personal exposure to AI-driven displacement, they will not advocate for the policy responses — retraining programs, safety nets, labor market reforms — that would protect them when the displacement arrives. The anxiety that is missing may matter as much as the anxiety that is present.
+Whether the third-person effect is protective or dangerous. If people systematically underestimate their personal exposure to AI-driven displacement, they will not advocate for the policy responses (retraining programs, safety nets, labor market reforms) that would protect them when the displacement arrives. The anxiety that is missing may matter as much as the anxiety that is present.
 
 And whether Block is the leading indicator or the outlier. Dorsey said companies are "late" and that most will reach the same conclusion within a year. The HBR data says 60% of organizations are already acting on AI's potential, not its performance. If performance catches up to potential, the 2% figure becomes a much larger number quickly. The anxiety would be warranted retroactively, which is the worst possible timing.
 
 ---
 
-February 26 and 27 were about different fears. About four thousand people lost their jobs because AI is productive enough to replace them. A company was banned from federal business for insisting that AI should not be allowed to make targeting and surveillance decisions without human oversight.
+The hype cycle and the doom cycle both treat anxiety as a single dial to be turned up or down. The data says otherwise. The anxiety is real and aimed slightly wrong: toward experienced workers' personal situations, away from the entry-level collapse already underway.
 
-The hype cycle and the doom cycle both treat anxiety as a single dial to be turned up or down. The data says otherwise. The anxiety about job displacement is real and aimed slightly wrong: toward experienced workers' personal situations, away from the entry-level collapse already underway. The anxiety about AI systems without safeguards was always real and is now documented in a government blacklisting order.
-
-Both were validated within 24 hours of each other. Neither is going away.
+Block cut four thousand jobs and the market rewarded the move with a 24% spike. The signal that sends to every other CEO is the part of this story that was always going to matter most.

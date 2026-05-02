@@ -15,7 +15,7 @@ Recent benchmarks paint a grim picture. The [HaluMem study](https://arxiv.org/ab
 
 These are not edge cases. This is the baseline. If your memory system were a student, it would be failing the class and somehow also forgetting it enrolled.
 
-Most systems follow a straightforward pattern: the user says something, the LLM extracts important facts, the facts go into a vector database. Rinse. Repeat. The extracted facts become the source of truth. The original conversation is summarized or discarded.
+Most systems follow a straightforward pattern: the user says something, the LLM extracts important facts, the facts go into a vector database. The extracted facts become the source of truth. The original conversation is summarized or discarded.
 
 This compounds errors. Every extraction pass can introduce mistakes. Every summarization loses detail. After a few iterations, you are querying a game of telephone.
 
@@ -47,25 +47,7 @@ Sebastian Lund [makes a compelling argument](https://fastpaca.com/blog/failure-c
 
 Different types of information have different failure modes. Losing a user's stated preference is annoying. Losing the context that prevents a dangerous recommendation is catastrophic. A flat buffer where everything competes equally cannot express these distinctions.
 
-This leads to a layout with distinct regions:
-
-**Working** memory holds the current conversation context, volatile and in-memory only, serving as the entry point for everything else.
-
-**Episodic** memories are the immutable ground truth: raw interactions stored verbatim with fast decay, serving as the source for all derived knowledge.
-
-**Factual** memories are pattern-extracted facts like emails, phone numbers, dates, and names, with high confidence because extraction is deterministic and slow decay.
-
-**Semantic** memories are LLM-inferred knowledge (preferences, context, relationships between concepts) with variable confidence and slow decay.
-
-**Procedural** memories capture behavioral patterns, such as when a user prefers concise responses, detected through repetition with very slow decay.
-
-**Negation** memories represent what is explicitly NOT true. When a user corrects a misunderstanding, that negation gets stored to prevent false matches
-
-This is an engineering construct. Most memory systems only store positive knowledge. They have no way to represent that the user does NOT use MongoDB. So they keep suggesting it. Negation facts solve this practical problem.
-
-The neuroscience here is instructive. Memories strengthen through repeated retrieval (the [testing effect](https://pmc.ncbi.nlm.nih.gov/articles/PMC5912918/)), so Engram tracks `consolidation_strength` that increases when memories are linked, refined, or undergo consolidation. [Retrieval-induced forgetting](https://pubmed.ncbi.nlm.nih.gov/7931095/) shows that retrieving some memories actively suppresses related non-retrieved items; Engram implements this via opt-in RIF to naturally prune redundant memories.
-
-The linking between memories is inspired by [A-MEM research](https://arxiv.org/abs/2502.12110) showing significant improvement on multi-hop reasoning benchmarks. And the buffer promotion system draws from [Cognitive Workspace](https://arxiv.org/abs/2508.13171) research demonstrating 58.6% memory reuse compared to 0% for naive RAG approaches.
+Engram separates memory into regions with different decay rates and confidence properties: working (volatile, current conversation), episodic (immutable raw interactions), factual (deterministically extracted entities), semantic (LLM-inferred knowledge), procedural (behavioral patterns), and negation (what is explicitly NOT true). Most memory systems only store positive knowledge — they have no way to represent that a user does NOT use MongoDB, so they keep suggesting it. Negation as a first-class memory type solves that.
 
 ## Deferred processing
 
@@ -75,8 +57,6 @@ The critical path stores the episode and runs deterministic extraction (pattern 
 
 Semantic inference runs as a background job. This has two benefits: it does not slow down the application, and errors can be caught before they propagate. A batch consolidation job compares new inferences against existing knowledge and flags contradictions.
 
-This mirrors how biological memory consolidation works. Encoding is fast; consolidation is slow and happens offline. In the biological case, this happens during sleep. In the engineering case, this happens in a job queue. The [research on systems consolidation](https://pubmed.ncbi.nlm.nih.gov/7624455/) is extensive and the analogy is more useful than it might first appear.
-
 ## What comes next
 
 The architecture is settled. The code is catching up.
@@ -85,13 +65,13 @@ The stack includes [Pydantic AI](https://ai.pydantic.dev/) for structured LLM in
 
 I am building this because I need it. The AI applications I want to build require memory that works: memory that does not hallucinate, that can be verified, that degrades gracefully when something has to give.
 
-If this problem interests you, [the repo is on GitHub](https://github.com/ashita-ai/engram). It is early, but the architecture docs explain the reasoning. I will be writing more as the implementation progresses.
+If this problem interests you, [the repo is on GitHub](https://github.com/ashita-ai/engram). It is early, but the architecture docs explain the reasoning.
 
 ## What I am still figuring out
 
-Whether biological memory analogies are useful or misleading for engineering systems. The testing effect and retrieval-induced forgetting have clear computational analogs, but memory consolidation during sleep does not map cleanly to batch jobs. I may be pattern-matching more than reasoning.
+The optimal confidence thresholds for filtering queries. Too strict and the system is useless for exploratory questions. Too lenient and it returns inferences it should not trust. I do not have a principled way to set the boundary.
 
-The optimal confidence thresholds for filtering queries are also unclear. Too strict and the system is useless for exploratory questions. Too lenient and it returns inferences it should not trust. I do not have a principled way to set the boundary.
+Whether negation memories are sufficient or whether the system needs an explicit "uncertain" state distinct from absence. A user who never mentioned MongoDB is different from a user who said "I don't use MongoDB." The first is silence; the second is a fact. Treating them the same loses information.
 
 ---
 

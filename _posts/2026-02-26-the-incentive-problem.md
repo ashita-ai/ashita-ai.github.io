@@ -19,19 +19,11 @@ PwC's George Korizis [put it bluntly](https://www.enterprisedb.com/news/agentic-
 
 S&P Global [found](https://www.spglobal.com/market-intelligence/en/news-insights/research/ai-experiences-rapid-adoption-but-with-mixed-outcomes-highlights-from-vote-ai-machine-learning) that 42% of companies abandoned most AI initiatives in 2025, up from 17% in 2024. On average, 46% of pilots are scrapped before they ever reach production. The incentive structure is working exactly as designed. It is just not designed for production.
 
-Pilot teams are rewarded for novelty and speed. A fast prototype that generates executive excitement is a career win. Whether it survives the handoff to operations is someone else's problem — literally. AI-skilled workers command a [56% wage premium](https://www.pwc.com/gx/en/news-room/press-releases/2025/ai-linked-to-a-fourfold-increase-in-productivity-growth.html) over peers in similar roles, according to PwC's analysis of a billion job postings. The observable pattern: people launch, collect the credit, and move on. Whether the incentive structure is the cause or a correlate, the behavior is consistent — and the production system is the one left holding the gap.
+Pilot teams are rewarded for novelty and speed. A fast prototype that generates executive excitement is a career win. Whether it survives the handoff to operations is someone else's problem. The handoff is where it dies. Harvard Business Review [documented four models](https://hbr.org/2018/08/how-to-hand-off-an-innovation-project-from-one-team-to-another) for transferring innovation projects to execution teams. The most common (the "Owner's Manual," where the innovation team documents their work and hands it over) is also the least effective. The execution team, measured on reliability and efficiency, has no incentive to adopt something that disrupts their metrics.
 
-The handoff is where it dies. Harvard Business Review [documented four models](https://hbr.org/2018/08/how-to-hand-off-an-innovation-project-from-one-team-to-another) for transferring innovation projects to execution teams. The most common (the "Owner's Manual," where the innovation team documents their work and hands it over) is also the least effective. The execution team, measured on reliability and efficiency, has no incentive to adopt something that disrupts their metrics. The innovation dies between teams, not in the lab.
+The budget structure mirrors the team structure. [60% of enterprise AI investment](https://menlovc.com/2024-the-state-of-generative-ai-in-the-enterprise/) comes from innovation budgets: temporary funds earmarked for new projects. Only 40% comes from permanent operational budgets. A project ships on innovation dollars and then competes for maintenance budget against everything else, while the team that launched has already moved on. RAND [found](https://www.rand.org/pubs/research_reports/RRA2680-1.html) that more than 80% of AI projects fail to deliver expected value, twice the failure rate of non-AI technology projects. The money exists to build. The budget structures do not exist to sustain.
 
 The model that eliminates the handoff entirely is what HBR calls the "Hive": multidisciplinary teams that own a challenge across its entire lifecycle. Same team builds it, same team runs it, same team gets paged when it breaks. The pilot incentive disappears when there is no handoff to hide behind.
-
-## The budget problem
-
-[60% of enterprise AI investment](https://menlovc.com/2024-the-state-of-generative-ai-in-the-enterprise/) comes from innovation budgets: temporary funds earmarked for new projects. Only 40% comes from permanent operational budgets. Innovation budgets are designed to launch things. They are not designed to keep things running.
-
-The result is predictable. A project ships on innovation dollars. It then competes for maintenance budget against everything else. The team that launched has moved on. The team inheriting it has no incentive to keep it alive — doing so drains resources from their own projects.
-
-RAND [found](https://www.rand.org/pubs/research_reports/RRA2680-1.html) that more than 80% of AI projects fail to deliver expected value, twice the failure rate of non-AI technology projects. The Big Tech capex numbers obscure this: Amazon at $100B, Microsoft at $80B, Alphabet at $91B. The money exists to build. The budget structures do not exist to sustain.
 
 ## The vendor problem
 
@@ -51,17 +43,15 @@ The companies that scale AI share one structural trait: the same team that build
 
 This eliminates the pilot incentive. If the team that ships the demo also gets paged when it breaks at 3am, they build differently from the start. McKinsey's [State of AI data](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai) shows high performers consistently pushing AI ownership to line managers rather than centralizing it in corporate AI labs, and tying employee incentives to business outcomes rather than launch metrics.
 
-Budget follows the same logic. The 60% of AI investment flowing through innovation budgets creates a structural gap: a project ships on temporary dollars, then competes for a maintenance line item it was never promised. The question to ask before a pilot launches is not whether it works, but who owns the operational budget when the innovation funding ends. If that question does not have an answer, the project is a demonstration.
+The question to ask before a pilot launches is not whether it works, but who owns the operational budget when the innovation funding ends. If that question does not have an answer, the project is a demonstration.
 
 On the vendor side: outcome-based contracts align interests. If the vendor gets paid per resolved case rather than per seat, they have a direct reason to build AI that actually resolves cases.
 
 ## What I am still figuring out
 
-The career incentive data is weaker than expected. There is plenty of anecdotal evidence that pilot launchers advance faster than production deliverers, but no rigorous longitudinal studies tracking promotion rates by delivery type. The pattern is visible in behavior — people consistently leave before production, but the causal mechanism is inferred, not measured.
-
 The structural problem may run deeper than incentives alone. O'Reilly and Tushman's research on [organizational ambidexterity](https://journals.aom.org/doi/10.5465/amp.2013.0025) argues that exploration and exploitation require fundamentally different organizational capabilities: flexibility versus control, autonomy versus efficiency, tolerance for failure versus zero tolerance for downtime. Aligning incentives may not be sufficient if the same team structurally cannot do both. A team optimized for production reliability may be incapable of running the kind of exploratory experiments that produce useful pilots, regardless of how you measure them. The Hive model eliminates the handoff. It does not resolve the capability gap.
 
-The vendor transition is also unresolved. Outcome-based pricing works for vendors who can make the shift without collapsing existing revenue. Most incumbents cannot. Their sales motions, their customer success teams, their engineering roadmaps — all built around seat counts. Moving to outcome-based is not a contract change. It is a business model change. The vendors who get there first will be structurally different companies from the ones that dominated the last decade of SaaS.
+The vendor transition is also unresolved. Outcome-based pricing works for vendors who can make the shift without collapsing existing revenue. Most incumbents cannot. Their sales motions, their customer success teams, their engineering roadmaps are all built around seat counts. Moving to outcome-based is not a contract change. It is a business model change. The vendors who get there first will be structurally different companies from the ones that dominated the last decade of SaaS.
 
 ---
 

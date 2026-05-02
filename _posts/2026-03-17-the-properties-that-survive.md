@@ -62,17 +62,9 @@ The survivors can evolve without destroying what came before. HTTP/3 replaced TC
 
 AI infrastructure that cannot roll back, degrade gracefully, or run two versions simultaneously will not survive its first production failure, let alone a paradigm shift.
 
-## Shearing layers
+## Pattern versus property
 
-In 1994, Stewart Brand published [*How Buildings Learn*](https://en.wikipedia.org/wiki/How_Buildings_Learn), describing how buildings are not single things but layers that change at different rates. The site is eternal. The structure lasts generations. The skin changes every twenty years. The furniture moves daily.
-
-His key insight: "An adaptive building has to allow slippage between the differently-paced systems. Otherwise the slow systems block the flow of the quick ones, and the quick ones tear up the slow ones with their constant change."
-
-GPT-4 is furniture. It will be replaced, probably soon. RAG pipelines are furniture. Prompt engineering is furniture. The data quality infrastructure that feeds these systems, the audit trails that trace their decisions, the contracts that define what the data means, the rollback mechanisms that recover from failures. Those are structure.
-
-The agentic AI projects being scrapped are mostly projects that invested in AI furniture while ignoring the structure underneath. This is the distinction from [Building for Tomorrow](/blog/building-for-tomorrow/). Patterns are furniture, implementation choices that should change as technology evolves. Properties are structure, the load-bearing decisions everything else depends on. Confusing the two is how you build infrastructure that works for three years and constrains you for ten.
-
-The companies that separate structure from furniture now will swap models, architectures, and paradigms without starting over. The companies that do not will be starting over every time the furniture changes.
+The distinction matters at every layer. GPT-4 is a pattern. It will be replaced, probably soon. RAG pipelines are patterns. Prompt engineering is a pattern. The data quality infrastructure that feeds those systems, the audit trails that trace their decisions, the contracts that define what the data means, the rollback mechanisms that recover from failures — those are properties. This is the distinction from [Building for Tomorrow](/blog/building-for-tomorrow/): patterns are implementation choices that should change as technology evolves; properties are the load-bearing decisions everything else depends on. The agentic AI projects being scrapped are mostly projects that invested in patterns while ignoring properties. The companies that separate the two now will swap models, architectures, and paradigms without starting over. The companies that do not will be starting over every time the model changes.
 
 ## What I am still figuring out
 

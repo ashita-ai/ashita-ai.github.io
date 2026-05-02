@@ -60,19 +60,11 @@ Third, regulation is arriving. The [EU AI Act](https://en.wikipedia.org/wiki/Art
 
 ## What survives
 
-The metrological insight is that ground truth works when it has four properties, and these properties are paradigm-independent. They worked for Le Grand K. They work for databases. They will work for whatever replaces transformers.
+Ground truth works when it has four sub-properties: immutable sources at the bottom (raw records that do not drift), documented derivations from source to output (every derived fact traces to the record it came from), quantified uncertainty (the system knows whether a value was directly observed, pattern-extracted, or inferred), and continuous verification (data contracts, schema validation, automated checks that run on every change, not once at design time). The International Vocabulary of Metrology [defines traceability](https://jcgm.bipm.org/vim/en/2.41.html) as "a documented unbroken chain of calibrations, each contributing to the measurement uncertainty." Without it, ground truth degrades into opinion.
 
-Immutable sources at the bottom. The Planck constant does not drift. Immutable raw records do not drift either. They do not depend on any model, any embedding, any architecture. When the paradigm shifts, the raw data is still there.
+Two of these (derivations and verification) get their own posts later in this series, as [provenance](/blog/the-provenance-imperative/) and [contracts](/blog/contracts-as-infrastructure/). The point here is that they all sit downstream of immutability. If the bottom layer drifts, nothing built on top of it can be trusted, no matter how well the rest is engineered.
 
-Documented derivations from source to output. The International Vocabulary of Metrology [defines](https://jcgm.bipm.org/vim/en/2.41.html) traceability as "a documented unbroken chain of calibrations, each contributing to the measurement uncertainty." In data systems, every derived fact traces to the record it came from. When something goes wrong, you can find out why. This is not a feature of a particular framework. It is a property of any system that needs to be debuggable.
-
-Quantified uncertainty. Metrological traceability does not claim perfect accuracy. It claims known accuracy. In data systems, this means tracking confidence: was this directly observed, pattern-extracted, or LLM-inferred? A system that knows what it does not know is more useful than one that is confidently wrong.
-
-Continuous verification. National metrology institutes submit to the [CIPM Mutual Recognition Arrangement](https://www.bipm.org/en/cipm-mra), which requires international comparison and audit. Without enforcement, ground truth degrades into opinion. In data systems, this means [data contracts](/blog/the-metadata-control-plane/), schema validation, and automated checks that verify continuously, not once.
-
-These are not features of a current system. They are properties of any system that will still work after the paradigm shifts.
-
-This is why I built [Engram](/projects/engram/) with a strict confidence hierarchy: verbatim episode storage at the bottom, extracted facts in the middle, inferred knowledge at the top. Each layer knows where it came from and how much to trust itself. I had watched too many RAG systems treat every retrieved fact with equal confidence — a direct quote from a user and a pattern-matched inference stored side by side, indistinguishable. When the inference was wrong, there was no way to trace it back to the extraction that produced it, and no way to know it was an inference at all. The ground truth had been flattened into a single layer. Engram's design is opinionated about this because the alternative is a system that lies to you without knowing it.
+This is why I built [Engram](/projects/engram/) with a strict confidence hierarchy: verbatim episode storage at the bottom, extracted facts in the middle, inferred knowledge at the top. Each layer knows where it came from and how much to trust itself. The alternative is a system that lies to you without knowing it.
 
 ## What I am still figuring out
 

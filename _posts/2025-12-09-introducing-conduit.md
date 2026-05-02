@@ -19,9 +19,9 @@ Conduit is my attempt to stop doing that.
 
 If you use multiple LLM providers, you face three choices:
 
-1. **Overspend** - Route everything to expensive models. Quality guaranteed, budget destroyed.
-2. **Underspend** - Route everything to cheap models. Budget preserved, quality inconsistent.
-3. **Manual rules** - Write if/else logic based on query patterns. Brittle, breaks when models change.
+1. **Overspend** — Route everything to expensive models. Quality guaranteed, budget destroyed.
+2. **Underspend** — Route everything to cheap models. Budget preserved, quality inconsistent.
+3. **Manual rules** — Write if/else logic based on query patterns. Brittle, breaks when models change.
 
 None of these are good. The first wastes money. The second wastes time debugging bad outputs. The third wastes engineering effort on routing logic that needs constant maintenance.
 
@@ -73,7 +73,7 @@ I tested all 11 algorithms on two datasets:
 
 For each query, algorithms route to one of the available models, then receive feedback on whether the answer was correct. Quality is the percentage of correct answers.
 
-**MMLU (1000 queries)** - 6 models: GPT-4o-mini, GPT-4o, GPT-4-turbo, Claude Sonnet 4.5, Claude Opus 4.5, Gemini 2.5 Pro
+**MMLU (1000 queries)** — 6 models: GPT-4o-mini, GPT-4o, GPT-4-turbo, Claude Sonnet 4.5, Claude Opus 4.5, Gemini 2.5 Pro
 
 | Algorithm | Total Cost | Quality |
 |-----------|------------|---------|
@@ -82,7 +82,7 @@ For each query, algorithms route to one of the available models, then receive fe
 | Thompson Sampling | $2.61 | 90.3% |
 | Static model (GPT-4-turbo) | $0.20 | 82.0% |
 
-**GSM8K (1319 queries)** - 8 models: Claude Haiku/Sonnet/Opus 4.5, Gemini 2.5 Flash/Pro, GPT-5 Mini/Nano/5
+**GSM8K (1319 queries)** — 8 models: Claude Haiku/Sonnet/Opus 4.5, Gemini 2.5 Flash/Pro, GPT-5 Mini/Nano/5
 
 | Algorithm | Total Cost | Quality |
 |-----------|------------|---------|
@@ -91,58 +91,15 @@ For each query, algorithms route to one of the available models, then receive fe
 | Thompson Sampling | $11.51 | 92.9% |
 | Static model (Gemini 2.5 Pro) | $17.84 | 87.0% |
 
-The key finding: **learning algorithms outperform static model selection**. On MMLU, Dueling Bandit reached 93.2% vs 82.0% for always routing to a fixed high-quality model. On GSM8K, Hybrid UCB1+LinUCB hit 95.3% vs 87.0% for static routing. No single model dominates all query types - adaptive routing discovers which models work best for which questions. Full methodology and raw data in the [benchmark repo](https://github.com/ashita-ai/conduit-benchmark).
-
-## What Conduit does not do
-
-Transparency about limitations:
-
-- **No streaming** - Batch only for now. Streaming is planned but not implemented.
-- **No multi-tenancy** - Single-tenant. Deploy separate instances if you need isolation.
-- **No web UI** - API and CLI only.
-- **No auth** - Deploy behind your own authentication layer.
-- **No fine-tuning** - Routes to existing models, does not train them.
-
-If you need enterprise features like SSO, SOC2 compliance, or a dashboard, look at [Portkey](https://portkey.ai/) or [Martian](https://withmartian.com/). Conduit is for people who want a simple library they control.
+The key finding: **learning algorithms outperform static model selection**. On MMLU, Dueling Bandit reached 93.2% vs 82.0% for always routing to a fixed high-quality model. On GSM8K, Hybrid UCB1+LinUCB hit 95.3% vs 87.0% for static routing. No single model dominates all query types — adaptive routing discovers which models work best for which questions. Full methodology and raw data in the [benchmark repo](https://github.com/ashita-ai/conduit-benchmark).
 
 ## When to use it
 
-Conduit makes sense if:
+Conduit makes sense if you spend $500+/month on LLM APIs, run 1000+ queries/day with varying complexity, use 3+ different models, and want automatic optimization without hand-written routing rules. It does not make sense if you only use one model, have fewer than 100 queries/day, or all your queries need the same capability level.
 
-- You spend $500+/month on LLM APIs
-- You have 1000+ queries/day with varying complexity
-- You use 3+ different models
-- You want automatic optimization without manual routing rules
+Conduit is also intentionally narrow. No streaming yet (batch only). No multi-tenancy. No web UI. No built-in auth. No fine-tuning. If you need enterprise features like SSO, SOC2 compliance, or a dashboard, look at [Portkey](https://portkey.ai/) or [Martian](https://withmartian.com/). Conduit is for people who want a simple library they control.
 
-It does not make sense if:
-
-- You only use one model
-- You have fewer than 100 queries/day
-- All your queries need the same capability level
-
-## Try it
-
-```python
-import asyncio
-from conduit import Router, Query
-
-async def main():
-    router = Router()
-
-    # Simple query - probably routes to a cheap model
-    q1 = await router.route(Query(text="What is 2+2?"))
-    print(f"Math query -> {q1.selected_model}")
-
-    # Complex query - probably routes to a capable model
-    q2 = await router.route(Query(
-        text="Analyze the economic implications of central bank digital currencies on monetary policy transmission mechanisms"
-    ))
-    print(f"Analysis query -> {q2.selected_model}")
-
-asyncio.run(main())
-```
-
-The [repo is on GitHub](https://github.com/ashita-ai/conduit). It is not pip installable yet - clone the repo and install with `uv sync`. Again: this is alpha software. The API will change. But if you are tired of overpaying for simple queries, it might be worth a look.
+The [repo is on GitHub](https://github.com/ashita-ai/conduit). Not pip installable yet — clone and `uv sync`. Alpha software, API will change.
 
 ## What I am still figuring out
 
