@@ -19,23 +19,11 @@ The tech industry ran the same con.
 
 **Expensify** marketed "SmartScan" as AI that automatically processed expense receipts. From 2009 to 2012, [Mechanical Turk workers](https://qz.com/1141695/startup-expensifys-smart-scanning-technology-used-humans-hired-on-amazon-mechanical-turk) transcribed them manually for pennies each. One worker discovered strangers' Uber receipts with full names and home addresses. Boarding passes. Medical records. Bank account numbers. When caught in 2017, CEO David Barrett [admitted](https://blog.expensify.com/2017/11/10/our-commitment-to-your-privacy/) they had used MTurk since 2009.
 
-**Facebook M** was announced as an AI assistant in 2015. Reality: [no more than 30% of responses](https://en.wikipedia.org/wiki/M_(virtual_assistant)) were ever served by the AI. Human operators handled the rest, taking over conversations without users knowing. Quietly shut down in 2018.
-
 **Presto Automation** claimed "Presto Voice" eliminated human drive-thru order-taking. In 2025, it became the [SEC's first "AI-washing" enforcement](https://www.sec.gov/enforcement-litigation/administrative-proceedings/33-11352-s) against a public company. Over 70% of orders required human agents in the Philippines. At the majority of locations, 100%.
 
 **Builder.ai**, a UK unicorn valued at hundreds of millions, claimed to "automate software development through cutting-edge AI." In May 2025, [an investigation revealed](https://vaultinum.com/blog/ai-washing-lessons-from-the-builder-ai-collapse) no real AI existed, just 700 human developers doing manual coding. The company collapsed with $37 million in frozen assets. Microsoft had integrated it into Azure.
 
-**DoNotPay** marketed itself as the "world's first robot lawyer." The FTC [found](https://www.ftc.gov/news-events/news/press-releases/2025/02/ftc-finalizes-order-donotpay-prohibits-deceptive-ai-lawyer-claims-imposes-monetary-relief-requires) the company never tested if AI output matched human lawyer expertise, hired no attorneys, and produced documents that were "often incomplete, inaccurate or otherwise flawed." They settled for $193,000 in February 2025.
-
-Company raises money on AI claims. Uses humans to fake capabilities. Gets caught or quietly shuts down. Repeat.
-
-## The rational response
-
-[53% of consumers](https://www.gartner.com/en/newsroom/press-releases/2025-09-03-gartner-survey-finds-53-percent-of-consumers-distrust-ai-powered-search-results0) distrust AI-powered search results. [61% want an option](https://www.marketingdive.com/news/more-than-half-of-consumers-are-wary-of-ai-powered-search-gartner/759451/) to disable AI summaries entirely. [77% of Americans](https://kpmg.com/us/en/media/news/trust-in-ai-2025.html) do not trust businesses to use AI responsibly.
-
-This is not technophobia. This is pattern recognition. When "AI-powered" meant "humans we are not telling you about" for a decade, skepticism is the rational response.
-
-The trust gap is not a communication problem. It is an earned reputation.
+Company raises money on AI claims. Uses humans to fake capabilities. Gets caught or quietly shuts down. Repeat. [53% of consumers](https://www.gartner.com/en/newsroom/press-releases/2025-09-03-gartner-survey-finds-53-percent-of-consumers-distrust-ai-powered-search-results0) distrust AI-powered search results. [77% of Americans](https://kpmg.com/us/en/media/news/trust-in-ai-2025.html) do not trust businesses to use AI responsibly. This is not technophobia. It is pattern recognition. When "AI-powered" meant "humans we are not telling you about" for a decade, the trust gap is not a communication problem. It is an earned reputation.
 
 ## The strange part
 
@@ -57,15 +45,9 @@ Neither path is good. One group is paralyzed by earned distrust. The other is ig
 
 ## The Boeing parallel
 
-This has happened before.
-
-In 2018 and 2019, two Boeing 737 MAX aircraft crashed, killing 346 people. Investigations revealed that Boeing had rushed to match Airbus's A320, and engineers who raised safety concerns were told to ["not rock the boat"](https://pmc.ncbi.nlm.nih.gov/articles/PMC7351545/). A manager told one engineer: "You don't want to be upsetting executives."
-
-Instead of redesigning hardware, Boeing relied on software (the MCAS system) to compensate for aerodynamic problems. Engineers [bragged](https://spectrum.ieee.org/how-the-boeing-737-max-disaster-looks-to-a-software-developer) they had "tricked" FAA regulators. After the crashes, a former senior manager said: "I would absolutely not fly a Max airplane. I've worked in the factory where they were built, and I saw the pressure employees were under to rush the planes out the door."
+In 2018 and 2019, two Boeing 737 MAX aircraft crashed, killing 346 people. Investigations revealed that Boeing had rushed to match Airbus's A320, and engineers who raised safety concerns were told to ["not rock the boat"](https://pmc.ncbi.nlm.nih.gov/articles/PMC7351545/). A manager told one engineer: "You don't want to be upsetting executives." Instead of redesigning hardware, Boeing relied on software (the MCAS system) to compensate for aerodynamic problems. Engineers [bragged](https://spectrum.ieee.org/how-the-boeing-737-max-disaster-looks-to-a-software-developer) they had "tricked" FAA regulators.
 
 The pattern is identical to what DORA describes. Engineers knew the system was not ready. Competitive pressure overrode safety concerns. The code shipped anyway.
-
-The lesson applies directly to AI. Even the best companies fall prey to competitive pressures that drive them to ship products more quickly and cheaply than the engineering supports.
 
 The aviation industry relies on public trust. So does AI. Every high-profile failure erodes the foundation: UnitedHealthcare's algorithm denying care with a [90% error rate on appeals](https://www.cbsnews.com/news/unitedhealth-lawsuit-ai-deny-claims-medicare-advantage-health-insurance-denials/), a Cruise robotaxi [dragging a pedestrian over 20 feet](https://www.justice.gov/usao-ndca/pr/cruise-admits-submitting-false-report-influence-federal-investigation-and-agrees-pay), chatbots confidently hallucinating legal citations.
 
