@@ -5,11 +5,11 @@ date: 2026-05-12
 category: "architecture"
 ---
 
-On March 6, 1665, Henry Oldenburg published the first issue of *Philosophical Transactions of the Royal Society*. He was the Society's first Secretary; the journal was the second of its kind in the world, and the first that has continued without interruption to the present. Oldenburg did not write the papers that appeared in it. His job was to read them, decide which were worth publishing, and steward the process by which the Society's Council vetted the work before it went to print.
+On March 6, 1665, Henry Oldenburg published the first issue of *Philosophical Transactions of the Royal Society*. He was the Society's first Secretary; the journal was the second of its kind in the world and is the longest-running scientific journal still publishing today. Oldenburg did not write the papers that appeared in it. His job was to read them, decide which were worth publishing, and steward the process by which the Society's Council vetted the work before it went to print.
 
 Acceptance was the author's job. Doubt was Oldenburg's, and the Council's, and the Members' who read each manuscript before it was licensed for publication. The Society's rules at the time required that every tract be approved by the Council and reviewed first by some of its Members. This was internal review — insiders judging insiders. There was no external peer-review apparatus, and there did not need to be: the Society was small, the volume was small, the cost of doubt was modest, and it was paid by the people who already had a reason to pay it.
 
-The volume grew. By the 1830s, the Royal Society had created Sectional Committees with named referees who were not Council members, and external peer review — a non-Society reader, asked to read with the assumption that something was wrong — became formal procedure. The cost of doubt had outgrown the in-house budget. The Society had to externalize it.
+The volume grew. By the 1830s, the Royal Society had established Sectional Committees with named referees, and peer review — a third party, asked to read each manuscript with the assumption that something was wrong — became formal procedure. The cost of doubt had outgrown what the Council could absorb in-house. The Society had to externalize it.
 
 Every age since has spent a little more on doubt as the volume of acceptance grew.
 
@@ -21,7 +21,7 @@ The lightening was not because the principle had been challenged. It was because
 
 Then generation stopped being a human activity.
 
-AI agents now produce code at rates that bear no relationship to what humans can read. Some teams ship five times as many pull requests per week as they used to; some fifty times. The reviewer pool is the same size. The reviewer's reading rate is the same. The math is what it has been since 1665, just compressed: when the rate of acceptance outruns the doubt-budget, the budget either grows or quality drops.
+AI agents now produce code at rates that bear no relationship to what humans can read. [Faros AI's telemetry from over 10,000 developers](/blog/the-hollow-codebase/) showed teams with high AI adoption merging 98% more pull requests and seeing PR review times rise 91%. The reviewer pool is the same size. The reviewer's reading rate is the same. The math is what it has been since 1665, just compressed: when the rate of acceptance outruns the doubt-budget, the budget either grows or quality drops.
 
 ## What gets paid
 
@@ -37,7 +37,7 @@ This is true at the granular level — the reviewer who is too busy to engage wi
 
 Three things follow.
 
-The first is that reviewer attention has to be allocated, not assumed. The reviewer who is also a senior engineer cannot be the residual catch for everything that ships, because their time is finite and their other obligations are not optional. Some organizations have started rotating senior engineers through dedicated review weeks; others have created reviewer roles that exist as their own job, the way scientific journals have professional editors. The shape will vary, but the underlying move is the same: doubt is a paid position now, not a tax on whoever happens to be CC'd.
+The first is that [reviewer attention has to be allocated, not assumed](/blog/the-attention-economy-of-engineering/). The reviewer who is also a senior engineer cannot be the residual catch for everything that ships, because their time is finite and their other obligations are not optional. Some organizations have started rotating senior engineers through dedicated review weeks; others have created reviewer roles that exist as their own job, the way scientific journals have professional editors. The shape will vary, but the underlying move is the same: doubt is a paid position now, not a tax on whoever happens to be CC'd.
 
 The second is that bot review needs continuous calibration to be worth running at all. A bot reviewer that is not calibrated drifts into noise, which trains reviewers to ignore findings, including the next real one. A bot reviewer that is calibrated produces the kind of findings the human reviewer can use to extend their attention. Calibration costs human time, in the form of reading the bot's output critically, marking false positives, escalating false negatives, and feeding the result back into the configuration that drives the next pass. A bot review system shipped without this loop is the cheap half of the system, and most teams will deploy it. The expensive half is what makes the cheap half useful.
 
@@ -53,6 +53,6 @@ Whether bot review changes the answer. At a hypothetical limit, a bot reviewer t
 
 ---
 
-In 1665, the Royal Society's Council vetted manuscripts before publication because someone had to. The Society was small, the work was small, the people doing the doubting were the same people who had something at stake in the canon. By the 1830s that arrangement could no longer hold; the volume had outgrown what insiders could absorb, and named external referees took on the job for the first time. Software is at a structurally similar moment, on a much faster clock. Generation got cheap. Verification did not. The cost of doubt is now visible.
+In 1665, the Royal Society's Council vetted manuscripts before publication because someone had to. The Society was small, the work was small, the people doing the doubting were the same people who had something at stake in the canon. By the 1830s that arrangement could no longer hold; the volume had outgrown what the Council could absorb, and named referees took on the job in formal procedure for the first time. Software is at a structurally similar moment, on a much faster clock. Generation got cheap. Verification did not. The cost of doubt is now visible.
 
 Acceptance and doubt are different in kind. A producer cannot doubt their own work the way a reviewer can. The institution that wants both has to pay both. The institutions that have lasted — journals, standards bodies, peer-reviewed software ecosystems — have all paid this cost, sometimes badly, sometimes well, but always. The institutions that have not paid it have produced canons that contained things they should not have. The price of acceptance is doubt, paid out of someone's time, and there is no era in which it has been free. Ours is the era when it stopped being hidden.
