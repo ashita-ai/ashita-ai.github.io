@@ -2,24 +2,18 @@
 layout: default
 title: Blog
 permalink: /blog/
-pagination:
-  enabled: true
 ---
 
 <nav class="category-filter">
-  <a href="/blog/" class="category-tag category-all">All</a>
-  {% assign categories = "ai-failures,building-with-agents,data-infrastructure,architecture,regulation,economics,properties-series" | split: "," %}
-  {% for cat in categories %}
-    {% assign cat_posts = site.posts | where: "category", cat %}
-    {% if cat_posts.size > 0 %}
-      <a href="#" class="category-tag" data-category="{{ cat }}">{{ cat | replace: "-", " " }}</a>
-    {% endif %}
+  <a href="#" class="category-tag category-all active" data-category="">All</a>
+  {% assign all_categories = site.posts | map: "category" | compact | uniq | sort %}
+  {% for cat in all_categories %}
+    <a href="#" class="category-tag" data-category="{{ cat }}">{{ cat | replace: "-", " " }}</a>
   {% endfor %}
 </nav>
 
-{% if paginator.posts.size > 0 %}
 <ul class="post-list" id="post-list">
-  {% for post in paginator.posts %}
+  {% for post in site.posts %}
   <li class="post-item" data-category="{{ post.category }}">
     <p class="post-meta">{{ post.date | date: "%B %d, %Y" }}</p>
     <h3 class="post-title">
@@ -29,23 +23,13 @@ pagination:
   {% endfor %}
 </ul>
 
-{% if paginator.total_pages > 1 %}
-<nav class="pagination">
-  {% if paginator.previous_page %}
-  <a href="{{ paginator.previous_page_path | relative_url }}" class="prev">Previous</a>
-  {% endif %}
+<p class="empty-state" id="empty-state" hidden>No posts in this category yet.</p>
 
-  <span class="page-info">{{ paginator.page }} of {{ paginator.total_pages }}</span>
-
-  {% if paginator.next_page %}
-  <a href="{{ paginator.next_page_path | relative_url }}" class="next">Next</a>
-  {% endif %}
+<nav class="pagination" id="pagination" hidden>
+  <a href="#" class="prev" id="prev-page">Previous</a>
+  <span class="page-info" id="page-info"></span>
+  <a href="#" class="next" id="next-page">Next</a>
 </nav>
-{% endif %}
-
-{% else %}
-<p>No posts yet. Check back soon.</p>
-{% endif %}
 
 <p class="git-blame"><code>$ git blame OPINIONS.md</code><br><code>a1b2c3d (Evan Volgas) These opinions are mine, not my employer's.</code></p>
 
@@ -61,6 +45,11 @@ pagination:
   background: none;
   padding: 0;
   font-family: 'SF Mono', Monaco, 'Courier New', monospace;
+}
+.empty-state {
+  color: #666;
+  font-style: italic;
+  margin-top: 1.5rem;
 }
 .pagination {
   display: flex;
@@ -79,28 +68,79 @@ pagination:
 </style>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  var tags = document.querySelectorAll('.category-tag');
-  var items = document.querySelectorAll('.post-item');
+(function() {
+  var PER_PAGE = 5;
+  var items = Array.prototype.slice.call(document.querySelectorAll('.post-item'));
+  var tags = Array.prototype.slice.call(document.querySelectorAll('.category-tag'));
+  var pagination = document.getElementById('pagination');
+  var prevBtn = document.getElementById('prev-page');
+  var nextBtn = document.getElementById('next-page');
+  var pageInfo = document.getElementById('page-info');
+  var emptyState = document.getElementById('empty-state');
+
+  var state = { category: '', page: 1 };
+
+  function filtered() {
+    if (!state.category) return items;
+    return items.filter(function(item) {
+      return item.getAttribute('data-category') === state.category;
+    });
+  }
+
+  function render() {
+    var visible = filtered();
+    var totalPages = Math.max(1, Math.ceil(visible.length / PER_PAGE));
+    if (state.page > totalPages) state.page = totalPages;
+    if (state.page < 1) state.page = 1;
+
+    var start = (state.page - 1) * PER_PAGE;
+    var end = start + PER_PAGE;
+
+    items.forEach(function(item) { item.hidden = true; });
+    visible.slice(start, end).forEach(function(item) { item.hidden = false; });
+
+    if (visible.length === 0) {
+      emptyState.hidden = false;
+      pagination.hidden = true;
+      return;
+    }
+    emptyState.hidden = true;
+
+    if (totalPages <= 1) {
+      pagination.hidden = true;
+    } else {
+      pagination.hidden = false;
+      pageInfo.textContent = state.page + ' of ' + totalPages;
+      prevBtn.hidden = state.page <= 1;
+      nextBtn.hidden = state.page >= totalPages;
+    }
+  }
 
   tags.forEach(function(tag) {
     tag.addEventListener('click', function(e) {
       e.preventDefault();
-      var cat = this.getAttribute('data-category');
-
       tags.forEach(function(t) { t.classList.remove('active'); });
       this.classList.add('active');
-
-      if (!cat) {
-        items.forEach(function(item) { item.style.display = ''; });
-      } else {
-        items.forEach(function(item) {
-          item.style.display = item.getAttribute('data-category') === cat ? '' : 'none';
-        });
-      }
+      state.category = this.getAttribute('data-category') || '';
+      state.page = 1;
+      render();
     });
   });
 
-  document.querySelector('.category-all').classList.add('active');
-});
+  prevBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    state.page--;
+    render();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  nextBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    state.page++;
+    render();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  render();
+})();
 </script>
