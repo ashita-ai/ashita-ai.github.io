@@ -14,11 +14,11 @@ Agents contradict each other. They re-litigate decisions that were already made.
 
 Agents check in before deciding and record their reasoning after. Over time, that builds a tamper-evident, semantically searchable record every agent in the system can learn from.
 
-- **Check before deciding** — query for precedents, known conflicts, and prior reasoning before committing to an approach
-- **Trace after deciding** — record what you chose, why, what alternatives you considered, and how confident you are
-- **Conflict detection** — semantic similarity matching flags contradictions between agents before they cause incidents
-- **Integrity guarantees** — SHA-256 content hashes and Merkle proofs mean the record can't be quietly altered
-- **Assessment loop** — agents mark past decisions correct or incorrect, closing the feedback loop
+- **Check before deciding**: query for precedents, known conflicts, and prior reasoning before committing to an approach
+- **Trace after deciding**: record what you chose, why, what alternatives you considered, and how confident you are
+- **Conflict detection**: semantic similarity matching flags contradictions between agents before they cause incidents
+- **Integrity guarantees**: SHA-256 content hashes and Merkle proofs mean the record can't be quietly altered
+- **Assessment loop**: agents mark past decisions correct or incorrect, closing the feedback loop
 
 ## The conflict detection pipeline
 
@@ -26,9 +26,9 @@ When a new decision arrives, Akashi embeds it, runs approximate nearest-neighbor
 
 ## Three ways to run it
 
-- **Local-lite** — SQLite-backed, starts in under three seconds, no infrastructure required
-- **Complete local stack** — Docker Compose with TimescaleDB, Qdrant, and Ollama
-- **Self-hosted** — bring your own PostgreSQL and Qdrant
+- **Local-lite**: SQLite-backed, starts in under three seconds, no infrastructure required
+- **Complete local stack**: Docker Compose with TimescaleDB, Qdrant, and Ollama
+- **Self-hosted**: bring your own PostgreSQL and Qdrant
 
 ## The architecture
 
