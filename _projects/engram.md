@@ -17,25 +17,25 @@ Engram takes a different approach: memory you can trust.
 
 Engram is a memory system for AI applications that preserves ground truth and tracks confidence:
 
-- **Store first, derive later** — Raw conversations stored verbatim. LLM extraction happens in background where errors can be caught.
-- **Track confidence** — Every fact carries provenance: `verbatim` (highest), `extracted` (high), `inferred` (variable).
-- **Verify on retrieval** — Applications filter by confidence. High-stakes queries use only trusted facts.
-- **Enable recovery** — Derived facts trace to sources. Errors can be corrected by re-deriving.
+- **Store first, derive later**: Raw conversations stored verbatim. LLM extraction happens in background where errors can be caught.
+- **Track confidence**: Every fact carries provenance: `verbatim` (highest), `extracted` (high), `inferred` (variable).
+- **Verify on retrieval**: Applications filter by confidence. High-stakes queries use only trusted facts.
+- **Enable recovery**: Derived facts trace to sources. Errors can be corrected by re-deriving.
 
 ## Memory types
 
 Six memory types, each with different confidence and decay characteristics:
 
-- **Working** — Current conversation context, volatile and in-memory
-- **Episodic** — Immutable ground truth, verbatim storage
-- **Factual** — Pattern-extracted facts (emails, dates, names)
-- **Semantic** — LLM-inferred knowledge with variable confidence
-- **Procedural** — Behavioral patterns and preferences
-- **Negation** — What is explicitly NOT true
+- **Working**: Current conversation context, volatile and in-memory
+- **Episodic**: Immutable ground truth, verbatim storage
+- **Factual**: Pattern-extracted facts (emails, dates, names)
+- **Semantic**: LLM-inferred knowledge with variable confidence
+- **Procedural**: Behavioral patterns and preferences
+- **Negation**: What is explicitly NOT true
 
 ## The philosophy
 
-Ground truth is sacred. Every derived memory points back to source episodes. If extraction makes a mistake, re-derive from the original. Forgetting is a feature—memories decay over time, keeping the store relevant.
+Ground truth is sacred. Every derived memory points back to source episodes. If extraction makes a mistake, re-derive from the original. Forgetting is a feature: memories decay over time, keeping the store relevant.
 
 ## Status
 
