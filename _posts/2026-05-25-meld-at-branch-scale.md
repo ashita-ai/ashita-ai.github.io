@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Meld at Branch-Scale"
-date: 2026-05-25
+date: 2026-05-26
 category: "architecture"
 description: "Hyder processed transaction intentions at microsecond scale. A branching database needs the same kind of decision, stretched over weeks. The pieces are mostly old; what gets harder going from one scale to the other is duration, and the questions you have to track over that duration."
 ---
