@@ -84,7 +84,7 @@ The closest *shipping* system to a SQL database with branch merge is [Dolt](http
 
 ---
 
-If you have built or thought hard about any of these — week-scale read-set tracking, recursive compaction-map composition, trigger semantics that survive branching, the predicate-vs-row boundary, or the IVM registration cost when most queries fire once — I want to argue about it. The conversation I keep wanting to have is with someone who has held one of these problems in their hands and either solved it, decided it was unsolvable, or punted on it for reasons they can defend. I am building toward this at [Ardent](https://tryardent.com), and the kind of person I most want to hear from is the kind of person who finished this post irritated by something specific.
+If you have built or thought hard about any of these — week-scale read-set tracking, recursive compaction-map composition, trigger semantics that survive branching, the predicate-vs-row boundary, or the IVM registration cost when most queries fire once — I want to argue about it. The conversation I keep wanting to have is with someone who has held one of these problems in their hands and either solved it, decided it was unsolvable, or punted on it for reasons they can defend. I am building toward this at [Ardent](https://tryardent.com), and the kind of person I most want to hear from is the kind of person who finished this post irritated by something specific. If that's you: [cal.com/evanvolgas](https://cal.com/evanvolgas).
 
 ---
 
