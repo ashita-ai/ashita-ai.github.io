@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The Week-Long Transaction"
-date: 2026-05-26
+date: 2026-05-25
 category: "architecture"
 description: "Alice forked the database four weeks ago and ran a hundred queries. Today she wants to fold her work back in, and the system has to know which of her answers are still true. The pieces of an answer are mostly old. The composition is the work, and the part of the composition I do not know how to ship is duration."
 ---
