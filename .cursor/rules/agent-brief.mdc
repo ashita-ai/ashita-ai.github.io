@@ -1,0 +1,6 @@
+---
+description: Ashita public writing agent rules
+alwaysApply: true
+---
+
+Read `AGENT_BRIEF.md` and `CLAUDE.md`. Verify citations and internal links. Keep public framing broad and do not turn private/product vocabulary into doctrine.
