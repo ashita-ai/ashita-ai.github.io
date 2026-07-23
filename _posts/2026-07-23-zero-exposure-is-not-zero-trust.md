@@ -12,7 +12,7 @@ I want to say the unfashionable thing first: this is good. [The engineering deta
 
 I am also precisely the customer this was built for. I have told people to use a password manager for a decade, and I run a fleet of agents that act with my authority all day: they commit under my git identity, open pull requests under my name, read my Slack, file my tickets, and query databases I am responsible for. Not one of them knows a single password of mine. They do not need to. They have something better: my sessions.
 
-And I know the instinct an approval prompt trains. The response starts before the review is finished. It is what a thousand harmless approvals teach, and it has to be fought every time the next prompt arrives.
+And I know the instinct an approval prompt trains. The response starts before review is finished. It is what a thousand harmless approvals teach, and it has to be fought every time the next prompt arrives.
 
 Which is why the line that stayed with me is from 1Password's CTO, Nancy Wang: "The answer isn't handing agents your secrets. It is to let a user give an agent permission to use a credential without letting the agent see it."
 
