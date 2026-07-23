@@ -26,7 +26,7 @@ For most of computing history, the credential was a useful stand-in for authorit
 
 Agents break that shortcut. A browser agent can use a credential without possessing it — an improvement that separates two things our systems spent decades collapsing: knowledge of a secret and exercise of authority.
 
-Claude does not need to know my Stripe password to read my revenue. The password stays clean; the action lands under my account; the audit log says I did it. The bank does not care whether the password touched a model; it cares that an authenticated session submitted a request.
+Claude does not need to know my Stripe password to read my revenue. The password stays clean; the action lands under my account; the audit log says I did it.
 
 This is the new boundary. Not the secret. The delegation.
 
@@ -38,7 +38,7 @@ We have known what failure looks like for a year. Last August, [Brave's security
 
 Notice what the attacker never obtained: the password. The agent read the OTP the way it reads everything else. Helpfully. A prompt injection does not have to steal the credential if the agent will use the credential for it.
 
-Two days before the 1Password announcement, [Manifold Security reported](https://www.manifold.security/blog/claude-for-chrome-extension-bypass) that in Claude for Chrome v1.0.80, any script with DOM access on claude.ai could construct the task trigger, dispatch a synthetic click, and push Claude toward workflows that read Gmail, Docs, and Calendar. In default mode, Manifold said an approval modal still appeared before sensitive actions; in "Act without asking" mode, the same path ran silently. Reported May 21, acknowledged May 22, and eight releases later "still six lines of JavaScript." Outside reports are not vendor admissions. The durable part is the bug class: at the DOM layer, a trusted user gesture cannot be assumed just because a UI path was taken, and the failure is never "the model knew a password" — it is "something else drove the agent's authority."
+Two days before the 1Password announcement, [Manifold Security reported](https://www.manifold.security/blog/claude-for-chrome-extension-bypass) that in Claude for Chrome v1.0.80, any script with DOM access on claude.ai could construct the task trigger, dispatch a synthetic click, and push Claude toward workflows that read Gmail, Docs, and Calendar. In default mode, Manifold said an approval modal still appeared before sensitive actions; in "Act without asking" mode, the same path ran silently. Reported May 21, acknowledged May 22, and eight releases later "still six lines of JavaScript." Outside reports are not vendor admissions. The durable part is the bug class, and the failure is never "the model knew a password" — it is "something else drove the agent's authority."
 
 ## Consent will become the new checkmark
 
@@ -56,13 +56,13 @@ Zero trust is an abused phrase, but the original shape in [NIST SP 800-207](http
 
 Agent delegation needs the same move. The agent should not inherit a human's whole browser-shaped authority from one approved credential use. It should receive a delegation contract — a bounded grant of authority for a named task, with policy attached to every meaningful action in the run. [Contracts as infrastructure](/blog/contracts-as-infrastructure/), with a nervous system attached. It has to answer boring questions, because boring questions are where production systems live: which identity acted, who authorized the run, which credential was used, which reads and writes were allowed, what data could leave the origin where it was read, and what receipt survived after the tab closed.
 
-Not as more modal dialogs — more prompts are how approval channels die. Machine-enforced where possible, human-readable where necessary, scored after the fact. I have written about [provenance](/blog/the-provenance-imperative/) as the ability to trace how you got here. Delegated authority needs the same property at action time.
+Not as more modal dialogs — more prompts are how approval channels die. And not enforced inside the agent, either: a contract the agent interprets is only as strong as the agent — and the agent is the part that reads attacker text for a living. Comet and Manifold both failed at exactly that layer. Enforcement with teeth lives at the resource: the database that checks the row policy, the token that dies with the task, a policy point that cannot be talked out of its job by a comment section. I have written about [provenance](/blog/the-provenance-imperative/) as the ability to trace how you got here. Delegated authority needs the same property at action time.
 
 ## The hard part is visible now
 
 This is why I like the launch. When a user pastes a password into an agent prompt, everything is tangled: exposure, memory, action, audit, revocation. Zero-exposure credential use removes one source of chaos, and the remaining problem becomes visible enough to name. The agent is not trusted because it did not see the password. The agent is trusted only to the extent that its delegated authority is bounded, enforced, observed, and revocable.
 
-I do not know how much of this can be solved at the browser-extension layer; if Manifold's finding holds, one trust boundary still depended on a DOM event other code could synthesize. Nor do I know how much authority users will tolerate making explicit. The clean security answer is to define scope, egress, and revocation up front. The clean product answer is one biometric prompt and a happy path. History says the product answer ships first and the security answer arrives one incident at a time.
+The extension layer cannot enforce this alone; if Manifold's finding holds, one trust boundary there was a DOM event any script could synthesize. I do not know how much authority users will tolerate making explicit. The clean security answer is to define scope, egress, and revocation up front. The clean product answer is one biometric prompt and a happy path. History says the product answer ships first and the security answer arrives one incident at a time.
 
 The password manager is becoming an authority broker, the browser a production shell, the approval prompt an operational budget — none of them bad things, all of them too load-bearing to leave as UX.
 
