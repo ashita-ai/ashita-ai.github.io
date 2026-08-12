@@ -139,7 +139,7 @@ Judge capability mattered more than either rewrite. On the same procedure and th
 <figcaption style="font-size: 0.85rem; color: #666; max-width: 560px; margin: 0.4rem auto 0; text-align: left;">Corpus-projected precision on the same blind 200-pair gold set, same ordered-procedure prompt. Only the judge model changed. The <code>gpt-5</code> bar is the corrected 41.5%, after the 300-pair remeasure described below.</figcaption>
 </figure>
 
-The 41.5 percent was briefly 65.2. That estimate rested on 47 pairs `gpt-5` got entirely right. The curve is near-vertical exactly where the false-positive rate approaches zero. Zero of 47 cannot tell 65 percent precision from 19. A 300-pair remeasure found six false positives, a 2.00 percent rate, and the headline fell to 41.5 within hours. The same arithmetic that convicted the old detector almost flattered the new one.
+For a few hours I believed that number was 65.2. The first estimate of the new judge's precision came from a 47-pair sample it got entirely right, and a clean sample sets the false-positive rate near zero, which is exactly where the precision curve stands almost vertical. Zero of 47 cannot tell 65 percent precision from 19. A 300-pair remeasure found six false positives, a rate of 2.00 percent, and the estimate fell to 41.5. The same arithmetic that convicted the old detector almost flattered the new one.
 
 What survived is still a projection: 41.5 percent precision at 50.5 percent recall, a queue of about 113 where the old detector flagged 2,711. The new queue is twenty-four times smaller, and it drops half the real contradictions. The old detector caught all 93, but a detector that says yes to everything has perfect recall by construction.
 
@@ -176,5 +176,3 @@ The structural rules are a separate blind spot. They suppress about 56 percent o
 The old process had a test after every change. It could reliably tell me that each change matched the last thing I had noticed. The current one claims less: the corpus is measured, the operating point is projected, the filters are observable, and the live results are not in yet.
 
 I wrote in June that [a confidence number becomes a signal only when something keeps score](/blog/confidence-is-not-a-signal/). This is what keeping score looks like. No victory graph. A measurement that has already contradicted me twice: once about the old detector, once about my first estimate of the new one. That property is worth more than either number.
-
-*The figures are generated from the label counts by `examples/python/base_rate_charts.py` in the Akashi repo (standard library only); `base_rate.py` reproduces the precision arithmetic; `binding_collision.py` demonstrates the binding join.*
