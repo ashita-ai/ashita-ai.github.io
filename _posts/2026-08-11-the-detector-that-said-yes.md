@@ -3,16 +3,16 @@ layout: post
 title: "The Detector That Said Yes to Everything"
 date: 2026-08-11
 category: "architecture"
-description: "For months I added suppressors to a conflict detector that said yes to everything. Then I blind-labelled its historical scored corpus. The result was not a weak classifier, but a constant function—and a much more useful measurement program."
+description: "For months I added suppressors to a conflict detector that said yes to everything. Then I blind-labelled every pair it had ever scored. The result was not a weak classifier but a constant function, and the labels graded my own judgment too."
 ---
 
 For months, I improved Akashi's conflict detector one false positive at a time. A review found a pattern it should not flag. I added a suppression rule or another sentence to the prompt. The test passed. The next review found a different pattern.
 
 This looked like iteration. It was a detector accumulating excuses.
 
-So I stopped tuning it and blind-labelled the whole scored corpus instead: 2,772 pairs. The raters were language-model agents, dozens of them. Each saw the two decision texts and the structural metadata. None saw the detector's verdict. That is the blinding.
+So I stopped tuning it and blind-labelled the whole scored corpus: 2,772 pairs. The raters were language-model agents, dozens of them. Each saw the two decision texts and the structural metadata. None saw the detector's verdict. That is the blinding.
 
-Models grading a model is a fair objection. The defense is that blinding, plus an independent 200-pair re-rate that agreed at a Cohen's kappa of 0.766. Blind agreement is not ground truth. But unlike the old test set, it was not written by the person being graded. It is the loop I argued for in [Your Evals Won't Save You](/blog/your-evals-wont-save-you/), arriving seven months late.
+Models grading a model is a fair objection. The defense is that blinding, plus an independent 200-pair re-rate that agreed at a Cohen's kappa of 0.766. Blind agreement is not ground truth. But unlike the old test set, it was not written by the person being graded. It is the loop I argued for in [Your Evals Won't Save You](/blog/your-evals-wont-save-you/). It arrived seven months late.
 
 ## The detector was a constant function
 
@@ -57,13 +57,13 @@ The old evaluation suite had 122 handwritten pairs and reported 1.000 precision 
 
 The blind corpus could. That is the difference between a test set and a measurement.
 
-It graded me too. By July my triage was a routine that marked conflicts false positive in bulk. The detector said yes to everything, so I built a thing that said no to everything. The blind labels sided with the bulk dismissals, 98.3 percent correct. The rotten ones were the conflicts I had adjudicated deliberately, read and resolved with a declared winner. Eleven percent real.
+It graded me too. By July my triage was a routine that marked conflicts false positive in bulk. The detector said yes to everything, so I built a habit of saying no to everything. The blind labels sided with the bulk dismissals, 98.3 percent correct. The rotten ones were the conflicts I had adjudicated deliberately, read and resolved with a declared winner. Of those, 11 percent were real.
 
-[A channel over its alarm budget](/blog/the-alarm-budget/) does not only train its receiver to stop reading. It degrades the judgments the receiver still makes. Mine were the only ground truth the system had. A detector that cries wolf poisons the record of which wolves were real — the record you need to fix it.
+[A channel over its alarm budget](/blog/the-alarm-budget/) does not only train its receiver to stop reading. It degrades the judgments the receiver still makes. Mine were the only ground truth the system had. A detector that cries wolf poisons the record of which wolves were real, and that record is the one you need in order to fix it.
 
 ## The base rate changed the question
 
-The failure was not just the prompt. It was what I had optimized for. At prevalence p, sensitivity s, and majority-class false-positive rate f:
+The failure was not only the prompt. It was what I had optimized for. At prevalence p, sensitivity s, and majority-class false-positive rate f:
 
 ```
 precision = p·s / ( p·s + (1−p)·f )
@@ -97,11 +97,11 @@ precision = p·s / ( p·s + (1−p)·f )
 <figcaption style="font-size: 0.85rem; color: #666; max-width: 560px; margin: 0.4rem auto 0; text-align: left;">Precision against majority-class false-positive rate at the corpus base rate of 3.35%. The recall lines barely separate; the x-axis decides.</figcaption>
 </figure>
 
-False positives decide whether the queue is usable. Raise recall from 30 to 80 percent — fifty points of detector capability — and precision gains about 23 points. Halve the false-positive rate from 2 percent to 1, one point of movement, and it gains 17.
+False positives decide whether the queue is usable. Raise recall from 30 to 80 percent, which is fifty points of detector capability, and precision gains about 23 points. Halve the false-positive rate from 2 percent to 1, which is one point of movement, and precision gains 17.
 
-The scorer has two features of its own. `significance` weights a decision's consequence, and `topic_similarity` is the embedding overlap that nominates pairs. Against the blind labels they scored AUCs of 0.500 and 0.587. The first is a coin flip. The second is a coin flip with a lean. They can be a recall funnel, not the decision.
+The scorer has two features of its own. `significance` weights a decision's consequence, and `topic_similarity` is the embedding overlap that nominates pairs. Against the blind labels they scored AUCs of 0.500 and 0.587. The first is a coin flip. The second is barely better than one. They can be a recall funnel, not the decision.
 
-F1 obscured the same fact more politely. `gpt-5-mini` posted the best sample F1 I measured, 0.704, and projected to 17.3 percent corpus precision. `gpt-5` scored worse on F1 and projected to 41.5. A stratified sample cannot see a fourfold gap in majority-class false positives. At this base rate, that gap is the story. I report precision, recall, and queue size now.
+F1 obscured the same fact more politely. `gpt-5-mini` posted the best sample F1 I measured, 0.704, and projected to 17.3 percent corpus precision. `gpt-5` scored worse on F1 and projected to 41.5. A stratified sample cannot see a fourfold gap in majority-class false positives, and at this base rate that gap decides the outcome. I report precision, recall, and queue size now.
 
 ## The work was an experiment, not a prompt rewrite
 
@@ -111,7 +111,7 @@ The first rewrite failed. I made chronology decisive: a later decision is supers
 
 The version that survived is an ordered procedure. First, name the one question both decisions answer. If there is none, they are complementary. Then require explicit replacement language before anything counts as supersession. Only then ask whether two current answers are incompatible. A contradiction verdict must name its disputed question in a dedicated field, and the parser downgrades a verdict that cannot. A contract, not another request to be careful.
 
-Judge capability mattered more than either rewrite. Same procedure, same corpus. The judge alone moved corpus-projected precision from 8.1 to 41.5 percent.
+Judge capability mattered more than either rewrite. On the same procedure and the same corpus, the judge alone moved corpus-projected precision from 8.1 to 41.5 percent.
 
 <figure style="margin: 2.5rem 0; text-align: center;">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 314" width="100%" role="img" aria-label="Bar chart of corpus-projected precision by judge model: gpt-4o-mini 8.1 percent, gpt-4o 26.9 percent, gpt-4.1 28.7 percent, gpt-5 41.5 percent" style="font-family: Inter, sans-serif;">
@@ -141,7 +141,7 @@ Judge capability mattered more than either rewrite. Same procedure, same corpus.
 
 The 41.5 percent was briefly 65.2. That estimate rested on 47 pairs `gpt-5` got entirely right. The curve is near-vertical exactly where the false-positive rate approaches zero. Zero of 47 cannot tell 65 percent precision from 19. A 300-pair remeasure found six false positives, a 2.00 percent rate, and the headline fell to 41.5 within hours. The same arithmetic that convicted the old detector almost flattered the new one.
 
-What survived is still a projection: 41.5 percent precision at 50.5 percent recall, a queue of about 113 where the old detector flagged 2,711. Twenty-four times smaller, and it drops half the real contradictions. The old one caught all 93 — the way an alarm wired permanently on catches every fire.
+What survived is still a projection: 41.5 percent precision at 50.5 percent recall, a queue of about 113 where the old detector flagged 2,711. The new queue is twenty-four times smaller, and it drops half the real contradictions. The old detector caught all 93, but a detector that says yes to everything has perfect recall by construction.
 
 ## Some conflicts should not be judged
 
@@ -155,26 +155,26 @@ That covers only contradictions whose structure already exists. Four attempts to
 
 Production now runs `gpt-5` over a 30-day window and keeps a deterministic 5 percent sample of structurally suppressed pairs outside the conflict queue.
 
-Getting there produced the purest form of the failure. Reasoning models think a long time before the first token. The judge's timeout was still at its 15-second default. So 159 of 200 `gpt-5` calls timed out. A skipped candidate is fail-safe — not flagged, not alerted, not queued. Detections fell silently. That is exactly what a more precise model looks like from outside. `conflict_llm_timeout = 15s` against `120s`, from the section above, is this bug.
+The cutover produced the clearest instance of the same failure. Reasoning models think a long time before the first token. The judge's timeout was still at its 15-second default. So 159 of 200 `gpt-5` calls timed out. A skipped candidate is fail-safe: not flagged, not alerted, not queued. Detections fell silently. That is exactly what a more precise model looks like from the outside. `conflict_llm_timeout = 15s` against `120s`, from the section above, is this bug.
 
 The sample creates no operator work and cannot block a conflict. It creates rows for the next blind label. The rater will see the decisions, not the rule that suppressed them. That is how a suppression becomes a measurable claim instead of an accumulated hunch.
 
 ## What I am still figuring out
 
-**How much the funnel misses.** Retrieval stops at the top twenty neighbours, which leaves 33,151 pairs above the similarity floor never scored at all. I blind-labelled 200 of them and two were contradictions. Projected across the pool, roughly 332 conflicts never surfaced against the 93 found. Funnel recall near 22 percent, on an interval of 7 to 70. Direction, not a settled number.
+**How much the funnel misses.** Retrieval stops at the top twenty neighbours, which leaves 33,151 pairs above the similarity floor that were never scored. I blind-labelled 200 of them and two were contradictions. Projected across the pool, roughly 332 conflicts never surfaced against the 93 found. That puts funnel recall near 22 percent, on an interval of 7 to 70. It is a direction, not a settled number.
 
-The structural rules are a separate blind spot. They suppress about 56 percent of candidate pairs before any judge sees them. The first 116-pair batch of the 5 percent sample, blind-labelled as this went up, found zero contradictions. That puts the ceiling near 2.6 percent, not at zero. One batch is direction, not acquittal.
+The structural rules are a separate blind spot. They suppress about 56 percent of candidate pairs before any judge sees them. The first 116-pair batch of the 5 percent sample, blind-labelled as this went up, found zero contradictions. That puts the ceiling near 2.6 percent, not at zero. One batch narrows the range. It does not clear the rules.
 
-**Whether 41.5 percent is worth running.** At the measured false-positive rate, a missed contradiction must cost at least 1.4 times a false alarm for the single-judge point to win. A two-stage cascade reaches 74.2 percent precision at 38.7 percent recall. I have not built it, and I have not measured the attention cost of a false alarm — the input that decides the trade.
+**Whether 41.5 percent is worth running.** At the measured false-positive rate, a missed contradiction must cost at least 1.4 times a false alarm for the single-judge point to win. A two-stage cascade reaches 74.2 percent precision at 38.7 percent recall. I have not built it, and I have not measured the attention cost of a false alarm, which is the input that decides the trade-off.
 
 **Whether the pair is the right unit.** Everything above scores two decisions against each other. [Work on consistency checking with noisy LLM oracles](https://arxiv.org/abs/2601.13600) shows that pairwise checks cannot certify a whole set. Three decisions can be compatible in every pair and impossible together. Nothing I have measured would see that.
 
-**Whether the feature deserves its prominence.** Across 25.3 weeks the corpus holds 62 distinct disputes — 2.45 a week. Real value, and no automatic case for prominence. The 0.766 kappa cuts both ways too: some of the apparent room for improvement is label uncertainty, not detector failure.
+**Whether the feature deserves its prominence.** Across 25.3 weeks the corpus holds 62 distinct disputes, or 2.45 a week. That is real value, but not an automatic case for prominence. The 0.766 kappa also works against my own figures: some of the apparent room for improvement is label uncertainty rather than detector failure.
 
 ---
 
-The old process had a test after every change. It could reliably tell me that each change matched the last thing I had noticed. The current one claims less: the corpus is measured, the operating point projected, the filters observable, and live results still have to arrive.
+The old process had a test after every change. It could reliably tell me that each change matched the last thing I had noticed. The current one claims less: the corpus is measured, the operating point is projected, the filters are observable, and the live results are not in yet.
 
-I wrote in June that [a confidence number becomes a signal only when something keeps score](/blog/confidence-is-not-a-signal/). Keeping score feels like this. No victory graph. A measurement that has already disagreed with me twice: about the old detector, and about my first estimate of the new one. That property is worth more than either number.
+I wrote in June that [a confidence number becomes a signal only when something keeps score](/blog/confidence-is-not-a-signal/). This is what keeping score looks like. No victory graph. A measurement that has already contradicted me twice: once about the old detector, once about my first estimate of the new one. That property is worth more than either number.
 
 *The figures are generated from the label counts by `examples/python/base_rate_charts.py` in the Akashi repo (standard library only); `base_rate.py` reproduces the precision arithmetic; `binding_collision.py` demonstrates the binding join.*
