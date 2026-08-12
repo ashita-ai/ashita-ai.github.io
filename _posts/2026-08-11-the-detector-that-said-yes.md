@@ -14,7 +14,7 @@ So I stopped tuning it and blind-labelled the historical scored corpus: 2,772 pa
 
 ## The detector was a constant function
 
-[Akashi](/projects/akashi/) records agents' decisions. Conflict detection is meant to find two current decisions that cannot both be true — the feature that makes the record more than a log.
+[Akashi](/projects/akashi/) records agents' decisions. Conflict detection is meant to find two current decisions that cannot both be true — what makes the record more than a log.
 
 The blind labels found 93 contradictions in the 2,772 pairs. Most pairs were merely related. More than one fifth were supersessions: a later decision replacing an earlier one — normal progress, not conflict.
 
@@ -47,7 +47,7 @@ The blind labels found 93 contradictions in the 2,772 pairs. Most pairs were mer
 <figcaption style="font-size: 0.85rem; color: #666; max-width: 560px; margin: 0.4rem auto 0; text-align: left;">Blind four-way labels over all 2,772 scored pairs, each rated from the decision texts alone. The detector had called 97.8% of them contradictions.</figcaption>
 </figure>
 
-The shipped detector said "contradiction" for 97.8 percent of the pairs it scored — yes 2,711 times, of which 93 happened to be right. It found supersession 61 times where the blind labels found 627.
+The shipped detector said "contradiction" for 97.8 percent of the pairs it scored — yes 2,711 times; 93 happened to be right. It found supersession 61 times where the blind labels found 627.
 
 This was not a weak or miscalibrated classifier. It was nearly a constant function.
 
