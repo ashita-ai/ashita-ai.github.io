@@ -49,7 +49,7 @@ The blind labels found 93 contradictions in the 2,772 pairs. Most pairs were mer
 <figcaption style="font-size: 0.85rem; color: #666; max-width: 560px; margin: 0.4rem auto 0; text-align: left;">Blind four-way labels over all 2,772 scored pairs, each rated from the decision texts alone. The detector had called 97.8% of them contradictions.</figcaption>
 </figure>
 
-The shipped detector said "contradiction" for 97.8 percent of the pairs it scored. Yes, 2,711 times. Ninety-three of those were right. It found supersession 61 times where the blind labels found 627.
+The shipped detector said "contradiction" for 97.8 percent of the pairs it scored. Yes, 2,711 times. Ninety-two of those were right. It found supersession 61 times where the blind labels found 627.
 
 This was not a weak or miscalibrated classifier. It was nearly a constant function.
 
@@ -141,7 +141,7 @@ Judge capability mattered more than either rewrite. On the same procedure and th
 
 For a few hours I believed that number was 65.2. The first estimate of the new judge's precision came from a 47-pair sample it got entirely right, and a clean sample sets the false-positive rate near zero, which is exactly where the precision curve stands almost vertical. Zero of 47 cannot tell 65 percent precision from 19. A 300-pair remeasure found six false positives, a rate of 2.00 percent, and the estimate fell to 41.5. The same arithmetic that convicted the old detector almost flattered the new one.
 
-What survived is still a projection: 41.5 percent precision at 50.5 percent recall, a queue of about 113 where the old detector flagged 2,711. The new queue is twenty-four times smaller, and it drops half the real contradictions. The old detector caught all 93, but a detector that says yes to everything has perfect recall by construction.
+What survived is still a projection: 41.5 percent precision at 50.5 percent recall, a queue of about 113 where the old detector flagged 2,711. The new queue is twenty-four times smaller, and it drops half the real contradictions. The old detector caught 92 of the 93, which is what saying yes to almost everything buys you.
 
 ## Some conflicts should not be judged
 
