@@ -12,8 +12,6 @@ This looked like iteration. It was a detector accumulating excuses.
 
 So I stopped tuning it and blind-labelled the historical scored corpus: 2,772 pairs. The raters were language-model agents — dozens, each shown the decision texts and structural metadata, never the detector's verdict. Models grading a model is a fair objection. The defense is the blinding, plus an independent 200-pair re-rate that agreed at a Cohen's kappa of 0.766. Blind agreement is not ground truth, but unlike the old test set it was not written by the person being graded.
 
-It is the production loop I argued for in [Your Evals Won't Save You](/blog/your-evals-wont-save-you/), arriving late: every pair is something the detector did, labelled after the fact.
-
 ## The detector was a constant function
 
 [Akashi](/projects/akashi/) records agents' decisions. Conflict detection is meant to find two current decisions that cannot both be true — the feature that makes the record more than a log.
@@ -57,7 +55,7 @@ The old evaluation suite had 122 handwritten pairs and reported 1.000 precision 
 
 The blind corpus could. That is the difference between a test set and a measurement.
 
-It graded me too. By July I had automated my triage into a routine that marked conflicts false positive in bulk. The detector said yes to everything, so I built a thing that said no to everything. The blind labels sided with the bulk dismissals — 98.3 percent correct. The conflicts I had adjudicated deliberately, read and resolved with a declared winner, were the rotten ones: 11 percent real. [A channel over its alarm budget](/blog/the-alarm-budget/) does not just train its receiver to stop reading; it degrades the judgments the receiver still makes — and mine were the only ground truth the system had. A detector that cries wolf poisons the record of which wolves were real — the record you need to fix it.
+It graded me too. By July my triage was a routine that marked conflicts false positive in bulk. The detector said yes to everything, so I built a thing that said no to everything. The blind labels sided with the bulk dismissals — 98.3 percent correct. The conflicts I had adjudicated deliberately, read and resolved with a declared winner, were the rotten ones: 11 percent real. [A channel over its alarm budget](/blog/the-alarm-budget/) does not just train its receiver to stop reading; it degrades the judgments the receiver still makes — and mine were the only ground truth the system had. A detector that cries wolf poisons the record of which wolves were real — the record you need to fix it.
 
 ## The base rate changed the question
 
@@ -143,7 +141,7 @@ Judge capability mattered more than either rewrite: same procedure, and the judg
 
 The 41.5 percent was briefly 65.2. The first estimate of `gpt-5`'s false-positive rate came from a 47-pair sample it got entirely right, and the formula turned that zero into a 65 percent headline. The precision curve is near-vertical exactly there — 0-of-47 cannot distinguish 65 percent precision from 19 — and a 300-pair remeasure found six false positives. The headline fell to 41.5 within hours. The same arithmetic that convicted the old detector almost flattered the new one.
 
-What survived is still a projection: 41.5 percent precision at 50.5 percent recall, a queue of about 113 where the old detector flagged 2,711. The queue still has to earn those numbers in live use.
+What survived is still a projection: 41.5 percent precision at 50.5 percent recall, a queue of about 113 where the old detector flagged 2,711; the queue still has to earn those numbers in live use.
 
 ## Some conflicts should not be judged
 
@@ -157,7 +155,7 @@ That covers only contradictions whose structure already exists. Four attempts to
 
 Production now runs `gpt-5` over a 30-day window and keeps a deterministic 5 percent sample of structurally suppressed pairs outside the conflict queue.
 
-Getting there exposed a smaller version of the same problem: the cloud environment file fed Compose interpolation but never reached the containers. The configuration promised `gpt-5` and a 5 percent sample; the process could prove neither. Fixing the wiring put both into the running service.
+Getting there exposed the same problem smaller: the cloud environment file fed Compose interpolation but never reached the containers — the configuration promised `gpt-5` and a 5 percent sample, and the process could prove neither until the wiring was fixed.
 
 The sample creates no operator work and cannot block a conflict. It creates the rows for the next blind label — the rater will see the decisions, not the rule that suppressed them. That is how a suppression becomes a measurable claim instead of an accumulated hunch.
 
@@ -165,11 +163,11 @@ The sample creates no operator work and cannot block a conflict. It creates the 
 
 **How much the funnel misses.** I blind-labelled 200 high-similarity pairs that never reached the scorer. Two were contradictions — projected across the pool, roughly 332 conflicts never surfaced against the 93 found: funnel recall near 22 percent. The interval is wide, 7 to 70 percent: direction, not a settled number.
 
-The structural rules suppress about 56 percent of candidate pairs before any judge. The first 116-pair batch of the 5 percent sample, blind-labelled the night this went up, found zero contradictions — upper bound near 2.6 percent. One batch is direction, not acquittal.
+The structural rules suppress about 56 percent of candidate pairs before any judge. The first 116-pair batch of the 5 percent sample, blind-labelled as this went up, found zero contradictions — upper bound near 2.6 percent. One batch is direction, not acquittal.
 
-**Whether 41.5 percent is worth running.** At the measured false-positive rate, a missed contradiction must cost at least 1.4 times a false alarm for the single-judge point to win. A two-stage cascade reaches 74.2 percent precision on the gold set, but I have not built it — nor measured the attention cost of a false alarm, the input that decides the trade.
+**Whether 41.5 percent is worth running.** At the measured false-positive rate, a missed contradiction must cost at least 1.4 times a false alarm for the single-judge point to win. A two-stage cascade reaches 74.2 percent precision on the gold set, but I have not built it — nor measured the attention cost of a false alarm, the input that decides the trade. The screen's question is already chosen: "are these in tension" measured near-perfect where "which kind of tension" did not, and [recent work on consistency checking with noisy LLM oracles](https://arxiv.org/abs/2601.13600) argues the durable version is set-level: pairwise checks provably cannot certify a whole trail.
 
-**Whether the feature deserves its prominence.** Across 25.3 weeks the corpus holds 62 distinct disputes: 2.45 a week — real value, but not an automatic case for prominence. And the 0.766 kappa cuts both ways: some apparent room for improvement is label uncertainty, not detector failure.
+**Whether the feature deserves its prominence.** Across 25.3 weeks the corpus holds 62 distinct disputes: 2.45 a week — real value, but no automatic case for prominence. And the 0.766 kappa cuts both ways: some apparent room for improvement is label uncertainty, not detector failure.
 
 ---
 
