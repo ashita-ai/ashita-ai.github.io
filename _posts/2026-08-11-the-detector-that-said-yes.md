@@ -99,7 +99,7 @@ precision = p·s / ( p·s + (1−p)·f )
 
 False positives decide whether the queue is usable. Raise recall from 30 to 80 percent, which is fifty points of detector capability, and precision gains about 23 points. Halve the false-positive rate from 2 percent to 1, which is one point of movement, and precision gains 17.
 
-The scorer has two features of its own. `significance` weights a decision's consequence, and `topic_similarity` is the embedding overlap that nominates pairs. Against the blind labels they scored AUCs of 0.500 and 0.587. The first is a coin flip. The second is barely better than one. They can be a recall funnel, not the decision.
+The scorer has features of its own. `significance` weights a decision's consequence, and `topic_similarity` is the embedding overlap that nominates pairs. Against the blind labels they score AUCs of 0.60 and 0.62, on intervals six points wide in either direction. `outcome_divergence`, the feature built to measure how far two outcomes differ, scores 0.43, which means it points the wrong way. The strongest predictor in the whole scorer is `temporal_decay`, at 0.73, and nobody designed it as one. These can be a recall funnel. They cannot be the decision.
 
 F1 obscured the same fact more politely. `gpt-5-mini` posted the best sample F1 I measured, 0.704, and projected to 17.3 percent corpus precision. `gpt-5` scored worse on F1 and projected to 41.5. A stratified sample cannot see a fourfold gap in majority-class false positives, and at this base rate that gap decides the outcome. I report precision, recall, and queue size now.
 
