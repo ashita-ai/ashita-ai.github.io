@@ -171,8 +171,20 @@ The structural rules are a separate blind spot. They suppress about 56 percent o
 
 **Whether the feature deserves its prominence.** Across 25.3 weeks the corpus holds 62 distinct disputes, or 2.45 a week. That is real value, but not an automatic case for prominence. The 0.766 kappa also works against my own figures: some of the apparent room for improvement is label uncertainty rather than detector failure.
 
+## The data is downloadable
+
+A post arguing for measurement over assertion should hand over the measurements. [The data is published](/assets/data/conflict-detection/) under CC BY 4.0, in three files.
+
+`conflict-labels.csv` is all 2,772 pairs with their blind label, the detector's verdict and every scorer feature, and no decision text, which is what makes full coverage safe to release. It reproduces the base rate, the 97.8 percent, and the AUCs above.
+
+`conflict-pairs-recoded.jsonl` is 192 pairs with their text, so you can run your own judge. Every ticket, path, hash and name is replaced with a stable placeholder. One caveat matters: that subset holds 14 contradictions in 192 pairs, a base rate of 7.3 percent against the corpus 3.35, so a judge measured there will flatter itself.
+
+`teaching-set.jsonl` is 60 pairs I wrote by hand, sorted into the ten failure modes the real corpus taught me. Try `silent_supersession` and `surface_negation` before you look at the answers. Most people call both of them contradictions.
+
+Building the release found two more errors in this post, which is the argument for releasing it.
+
 ---
 
 The old process had a test after every change. It could reliably tell me that each change matched the last thing I had noticed. The current one claims less: the corpus is measured, the operating point is projected, the filters are observable, and the live results are not in yet.
 
-I wrote in June that [a confidence number becomes a signal only when something keeps score](/blog/confidence-is-not-a-signal/). This is what keeping score looks like. No victory graph. A measurement that has already contradicted me twice: once about the old detector, once about my first estimate of the new one. That property is worth more than either number.
+I wrote in June that [a confidence number becomes a signal only when something keeps score](/blog/confidence-is-not-a-signal/). This is what keeping score looks like. No victory graph. A measurement that has now contradicted me four times: about the old detector, about my first estimate of the new one, and twice more about numbers I had already written down here. That property is worth more than any of them.
