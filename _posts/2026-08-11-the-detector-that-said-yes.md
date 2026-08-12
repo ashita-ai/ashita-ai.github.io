@@ -167,7 +167,7 @@ The structural rules are a separate blind spot. They suppress about 56 percent o
 
 **Whether 41.5 percent is worth running.** At the measured false-positive rate, a missed contradiction must cost at least 1.4 times a false alarm for the single-judge point to win. A two-stage cascade reaches 74.2 percent precision at 38.7 percent recall. I have not built it, and I have not measured the attention cost of a false alarm, which is the input that decides the trade-off.
 
-**Whether the pair is the right unit.** Everything above scores two decisions against each other. [Work on consistency checking with noisy LLM oracles](https://arxiv.org/abs/2601.13600) shows that pairwise checks cannot certify a whole set. Three decisions can be compatible in every pair and impossible together. Nothing I have measured would see that.
+**Whether the pair is the right unit.** Everything above scores two decisions against each other. [Work on consistency checking with noisy LLM oracles](https://arxiv.org/abs/2601.13600) shows that pairwise checks cannot certify a whole set: three decisions can be compatible in every pair and impossible together. The same paper gives a way out, an adaptive search for the smallest inconsistent subset at polynomial query cost. Nothing I run today would see the problem, let alone do that.
 
 **Whether the feature deserves its prominence.** Across 25.3 weeks the corpus holds 62 distinct disputes, or 2.45 a week. That is real value, but not an automatic case for prominence. The 0.766 kappa also works against my own figures: some of the apparent room for improvement is label uncertainty rather than detector failure.
 
