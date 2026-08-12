@@ -165,7 +165,7 @@ The sample creates no operator work and cannot block a conflict. It creates the 
 
 **How much the funnel misses.** I blind-labelled 200 high-similarity pairs that never reached the scorer. Two were contradictions — projected across the pool, roughly 332 conflicts never surfaced against the 93 found: funnel recall near 22 percent. The interval is wide, 7 to 70 percent: direction, not a settled number.
 
-The structural rules are a separate blind spot: they suppress about 56 percent of candidate pairs before any judge. The 5 percent sample is live but unlabelled, so I cannot yet say whether those rules save attention or quietly discard the cases that matter.
+The structural rules suppress about 56 percent of candidate pairs before any judge. The first 116-pair batch of the 5 percent sample, blind-labelled the night this went up, found zero contradictions — upper bound near 2.6 percent. One batch is direction, not acquittal.
 
 **Whether 41.5 percent is worth running.** At the measured false-positive rate, a missed contradiction must cost at least 1.4 times a false alarm for the single-judge point to win. A two-stage cascade reaches 74.2 percent precision on the gold set, but I have not built it — nor measured the attention cost of a false alarm, the input that decides the trade.
 
