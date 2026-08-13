@@ -61,7 +61,7 @@ It graded me too. Bulk dismissals were 97.5 percent correct; of conflicts I read
 
 ## The base rate changed the question
 
-The failure was not only the prompt. It was what I had optimized for: at prevalence p, sensitivity s, and majority-class false-positive rate f:
+The failure was not only the prompt. It was what I had optimized for. At prevalence p, sensitivity s, and majority-class false-positive rate f:
 
 ```
 precision = p·s / ( p·s + (1−p)·f )
@@ -179,4 +179,4 @@ The release does not include triage history, decision dates, or text for the who
 
 The old process had a test after every change, so it could reliably tell me each change matched the last thing I had noticed. The current one claims less: corpus measured, operating point projected, filters observable, live results still to come.
 
-I wrote in June that [a confidence number becomes a signal only when something keeps score](/blog/confidence-is-not-a-signal/). No victory graph: a measurement that has contradicted me about the old detector and my first estimate of the new one. That property is worth more than either number.
+I wrote in June that [a confidence number becomes a signal only when something keeps score](/blog/confidence-is-not-a-signal/). This is what keeps score. It is not a victory graph. It is a measurement that has already contradicted me twice: about the old detector, and about my first estimate of the new one. An instrument that can contradict me is worth more than either number it produced.
