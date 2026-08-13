@@ -12,7 +12,7 @@ This looked like iteration. It was a detector accumulating excuses.
 
 So I stopped tuning and blind-labelled all 2,772 scored pairs. Dozens of language-model agents saw the two decision texts and structural metadata, never the detector's verdict.
 
-Models grading a model is a fair objection. Blinding plus an independent 200-pair re-rate, kappa 0.766 for contradiction versus rest, is the defense. It is not ground truth, but unlike the old test set it was not written by the person being graded.
+A model grading a model is a fair objection. My answer is blinding, plus an independent re-rate of 200 pairs that agreed at kappa 0.766 on contradiction versus everything else. That does not make the labels ground truth. It makes them the first ones I did not write myself.
 
 ## The detector was a constant function
 
