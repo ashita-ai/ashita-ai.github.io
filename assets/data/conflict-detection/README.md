@@ -5,8 +5,6 @@ permalink: /assets/data/conflict-detection/
 description: "Blind labels, recoded decision pairs, and an authored teaching set for the conflict-detection post."
 ---
 
-# Conflict detection: labels, pairs, and a teaching set
-
 Companion data for [The Detector That Said Yes to Everything](https://ashita.ai/blog/the-detector-that-said-yes/).
 
 The post argues that a hand-written evaluation suite can only check whether a
@@ -18,6 +16,10 @@ can try the labelling task yourself.
 Three files, three different jobs. Read the caveats before you use any of them
 as a benchmark.
 
+- [`conflict-labels.csv`](/assets/data/conflict-detection/conflict-labels.csv) — 2,772 blind labels, no text
+- [`conflict-pairs-recoded.jsonl`](/assets/data/conflict-detection/conflict-pairs-recoded.jsonl) — 192 recoded pairs with text
+- [`teaching-set.jsonl`](/assets/data/conflict-detection/teaching-set.jsonl) — 60 authored pairs across ten failure modes
+
 ---
 
 ## 1. `conflict-labels.csv`: every number in the post, no text
@@ -27,7 +29,7 @@ this file covers the whole corpus rather than a scoped subset.
 
 | column | meaning |
 |---|---|
-| `pair_id` | stable, non-reversible identifier |
+| `pair_id` | stable, non-reversible identifier shared with file 2 when `in_recoded_subset` is `t` |
 | `gold_label` | blind four-way label: `contradiction`, `supersession`, `related_not_contradicting`, `unrelated` |
 | `detector_relationship` | what the shipped detector said about this pair |
 | `topic_similarity`, `significance`, `outcome_divergence`, `confidence_weight`, `temporal_decay` | the scorer's features |
@@ -68,15 +70,12 @@ this file, quote the 7.3% alongside it.
 
 Label mix: 14 contradiction, 59 supersession, 119 related_not_contradicting.
 
-**Every specific has been recoded.** Ticket ids, file paths, commit hashes, pull
-request numbers, environment variables, branch names, service names, person
-names and third-party names were replaced with stable placeholders
-(`TICKET-X001`, `SHAX004`, `#PR012`, `pkg/xfile003.ext`, `Xname007`,
-`xterm002`). Substitution is deterministic and the same source token always maps
-to the same placeholder, which matters because a real contradiction here is
-often two decisions binding the same named parameter to two different values.
-Inconsistent substitution would destroy the very thing being labelled. The text
-reads a little stiffly as a result. That is the trade.
+**Identifying tokens are recoded.** Ticket ids, paths, commit hashes, pull
+request numbers, environment variables, branch names, person names, and named
+stack products use stable placeholders (`TICKET-X001`, `SHAX004`,
+`pkg/xfile003.ext`, `Xname007`, `xterm002`, `xvendor001`). The same source token
+maps to the same placeholder, which preserves parameter-binding contradictions
+without releasing the original token.
 
 ## 3. `teaching-set.jsonl`: 60 authored pairs
 
@@ -115,12 +114,13 @@ statistics precisely because dropping the text is what made full coverage safe.
 recoding in file 2.
 
 **Anything identifying the systems involved.** Ticket ids, hashes, paths,
-branch names, hostnames, resource ids, people and third parties are recoded.
-Presence in a public repository is not treated as evidence that a token is safe,
-because a token can be in a repository precisely because it leaked there.
-Release is gated on two checks: an assertion that no recoded token survives in
-the output, and a denylist that exits non-zero rather than warning. If you find
-something that should not be here, open an issue on
+branch names, hostnames, resource ids, people, and named stack products are
+recoded. Every release runs `scripts/check_conflict_detection_data.rb`, which
+verifies the CSV/JSONL join and exits non-zero on raw identifier patterns or the
+named product denylist. Agent identifiers are the exception: file 1's `agent_a`
+and `agent_b` columns carry the real tool names, published deliberately, because
+the post's argument is about which agents disagree. If you find something that
+should not be here, open an issue on
 [ashita-ai/akashi](https://github.com/ashita-ai/akashi).
 
 ## Provenance and license
