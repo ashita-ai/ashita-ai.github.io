@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The Detector That Said Yes to Everything"
-date: 2026-08-11
+date: 2026-08-12
 category: "architecture"
 description: "For months I added suppressors to a conflict detector that said yes to everything. Then I blind-labelled its scored corpus. The result was a constant function, and the labels graded my judgment too."
 ---
