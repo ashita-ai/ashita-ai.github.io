@@ -163,9 +163,25 @@ The sample creates no operator work and cannot block a conflict. It creates rows
 
 ## The data
 
-[The published data](/assets/data/conflict-detection/) reproduces the corpus counts, detector outcomes and feature AUCs. `conflict-labels.csv` has all 2,772 labels and no text. `conflict-pairs-recoded.jsonl` has 192 joinable, redacted pairs for running another judge; its 7.3 percent base rate is not the corpus rate. `teaching-set.jsonl` has 60 authored examples across ten failure modes.
+[The published data](/assets/data/conflict-detection/) reproduces the corpus counts, detector outcomes and feature AUCs. `conflict-labels.csv` has all 2,772 labels and no text. `conflict-pairs-recoded.jsonl` has 192 joinable, redacted pairs for running another judge; its 7.3 percent base rate is not the corpus rate. `teaching-set.jsonl` has 60 authored examples across ten failure modes. The label-noise correction in the next section needs nothing beyond that first file, which supplies the base rate; the two re-rate constants are quoted there.
 
 The release does not include triage history, decision dates, or text for the whole corpus. Everything past the corpus counts rests on my measurement alone: the triage split, the binding-collision share, the no-artifact figure, the dispute count, and every number from the judge experiment.
+
+## The labels cannot carry the decimal point
+
+The re-rate that produced kappa 0.766 produced two numbers I did not look at hard enough. The second rater found 81.7 percent of the contradictions the first one found, and called 5.7 percent of the non-contradictions contradictions. The corpus says contradictions are 3.35 percent of pairs. The false alarm rate of the instrument is larger than the thing the instrument is measuring.
+
+There is a standard correction for a noisy screen, Rogan-Gladen. For an observed positive rate p, a sensitivity Se and a specificity Sp, the corrected prevalence is (p + Sp − 1) / (Se + Sp − 1). Specificity is one minus the 5.7 percent false flag rate, so Sp is 0.943 and Se is 0.817. The numerator is 0.0335 + 0.943 − 1 = −0.0235. The corrected base rate is −3.1 percent.
+
+A negative prevalence is not a finding that there are no contradictions. It is the arithmetic refusing to answer: the observed rate is lower than this labeller's own false alarms would produce on a corpus that contained none, so the protocol cannot resolve a rate this low. For any positive answer the false flag rate has to sit below the base rate itself, below 3.35 percent. Mine is 5.7.
+
+Move that one input. At a 3.35 percent false flag rate the corrected base rate is zero. At 2 percent it is 1.7. At 1 percent it is 2.9. At zero it is 4.1. The true rate is somewhere in that spread and these labels cannot say where.
+
+This does not retract the detector going from 3.4 percent precision to a projected 41.5. Nothing here touches the size or the direction of that move. It also rests on constants I did not publish per pair, so treat 0.817 and 0.943 as sensitivity inputs rather than measurements you can check.
+
+What it retracts is the decimal point. Every number downstream of the base rate inherits its uncertainty, including whether the queue is worth running. At the shipped operating point, 50.5 percent recall against a 2 percent false-positive rate, a missed contradiction has to cost 1.14 times a false alarm if the true prevalence is 3.35 percent, close to the 1.4 I quote below. At 2 percent it is 1.94 times. At 1 percent it is 3.92. That answer is a band, not a number.
+
+The fix is human labels on a calibration subset, weighted hard toward the boring class, because specificity on the majority is the arm that sets the interval. Not sampled in proportion, though. Thirteen positives would put a 38 point interval on sensitivity and settle nothing, so all 93 contradictions get labelled and the sample is spent on the negatives. That is 480 labels, and I have not done it yet. The labels contradicted the detector. Now they contradict themselves.
 
 ## What I am still figuring out
 
