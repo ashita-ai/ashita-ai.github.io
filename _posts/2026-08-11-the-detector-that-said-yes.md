@@ -57,7 +57,7 @@ The old evaluation suite had 122 handwritten pairs and reported 1.000 precision 
 
 The blind corpus could. That is the difference between a test set and a measurement.
 
-It graded me too. By July my triage was a routine that marked conflicts false positive in bulk. The detector said yes to everything, so I built a habit of saying no to everything. The blind labels sided with the bulk dismissals, 98.3 percent correct. The rotten ones were the conflicts I had adjudicated deliberately, read and resolved with a declared winner. Of those, 11 percent were real.
+It graded me too. By July my triage was a routine that marked conflicts false positive in bulk. The detector said yes to everything, so I built a habit of saying no to everything. The blind labels sided with the bulk dismissals, 97.5 percent correct. The rotten ones were the conflicts I had adjudicated deliberately, read and resolved with a declared winner. Of those, 11 percent were real.
 
 [A channel over its alarm budget](/blog/the-alarm-budget/) does not only train its receiver to stop reading. It degrades the judgments the receiver still makes. Mine were the only ground truth the system had. A detector that cries wolf poisons the record of which wolves were real, and that record is the one you need in order to fix it.
 

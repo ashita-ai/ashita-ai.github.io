@@ -42,16 +42,17 @@ What you can reproduce from this file alone:
 - The base rate. 93 contradictions in 2,772 pairs, 3.35%.
 - The central finding. The detector said `contradiction` for 2,711 of 2,772
   pairs, 97.8%, of which 92 were right. Precision 3.39%, recall 98.9%.
-- Both feature AUCs, and two the post added after the data was built:
-  `outcome_divergence` is *inverted* at 0.434, and the strongest single feature
-  is `temporal_decay` at 0.728, which was never designed as a signal.
+- Every feature AUC. Rank AUC with midrank ties, Hanley–McNeil intervals:
+  `temporal_decay` 0.728, `topic_similarity` 0.616, `significance` 0.601,
+  `confidence_weight` 0.584, `outcome_divergence` 0.434. Two of those are worth
+  a second look. `outcome_divergence` is *inverted*, with an interval that
+  excludes 0.5, and the strongest feature in the scorer is a staleness weight.
 - The precision arithmetic at a 3.35% base rate, and why F1 picks the wrong
   judge when the majority class is 96.65% of the data.
 
-**Snapshot 2026-08-12.** The feature columns are mutable in the source system:
-39 of these rows were rescored after the labelling run. That is why the post's
-earlier AUC figures of 0.500 and 0.587 do not reproduce and were corrected. Any
-AUC you compute here belongs to this snapshot.
+**Snapshot 2026-08-12.** Feature columns are mutable in the source system, and
+39 of these rows were rescored after the labelling run. Treat any AUC you
+compute here as a property of this snapshot, not of the pipeline in general.
 
 ## 2. `conflict-pairs-recoded.jsonl`: real pairs you can judge
 
@@ -113,13 +114,13 @@ statistics precisely because dropping the text is what made full coverage safe.
 **The substitution map.** It is a decoder ring. Publishing it would reverse the
 recoding in file 2.
 
-**Anything you can use to identify the systems involved.** The scrub was built
-around one rule that turned out to be wrong: *a token already present in my
-public repository is safe to keep.* It is not. A token being in the repository
-proves the leak already happened, which is exactly what it turned out to have
-done. The rule was replaced, and three separate misses were caught afterwards by
-an independent audit and a hard denylist check that fails the build rather than
-warning. If you find something that should not be here, please open an issue on
+**Anything identifying the systems involved.** Ticket ids, hashes, paths,
+branch names, hostnames, resource ids, people and third parties are recoded.
+Presence in a public repository is not treated as evidence that a token is safe,
+because a token can be in a repository precisely because it leaked there.
+Release is gated on two checks: an assertion that no recoded token survives in
+the output, and a denylist that exits non-zero rather than warning. If you find
+something that should not be here, open an issue on
 [ashita-ai/akashi](https://github.com/ashita-ai/akashi).
 
 ## Provenance and license
