@@ -99,7 +99,7 @@ precision = p·s / ( p·s + (1−p)·f )
 
 False positives decide whether the queue is usable. Raise recall from 30 to 80 percent, which is fifty points of detector capability, and precision gains about 23 points. Halve the false-positive rate from 2 percent to 1, which is one point of movement, and precision gains 17.
 
-The scorer has features of its own. `significance` weights a decision's consequence, and `topic_similarity` is the embedding overlap that nominates pairs. Against the blind labels they score AUCs of 0.60 and 0.62, on intervals six points wide in either direction. `outcome_divergence`, the feature built to measure how far two outcomes differ, scores 0.43, which means it points the wrong way. The strongest predictor in the whole scorer is `temporal_decay`, at 0.73, and nobody designed it as one. These can be a recall funnel. They cannot be the decision.
+The scorer has features of its own. `significance` weights a decision's consequence. `topic_similarity` is the embedding overlap that nominates pairs. Against the blind labels they score 0.60 and 0.62 AUC, on intervals six points wide. `outcome_divergence`, built to measure how far two outcomes differ, scores 0.43, which means it points the wrong way. The strongest predictor in the scorer is `temporal_decay`, at 0.73, and nobody designed it as one. These can be a recall funnel. They cannot be the decision.
 
 F1 obscured the same fact more politely. `gpt-5-mini` posted the best sample F1 I measured, 0.704, and projected to 17.3 percent corpus precision. `gpt-5` scored worse on F1 and projected to 41.5. A stratified sample cannot see a fourfold gap in majority-class false positives, and at this base rate that gap decides the outcome. I report precision, recall, and queue size now.
 
@@ -139,7 +139,7 @@ Judge capability mattered more than either rewrite. On the same procedure and th
 <figcaption style="font-size: 0.85rem; color: #666; max-width: 560px; margin: 0.4rem auto 0; text-align: left;">Corpus-projected precision on the same blind 200-pair gold set, same ordered-procedure prompt. Only the judge model changed. The <code>gpt-5</code> bar is the corrected 41.5%, after the 300-pair remeasure described below.</figcaption>
 </figure>
 
-For a few hours I believed that number was 65.2. The first estimate of the new judge's precision came from a 47-pair sample it got entirely right, and a clean sample sets the false-positive rate near zero, which is exactly where the precision curve stands almost vertical. Zero of 47 cannot tell 65 percent precision from 19. A 300-pair remeasure found six false positives, a rate of 2.00 percent, and the estimate fell to 41.5. The same arithmetic that convicted the old detector almost flattered the new one.
+For a few hours I believed that number was 65.2. The first estimate came from a 47-pair sample the judge got entirely right. A clean sample puts the false-positive rate near zero, which is where the precision curve stands almost vertical. Zero of 47 cannot tell 65 percent precision from 19. A 300-pair remeasure found six false positives, a rate of 2.00 percent, and the estimate fell to 41.5. The same arithmetic that convicted the old detector almost flattered the new one.
 
 What survived is still a projection: 41.5 percent precision at 50.5 percent recall, a queue of about 113 where the old detector flagged 2,711. The new queue is twenty-four times smaller, and it drops half the real contradictions. The old detector caught 92 of the 93, which is what saying yes to almost everything buys you.
 
@@ -155,7 +155,7 @@ That covers only contradictions whose structure already exists. Four attempts to
 
 Production now runs `gpt-5` over a 30-day window and keeps a deterministic 5 percent sample of structurally suppressed pairs outside the conflict queue.
 
-The cutover produced the clearest instance of the same failure. Reasoning models think a long time before the first token. The judge's timeout was still at its 15-second default. So 159 of 200 `gpt-5` calls timed out. A skipped candidate is fail-safe: not flagged, not alerted, not queued. Detections fell silently. That is exactly what a more precise model looks like from the outside. `conflict_llm_timeout = 15s` against `120s`, from the section above, is this bug.
+The cutover produced the clearest case of a measurement that flatters you. Reasoning models think a long time before the first token. The judge's timeout was still at its 15-second default, so 159 of 200 `gpt-5` calls timed out. A skipped candidate is fail-safe: not flagged, not alerted, not queued. Detections fell silently. That is exactly what a more precise model looks like from outside. `conflict_llm_timeout = 15s` against `120s`, from the section above, is this bug.
 
 The sample creates no operator work and cannot block a conflict. It creates rows for the next blind label. The rater will see the decisions, not the rule that suppressed them. That is how a suppression becomes a measurable claim instead of an accumulated hunch.
 
@@ -167,21 +167,19 @@ The structural rules are a separate blind spot. They suppress about 56 percent o
 
 **Whether 41.5 percent is worth running.** At the measured false-positive rate, a missed contradiction must cost at least 1.4 times a false alarm for the single-judge point to win. A two-stage cascade reaches 74.2 percent precision at 38.7 percent recall. I have not built it, and I have not measured the attention cost of a false alarm, which is the input that decides the trade-off.
 
-**Whether the pair is the right unit.** Everything above scores two decisions against each other. [Work on consistency checking with noisy LLM oracles](https://arxiv.org/abs/2601.13600) shows that pairwise checks cannot certify a whole set: three decisions can be compatible in every pair and impossible together. The same paper gives a way out, an adaptive search for the smallest inconsistent subset at polynomial query cost. Nothing I run today would see the problem, let alone do that.
+**Whether the pair is the right unit.** Everything above scores two decisions against each other. [Work on consistency checking with noisy LLM oracles](https://arxiv.org/abs/2601.13600) shows pairwise checks cannot certify a whole set: three decisions can be compatible in every pair and impossible together. The paper offers a way out, an adaptive search for the smallest inconsistent subset at polynomial cost. Nothing I run today would see the problem, let alone do that.
 
 **Whether the feature deserves its prominence.** Across 25.3 weeks the corpus holds 62 distinct disputes, or 2.45 a week. That is real value, but not an automatic case for prominence. The 0.766 kappa also works against my own figures: some of the apparent room for improvement is label uncertainty rather than detector failure.
 
-## The data is downloadable
+## You can check this yourself
 
 A post arguing for measurement over assertion should hand over the measurements. [The data is published](/assets/data/conflict-detection/) under CC BY 4.0, in three files.
 
 `conflict-labels.csv` is all 2,772 pairs with their blind label, the detector's verdict and every scorer feature, and no decision text, which is what makes full coverage safe to release. It reproduces the base rate, the 97.8 percent, and the AUCs above.
 
-`conflict-pairs-recoded.jsonl` is 192 pairs with their text, so you can run your own judge. Every ticket, path, hash and name is replaced with a stable placeholder. One caveat matters: that subset holds 14 contradictions in 192 pairs, a base rate of 7.3 percent against the corpus 3.35, so a judge measured there will flatter itself.
+`conflict-pairs-recoded.jsonl` is 192 of those pairs with their text, so you can run your own judge. Every ticket, path, hash and name became a stable placeholder. One caveat matters: 14 of the 192 are contradictions, a 7.3 percent base rate against the corpus 3.35, so a judge measured there will flatter itself.
 
 `teaching-set.jsonl` is 60 pairs I wrote by hand, sorted into the ten failure modes the real corpus taught me. Try `silent_supersession` and `surface_negation` before you look at the answers. Most people call both of them contradictions.
-
-Building the release found two more errors in this post, which is the argument for releasing it.
 
 ---
 

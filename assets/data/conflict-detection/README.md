@@ -35,7 +35,7 @@ this file covers the whole corpus rather than a scoped subset.
 | `same_project`, `same_agent`, `days_apart` | structural metadata |
 | `severity`, `category`, `scoring_method` | detector metadata |
 | `len_a`, `len_b` | decision text length in characters |
-| `akashi_subset` | whether this pair is in the subset published as file 2 |
+| `in_recoded_subset` | whether this pair is one of the 192 published with text in file 2 |
 
 What you can reproduce from this file alone:
 
@@ -121,13 +121,6 @@ done. The rule was replaced, and three separate misses were caught afterwards by
 an independent audit and a hard denylist check that fails the build rather than
 warning. If you find something that should not be here, please open an issue on
 [ashita-ai/akashi](https://github.com/ashita-ai/akashi).
-
-## Reproducing the arithmetic
-
-`examples/python/base_rate.py` and `examples/python/base_rate_charts.py` in the
-[akashi repo](https://github.com/ashita-ai/akashi) reproduce the precision
-arithmetic and generate the post's figures from label counts. Standard library
-only.
 
 ## Provenance and license
 
