@@ -6,6 +6,10 @@ category: "architecture"
 description: "For months I added suppressors to a conflict detector that said yes to everything. Then I blind-labelled its scored corpus. The result was a constant function, and the labels graded my judgment too."
 ---
 
+In 1955, Paul Meehl and Albert Rosen [published a paper](https://meehl.umn.edu/sites/meehl.umn.edu/files/files/035antecedentprobability.pdf) about screening tests that look good and are not. Their example was an Army inventory meant to find the inductees who would wash out of basic training. It caught 55 percent of the men who did wash out and flagged 19 percent of the men who did not.
+
+Set that against a population where 5 percent wash out. Per 10,000 inductees it flags 2,080 men and is right about 275 of them. Calling every recruit fine, with no test at all, is right 95 percent of the time. The test is right 80 percent. Their rule: a device has to beat the base rate to be worth running. Their second warning took me longer to earn — a test scored on the groups it was built from reports validity that is "spuriously high."
+
 For months, I improved Akashi's conflict detector one false positive at a time. A review found a pattern it should not flag. I added a suppression rule or another sentence to the prompt. The test passed. The next review found a different pattern.
 
 This looked like iteration. It was a detector accumulating excuses.
@@ -18,7 +22,7 @@ A model grading a model is a fair objection. My answer is blinding, plus an inde
 
 [Akashi](/projects/akashi/) records agents' decisions. Conflict detection is meant to find two current decisions that cannot both be true. That is what makes the record more than a log.
 
-The blind labels found 93 contradictions in the 2,772 pairs. Most pairs were merely related. More than a fifth were supersessions: a later decision replacing an earlier one. That is normal progress, not conflict.
+The blind labels found 93 contradictions in the 2,772 pairs. More than a fifth were supersessions, a later decision replacing an earlier one, which is normal progress rather than conflict.
 
 <figure style="margin: 2.5rem 0; text-align: center;">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 312" width="100%" role="img" aria-label="Horizontal bar chart of blind labels over 2,772 candidate pairs: 72.8 percent related but not contradicting, 22.6 percent supersession, 3.35 percent contradiction, 1.3 percent unrelated" style="font-family: Inter, sans-serif;">
@@ -95,9 +99,9 @@ precision = p·s / ( p·s + (1−p)·f )
 <figcaption style="font-size: 0.85rem; color: #666; max-width: 560px; margin: 0.4rem auto 0; text-align: left;">Precision against majority-class false-positive rate at the corpus base rate of 3.35%. The recall lines barely separate; the x-axis decides.</figcaption>
 </figure>
 
-False positives decide whether the queue is usable: raising recall from 30 to 80 percent gains about 23 precision points; halving false-positive rate from 2 to 1 percent gains 17.
+False positives decide whether the queue is usable: raising recall from 30 to 80 percent gains about 23 precision points; halving false-positive rate from 2 to 1 percent gains 17. This is Meehl's induction station with my name on the cutting score.
 
-The scorer has features of its own. `significance` weights a decision's consequence; `topic_similarity` is the embedding overlap that nominates pairs. Against the blind labels they score 0.60 and 0.62 AUC, on intervals about twelve points wide. `outcome_divergence` scores 0.43, which means it points the wrong way. The strongest predictor is `temporal_decay`, at 0.73. These can be a recall funnel, not the decision.
+The scorer has features of its own. `significance` weights a decision's consequence; `topic_similarity` is the embedding overlap that nominates pairs. Against the blind labels they score 0.60 and 0.62 AUC, on intervals about twelve points wide. `outcome_divergence` scores 0.43, which means it points the wrong way. The strongest predictor is `temporal_decay`, a staleness weight, at 0.73. These can be a recall funnel, not the decision.
 
 F1 obscured the same fact more politely. `gpt-5-mini` had the best sample F1, 0.704, and 17.3 percent corpus-projected precision. `gpt-5` scored worse on F1 and projected to 41.5. I report precision, recall, and queue size now.
 
@@ -157,6 +161,12 @@ The first cutover inherited the 15-second timeout, so 159 of 200 `gpt-5` calls t
 
 The sample creates no operator work and cannot block a conflict. It creates rows for the next blind label. The rater will see the decisions, not the rule that suppressed them. That is how a suppression becomes a measurable claim instead of an accumulated hunch.
 
+## The data
+
+[The published data](/assets/data/conflict-detection/) reproduces the corpus counts, detector outcomes and feature AUCs. `conflict-labels.csv` has all 2,772 labels and no text. `conflict-pairs-recoded.jsonl` has 192 joinable, redacted pairs for running another judge; its 7.3 percent base rate is not the corpus rate. `teaching-set.jsonl` has 60 authored examples across ten failure modes.
+
+The release does not include triage history, decision dates, or text for the whole corpus. Everything past the corpus counts rests on my measurement alone: the triage split, the binding-collision share, the no-artifact figure, the dispute count, and every number from the judge experiment.
+
 ## What I am still figuring out
 
 **How much the funnel misses.** Top-twenty retrieval leaves 33,151 pairs above the similarity floor unscored. Two of 200 blind labels were contradictions, projecting roughly 332 unseen conflicts against 93 found: funnel recall near 22 percent, interval 7 to 70. Direction, not a settled number.
@@ -167,13 +177,7 @@ The structural rules suppress about 56 percent of candidate pairs before any jud
 
 **Whether the pair is the right unit.** Everything above scores two decisions against each other. [Work on consistency checking with noisy LLM oracles](https://arxiv.org/abs/2601.13600) shows pairwise checks cannot certify a whole set: three decisions can be compatible in every pair and impossible together. The paper offers an adaptive search for a minimal inconsistent subset at polynomial cost. Nothing I run today would see the problem.
 
-**Whether the feature deserves its prominence.** Across 25.3 weeks the corpus holds 62 distinct disputes, or 2.45 a week. That is real value, but not an automatic case for prominence. The 0.766 kappa also works against my own figures: some of the apparent room for improvement is label uncertainty rather than detector failure.
-
-## The data
-
-[The published data](/assets/data/conflict-detection/) reproduces the corpus counts, detector outcomes and feature AUCs. `conflict-labels.csv` has all 2,772 labels and no text. `conflict-pairs-recoded.jsonl` has 192 joinable, redacted pairs for running another judge; its 7.3 percent base rate is not the corpus rate. `teaching-set.jsonl` has 60 authored examples across ten failure modes.
-
-The release does not include triage history, decision dates, or text for the whole corpus. Everything past the corpus counts rests on my measurement alone: the triage split, the binding-collision share, the no-artifact figure, the dispute count, and every number from the judge experiment.
+**Whether the feature deserves its prominence.** Across 25.3 weeks the corpus holds 62 distinct disputes, or 2.45 a week. Real value, but not an automatic case for a headline feature. The 0.766 kappa also works against my own figures: some of the apparent room for improvement is label uncertainty rather than detector failure.
 
 ---
 
