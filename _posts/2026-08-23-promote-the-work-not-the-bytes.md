@@ -4,6 +4,11 @@ title: "Promote the Work, Not the Bytes"
 date: 2026-08-23
 category: "architecture"
 description: "Databases got the cheap branch and kept the merge. Here is the model I am working from instead, built on the instinct every engineer already has about long-lived branches, and the two places that instinct stops being enough."
+image:
+  path: /assets/images/promote-the-work-not-the-bytes.jpg
+  width: 1200
+  height: 630
+  alt: "Bare tree branches forking against a pale sky"
 ---
 
 In May I [wrote about Alice](/blog/the-week-long-transaction/), who forked production, worked on the branch for four weeks, and wanted her work folded back in. I could not answer which of her answers were still true.
