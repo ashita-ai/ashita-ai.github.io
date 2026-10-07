@@ -4,6 +4,11 @@ title: "All the Attention in the World"
 date: 2026-10-07
 category: "architecture"
 description: "Attention Is All You Need solved the machine's attention problem and handed the bill to the person reviewing the output. The paper also contained the fix: when attending to everything costs too much, restrict attention by a rule. For people supervising agents, the rule is irreversibility."
+image:
+  path: /assets/images/all-the-attention-in-the-world.jpg
+  width: 1200
+  height: 630
+  alt: "A yellow wet-floor sign reading ATTENTION SOL GLISSANT on a polished stone floor"
 ---
 
 In June 2017, a team at Google posted a paper about machine translation. A couple of nights before the deadline, it still had no title. Llion Jones suggested a riff on a Beatles song. "It literally took five seconds of thought," he [told Wired](https://www.wired.com/story/eight-google-employees-invented-modern-ai-transformers-paper/). "I didn't think they would use it."
