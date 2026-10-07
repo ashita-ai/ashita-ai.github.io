@@ -73,7 +73,7 @@ I also changed how the agents talk to me. Action first, five items at most, no r
 
 Now I mostly approve designs. One decision about how a thing should work covers hundreds of actions that follow from it, and most of those actions are reversible.
 
-The arc runs from instances to rules, and from after the fact to before it. Reading instances scales with the number of agents. Writing rules does not.
+The arc runs from instances to rules, and from after the fact to before it. Reading each diff costs more with every agent I add. Writing a rule costs the same at five agents or fifty.
 
 ## What I am still figuring out
 
