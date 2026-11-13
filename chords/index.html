@@ -690,10 +690,26 @@ footer{padding-block:24px 48px;border-top:1px solid var(--line);font-size:14px;c
 
   /* ---------- audio ---------- */
   let ac=null;
+  /* iPhone: Web Audio is muted by the ring/silent switch unless the page counts as media playback.
+     Two measures, both started from a tap: the audioSession hint, and a silent looping <audio> element. */
+  let silentEl=null;
+  function unlockIOS(){
+    try{ if(navigator.audioSession) navigator.audioSession.type='playback'; }catch(e){}
+    try{
+      if(!silentEl){
+        const n=800, b=new Uint8Array(44+n*2), v=new DataView(b.buffer), w=(o,s)=>{for(let i=0;i<s.length;i++) b[o+i]=s.charCodeAt(i);};
+        w(0,'RIFF'); v.setUint32(4,36+n*2,true); w(8,'WAVEfmt '); v.setUint32(16,16,true); v.setUint16(20,1,true); v.setUint16(22,1,true);
+        v.setUint32(24,8000,true); v.setUint32(28,16000,true); v.setUint16(32,2,true); v.setUint16(34,16,true); w(36,'data'); v.setUint32(40,n*2,true);
+        let bin=''; b.forEach(x=>{bin+=String.fromCharCode(x);});
+        silentEl=new Audio('data:audio/wav;base64,'+btoa(bin)); silentEl.loop=true; silentEl.setAttribute('playsinline','');
+      }
+      const pr=silentEl.play(); if(pr&&pr.catch) pr.catch(()=>{});
+    }catch(e){}
+  }
   function audio(){
     try{
-      if(!ac){const A=window.AudioContext||window.webkitAudioContext; if(!A) return null; ac=new A();}
-      if(ac.state==='suspended') ac.resume();
+      if(!ac){const A=window.AudioContext||window.webkitAudioContext; if(!A) return null; ac=new A(); unlockIOS();}
+      if(ac.state==='suspended'||ac.state==='interrupted') ac.resume();
       return ac;
     }catch(e){return null;}
   }
