@@ -1,0 +1,1475 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Chords by the Numbers | Ashita AI</title>
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+<meta name="description" content="A piano field guide: work chords out from a few rules, see the frequencies behind them, and hear what effects do to a sound.">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: one reading column; each interactive tool is a framed instrument panel; every number set in mono */
+:root{
+  --bg:#F5F6F0; --surface:#FFFFFF; --ink:#000000; --muted:#666666; --line:#D8DAD0;
+  --accent:#2C4A6E; --accent-soft:#E2E8EF; --on-accent:#FFFFFF;
+  --good:#1E7B4F; --bad:#B3341F;
+  --fn-t:#2C4A6E; --fn-s:#0E7C86; --fn-d:#B25E09;
+  --key-white:#FFFFFF; --key-black:#1B1F28; --key-edge:#C3CAD6; --key-label:#8A93A3;
+  --font-display:"JetBrains Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  --font-body:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --font-mono:"JetBrains Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0E1117; --surface:#161A22; --ink:#E6E9EF; --muted:#9AA3B4; --line:#2A303C;
+    --accent:#7F9CFF; --accent-soft:#1D2642; --on-accent:#0E1117;
+    --good:#5FD39B; --bad:#FF8A75;
+    --fn-t:#7F9CFF; --fn-s:#4FD1E0; --fn-d:#F0B15A;
+    --key-white:#E4E8EE; --key-black:#07090C; --key-edge:#3A4150; --key-label:#6E7686;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0E1117; --surface:#161A22; --ink:#E6E9EF; --muted:#9AA3B4; --line:#2A303C;
+  --accent:#7F9CFF; --accent-soft:#1D2642; --on-accent:#0E1117;
+  --good:#5FD39B; --bad:#FF8A75;
+  --fn-t:#7F9CFF; --fn-s:#4FD1E0; --fn-d:#F0B15A;
+  --key-white:#E4E8EE; --key-black:#07090C; --key-edge:#3A4150; --key-label:#6E7686;
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:16px;line-height:1.6}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+
+.gutter{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.col{max-width:760px;margin:0 auto}
+/* site chrome, as on ashita.ai */
+.site-nav{max-width:760px;margin:0 auto;padding:1rem 0;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.site-nav img{height:64px;width:auto;display:block}
+.site-nav ul{list-style:none;margin:0 0 0 auto;padding:0;display:flex;gap:1.5rem;flex-wrap:wrap;max-width:none}
+.site-nav li{margin:0}
+.site-nav a{color:#000;font-family:var(--font-mono);font-size:14px;font-weight:500;text-decoration:underline}
+.site-nav a:hover{color:var(--accent)}
+.site-foot{border-top:1px solid #000;padding:2rem 0}
+.site-foot .col{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:14px}
+.site-foot p{margin:0}
+.site-foot a{color:var(--accent)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .site-nav img{filter:invert(.9) hue-rotate(180deg)}:root:not([data-theme="light"]) .site-nav a{color:var(--ink)}:root:not([data-theme="light"]) .site-foot{border-top-color:var(--line)}}
+
+nav.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+nav.top .col{display:flex;gap:4px;overflow-x:auto;padding-block:8px;scrollbar-width:none}
+nav.top .col::-webkit-scrollbar{display:none}
+nav.top a{flex:none;font-size:14px;font-weight:500;color:var(--muted);text-decoration:none;padding:6px 10px;border-radius:6px;white-space:nowrap}
+nav.top a:hover{color:var(--ink);background:var(--surface)}
+nav.top a:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+
+header.hero{padding-block:40px 28px}
+.eyebrow{font-family:var(--font-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+h1{font-family:var(--font-display);font-weight:600;font-size:clamp(26px,5.5vw,36px);line-height:1.2;letter-spacing:-.02em;margin:8px 0 12px;text-wrap:balance}
+.deck{font-size:18px;color:var(--muted);max-width:60ch;margin:0}
+.memo{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:24px}
+.memo div{border-top:2px solid var(--ink);padding-top:8px}
+.memo b{display:block;font-family:var(--font-mono);font-weight:500;font-size:15px}
+.memo span{font-size:13px;color:var(--muted)}
+@media (max-width:520px){.memo{grid-template-columns:1fr}}
+
+section{padding-block:32px;border-top:1px solid var(--line);scroll-margin-top:64px}
+h2{font-family:var(--font-display);font-weight:600;font-size:clamp(20px,3.8vw,24px);line-height:1.3;letter-spacing:-.01em;margin:6px 0 12px;text-wrap:balance}
+h3{font-family:var(--font-display);font-weight:600;font-size:17px;line-height:1.3;margin:28px 0 6px;text-wrap:balance}
+p{margin:0 0 12px;max-width:65ch}
+ul,ol{margin:0 0 12px;padding-left:20px;max-width:65ch}
+li{margin-bottom:6px}
+.m{font-family:var(--font-mono);font-size:.92em;font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+sup{font-size:.7em}
+
+.scroll{overflow-x:auto;margin:12px 0 16px}
+table.wrap td,table.wrap th{white-space:normal;vertical-align:top;min-width:150px;padding-right:14px}
+table.wrap td:first-child{min-width:130px;font-weight:600}
+.fxcv{display:block;width:100%;height:200px;border:1px solid var(--line);border-radius:10px;background:var(--bg)}
+.fxrange{width:100%;max-width:320px}
+table{border-collapse:collapse;font-size:14px;min-width:100%}
+th,td{text-align:left;padding:8px 12px 8px 0;border-bottom:1px solid var(--line);white-space:nowrap}
+th{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+td.num{font-family:var(--font-mono);font-variant-numeric:tabular-nums}
+td .none{color:var(--key-label)}
+table.hz td,table.hz th{padding:6px 10px 6px 0;font-size:13px}
+table.hz td{font-family:var(--font-mono);font-variant-numeric:tabular-nums}
+table.hz td.hit{background:var(--accent-soft)}
+table.hz td.exact{background:var(--accent);color:var(--on-accent)}
+table.hz th.rowh{color:var(--ink);font-family:var(--font-mono);font-size:13px;letter-spacing:0;text-transform:none}
+
+.tool{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0 20px;display:grid;gap:14px}
+.tool-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.tool-title{font-family:var(--font-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.field{display:grid;gap:6px;min-width:0}
+.field>label,.field>.lbl{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-family:var(--font-mono);font-size:14px;min-width:44px;min-height:36px;padding:6px 10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);cursor:pointer}
+.chip.wide{font-family:var(--font-body);font-size:14px}
+.chip:hover{border-color:var(--accent)}
+.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.chip:disabled{opacity:.35;cursor:not-allowed}
+.chip:focus-visible,.btn:focus-visible,.row:focus-visible,select:focus-visible,[data-a]:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.btn{font-family:var(--font-body);font-size:14px;font-weight:600;min-height:36px;padding:6px 14px;border-radius:8px;border:1px solid var(--accent);background:var(--accent-soft);color:var(--ink);cursor:pointer}
+.btn:hover{background:var(--accent);color:var(--on-accent)}
+.btns{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+select{font-family:var(--font-body);font-size:14px;min-height:36px;padding:6px 8px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);max-width:100%}
+.pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.pair .sel2{display:flex;gap:6px;flex-wrap:wrap}
+@media (max-width:520px){.pair{grid-template-columns:1fr}}
+
+.split{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:20px;align-items:center}
+@media (max-width:620px){.split{grid-template-columns:1fr}}
+.clock{width:100%;max-width:300px;margin:0 auto;display:block}
+.readout{display:grid;gap:10px;margin:0}
+.readout div{display:grid;gap:2px;min-width:0}
+.readout dt{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.readout dd{margin:0;font-family:var(--font-mono);font-size:16px;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.readout dd.big{font-size:22px;font-weight:500}
+.note{font-size:14px;color:var(--muted);margin:0;max-width:none}
+.msg{font-size:15px;margin:0;max-width:none;min-height:1.6em}
+.msg.ok{color:var(--good);font-weight:600}
+.msg.no{color:var(--bad);font-weight:600}
+.target{font-family:var(--font-display);font-weight:600;font-size:30px;line-height:1.1}
+
+.kbwrap{overflow-x:auto}
+.kb{display:block;width:100%;min-width:520px;height:auto}
+.fqwrap{overflow-x:auto}
+.fq{display:block;width:100%;min-width:520px;height:auto}
+
+.ck-ring{fill:none;stroke:var(--line);stroke-width:1.5}
+.ck-dot{fill:var(--surface);stroke:var(--key-edge);stroke-width:1.5}
+.ck-dot.on{fill:var(--accent);stroke:var(--accent)}
+.ck-root{fill:none;stroke:var(--accent);stroke-width:2.5}
+.ck-poly{fill:var(--accent);fill-opacity:.13;stroke:var(--accent);stroke-width:2;stroke-linejoin:round}
+.ck-name{fill:var(--ink);font-family:var(--font-body);font-size:13px;font-weight:600}
+.ck-name.off{fill:var(--muted);font-weight:400}
+.ck-num{fill:var(--muted);font-family:var(--font-mono);font-size:10px}
+.ck-center{fill:var(--ink);font-family:var(--font-display);font-size:24px;font-weight:700}
+
+.kw{fill:var(--key-white);stroke:var(--key-edge);stroke-width:1;cursor:pointer}
+.kb-black{fill:var(--key-black);stroke:var(--key-edge);stroke-width:1;cursor:pointer}
+.kw.on,.kb-black.on{fill:var(--accent);stroke:var(--accent)}
+.kw.from,.kb-black.from,.kw.sel,.kb-black.sel{fill:var(--accent-soft);stroke:var(--accent);stroke-width:2}
+.kl{font-family:var(--font-body);font-size:11px;font-weight:600;fill:var(--on-accent);pointer-events:none}
+.kl.f{fill:var(--ink)}
+.kl.c{fill:var(--key-label);font-weight:400}
+
+.fq-band{fill:var(--bg)}
+.fq-bandname{fill:var(--muted);font-family:var(--font-mono);font-size:10px}
+.fq-grid{stroke:var(--line);stroke-width:1}
+.fq-axis{fill:var(--muted);font-family:var(--font-mono);font-size:10px}
+.fq-base{stroke:var(--key-edge);stroke-width:1}
+.fq-fund{stroke:var(--accent);stroke-width:3;stroke-linecap:round}
+.fq-harm{stroke:var(--accent);stroke-width:1.5;stroke-opacity:.35;stroke-linecap:round}
+.fq-name{fill:var(--ink);font-family:var(--font-body);font-size:11px;font-weight:600}
+
+.rows{display:grid;gap:6px}
+.row{display:grid;grid-template-columns:56px 84px minmax(0,1fr) auto;gap:10px;align-items:center;text-align:left;width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:inherit;cursor:pointer}
+.row:hover{border-color:var(--accent)}
+.row .rn{font-family:var(--font-display);font-weight:700;font-size:18px}
+.row .nm{font-weight:600}
+.row .nt{font-family:var(--font-mono);font-size:14px;overflow-wrap:anywhere}
+.row .gp{font-family:var(--font-mono);font-size:12px;color:var(--muted)}
+@media (max-width:440px){.row{grid-template-columns:48px 64px minmax(0,1fr)}.row .gp{display:none}}
+
+.row{border-left-width:4px}
+.row[data-fn="t"],.prog .step[data-fn="t"]{border-left:4px solid var(--fn-t)}
+.row[data-fn="s"],.prog .step[data-fn="s"]{border-left:4px solid var(--fn-s)}
+.row[data-fn="d"],.prog .step[data-fn="d"]{border-left:4px solid var(--fn-d)}
+.row .nm small{display:block;font-weight:400;font-size:11px;color:var(--muted);letter-spacing:.02em}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13px;color:var(--muted)}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.chip.live{outline:2px solid var(--accent);outline-offset:2px}
+.part{display:grid;gap:6px}
+.part+.part{margin-top:4px}
+.prog{display:grid;gap:6px}
+.prog .step{display:grid;grid-template-columns:56px 84px minmax(0,1fr) auto;gap:10px;align-items:center;padding:8px 12px;border:1px solid var(--line);border-radius:8px;font-family:var(--font-mono);font-size:14px}
+.prog .step.live{border-color:var(--accent);background:var(--accent-soft)}
+.prog .rn{font-family:var(--font-display);font-weight:700;font-size:17px}
+@media (max-width:440px){.prog .step{grid-template-columns:48px 64px minmax(0,1fr)}.prog .step .mv{grid-column:1 / -1;color:var(--muted)}}
+
+.moves{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:12px 0 16px;font-family:var(--font-mono);font-size:14px}
+.moves .v{padding:6px 10px;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+.moves .a{color:var(--muted);font-size:12px;text-align:center;line-height:1.3}
+
+ol.steps{list-style:none;padding:0;counter-reset:s;display:grid;gap:14px}
+ol.steps li{counter-increment:s;display:grid;grid-template-columns:32px minmax(0,1fr);gap:10px;margin:0}
+ol.steps li::before{content:counter(s);font-family:var(--font-display);font-weight:700;font-size:20px;color:var(--accent);line-height:1.4}
+ol.steps b{display:block}
+
+footer{padding-block:24px 48px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
+</style>
+</head>
+<body>
+<header class="gutter"><div class="site-nav">
+  <a href="/" style="border:none"><img src="/assets/images/ashita.jpg" alt="Ashita AI"></a>
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/projects/">Projects</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/chords/">Chords</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/contact/">Contact</a></li>
+  </ul>
+</div></header>
+<nav class="top gutter" aria-label="Sections">
+  <div class="col">
+    <a href="#numbers">Notes as numbers</a>
+    <a href="#sound">Why it sounds good</a>
+    <a href="#freq">Frequencies</a>
+    <a href="#piano">On the piano</a>
+    <a href="#keys">Chords in a key</a>
+    <a href="#fx">Effects</a>
+    <a href="#practice">Practice</a>
+  </div>
+</nav>
+
+<main class="gutter">
+<div class="col">
+
+<header class="hero">
+  <div class="eyebrow">A piano field guide</div>
+  <h1>Chords by the Numbers</h1>
+  <p class="deck">Work chords out from a few rules instead of memorizing them. Check your answers against any chord chart.</p>
+  <div class="memo" aria-label="The only things to memorize">
+    <div><b>0 to 11</b><span>The 12 note numbers</span></div>
+    <div><b>4+3 · 3+4</b><span>Major gaps, then minor gaps</span></div>
+    <div><b>mod 12</b><span>Adding, with wraparound</span></div>
+  </div>
+</header>
+
+<section id="numbers">
+  <div class="eyebrow">Part 1</div>
+  <h2>Notes are numbers mod 12</h2>
+  <p>There are 12 notes before the pattern repeats an octave higher. Number them:</p>
+  <p class="m">C=0 C♯=1 D=2 E♭=3 E=4 F=5 F♯=6 G=7 A♭=8 A=9 B♭=10 B=11</p>
+  <p>After B you're back at C, so this is arithmetic mod 12, like hours on a clock. The distance between two notes (an interval) is subtraction mod 12.</p>
+
+  <h3>A chord type is a set of numbers</h3>
+  <p>Each chord type is a fixed set of distances measured from its root, the note it's named after. To build any chord, add the root's number to every element, mod 12. Moving a chord to a new root is called transposition. On the clock it's a rotation.</p>
+
+  <div class="tool" id="clockTool">
+    <div class="tool-head">
+      <span class="tool-title">Chord clock</span>
+      <div class="chips" role="group" aria-label="Circle order">
+        <button class="chip wide" type="button" id="ordChrom" aria-pressed="true">Chromatic</button>
+        <button class="chip wide" type="button" id="ordFifths" aria-pressed="false">Fifths</button>
+      </div>
+    </div>
+    <div class="field"><span class="lbl">Root</span><div class="chips" id="ckRoots" role="group" aria-label="Root"></div></div>
+    <div class="field"><span class="lbl">Chord type</span><div class="chips" id="ckTypes" role="group" aria-label="Chord type"></div></div>
+    <div class="split">
+      <div>
+        <svg class="clock" id="clock" viewBox="0 0 320 320" role="img" aria-label="Chord shape on the 12-note circle"></svg>
+        <div class="btns" style="justify-content:center;margin-top:8px">
+          <button class="btn" type="button" id="rotDown">Rotate −1</button>
+          <button class="btn" type="button" id="rotUp">Rotate +1</button>
+        </div>
+      </div>
+      <div class="readout">
+        <dl class="readout">
+          <div><dt>Notes</dt><dd class="big" id="ckNotes" aria-live="polite"></dd></div>
+          <div><dt>Formula + root, mod 12</dt><dd id="ckMath"></dd></div>
+          <div><dt>Gaps around the circle</dt><dd id="ckGaps"></dd></div>
+        </dl>
+        <p class="note" id="ckNote"></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll">
+    <table>
+      <thead><tr><th>Chord</th><th>Formula</th><th>From C</th></tr></thead>
+      <tbody>
+        <tr><td>Major</td><td class="num">{0, 4, 7}</td><td>C E G</td></tr>
+        <tr><td>Minor</td><td class="num">{0, 3, 7}</td><td>C E♭ G</td></tr>
+        <tr><td>Diminished</td><td class="num">{0, 3, 6}</td><td>C E♭ G♭</td></tr>
+        <tr><td>Augmented</td><td class="num">{0, 4, 8}</td><td>C E G♯</td></tr>
+        <tr><td>Suspended 2 (sus2)</td><td class="num">{0, 2, 7}</td><td>C D G</td></tr>
+        <tr><td>Suspended 4 (sus4)</td><td class="num">{0, 5, 7}</td><td>C F G</td></tr>
+        <tr><td>Dominant 7</td><td class="num">{0, 4, 7, 10}</td><td>C E G B♭</td></tr>
+        <tr><td>Major 7</td><td class="num">{0, 4, 7, 11}</td><td>C E G B</td></tr>
+        <tr><td>Minor 7</td><td class="num">{0, 3, 7, 10}</td><td>C E♭ G B♭</td></tr>
+        <tr><td>Minor 7♭5</td><td class="num">{0, 3, 6, 10}</td><td>C E♭ G♭ B♭</td></tr>
+        <tr><td>Diminished 7</td><td class="num">{0, 3, 6, 9}</td><td>C E♭ G♭ A</td></tr>
+        <tr><td>Add 9</td><td class="num">{0, 4, 7, 14}</td><td>C E G D</td></tr>
+        <tr><td>Dominant 9</td><td class="num">{0, 4, 7, 10, 14}</td><td>C E G B♭ D</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>The tool above has a few more (the power chord 5, the 6, maj9, m9, and two rarer sevenths). A 9th is the 2nd note of the scale placed an octave up, so its number is 14 and wraps to 2 on the clock. A chart of about 200 chords is really 19 shapes, each rotated 12 ways.</p>
+
+  <h3>What the shapes show</h3>
+  <ul>
+    <li><b>Major and minor are mirror images.</b> Around the circle, major's gaps are 4+3+5 and minor's are 3+4+5. Reflect one triangle and you get the other.</li>
+    <li><b>The gaps always add up to 12,</b> because one trip around the circle is 12 steps. Know all but one gap and the last is forced.</li>
+    <li><b>Symmetric shapes come in fewer versions.</b> Augmented (4+4+4) splits the circle evenly, so there are only 4 different augmented chords. Diminished 7 (3+3+3+3) has only 3. On a chord chart these show up as different names for the same notes.</li>
+  </ul>
+</section>
+
+<section id="sound">
+  <div class="eyebrow">Part 2</div>
+  <h2>Why these numbers sound good</h2>
+  <p>Each step up multiplies the frequency by 2<sup>1/12</sup>. Notes blend smoothly when their frequencies form simple whole-number ratios. A cent is 1/100 of a step, so the last column shows how far the equal-tempered version misses the pure ratio.</p>
+  <div class="scroll">
+    <table>
+      <thead><tr><th>Steps</th><th>2<sup>n/12</sup></th><th>Close to</th><th>Off by</th><th>Name</th></tr></thead>
+      <tbody>
+        <tr><td class="num">7</td><td class="num">1.498</td><td class="num">3/2</td><td class="num">−2.0¢</td><td>Perfect fifth</td></tr>
+        <tr><td class="num">4</td><td class="num">1.260</td><td class="num">5/4</td><td class="num">+13.7¢</td><td>Major third</td></tr>
+        <tr><td class="num">3</td><td class="num">1.189</td><td class="num">6/5</td><td class="num">−15.6¢</td><td>Minor third</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tool">
+    <span class="tool-title">Hear the difference</span>
+    <div class="field"><span class="lbl">Major third over C</span>
+      <div class="btns"><button class="btn" type="button" data-iv="400">Equal temperament: 2<sup>4/12</sup></button><button class="btn" type="button" data-ratio="1.25">Pure: 5/4</button></div>
+    </div>
+    <div class="field"><span class="lbl">Perfect fifth over C</span>
+      <div class="btns"><button class="btn" type="button" data-iv="700">Equal temperament: 2<sup>7/12</sup></button><button class="btn" type="button" data-ratio="1.5">Pure: 3/2</button></div>
+    </div>
+    <p class="note">Equal temperament is the tuning a piano is built around. Real pianos are stretched a little at the extremes, which this page ignores. The equal-tempered third beats about 10 times a second, heard as a buzz or shimmer. The fifth beats less than once a second, a slow swell. The pure versions sit still. Part 3 puts real Hz on all of this.</p>
+  </div>
+
+  <p>A major triad is roughly in the ratio <span class="m">4 : 5 : 6</span>, which is why it sounds stable.</p>
+  <p><b>Why 12 notes?</b> We want stacking fifths (×3/2) to land back near the start after some number of octaves (×2). That means approximating <span class="m">log₂(3/2) ≈ 0.58496</span> with a small fraction, and <span class="m">7/12 = 0.58333</span> is a very good one.</p>
+  <p><b>Circle of fifths.</b> Step by 7, mod 12: <span class="m">0, 7, 2, 9, 4, 11, 6, 1, 8, 3, 10, 5</span>, then back to 0. Because gcd(7, 12) = 1, you hit every note once. Keys next to each other on this circle share 6 of their 7 notes. Switch the chord clock above to Fifths to see it.</p>
+</section>
+
+<section id="freq">
+  <div class="eyebrow">Part 3</div>
+  <h2>Frequencies</h2>
+  <p>Frequency is how many times a note's sound wave repeats per second, in hertz (Hz). A4, the A above middle C, is defined as 440 Hz. Every other note follows from Part 2's one rule:</p>
+  <p class="m">f = 440 × 2<sup>(m − 69)/12</sup></p>
+  <p>Here m is the MIDI note number: middle C is 60 and A4 is 69. Two things fall out of m. <b>m mod 12</b> is this page's note number, and <b>m ÷ 12</b> (rounded down, minus 1) is the octave. Going up an octave adds 12 to m and doubles f, so every row below doubles from left to right.</p>
+
+  <div class="tool" id="fqTool">
+    <div class="tool-head"><span class="tool-title">Frequency chart</span></div>
+    <div class="field"><span class="lbl">Root</span><div class="chips" id="fqRoots" role="group" aria-label="Root"></div></div>
+    <div class="field"><span class="lbl">Chord type</span><div class="chips" id="fqTypes" role="group" aria-label="Chord type"></div></div>
+    <div class="field"><span class="lbl">Octave of the root</span><div class="chips" id="fqOct" role="group" aria-label="Octave of the root"></div></div>
+
+    <div class="field"><span class="lbl">Every note, in Hz. Shaded: notes in this chord. Solid: the exact notes played.</span>
+      <div class="scroll" style="margin:0"><table class="hz" id="fqTable"></table></div>
+    </div>
+
+    <div class="field"><span class="lbl">This chord, note by note</span>
+      <div class="scroll" style="margin:0"><table class="hz" id="fqChord"></table></div>
+      <p class="note" id="fqChordNote"></p>
+    </div>
+    <div class="btns">
+      <button class="btn" type="button" id="fqPlayET">Play equal temperament</button>
+      <button class="btn" type="button" id="fqPlayJI">Play pure ratios</button>
+    </div>
+
+    <div class="field">
+      <div class="tool-head">
+        <span class="lbl">Where it sits (log frequency)</span>
+        <div class="chips" role="group" aria-label="Strip options">
+          <button class="chip wide" type="button" id="fqHarm" aria-pressed="true">Harmonics</button>
+          <button class="chip wide" type="button" id="fqBands" aria-pressed="true">Mix bands</button>
+        </div>
+      </div>
+      <div class="fqwrap"><svg class="fq" id="fqSvg" viewBox="0 0 640 200" role="img" aria-label="Chord notes on a log frequency axis"></svg></div>
+      <dl class="readout">
+        <div><dt>Roughness between the notes (model units)</dt><dd id="fqRough" aria-live="polite"></dd></div>
+      </dl>
+      <p class="note">Tall lines are the notes. Short lines are their harmonics, the extra whole-number multiples every real instrument produces (2×, 3×, up to 7×). Darker lines are harmonics two notes share, which is the fifth's whole trick. Roughness comes from the Plomp–Levelt model with 6 harmonics per note. Lower is smoother. Move the root's octave down and watch it climb: a third that sounds clean at C4 turns muddy at C2, because the harmonics land inside the same narrow band of hearing. The bands (sub, bass, low mid, and so on) are rules of thumb from mixing.</p>
+    </div>
+  </div>
+</section>
+
+<section id="piano">
+  <div class="eyebrow">Part 4</div>
+  <h2>On the piano</h2>
+  <h3>Count every key, black ones included</h3>
+  <p>One step is one key to the next, black or white. Major chord: root, count up 4 keys, then 3 more. C major: C → (C♯ D D♯) E → (F F♯) G. Counting only white keys will throw you off, because the white-key gaps aren't even.</p>
+
+  <div class="tool" id="kbTool">
+    <div class="tool-head">
+      <span class="tool-title">Keyboard</span>
+      <button class="btn" type="button" id="kbPlay">Play chord</button>
+    </div>
+    <div class="field"><span class="lbl">Root</span><div class="chips" id="kbRoots" role="group" aria-label="Root"></div></div>
+    <div class="field"><span class="lbl">Chord type</span><div class="chips" id="kbTypes" role="group" aria-label="Chord type"></div></div>
+    <div class="field"><span class="lbl">Inversion</span><div class="chips" id="kbInv" role="group" aria-label="Inversion"></div></div>
+    <div class="field"><label for="kbBass">Bass note (slash chord)</label><select id="kbBass" aria-label="Bass note"></select></div>
+    <div class="kbwrap"><svg class="kb" id="kb" viewBox="0 0 632 136" role="group" aria-label="Three-octave keyboard with chord notes highlighted"></svg></div>
+    <p class="note">Tap any key to hear it. The keyboard starts at middle C. A slash chord keeps the chord and changes only the lowest note: B♭/D is a B♭ chord with D underneath. Pick the bass note above to try it.</p>
+    <dl class="readout">
+      <div><dt>Notes, bottom to top</dt><dd class="big" id="kbNotes" aria-live="polite"></dd></div>
+      <div><dt>Key gaps</dt><dd id="kbGaps"></dd></div>
+      <div><dt>Key colors</dt><dd id="kbColors"></dd></div>
+    </dl>
+  </div>
+
+  <h3>Why the keyboard looks like it does</h3>
+  <p>The 7 white keys are the C major scale <span class="m">{0, 2, 4, 5, 7, 9, 11}</span>. The 5 black keys are the rest, <span class="m">{1, 3, 6, 8, 10}</span>. Start at F and step up by fifths: F C G D A E B, 7 notes in 6 steps, and they are exactly the white keys. Take 5 more steps: F♯ C♯ G♯ D♯ A♯, exactly the black keys. The keyboard is the circle of fifths cut into a run of 7 and a run of 5.</p>
+
+  <h3>Same formula, different key colors</h3>
+  <p>On the clock every major chord is the same triangle, but under your hand they feel different. Grouped by key colors, bottom to top (W = white, B = black):</p>
+  <div class="scroll">
+    <table>
+      <thead><tr><th>Colors</th><th>Major</th><th>Minor</th></tr></thead>
+      <tbody>
+        <tr><td class="num">W W W</td><td>C, F, G</td><td>Dm, Em, Am</td></tr>
+        <tr><td class="num">W B W</td><td>D, E, A</td><td>Cm, Fm, Gm</td></tr>
+        <tr><td class="num">B W B</td><td>D♭, E♭, A♭</td><td>C♯m, F♯m, G♯m</td></tr>
+        <tr><td class="num">B B B</td><td>G♭</td><td>E♭m</td></tr>
+        <tr><td class="num">W B B</td><td>B</td><td><span class="none">none</span></td></tr>
+        <tr><td class="num">B W W</td><td>B♭</td><td><span class="none">none</span></td></tr>
+        <tr><td class="num">W W B</td><td><span class="none">none</span></td><td>Bm</td></tr>
+        <tr><td class="num">B B W</td><td><span class="none">none</span></td><td>B♭m</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Both columns follow a 3-3-3-1-1-1 pattern, so there are 6 hand feels to learn per chord type, not 12. The odd majors are G♭, B and B♭. The odd minors are E♭m, Bm and B♭m.</p>
+
+  <h3>Inversions are cyclic shifts</h3>
+  <p>Moving the bottom note up an octave gives an inversion: the same notes in a different order on the keyboard. The gaps around the circle were 4, 3, 5, and each inversion reads that cycle from a different starting point:</p>
+  <ul>
+    <li>Root position (C E G): gaps <span class="m">4, 3</span></li>
+    <li>1st inversion (E G C): gaps <span class="m">3, 5</span></li>
+    <li>2nd inversion (G C E): gaps <span class="m">5, 4</span></li>
+  </ul>
+  <p>Choosing the nearest inversion keeps your hand still. Here's C → F → G → C, with how many keys each finger moves, bottom finger first:</p>
+  <div class="moves" aria-label="Voice leading example">
+    <span class="v">C E G</span><span class="a">0 1 2</span>
+    <span class="v">C F A</span><span class="a">1 3 2</span>
+    <span class="v">B D G</span><span class="a">1 2 0</span>
+    <span class="v">C E G</span>
+  </div>
+  <p>The biggest move is F → D, 3 keys. You could play G as D G B instead, where every finger moves exactly 2, but B D G sets up the return to C with almost no motion. Try any pair of chords:</p>
+
+  <div class="tool" id="vfTool">
+    <span class="tool-title">Voice-leading finder</span>
+    <div class="pair">
+      <div class="field"><span class="lbl">From</span>
+        <div class="sel2"><select id="vfFR" aria-label="From root"></select><select id="vfFT" aria-label="From chord type"></select></div>
+      </div>
+      <div class="field"><span class="lbl">To</span>
+        <div class="sel2"><select id="vfTR" aria-label="To root"></select><select id="vfTT" aria-label="To chord type"></select></div>
+      </div>
+    </div>
+    <div class="kbwrap"><svg class="kb" id="vkb" viewBox="0 0 632 136" role="group" aria-label="Keyboard showing the from chord and the nearest voicing of the to chord"></svg></div>
+    <dl class="readout">
+      <div><dt>From</dt><dd id="vfFrom"></dd></div>
+      <div><dt>To, nearest voicing</dt><dd class="big" id="vfTo" aria-live="polite"></dd></div>
+      <div><dt>How far each finger moves, bottom first</dt><dd id="vfMoves"></dd></div>
+      <div><dt>For comparison, root position</dt><dd id="vfRoot"></dd></div>
+    </dl>
+    <div class="btns"><button class="btn" type="button" id="vfPlay">Play both</button></div>
+    <p class="note">Outlined keys are the first chord. Solid keys are the second. A key that is in both stays solid.</p>
+  </div>
+</section>
+
+<section id="keys">
+  <div class="eyebrow">Part 5</div>
+  <h2>Chords in a key, worked out</h2>
+  <p>A major scale is <span class="m">{0, 2, 4, 5, 7, 9, 11}</span> from its key note: steps of 2, 2, 1, 2, 2, 2, 1. To get a chord on each scale note, stack every other note of the scale, then check the gaps. Two gaps of 4 then 3 make major, 3 then 4 make minor, 3 then 3 make diminished.</p>
+  <p>That's where major, minor, minor, major, major, minor, diminished comes from. Minor keys work the same way on a different scale. Natural minor is the major scale started on its 6th note (steps 2, 1, 2, 2, 1, 2, 2). Harmonic minor raises the 7th note by one step, which turns the v chord major and gives the key a strong pull home. Pick a mode and a key, then tap a chord to load it onto the keyboard.</p>
+
+  <div class="tool">
+    <span class="tool-title">Key explorer</span>
+    <div class="field"><span class="lbl">Mode</span><div class="chips" id="kyModes" role="group" aria-label="Mode"></div></div>
+    <div class="field"><span class="lbl">Key</span><div class="chips" id="kyRoots" role="group" aria-label="Key"></div></div>
+    <div class="field"><span class="lbl">Chords</span><div class="chips" id="kySize" role="group" aria-label="Triads or sevenths"></div></div>
+    <dl class="readout"><div><dt>Scale</dt><dd id="kyScale"></dd></div></dl>
+    <div class="legend" aria-label="What the colors mean">
+      <span><i style="background:var(--fn-t)"></i>Home: rest here</span>
+      <span><i style="background:var(--fn-s)"></i>Step away: leave home</span>
+      <span><i style="background:var(--fn-d)"></i>Pull home: tension that wants to resolve</span>
+    </div>
+    <div class="rows" id="kyRows"></div>
+
+    <div class="field"><span class="lbl">Progression</span>
+      <div class="btns"><select id="pgSel" aria-label="Progression"></select><button class="btn" type="button" id="pgPlay">Play with smooth voicings</button></div>
+    </div>
+    <div class="prog" id="pgOut" aria-live="polite"></div>
+    <p class="note">Each chord is voiced as the inversion nearest the one before, so your hand barely moves. The number on the right is the total keys moved.</p>
+  </div>
+</section>
+
+<section id="fx">
+  <div class="eyebrow">Part 6</div>
+  <h2>Effects: what they do to the sound</h2>
+  <p>Every effect does one of five things to a sound. It removes frequencies, adds frequencies, adds time, adds movement, or squeezes the volume. Most records lean on all five, so this part has a grid of the common ones and a demo you can hear and see.</p>
+
+  <div class="scroll"><table class="wrap">
+    <thead><tr><th>Effect</th><th>What it does</th><th>Frequencies</th><th>Examples</th></tr></thead>
+    <tbody>
+      <tr><td>EQ and filters</td><td>Turns bands up or down. A low cut removes everything under a set frequency, a high cut removes everything above.</td><td>Adds nothing. Changes the balance of what is already there.</td><td>Ableton EQ Eight, FabFilter Pro-Q, iZotope Neutron, a Pultec-style EQ.</td></tr>
+      <tr><td>Compressor</td><td>Turns down the loud parts, so the quiet parts (breath, room, tails) come up relatively.</td><td>Adds nothing on its own. The tube and optical ones (LA-2A) add a faint warmth.</td><td>LA-2A style optical, 1176 style FET, Ableton Compressor.</td></tr>
+      <tr><td>Limiter</td><td>A hard ceiling on loudness. It lets you make the whole song louder without peaks going over.</td><td>Adds nothing when gentle. Pushed hard, it distorts, and the distortion is new harmonics.</td><td>iZotope Ozone Maximizer, FabFilter Pro-L. Set the ceiling around −1 dB.</td></tr>
+      <tr><td>Saturation, tape, tube</td><td>Rounds off the peaks of the wave. Soft rounding sounds warm. Hard rounding sounds fuzzy.</td><td><strong>Adds harmonics</strong>: copies of each note at 2×, 3×, 4× its frequency. Lopsided rounding adds the even ones (2×, 4×), even rounding adds the odd ones (3×, 5×).</td><td>Soundtoys Decapitator, Output Thermal, tape emulations, tube amp simulators.</td></tr>
+      <tr><td>Delay and echo</td><td>Repeats the sound later. Tape echoes get darker with every repeat. Very short delays (under about 30 ms) blur into a hollow, comb-like tone.</td><td>Adds no new pitches. It repeats the same ones. Short delays cut a row of notches into the spectrum.</td><td>Ableton Echo, tape echo emulations.</td></tr>
+      <tr><td>Reverb</td><td>Adds a tail, so the sound seems to sit in a room. It smears the end of every note into the next.</td><td>Adds no new pitches, but fills the gaps with a wash. Mostly mids and highs. Too much low end in the tail turns to mud.</td><td>Ableton Reverb, plate and hall reverbs.</td></tr>
+      <tr><td>Pan and tremolo</td><td>Moves the sound left and right, or pulses its volume.</td><td>Slow movement adds nothing. A pulse faster than about 20 times a second adds new frequencies on both sides of each note.</td><td>Output Movement, an auto-pan, a tremolo pedal or plugin.</td></tr>
+      <tr><td>Gate</td><td>Mutes the sound when it falls under a level. It removes noise, bleed and long tails between notes.</td><td>Removes what sits under the threshold, in every band at once.</td><td>Ableton Gate, any noise gate.</td></tr>
+      
+    </tbody>
+  </table></div>
+  <p class="note">The examples are well-known plugins and devices of each type. This says what each type does, not how any particular setting is dialled in.</p>
+
+  <h3>Where the problems live</h3>
+  <p>Most mix complaints are a complaint about one frequency band. This is the map.</p>
+  <div class="scroll"><table class="wrap">
+    <thead><tr><th>Band</th><th>Sounds like</th><th>Too much sounds like</th><th>Usual fix</th></tr></thead>
+    <tbody>
+      <tr><td>20–60 Hz</td><td>Sub. You feel it more than hear it.</td><td>Boom, speaker rattle, a mix that sounds quiet.</td><td>Low cut on everything except the bass.</td></tr>
+      <tr><td>60–250 Hz</td><td>Bass and warmth. The weight of the piano's left hand.</td><td>Thump, a thick mix.</td><td>EQ cut, or a sidechain duck on the pad.</td></tr>
+      <tr><td>250–500 Hz</td><td>Low mids. Body.</td><td>Mud, a boxy sound.</td><td>Small EQ cut on pads and reverb tails.</td></tr>
+      <tr><td>500 Hz–2 kHz</td><td>Mids. Where the voice and the piano melody sit.</td><td>Honk, nasal tone.</td><td>EQ cut, or turn the loud track down.</td></tr>
+      <tr><td>2–5 kHz</td><td>Presence. The edge of a voice or a pluck.</td><td>Harsh, tiring, ear fatigue.</td><td>EQ cut, or a softer saturator.</td></tr>
+      <tr><td>5–10 kHz</td><td>Brightness. Cymbals, breath, sibilance.</td><td>Hiss, a sharp "sss".</td><td>High shelf cut, a de-esser, or a high cut.</td></tr>
+      <tr><td>10 kHz and up</td><td>Air.</td><td>Fizz, tape hiss.</td><td>High cut on noisy tracks.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Hear it, and see it</h3>
+  <p>Pick an effect and press Play. The graph shows frequency from left to right and loudness up and down. The faint line is the plain sound. The filled shape is the sound after the effect. The readout names the frequencies the effect added or removed, as measured while it plays.</p>
+
+  <div class="tool" id="fxTool">
+    <span class="tool-title">Effect lab</span>
+    <div class="pair">
+      <div class="field"><label for="fxRoot">Chord root</label><select id="fxRoot"></select></div>
+      <div class="field"><label for="fxType">Chord type</label><select id="fxType"></select></div>
+    </div>
+    <div class="field"><span class="lbl">Effect</span><div class="chips" id="fxChips" role="group" aria-label="Effect"></div></div>
+    <div class="field"><label for="fxAmt">Amount: <span id="fxAmtV"></span></label><input class="fxrange" id="fxAmt" type="range" min="0" max="100" value="60"></div>
+    <div class="btns"><button class="btn" type="button" id="fxPlay">Play</button><span class="note" id="fxState"></span></div>
+    <canvas class="fxcv" id="fxCv" role="img" aria-label="Frequency graph of the sound before and after the effect"></canvas>
+    <canvas class="fxcv" id="fxLv" hidden style="height:130px" role="img" aria-label="Loudness over the last few seconds"></canvas>
+    <p class="note" id="fxLvKey" hidden></p>
+    <dl class="readout">
+      <div><dt>Chord</dt><dd id="fxChord"></dd></div>
+      <div><dt>What it does</dt><dd id="fxWhat" style="font-family:var(--font-body);font-size:15px"></dd></div>
+      <div><dt>Added</dt><dd id="fxAdd"></dd></div>
+      <div><dt>Removed</dt><dd id="fxCut"></dd></div>
+      <div id="fxMeasRow" hidden><dt>Measured</dt><dd id="fxMeas" style="font-family:var(--font-body);font-size:15px"></dd></div>
+    </dl>
+  </div>
+</section>
+
+<section id="practice">
+  <div class="eyebrow">Part 7</div>
+  <h2>How to practice without rote memory</h2>
+
+  <div class="tool" id="earTool">
+    <div class="tool-head">
+      <span class="tool-title">Ear training</span>
+      <div class="chips" id="earLevel" role="group" aria-label="Difficulty"></div>
+    </div>
+    <div class="btns"><button class="btn" type="button" id="earPlay">Play the chord</button></div>
+    <div class="field"><span class="lbl">What kind of chord is it?</span><div class="chips" id="earAns" role="group" aria-label="Answers"></div></div>
+    <p class="msg" id="earMsg" aria-live="polite">Press Play, then pick an answer. Close your eyes if you can.</p>
+    <div class="btns">
+      <button class="btn" type="button" id="earMine">Hear my answer</button>
+      <button class="btn" type="button" id="earNext">Next chord</button>
+      <span class="note" id="earScore"></span>
+    </div>
+    <p class="note">The root changes every time. Listen to the colour, not the pitch.</p>
+  </div>
+
+  <div class="tool" id="qzTool">
+    <div class="tool-head">
+      <span class="tool-title">Build it, then check</span>
+      <div class="chips" id="qzLevel" role="group" aria-label="Difficulty"></div>
+    </div>
+    <div><span class="lbl muted" style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase">Spell this chord</span><div class="target" id="qzTarget"></div></div>
+    <div class="kbwrap"><svg class="kb" id="qkb" viewBox="0 0 632 136" role="group" aria-label="Keyboard: tap the keys of the chord"></svg></div>
+    <p class="msg" id="qzMsg" aria-live="polite"></p>
+    <div class="btns">
+      <button class="btn" type="button" id="qzCheck">Check</button>
+      <button class="btn" type="button" id="qzClear">Clear</button>
+      <button class="btn" type="button" id="qzShow">Show answer</button>
+      <button class="btn" type="button" id="qzNext">Next chord</button>
+      <span class="note" id="qzScore"></span>
+    </div>
+    <p class="note">Any octave counts. Only the note names matter.</p>
+  </div>
+
+  <ol class="steps">
+    <li><div><b>Learn the color families.</b> Play C, F and G major (all white), then lower each middle note by one key to get the minors. Then do D, E and A (white, black, white) the same way. Most music lives in these two families.</div></li>
+    <li><div><b>Work out a key's chords, then play them.</b> Use the stacking rule on a new scale, major or minor. It's the same arithmetic with different numbers.</div></li>
+    <li><div><b>Connect chords with the nearest inversion.</b> For each change, find the voicing that moves your fingers least, then check it in the finder. That's a small puzzle, which is easier to remember than a fingering chart.</div></li>
+    <li><div><b>Build first, check second.</b> Work out a chord yourself, tap it in above, then confirm it against a chord chart.</div></li>
+  </ol>
+</section>
+
+</div>
+</main>
+<footer class="site-foot gutter"><div class="col">
+  <p>&copy; 2026 Ashita AI</p>
+  <p><a href="https://github.com/ashita-ai" target="_blank" rel="noopener">GitHub</a> · <a href="/contact/">Contact</a></p>
+</div></footer>
+
+<footer class="gutter">
+  <div class="col">
+    <p>Chord tones are spelled by letter, so C minor is C E♭ G, not C D♯ G. Where that would need a double sharp or double flat, the page shows the plain piano name instead. C♯ and D♭ are the same key, and so on. Hz values use equal temperament with A4 = 440 Hz. The pure ratios are 5-limit just intonation measured up from the bottom note.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const LET=['C','D','E','F','G','A','B'];
+  const NAT=[0,2,4,5,7,9,11];
+  const ROOTS=[['C',0],['D♭',1],['D',1],['E♭',2],['E',2],['F',3],['F♯',3],['G',4],['A♭',5],['A',5],['B♭',6],['B',6]];
+  const MIN_ROOTS=[['C',0],['C♯',0],['D',1],['E♭',2],['E',2],['F',3],['F♯',3],['G',4],['G♯',4],['A',5],['B♭',6],['B',6]];
+  const PLAIN=ROOTS.map(r=>r[0]);
+  const ACC={'-1':'♭','0':'','1':'♯'};
+  const mod=(n,m)=>((n%m)+m)%m;
+  const BLACK=new Set([1,3,6,8,10]);
+
+  const TYPES=[
+    {id:'maj',name:'Major',sfx:'',iv:[0,4,7],dg:[0,2,4]},
+    {id:'min',name:'Minor',sfx:'m',iv:[0,3,7],dg:[0,2,4]},
+    {id:'dim',name:'Dim',sfx:'°',iv:[0,3,6],dg:[0,2,4]},
+    {id:'aug',name:'Aug',sfx:'+',iv:[0,4,8],dg:[0,2,4]},
+    {id:'sus2',name:'sus2',sfx:'sus2',iv:[0,2,7],dg:[0,1,4]},
+    {id:'sus4',name:'sus4',sfx:'sus4',iv:[0,5,7],dg:[0,3,4]},
+    {id:'5',name:'5',sfx:'5',iv:[0,7],dg:[0,4]},
+    {id:'6',name:'6',sfx:'6',iv:[0,4,7,9],dg:[0,2,4,5]},
+    {id:'7',name:'7',sfx:'7',iv:[0,4,7,10],dg:[0,2,4,6]},
+    {id:'maj7',name:'maj7',sfx:'maj7',iv:[0,4,7,11],dg:[0,2,4,6]},
+    {id:'m7',name:'m7',sfx:'m7',iv:[0,3,7,10],dg:[0,2,4,6]},
+    {id:'m7b5',name:'m7♭5',sfx:'m7♭5',iv:[0,3,6,10],dg:[0,2,4,6]},
+    {id:'dim7',name:'dim7',sfx:'°7',iv:[0,3,6,9],dg:[0,2,4,6]},
+    {id:'mmaj7',name:'m(maj7)',sfx:'m(maj7)',iv:[0,3,7,11],dg:[0,2,4,6]},
+    {id:'maj7s5',name:'maj7♯5',sfx:'maj7♯5',iv:[0,4,8,11],dg:[0,2,4,6]},
+    {id:'add9',name:'add9',sfx:'add9',iv:[0,4,7,14],dg:[0,2,4,8]},
+    {id:'madd9',name:'m add9',sfx:'madd9',iv:[0,3,7,14],dg:[0,2,4,8]},
+    {id:'9',name:'9',sfx:'9',iv:[0,4,7,10,14],dg:[0,2,4,6,8]},
+    {id:'maj9',name:'maj9',sfx:'maj9',iv:[0,4,7,11,14],dg:[0,2,4,6,8]},
+    {id:'m9',name:'m9',sfx:'m9',iv:[0,3,7,10,14],dg:[0,2,4,6,8]}
+  ];
+  const TI={}; TYPES.forEach((t,i)=>{TI[t.id]=i;});
+  const NSFX={maj:'',min:'',dim:'°',aug:'+','7':'7',maj7:'maj7',m7:'7',m7b5:'ø7',dim7:'°7',mmaj7:'maj7',maj7s5:'+maj7'};
+  const QUAL=new Map();
+  Object.keys(NSFX).forEach(id=>QUAL.set(TYPES[TI[id]].iv.join(','),TI[id]));
+
+  function spell(letter,pitch){
+    const L=mod(letter,7);
+    let d=mod(pitch-NAT[L],12); if(d>6) d-=12;
+    if(Math.abs(d)>1) return PLAIN[mod(pitch,12)];
+    return LET[L]+ACC[String(d)];
+  }
+  function chordSpelling(rootPitch,rootLetter,t){
+    return t.iv.map((v,i)=>spell(rootLetter+t.dg[i],rootPitch+v));
+  }
+  const setStr=a=>'{'+a.join(', ')+'}';
+  const hzm=m=>440*Math.pow(2,(m-69)/12);
+
+  function makeChips(el,items,onPick,cls){
+    el.innerHTML='';
+    return items.map((label,i)=>{
+      const b=document.createElement('button');
+      b.type='button'; b.className='chip'+(cls?' '+cls:''); b.textContent=label;
+      b.setAttribute('aria-pressed','false');
+      b.addEventListener('click',()=>onPick(i));
+      el.appendChild(b); return b;
+    });
+  }
+  const press=(btns,i)=>btns.forEach((b,j)=>b.setAttribute('aria-pressed',String(i===j)));
+  function fillSelect(el,items,value){
+    el.innerHTML='';
+    items.forEach((label,i)=>{const o=document.createElement('option');o.value=String(i);o.textContent=label;el.appendChild(o);});
+    el.value=String(value);
+  }
+
+  /* ---------- audio ---------- */
+  let ac=null;
+  function audio(){
+    try{
+      if(!ac){const A=window.AudioContext||window.webkitAudioContext; if(!A) return null; ac=new A();}
+      if(ac.state==='suspended') ac.resume();
+      return ac;
+    }catch(e){return null;}
+  }
+  function tone(freq,start,dur,opt){
+    const a=audio(); if(!a) return;
+    opt=opt||{};
+    const o=a.createOscillator(), g=a.createGain();
+    o.type=opt.wave||'triangle'; o.frequency.value=freq;
+    const v=opt.vol||0.1;
+    g.gain.setValueAtTime(0,start);
+    g.gain.linearRampToValueAtTime(v,start+0.02);
+    g.gain.setValueAtTime(v,start+Math.max(0.03,dur-0.2));
+    g.gain.linearRampToValueAtTime(0,start+dur);
+    let node=o;
+    if(opt.lp){const f=a.createBiquadFilter(); f.type='lowpass'; f.frequency.value=opt.lp; o.connect(f); node=f;}
+    node.connect(g); g.connect(a.destination);
+    o.start(start); o.stop(start+dur+0.05);
+  }
+  const C4=hzm(60);
+  const keyHz=a=>hzm(60+a);
+  function playOne(a){const c=audio(); if(c) tone(keyHz(a),c.currentTime+0.02,0.9,{vol:0.16});}
+  function playChordHz(freqs,t0,dur){const v=0.22/Math.max(1,freqs.length); freqs.forEach(f=>tone(f,t0,dur,{vol:v}));}
+
+  /* ---------- keyboard drawing (shared) ---------- */
+  const NKEYS=36;
+  /* marks: Map(key index -> {name, cls}); cls is 'on', 'from' or 'sel' */
+  function drawKb(svg,marks,onKey,label){
+    const had=document.activeElement&&svg.contains(document.activeElement)?document.activeElement.getAttribute('data-a'):null;
+    const W=30,H=132,BW=18,BH=82,X0=1,Y0=2;
+    let whites='',blacks='';
+    for(let a=0;a<NKEYS;a++){
+      const pc=a%12, oct=Math.floor(a/12), mk=marks.get(a);
+      const cls=mk?' '+mk.cls:'';
+      const aria=PLAIN[pc]+(4+oct)+(mk?', in the chord':'');
+      const attrs=' data-a="'+a+'" role="button" tabindex="0" aria-label="'+aria+'"';
+      const tcls='kl'+(mk&&mk.cls!=='on'?' f':'');
+      if(!BLACK.has(pc)){
+        const wi=oct*7+NAT.indexOf(pc), x=X0+wi*W;
+        whites+='<rect class="kw'+cls+'"'+attrs+' x="'+x+'" y="'+Y0+'" width="'+W+'" height="'+H+'" rx="3"/>';
+        if(mk) whites+='<text class="'+tcls+'" x="'+(x+W/2)+'" y="'+(Y0+H-12)+'" text-anchor="middle">'+mk.name+'</text>';
+        else if(pc===0) whites+='<text class="kl c" x="'+(x+W/2)+'" y="'+(Y0+H-12)+'" text-anchor="middle">C'+(4+oct)+'</text>';
+      } else {
+        const wi=oct*7+NAT.indexOf(pc-1), x=X0+(wi+1)*W-BW/2;
+        blacks+='<rect class="kb-black'+cls+'"'+attrs+' x="'+x+'" y="'+Y0+'" width="'+BW+'" height="'+BH+'" rx="2"/>';
+        if(mk) blacks+='<text class="'+tcls+'" x="'+(x+BW/2)+'" y="'+(Y0+BH-10)+'" text-anchor="middle" style="font-size:9px">'+mk.name+'</text>';
+      }
+    }
+    svg.innerHTML=whites+blacks;
+    if(label) svg.setAttribute('aria-label',label);
+    if(had!==null){const el=svg.querySelector('[data-a="'+had+'"]'); if(el) el.focus();}
+    if(!svg._wired){
+      svg._wired=true;
+      svg.addEventListener('click',e=>{const t=e.target.closest('[data-a]'); if(t&&svg._onKey) svg._onKey(+t.getAttribute('data-a'));});
+      svg.addEventListener('keydown',e=>{
+        if(e.key!=='Enter'&&e.key!==' ') return;
+        const t=e.target.closest('[data-a]'); if(!t) return;
+        e.preventDefault(); if(svg._onKey) svg._onKey(+t.getAttribute('data-a'));
+      });
+    }
+    svg._onKey=onKey;
+  }
+
+  /* ---------- voice leading ---------- */
+  function combos(n,k){const out=[];(function r(s,cur){if(cur.length===k){out.push(cur.slice());return;}for(let i=s;i<n;i++){cur.push(i);r(i+1,cur);cur.pop();}})(0,[]);return out;}
+  /* a, b: sorted key numbers. Pairs voices in order, dropping extras from the longer chord. */
+  function matchVoices(a,b){
+    const k=Math.min(a.length,b.length);
+    const ca=a.length>k?combos(a.length,k):[a.map((_,i)=>i)];
+    const cb=b.length>k?combos(b.length,k):[b.map((_,i)=>i)];
+    let best=null;
+    ca.forEach(ia=>cb.forEach(ib=>{
+      let c=0; for(let i=0;i<k;i++) c+=Math.abs(a[ia[i]]-b[ib[i]]);
+      if(!best||c<best.cost) best={cost:c,ia,ib};
+    }));
+    best.moves=best.ia.map((x,i)=>b[best.ib[i]]-a[x]);
+    return best;
+  }
+  /* closed-position voicings of a chord given as pitch classes in chord order (root first) */
+  function candidates(pcs){
+    const out=[];
+    pcs.forEach((_,r)=>{
+      for(let o=-12;o<=24;o+=12){
+        const notes=[pcs[r]+o];
+        for(let j=1;j<pcs.length;j++){
+          const p=pcs[(r+j)%pcs.length]; let n=notes[notes.length-1]+1;
+          while(mod(n,12)!==p) n++;
+          notes.push(n);
+        }
+        if(notes[0]>=0&&notes[notes.length-1]<NKEYS) out.push({notes,inv:r});
+      }
+    });
+    return out;
+  }
+  function nearest(prev,pcs){
+    let best=null;
+    candidates(pcs).forEach(c=>{
+      const m=matchVoices(prev,c.notes);
+      if(!best||m.cost<best.m.cost) best={c,m};
+    });
+    return best;
+  }
+  function rootVoicing(pcs){return candidates(pcs).find(c=>c.inv===0&&c.notes[0]>=0&&c.notes[0]<12);}
+  const INVN=['root position','1st inversion','2nd inversion','3rd inversion','4th inversion'];
+
+  /* ---------- clock ---------- */
+  const ck={root:0,type:0,order:'chrom'};
+  const clockEl=document.getElementById('clock');
+  const ckRootBtns=makeChips(document.getElementById('ckRoots'),PLAIN,i=>{ck.root=i;renderClock();});
+  const ckTypeBtns=makeChips(document.getElementById('ckTypes'),TYPES.map(t=>t.name),i=>{ck.type=i;renderClock();});
+  const ordC=document.getElementById('ordChrom'), ordF=document.getElementById('ordFifths');
+  ordC.addEventListener('click',()=>{ck.order='chrom';renderClock();});
+  ordF.addEventListener('click',()=>{ck.order='fifths';renderClock();});
+  document.getElementById('rotUp').addEventListener('click',()=>{ck.root=mod(ck.root+1,12);renderClock();});
+  document.getElementById('rotDown').addEventListener('click',()=>{ck.root=mod(ck.root-1,12);renderClock();});
+
+  function renderClock(){
+    press(ckRootBtns,ck.root); press(ckTypeBtns,ck.type);
+    ordC.setAttribute('aria-pressed',String(ck.order==='chrom'));
+    ordF.setAttribute('aria-pressed',String(ck.order==='fifths'));
+    const t=TYPES[ck.type];
+    const raw=t.iv.map(v=>v+ck.root);
+    const pcs=Array.from(new Set(raw.map(v=>mod(v,12))));
+    const on=new Set(pcs);
+    const cx=160,cy=160,R=112;
+    const posOf=p=>ck.order==='fifths'?mod(p*7,12):p;
+    const pitchAt=k=>ck.order==='fifths'?mod(k*7,12):k;
+    const pt=(k,r)=>{const a=(k*30-90)*Math.PI/180;return [cx+r*Math.cos(a),cy+r*Math.sin(a)];};
+    let s='<circle class="ck-ring" cx="160" cy="160" r="'+R+'"/>';
+    const ordered=pcs.slice().sort((a,b)=>posOf(a)-posOf(b));
+    s+='<polygon class="ck-poly" points="'+ordered.map(p=>pt(posOf(p),R).map(n=>n.toFixed(1)).join(',')).join(' ')+'"/>';
+    for(let k=0;k<12;k++){
+      const p=pitchAt(k);
+      const [x,y]=pt(k,R), [nx,ny]=pt(k,R+28), [ix,iy]=pt(k,R-24);
+      const isOn=on.has(p);
+      if(p===ck.root) s+='<circle class="ck-root" cx="'+x.toFixed(1)+'" cy="'+y.toFixed(1)+'" r="13"/>';
+      s+='<circle class="ck-dot'+(isOn?' on':'')+'" cx="'+x.toFixed(1)+'" cy="'+y.toFixed(1)+'" r="7"/>';
+      s+='<text class="ck-name'+(isOn?'':' off')+'" x="'+nx.toFixed(1)+'" y="'+ny.toFixed(1)+'" text-anchor="middle" dominant-baseline="central">'+PLAIN[p]+'</text>';
+      s+='<text class="ck-num" x="'+ix.toFixed(1)+'" y="'+iy.toFixed(1)+'" text-anchor="middle" dominant-baseline="central">'+p+'</text>';
+    }
+    s+='<text class="ck-center" x="160" y="160" text-anchor="middle" dominant-baseline="central">'+PLAIN[ck.root]+t.sfx+'</text>';
+    clockEl.innerHTML=s;
+
+    const spelled=chordSpelling(ck.root,ROOTS[ck.root][1],t).join(' ');
+    clockEl.setAttribute('aria-label','Chord shape on the 12-note circle: '+PLAIN[ck.root]+t.sfx+', notes '+spelled);
+    document.getElementById('ckNotes').textContent=spelled;
+    const wrapped=raw.some(v=>v>11);
+    document.getElementById('ckMath').textContent=setStr(t.iv)+' + '+ck.root+' = '+setStr(raw)+(wrapped?' → '+setStr(raw.map(v=>mod(v,12))):'');
+    const rel=Array.from(new Set(t.iv.map(v=>v%12))).sort((a,b)=>a-b);
+    const gaps=rel.map((v,i)=>(i<rel.length-1?rel[i+1]:12)-v);
+    document.getElementById('ckGaps').textContent=gaps.join(' + ')+' = 12';
+
+    let note;
+    if(ck.order==='fifths'){
+      note='Same notes, arranged by fifths. The fifth sits right next to the root. A major third is 4 fifths clockwise; a minor third is 3 fifths counterclockwise.';
+    } else if(t.id==='aug'||t.id==='dim7'){
+      const step=t.id==='aug'?4:3;
+      const same=[];for(let k=0;k<12;k+=step) same.push(PLAIN[mod(ck.root+k,12)]+t.sfx);
+      note='Symmetric: rotating by '+step+' lands on the same notes, so '+same.join(', ')+' are one chord with '+same.length+' names.';
+    } else if(t.iv.some(v=>v>11)){
+      note='The 9th is the note 14 steps up, which wraps to '+mod(ck.root+14,12)+' on the clock. On the circle it is the same note as the 2nd.';
+    } else {
+      note='Rotate the root and the shape turns with it. The gaps never change.';
+    }
+    document.getElementById('ckNote').textContent=note;
+  }
+
+  /* ---------- frequency chart ---------- */
+  const fq={root:2,type:TI.min,oct:3,harm:true,bands:true};
+  const fqRootBtns=makeChips(document.getElementById('fqRoots'),PLAIN,i=>{fq.root=i;renderFq();});
+  const fqTypeBtns=makeChips(document.getElementById('fqTypes'),TYPES.map(t=>t.name),i=>{fq.type=i;renderFq();});
+  const fqOctBtns=makeChips(document.getElementById('fqOct'),['1','2','3','4','5'],i=>{fq.oct=i+1;renderFq();});
+  const fqHarmBtn=document.getElementById('fqHarm'), fqBandBtn=document.getElementById('fqBands');
+  fqHarmBtn.addEventListener('click',()=>{fq.harm=!fq.harm;renderFq();});
+  fqBandBtn.addEventListener('click',()=>{fq.bands=!fq.bands;renderFq();});
+
+  const JUST={0:[1,1],1:[16,15],2:[9,8],3:[6,5],4:[5,4],5:[4,3],6:[45,32],7:[3,2],8:[8,5],9:[5,3],10:[9,5],11:[15,8]};
+  function justRatio(semis){const o=Math.floor(semis/12), r=JUST[semis%12]; return [r[0]*Math.pow(2,o), r[1]];}
+  function octOf(m,name){
+    let o=Math.floor(m/12)-1;
+    if(name[0]==='C'&&name.endsWith('♭')) o+=1;
+    if(name[0]==='B'&&name.endsWith('♯')) o-=1;
+    return o;
+  }
+  const fmtHz=f=>f<1000?f.toFixed(2):f.toFixed(1);
+  function fqNotes(){
+    const t=TYPES[fq.type];
+    const names=chordSpelling(fq.root,ROOTS[fq.root][1],t);
+    const base=12*(fq.oct+1)+fq.root;
+    return t.iv.map((v,i)=>({m:base+v,n:names[i],f:hzm(base+v)}));
+  }
+  /* Plomp-Levelt roughness (Sethares' parameters), partials fall off 0.88 each */
+  function pairRough(f1,f2,a1,a2){
+    const s=0.24/(0.0207*Math.min(f1,f2)+18.96), d=Math.abs(f2-f1);
+    return a1*a2*(Math.exp(-3.5*s*d)-Math.exp(-5.75*s*d));
+  }
+  function roughness(freqs){
+    const parts=freqs.map(f=>Array.from({length:6},(_,k)=>[f*(k+1),Math.pow(0.88,k)]));
+    let tot=0;
+    for(let i=0;i<parts.length;i++) for(let j=i+1;j<parts.length;j++)
+      parts[i].forEach(p=>parts[j].forEach(q=>{tot+=pairRough(p[0],q[0],p[1],q[1]);}));
+    return tot;
+  }
+  function renderFq(){
+    press(fqRootBtns,fq.root); press(fqTypeBtns,fq.type); press(fqOctBtns,fq.oct-1);
+    fqHarmBtn.setAttribute('aria-pressed',String(fq.harm));
+    fqBandBtn.setAttribute('aria-pressed',String(fq.bands));
+    const t=TYPES[fq.type], notes=fqNotes();
+    const pcSet=new Set(notes.map(n=>n.m%12)), exact=new Set(notes.map(n=>n.m));
+
+    /* table of every note */
+    let h='<thead><tr><th>Note</th>';
+    for(let o=0;o<=8;o++) h+='<th>Oct '+o+'</th>';
+    h+='</tr></thead><tbody>';
+    for(let pc=0;pc<12;pc++){
+      h+='<tr><th class="rowh" scope="row">'+PLAIN[pc]+' · '+pc+'</th>';
+      for(let o=0;o<=8;o++){
+        const m=12*(o+1)+pc;
+        const cls=exact.has(m)?'exact':pcSet.has(pc)?'hit':'';
+        h+='<td'+(cls?' class="'+cls+'"':'')+'>'+fmtHz(hzm(m))+'</td>';
+      }
+      h+='</tr>';
+    }
+    document.getElementById('fqTable').innerHTML=h+'</tbody>';
+
+    /* this chord, note by note, against pure ratios up from the bottom note */
+    const bottom=notes[0];
+    let c='<thead><tr><th>Note</th><th>MIDI</th><th>Hz</th><th>Ratio</th><th>Pure</th><th>Pure Hz</th><th>Off by</th></tr></thead><tbody>';
+    const pure=[];
+    notes.forEach(n=>{
+      const semis=n.m-bottom.m, jr=justRatio(semis), jr1=jr[0]/jr[1], pf=bottom.f*jr1;
+      pure.push(pf);
+      const cents=1200*Math.log2((n.f/bottom.f)/jr1);
+      c+='<tr><td>'+n.n+octOf(n.m,n.n)+'</td><td>'+n.m+'</td><td>'+fmtHz(n.f)+'</td><td>'+(n.f/bottom.f).toFixed(4)+'</td><td>'+jr[0]+'/'+jr[1]+'</td><td>'+fmtHz(pf)+'</td><td>'+(semis===0?'0.0':(cents>0?'+':'−')+Math.abs(cents).toFixed(1))+'¢</td></tr>';
+    });
+    const ct=document.getElementById('fqChord');
+    ct.innerHTML=c+'</tbody>';
+    ct.querySelectorAll('td').forEach(td=>{td.style.paddingRight='14px';});
+    document.getElementById('fqChordNote').textContent='Ratios are measured up from the bottom note ('+bottom.n+octOf(bottom.m,bottom.n)+'). A positive "off by" means the equal-tempered note is sharp of the pure one.';
+
+    /* log-frequency strip */
+    const X0=28,X1=612,FMIN=20,FMAX=12000,span=Math.log2(FMAX/FMIN),BASE=150;
+    const X=f=>X0+(X1-X0)*Math.log2(f/FMIN)/span;
+    let s='';
+    if(fq.bands){
+      [['Sub',20,60],['Bass',60,250],['Low mid',250,500],['Mid',500,2000],['Presence',2000,6000],['Air',6000,12000]].forEach(([nm,lo,hi],i)=>{
+        const x=X(lo),w=X(hi)-x;
+        if(i%2===0) s+='<rect class="fq-band" x="'+x.toFixed(1)+'" y="8" width="'+w.toFixed(1)+'" height="'+(BASE-8)+'"/>';
+        s+='<text class="fq-bandname" x="'+(x+w/2).toFixed(1)+'" y="19" text-anchor="middle">'+nm+'</text>';
+      });
+    }
+    [20,50,100,200,500,1000,2000,5000,10000].forEach(f=>{
+      const x=X(f).toFixed(1);
+      s+='<line class="fq-grid" x1="'+x+'" y1="8" x2="'+x+'" y2="'+BASE+'"/>';
+      s+='<text class="fq-axis" x="'+x+'" y="'+(BASE+16)+'" text-anchor="middle">'+(f>=1000?(f/1000)+'k':f)+'</text>';
+    });
+    s+='<line class="fq-base" x1="'+X0+'" y1="'+BASE+'" x2="'+X1+'" y2="'+BASE+'"/>';
+    s+='<text class="fq-axis" x="'+X1+'" y="'+(BASE+34)+'" text-anchor="end">Hz, log scale</text>';
+    notes.forEach((n,i)=>{
+      const top=fq.harm?7:1;
+      for(let k=top;k>=1;k--){
+        const f=n.f*k; if(f>FMAX) continue;
+        const x=X(f).toFixed(1), len=k===1?90:90*Math.pow(0.8,k-1);
+        s+='<line class="'+(k===1?'fq-fund':'fq-harm')+'" x1="'+x+'" y1="'+BASE+'" x2="'+x+'" y2="'+(BASE-len).toFixed(1)+'"/>';
+      }
+      s+='<text class="fq-name" x="'+X(n.f).toFixed(1)+'" y="'+(BASE-90-6-(i%3)*11)+'" text-anchor="middle">'+n.n+'</text>';
+    });
+    const svg=document.getElementById('fqSvg');
+    svg.innerHTML=s;
+    svg.setAttribute('aria-label','Log frequency strip for '+PLAIN[fq.root]+t.sfx+' with the root at octave '+fq.oct+': '+notes.map(n=>n.n+' '+fmtHz(n.f)+' Hz').join(', '));
+    document.getElementById('fqRough').textContent=roughness(notes.map(n=>n.f)).toFixed(2);
+    fq._et=notes.map(n=>n.f); fq._ji=pure;
+  }
+  document.getElementById('fqPlayET').addEventListener('click',()=>{const a=audio(); if(a) playChordHz(fq._et,a.currentTime+0.05,2);});
+  document.getElementById('fqPlayJI').addEventListener('click',()=>{const a=audio(); if(a) playChordHz(fq._ji,a.currentTime+0.05,2);});
+
+  /* ---------- keyboard tool ---------- */
+  const kb={root:0,letter:0,type:0,inv:0,bass:null};
+  const kbBassEl=document.getElementById('kbBass');
+  fillSelect(kbBassEl,['Chord root'].concat(PLAIN),0);
+  kbBassEl.addEventListener('change',()=>{const v=+kbBassEl.value; kb.bass=v===0?null:v-1; renderKb();});
+  const kbEl=document.getElementById('kb');
+  const kbRootBtns=makeChips(document.getElementById('kbRoots'),PLAIN,i=>{kb.root=i;kb.letter=ROOTS[i][1];renderKb();});
+  const kbTypeBtns=makeChips(document.getElementById('kbTypes'),TYPES.map(t=>t.name),i=>{kb.type=i;if(kb.inv>=TYPES[i].iv.length)kb.inv=0;renderKb();});
+  const kbInvBtns=makeChips(document.getElementById('kbInv'),['Root','1st','2nd','3rd','4th'],i=>{kb.inv=i;renderKb();},'wide');
+
+  function voicing(){
+    const t=TYPES[kb.type];
+    const names=chordSpelling(kb.root,kb.letter,t);
+    const notes=t.iv.map((v,i)=>({a:kb.root+v,n:names[i]}));
+    for(let i=0;i<kb.inv;i++){const f=notes.shift(); f.a+=12; notes.push(f);}
+    notes.sort((x,y)=>x.a-y.a);
+    const sh=Math.floor(notes[0].a/12)*12;
+    if(sh) notes.forEach(x=>{x.a-=sh;});
+    if(kb.bass===null) return notes;
+    /* slash chord: the chord moves up an octave to make room, and the bass note goes under it */
+    notes.forEach(x=>{x.a+=12;});
+    if(notes[notes.length-1].a>NKEYS-1) notes.forEach(x=>{x.a-=12;});
+    let ba=notes[0].a-1; while(ba>=0&&mod(ba,12)!==kb.bass) ba--;
+    if(ba<0) ba=kb.bass;
+    const tone=notes.find(x=>x.a%12===kb.bass);
+    notes.push({a:ba,n:tone?tone.n:PLAIN[kb.bass]});
+    notes.sort((x,y)=>x.a-y.a);
+    return notes;
+  }
+
+  function renderKb(){
+    const t=TYPES[kb.type];
+    press(kbRootBtns,kb.root); press(kbTypeBtns,kb.type); press(kbInvBtns,kb.inv);
+    kbInvBtns.forEach((b,i)=>{b.disabled=i>=t.iv.length;});
+    kbBassEl.value=String(kb.bass===null?0:kb.bass+1);
+    const v=voicing();
+    const marks=new Map(v.map(x=>[x.a,{name:x.n,cls:'on'}]));
+    drawKb(kbEl,marks,a=>playOne(a),'Three-octave keyboard: '+v.map(x=>x.n).join(' ')+' highlighted');
+    document.getElementById('kbNotes').textContent=v.map(x=>x.n).join(' ');
+    const g=[];for(let i=1;i<v.length;i++) g.push(v[i].a-v[i-1].a);
+    document.getElementById('kbGaps').textContent=g.join(', ');
+    document.getElementById('kbColors').textContent=v.map(x=>BLACK.has(x.a%12)?'B':'W').join(' ');
+  }
+
+  document.getElementById('kbPlay').addEventListener('click',()=>{
+    const a=audio(); if(!a) return;
+    const v=voicing(), t0=a.currentTime+0.05, step=0.2, vol=0.22/v.length;
+    v.forEach((x,i)=>tone(keyHz(x.a),t0+i*step,0.35,{vol:vol*1.4}));
+    const tc=t0+v.length*step+0.1;
+    v.forEach(x=>tone(keyHz(x.a),tc,1.6,{vol:vol}));
+  });
+
+  document.querySelectorAll('[data-iv],[data-ratio]').forEach(b=>{
+    b.addEventListener('click',()=>{
+      const a=audio(); if(!a) return;
+      const t0=a.currentTime+0.05;
+      const top=b.dataset.ratio?C4*parseFloat(b.dataset.ratio):C4*Math.pow(2,parseFloat(b.dataset.iv)/1200);
+      const opt={wave:'sawtooth',lp:3200,vol:0.07};
+      tone(C4,t0,2.6,opt); tone(top,t0,2.6,opt);
+    });
+  });
+
+  /* ---------- voice-leading finder ---------- */
+  const vfEls={fr:document.getElementById('vfFR'),ft:document.getElementById('vfFT'),tr:document.getElementById('vfTR'),tt:document.getElementById('vfTT')};
+  const typeNames=TYPES.map(t=>t.name);
+  fillSelect(vfEls.fr,PLAIN,0); fillSelect(vfEls.ft,typeNames,TI.maj);
+  fillSelect(vfEls.tr,PLAIN,5); fillSelect(vfEls.tt,typeNames,TI.maj);
+  let vfLast=null;
+  function chordInfo(root,type){
+    const t=TYPES[type], letter=ROOTS[root][1];
+    const names=chordSpelling(root,letter,t);
+    const pcs=t.iv.map(v=>mod(root+v,12));
+    const nameOf=new Map(pcs.map((p,i)=>[p,names[i]]));
+    return {t,pcs,nameOf,label:PLAIN[root]+t.sfx};
+  }
+  function renderVf(){
+    const A=chordInfo(+vfEls.fr.value,+vfEls.ft.value), B=chordInfo(+vfEls.tr.value,+vfEls.tt.value);
+    const from=rootVoicing(A.pcs).notes;
+    const best=nearest(from,B.pcs);
+    const rootB=candidates(B.pcs).filter(c=>c.inv===0).map(c=>({c,m:matchVoices(from,c.notes)})).sort((x,y)=>x.m.cost-y.m.cost)[0];
+    const name=(a,info)=>info.nameOf.get(a%12);
+    const marks=new Map();
+    from.forEach(a=>marks.set(a,{name:name(a,A),cls:'from'}));
+    best.c.notes.forEach(a=>marks.set(a,{name:name(a,B),cls:'on'}));
+    drawKb(document.getElementById('vkb'),marks,a=>playOne(a),'Keyboard: '+A.label+' then '+B.label+' in its nearest voicing');
+    document.getElementById('vfFrom').textContent=A.label+': '+from.map(a=>name(a,A)).join(' ');
+    document.getElementById('vfTo').textContent=B.label+': '+best.c.notes.map(a=>name(a,B)).join(' ')+' ('+INVN[best.c.inv]+')';
+    const m=best.m;
+    let mv=m.moves.map(x=>Math.abs(x)).join(' ')+' = '+m.cost+' keys';
+    if(from.length!==best.c.notes.length) mv+=' (the '+(from.length>best.c.notes.length?'extra note drops out':'extra note comes in')+')';
+    document.getElementById('vfMoves').textContent=mv;
+    document.getElementById('vfRoot').textContent=rootB.c.notes.map(a=>name(a,B)).join(' ')+': '+rootB.m.cost+' keys'+(rootB.m.cost===m.cost?' (same as the nearest)':'');
+    vfLast={from,to:best.c.notes};
+  }
+  Object.values(vfEls).forEach(el=>el.addEventListener('change',renderVf));
+  document.getElementById('vfPlay').addEventListener('click',()=>{
+    const a=audio(); if(!a||!vfLast) return;
+    const t0=a.currentTime+0.05;
+    playChordHz(vfLast.from.map(keyHz),t0,1.1);
+    playChordHz(vfLast.to.map(keyHz),t0+1.2,1.6);
+  });
+
+  /* ---------- keys ---------- */
+  const MODES=[
+    {name:'Major',sc:[0,2,4,5,7,9,11],roots:ROOTS},
+    {name:'Natural minor',sc:[0,2,3,5,7,8,10],roots:MIN_ROOTS},
+    {name:'Harmonic minor',sc:[0,2,3,5,7,8,11],roots:MIN_ROOTS}
+  ];
+  const ROM=['I','II','III','IV','V','VI','VII'];
+  /* what each scale degree does: home, step away from home, or pull back to it */
+  const FN_BY_DEG=['t','s','t','s','d','t','d'];
+  const FN_WORD={t:'home',s:'step away',d:'pull home'};
+  const PROGS={
+    0:[['I – V – vi – IV',[0,4,5,3]],['ii – V – I',[1,4,0]],['I – vi – IV – V',[0,5,3,4]],['I – IV – V – I',[0,3,4,0]]],
+    1:[['i – VI – III – VII',[0,5,2,6]],['i – iv – v – i',[0,3,4,0]],['i – VII – VI – V',[0,6,5,4]]],
+    2:[['i – iv – V – i',[0,3,4,0]],['i – VI – V',[0,5,4]],['ii° – V – i',[1,4,0]]]
+  };
+  const ky={mode:0,key:0,size:3};
+  const kyModeBtns=makeChips(document.getElementById('kyModes'),MODES.map(m=>m.name),i=>{ky.mode=i;renderKeys();},'wide');
+  const kyRootBtns=makeChips(document.getElementById('kyRoots'),PLAIN,i=>{ky.key=i;renderKeys();});
+  const kySizeBtns=makeChips(document.getElementById('kySize'),['Triads','Sevenths'],i=>{ky.size=i?4:3;renderKeys();},'wide');
+  const pgSel=document.getElementById('pgSel');
+  let pgLast=null;
+
+  function keyChords(){
+    const M=MODES[ky.mode], kl=M.roots[ky.key][1];
+    const sc=M.sc.map((s,i)=>({p:mod(ky.key+s,12),l:kl+i}));
+    const scNames=sc.map(x=>spell(x.l,x.p));
+    const chords=[];
+    for(let i=0;i<7;i++){
+      const idx=ky.size===3?[i,i+2,i+4]:[i,i+2,i+4,i+6];
+      const tones=idx.map(j=>sc[j%7]);
+      const ps=tones.map(x=>x.p);
+      const rel=ps.map(p=>mod(p-ps[0],12));
+      const tIdx=QUAL.get(rel.join(','));
+      if(tIdx===undefined) throw new Error('no chord type for '+rel.join(',')+' in '+M.name);
+      const t=TYPES[tIdx];
+      const rn=(t.iv[1]===4?ROM[i]:ROM[i].toLowerCase())+NSFX[t.id];
+      chords.push({i,fn:FN_BY_DEG[i],sc:sc[i],tones,ps,t,tIdx,rn,name:scNames[i]+t.sfx,
+        names:tones.map(x=>spell(x.l,x.p)),gaps:ps.slice(1).map((p,k)=>mod(p-ps[k],12))});
+    }
+    return {sc,scNames,chords};
+  }
+
+  function renderKeys(){
+    const M=MODES[ky.mode];
+    press(kyModeBtns,ky.mode); press(kyRootBtns,ky.key); press(kySizeBtns,ky.size===4?1:0);
+    kyRootBtns.forEach((b,i)=>{b.textContent=M.roots[i][0];});
+    const K=keyChords();
+    document.getElementById('kyScale').textContent=K.scNames.join(' ')+'   '+setStr(K.sc.map(x=>x.p));
+    const rows=document.getElementById('kyRows'); rows.innerHTML='';
+    K.chords.forEach(c=>{
+      const b=document.createElement('button');
+      b.type='button'; b.className='row';
+      b.innerHTML='<span class="rn"></span><span class="nm"></span><span class="nt"></span><span class="gp"></span>';
+      b.dataset.fn=c.fn;
+      b.children[0].textContent=c.rn;
+      b.children[1].textContent=c.name;
+      const sm=document.createElement('small'); sm.textContent=FN_WORD[c.fn]; b.children[1].appendChild(sm);
+      b.children[2].textContent=c.names.join(' ')+'  '+setStr(c.ps);
+      b.children[3].textContent='gaps '+c.gaps.join(', ');
+      b.setAttribute('aria-label',c.rn+', '+c.name+', '+FN_WORD[c.fn]+'. Load onto the keyboard');
+      b.addEventListener('click',()=>{
+        kb.root=c.sc.p; kb.letter=c.sc.l; kb.type=c.tIdx; kb.inv=0; kb.bass=null; renderKb();
+        const reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        document.getElementById('kbTool').scrollIntoView({behavior:reduce?'auto':'smooth',block:'center'});
+      });
+      rows.appendChild(b);
+    });
+    const prev=pgSel.value;
+    fillSelect(pgSel,PROGS[ky.mode].map(p=>p[0]),prev&&+prev<PROGS[ky.mode].length?+prev:0);
+    renderProg();
+  }
+
+  function renderProg(){
+    const K=keyChords(), deg=PROGS[ky.mode][+pgSel.value][1];
+    const out=document.getElementById('pgOut'); out.innerHTML='';
+    let prev=null, total=0; const plan=[];
+    deg.forEach(d=>{
+      const c=K.chords[d];
+      let v, moveText='start';
+      if(!prev){ v=rootVoicing(c.ps); }
+      else { const b=nearest(prev,c.ps); v=b.c; total+=b.m.cost; moveText=b.m.moves.map(Math.abs).join(' ')+' = '+b.m.cost; }
+      prev=v.notes;
+      const nameOf=new Map(c.ps.map((p,k)=>[p,c.names[k]]));
+      plan.push({notes:v.notes});
+      const row=document.createElement('div'); row.className='step'; row.dataset.fn=c.fn;
+      row.innerHTML='<span class="rn"></span><span class="nm"></span><span class="nt"></span><span class="mv"></span>';
+      row.children[0].textContent=c.rn;
+      row.children[1].textContent=c.name+' · '+FN_WORD[c.fn];
+      row.children[2].textContent=v.notes.map(a=>nameOf.get(a%12)).join(' ');
+      row.children[3].textContent=moveText;
+      out.appendChild(row);
+    });
+    const sum=document.createElement('p'); sum.className='note'; sum.textContent='Total keys moved after the first chord: '+total+'.';
+    out.appendChild(sum);
+    pgLast=plan;
+  }
+  pgSel.addEventListener('change',renderProg);
+  document.getElementById('pgPlay').addEventListener('click',()=>{
+    const a=audio(); if(!a||!pgLast) return;
+    const t0=a.currentTime+0.05, rows=document.querySelectorAll('#pgOut .step');
+    pgLast.forEach((p,i)=>{
+      playChordHz(p.notes.map(keyHz),t0+i*1.3,1.25);
+      setTimeout(()=>{rows.forEach((r,j)=>r.classList.toggle('live',i===j));},i*1300);
+    });
+    setTimeout(()=>rows.forEach(r=>r.classList.remove('live')),pgLast.length*1300);
+  });
+
+  /* ---------- quiz ---------- */
+  const QZ_LEVELS=[
+    ['Triads',['maj','min','dim','aug']],
+    ['Sevenths',['7','maj7','m7','m7b5','dim7']],
+    ['Spicier',['sus2','sus4','6','add9','9','m9','maj9']]
+  ];
+  const qz={level:1,root:7,type:TI.m7,sel:new Set(),state:'idle',scored:false,asked:0,right:0};
+  const qzLevelBtns=makeChips(document.getElementById('qzLevel'),QZ_LEVELS.map(l=>l[0]),i=>{qz.level=i;qzNext();},'wide');
+  const qzMsg=document.getElementById('qzMsg');
+  function qzTarget(){const t=TYPES[qz.type]; return {t,names:chordSpelling(qz.root,ROOTS[qz.root][1],t),pcs:new Set(t.iv.map(v=>mod(qz.root+v,12)))};}
+  function qzScore(ok){if(qz.scored) return; qz.scored=true; qz.asked++; if(ok) qz.right++;}
+  function qzSay(text,cls){qzMsg.textContent=text; qzMsg.className='msg'+(cls?' '+cls:'');}
+  function renderQz(){
+    press(qzLevelBtns,qz.level);
+    const T=qzTarget();
+    document.getElementById('qzTarget').textContent=PLAIN[qz.root]+T.t.sfx;
+    const marks=new Map();
+    if(qz.state==='shown'){
+      const nameOf=new Map(T.t.iv.map((v,i)=>[mod(qz.root+v,12),T.names[i]]));
+      for(let a=0;a<NKEYS;a++) if(T.pcs.has(a%12)) marks.set(a,{name:nameOf.get(a%12),cls:'on'});
+    }
+    qz.sel.forEach(a=>{ if(!marks.has(a)) marks.set(a,{name:PLAIN[a%12],cls:'sel'}); });
+    drawKb(document.getElementById('qkb'),marks,a=>{
+      playOne(a);
+      if(qz.state==='shown') return;
+      if(qz.sel.has(a)) qz.sel.delete(a); else qz.sel.add(a);
+      qz.state='idle'; qzSay('');
+      renderQz();
+    },'Quiz keyboard: tap the keys of '+PLAIN[qz.root]+T.t.sfx);
+    document.getElementById('qzScore').textContent=qz.asked?qz.right+' of '+qz.asked+' right first try':'';
+  }
+  function qzNext(){
+    const ids=QZ_LEVELS[qz.level][1];
+    let r, ti;
+    do{ r=Math.floor(Math.random()*12); ti=TI[ids[Math.floor(Math.random()*ids.length)]]; }while(r===qz.root&&ti===qz.type);
+    qz.root=r; qz.type=ti; qz.sel=new Set(); qz.state='idle'; qz.scored=false;
+    qzSay(''); renderQz();
+  }
+  document.getElementById('qzCheck').addEventListener('click',()=>{
+    const T=qzTarget(), got=new Set(Array.from(qz.sel).map(a=>a%12));
+    if(!got.size){qzSay('Tap the keys first.');return;}
+    const missing=Array.from(T.pcs).filter(p=>!got.has(p)).map(p=>PLAIN[p]);
+    const extra=Array.from(got).filter(p=>!T.pcs.has(p)).map(p=>PLAIN[p]);
+    if(!missing.length&&!extra.length){ qzScore(true); qzSay('Right. '+T.names.join(' ')+'.','ok'); }
+    else{
+      qzScore(false);
+      qzSay('Not yet. '+(missing.length?'Missing: '+missing.join(', ')+'. ':'')+(extra.length?'Not in the chord: '+extra.join(', ')+'.':''),'no');
+    }
+    renderQz();
+  });
+  document.getElementById('qzClear').addEventListener('click',()=>{qz.sel=new Set(); qz.state='idle'; qzSay(''); renderQz();});
+  document.getElementById('qzShow').addEventListener('click',()=>{
+    const T=qzTarget(); qzScore(false); qz.state='shown';
+    qzSay('Answer: '+T.names.join(' ')+'. Gaps '+T.t.iv.slice(1).map((v,i)=>v-T.t.iv[i]).join(', ')+'.');
+    renderQz();
+  });
+  document.getElementById('qzNext').addEventListener('click',qzNext);
+
+  /* ---------- playing a progression with smooth voicings and a bass ---------- */
+  function playProgression(chords,onStep){
+    const a=audio(); if(!a) return;
+    const t0=a.currentTime+0.05; let prev=null;
+    chords.forEach((c,i)=>{
+      const pcs=TYPES[c.type].iv.map(v=>mod(c.root+v,12));
+      const v=prev?nearest(prev,pcs).c:rootVoicing(pcs);
+      prev=v.notes;
+      const bassPc=c.bass===null?c.root:c.bass;
+      playChordHz(v.notes.map(keyHz).concat([keyHz(bassPc-12)]),t0+i*1.3,1.25);
+      if(onStep) setTimeout(()=>onStep(i),i*1300);
+    });
+    if(onStep) setTimeout(()=>onStep(-1),chords.length*1300);
+  }
+  function jump(id){
+    const reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    document.getElementById(id).scrollIntoView({behavior:reduce?'auto':'smooth',block:'center'});
+  }
+
+  /* ---------- ear training ---------- */
+  const EAR_LEVELS=[['Major or minor',['maj','min']],['Four triads',['maj','min','dim','aug']],['Sevenths',['7','maj7','m7','m7b5']],['Colours',['maj','min','sus2','sus4','add9']]];
+  const EAR_LABEL={maj:'Major',min:'Minor',dim:'Diminished',aug:'Augmented','7':'Dominant 7',maj7:'Major 7',m7:'Minor 7',m7b5:'Minor 7♭5',sus2:'sus2',sus4:'sus4',add9:'Add 9'};
+  const ear={level:0,root:0,type:TI.maj,freqs:[],guess:null,scored:false,asked:0,right:0};
+  const earLevelBtns=makeChips(document.getElementById('earLevel'),EAR_LEVELS.map(l=>l[0]),i=>{ear.level=i;earNext(false);},'wide');
+  const earMsg=document.getElementById('earMsg');
+  let earAnsBtns=[];
+  function earSay(text,cls){earMsg.textContent=text; earMsg.className='msg'+(cls?' '+cls:'');}
+  function earVoice(root,type){
+    const pcs=TYPES[type].iv.map(v=>mod(root+v,12));
+    const low=candidates(pcs).filter(c=>c.notes[0]>=0&&c.notes[0]<12);
+    return low[Math.floor(Math.random()*low.length)].notes.map(keyHz);
+  }
+  function earNext(play){
+    press(earLevelBtns,ear.level);
+    const ids=EAR_LEVELS[ear.level][1];
+    earAnsBtns=makeChips(document.getElementById('earAns'),ids.map(id=>EAR_LABEL[id]),i=>earAnswer(ids[i]),'wide');
+    let r,ti;
+    do{ r=Math.floor(Math.random()*12); ti=TI[ids[Math.floor(Math.random()*ids.length)]]; }while(r===ear.root&&ti===ear.type);
+    ear.root=r; ear.type=ti; ear.freqs=earVoice(r,ti); ear.guess=null; ear.scored=false;
+    earSay(play?'Listen, then pick an answer.':'Press Play, then pick an answer. Close your eyes if you can.');
+    document.getElementById('earScore').textContent=ear.asked?ear.right+' of '+ear.asked+' right first try':'';
+    if(play) earPlay();
+  }
+  function earPlay(){const a=audio(); if(a) playChordHz(ear.freqs,a.currentTime+0.05,1.8);}
+  function earAnswer(id){
+    const ids=EAR_LEVELS[ear.level][1];
+    ear.guess=TI[id];
+    press(earAnsBtns,ids.indexOf(id));
+    const t=TYPES[ear.type], names=chordSpelling(ear.root,ROOTS[ear.root][1],t);
+    if(!ear.scored){ear.scored=true; ear.asked++; if(ear.guess===ear.type) ear.right++;}
+    if(ear.guess===ear.type) earSay('Right: '+PLAIN[ear.root]+t.sfx+' ('+names.join(' ')+').','ok');
+    else earSay('It was '+EAR_LABEL[t.id]+': '+PLAIN[ear.root]+t.sfx+' ('+names.join(' ')+'). You said '+EAR_LABEL[id]+'. Press "Hear my answer" to compare.','no');
+    document.getElementById('earScore').textContent=ear.right+' of '+ear.asked+' right first try';
+  }
+  document.getElementById('earPlay').addEventListener('click',earPlay);
+  document.getElementById('earNext').addEventListener('click',()=>earNext(true));
+  document.getElementById('earMine').addEventListener('click',()=>{
+    if(ear.guess===null){earSay('Pick an answer first.'); return;}
+    const a=audio(); if(a) playChordHz(earVoice(ear.root,ear.guess),a.currentTime+0.05,1.8);
+  });
+
+  /* ---------- effects lab ---------- */
+  const FX=[
+    {id:'dry',label:'None',spectral:true,amt:'',what:'The plain sound: the chord you picked, on a triangle wave. A triangle has each note plus faint odd harmonics at 3×, 5×, 7×.'},
+    {id:'lp',label:'Low-pass filter',spectral:true,amt:a=>'cutoff '+Math.round(lpFreq(a))+' Hz',what:'Removes everything above the cutoff. The harmonics above it disappear and the sound goes dull and dark. Nothing new is added.'},
+    {id:'hp',label:'High-pass filter',spectral:true,amt:a=>'cutoff '+Math.round(hpFreq(a))+' Hz',what:'Removes everything below the cutoff. Push it past the lowest note of the chord and that note vanishes, leaving a thin sound.'},
+    {id:'sat',label:'Saturation',spectral:true,amt:a=>'drive '+Math.round(a*100)+'%',what:'Rounds off the wave with a lopsided curve. That creates harmonics at 2×, 4× and more of each note: new frequencies that were not in the chord.'},
+    {id:'trem',label:'Fast tremolo',spectral:true,amt:a=>'pulse '+Math.round(tremRate(a))+' times a second',what:'Pulses the volume. Slow pulses are just movement. Past about 20 a second, each note grows copies at note ± the pulse rate.'},
+    {id:'comb',label:'Short delay',spectral:true,amt:a=>'delay '+(combMs(a)).toFixed(1)+' ms',what:'Mixes the sound with a copy a few milliseconds late. The two cancel at some frequencies and add at others, which cuts a row of notches. Chorus and flangers work this way.'},
+    {id:'comp',label:'Compressor',spectral:false,level:'comp',amt:a=>'threshold −'+Math.round(10+a*40)+' dB, ratio 8:1',add:'No new pitches. A compressor changes volume, not frequency.',cut:'None.',key:'Dashed: before. Solid: after. Watch the gap between the loud and soft chords.',what:'A loud chord and a soft chord alternate. The compressor turns the loud one down and lifts everything back up, so the gap between loud and soft shrinks. The frequency graph barely moves: read the loudness graph.'},
+    {id:'chorus',label:'Chorus',spectral:false,amt:a=>'depth '+(1+a*5).toFixed(1)+' ms',add:'No new pitches. The same notes, doubled and slightly detuned.',cut:'A row of notches that slides. Watch the dips in the graph move.',what:'Mixes the sound with copies that are a few milliseconds late, and that delay drifts slowly. The drifting makes each copy a little flat, then a little sharp, so the one sound becomes a group. It is the short delay from above, in motion.'},
+    {id:'pan',label:'Auto-pan',spectral:false,level:'pan',amt:a=>'speed '+(0.15+a*1.35).toFixed(2)+' times a second',add:'Nothing. Same frequencies, moved around the room.',cut:'None.',key:'Solid: left ear. Dashed: right ear. When one rises the other falls.',what:'Sweeps the sound from the left ear to the right and back. Use headphones.'},
+    {id:'echo',label:'Echo',spectral:false,amt:a=>'feedback '+Math.round(a*85)+'%',what:'Repeats the chord later, quieter each time. It adds no new frequencies. It repeats the same three notes.'},
+    {id:'verb',label:'Reverb',spectral:false,amt:a=>'tail '+(0.6+a*3.4).toFixed(1)+' s',what:'Adds a tail made of the same notes, smeared and noisy. The graph fills in between the peaks because the tail is a wash, not new pitches.'}
+  ];
+  const lpFreq=a=>8000*Math.pow(0.03,a), hpFreq=a=>40*Math.pow(10,a*1.5), tremRate=a=>4+a*56, combMs=a=>1+a*9;
+  const chordHz=()=>TYPES[fx.type].iv.map(v=>hzm(48+fx.root+v));
+  const fx={root:2,type:TI.min,i:0,amt:0.6,on:false,nodes:[],timer:0,raf:0,dry:null,wet:null,last:0};
+  const fxBtns=makeChips(document.getElementById('fxChips'),FX.map(f=>f.label),i=>{fx.i=i;fxLabel();if(fx.on){fxStop();fxStart();}},'wide');
+  function fxLabel(){
+    press(fxBtns,fx.i); const f=FX[fx.i];
+    const t=TYPES[fx.type], nm=chordSpelling(fx.root,ROOTS[fx.root][1],t), hz=chordHz();
+    document.getElementById('fxChord').textContent=PLAIN[fx.root]+t.sfx+': '+nm.join(' ')+' · '+hz.map(h=>fmtHz(h)).join(', ')+' Hz';
+    document.getElementById('fxAmtV').textContent=f.amt?f.amt(fx.amt):'';
+    document.getElementById('fxAmt').disabled=!f.amt;
+    document.getElementById('fxWhat').textContent=f.what;
+    document.getElementById('fxAdd').textContent=f.spectral?'Press Play.':(f.add||'No new pitches. It repeats the same notes.');
+    document.getElementById('fxCut').textContent=f.spectral?'Press Play.':(f.cut||'None.');
+    document.getElementById('fxLv').hidden=!f.level; document.getElementById('fxLvKey').hidden=!f.level;
+    document.getElementById('fxLvKey').textContent=f.key||''; document.getElementById('fxMeasRow').hidden=!f.level;
+    document.getElementById('fxMeas').textContent=f.level?'Press Play.':'';
+  }
+  function impulse(a,sec){
+    const n=Math.floor(a.sampleRate*sec), b=a.createBuffer(2,n,a.sampleRate);
+    for(let c=0;c<2;c++){const d=b.getChannelData(c); for(let k=0;k<n;k++) d[k]=(Math.random()*2-1)*Math.pow(1-k/n,3);}
+    return b;
+  }
+  function satCurve(k){
+    const n=2048,c=new Float32Array(n),bias=0.25,off=Math.tanh(k*bias),norm=Math.max(Math.tanh(k*(1+bias))-off,Math.tanh(k*(-1+bias))-off,1e-3);
+    for(let i=0;i<n;i++){const x=i/(n-1)*2-1; c[i]=(Math.tanh(k*(x+bias))-off)/Math.abs(norm);}
+    return c;
+  }
+  function fxStart(){
+    const a=audio(); if(!a) {document.getElementById('fxState').textContent='This browser has no audio.'; return;}
+    const f=FX[fx.i], am=fx.amt, N=[];
+    const mk=n=>{N.push(n); return n;};
+    const mix=mk(a.createGain()); mix.gain.value=0.9;
+    const anW=mk(a.createAnalyser()), anD=mk(a.createAnalyser());
+    anW.fftSize=anD.fftSize=16384; anW.smoothingTimeConstant=anD.smoothingTimeConstant=0.82; anW.minDecibels=anD.minDecibels=-110; anW.maxDecibels=anD.maxDecibels=-10;
+    const bus=mk(a.createGain());
+    let out=bus;
+    if(f.id==='lp'||f.id==='hp'){const b=mk(a.createBiquadFilter()); b.type=f.id==='lp'?'lowpass':'highpass'; b.Q.value=0.7; b.frequency.value=f.id==='lp'?lpFreq(am):hpFreq(am); bus.connect(b); out=b;}
+    else if(f.id==='sat'){const w=mk(a.createWaveShaper()); w.curve=satCurve(1+am*9); w.oversample='4x'; bus.connect(w); out=w;}
+    else if(f.id==='trem'){const g=mk(a.createGain()); g.gain.value=0.5; const l=mk(a.createOscillator()); l.frequency.value=tremRate(am); const d=mk(a.createGain()); d.gain.value=0.5; l.connect(d); d.connect(g.gain); l.start(); bus.connect(g); out=g;}
+    else if(f.id==='comb'){const dl=mk(a.createDelay(0.05)); dl.delayTime.value=combMs(am)/1000; const sum=mk(a.createGain()); sum.gain.value=0.6; bus.connect(sum); bus.connect(dl); dl.connect(sum); out=sum;}
+    else if(f.id==='comp'){const c=mk(a.createDynamicsCompressor()); c.threshold.value=-(10+am*40); c.ratio.value=8; c.knee.value=6; c.attack.value=0.003; c.release.value=0.25; const mu=mk(a.createGain()); mu.gain.value=Math.pow(10,(10+am*40)*0.5/20); bus.connect(c); c.connect(mu); out=mu;}
+    else if(f.id==='chorus'){
+      const sum=mk(a.createGain()); sum.gain.value=0.6; bus.connect(sum);
+      [[0.017,0.5,0],[0.023,0.37,1.7]].forEach(([base,rate,ph])=>{
+        const dl=mk(a.createDelay(0.05)); dl.delayTime.value=base; const l=mk(a.createOscillator()); l.frequency.value=rate; const d=mk(a.createGain()); d.gain.value=(1+am*5)/1000;
+        l.connect(d); d.connect(dl.delayTime); l.start(a.currentTime+ph*0); bus.connect(dl); dl.connect(sum);
+      });
+      out=sum;
+    }
+    else if(f.id==='pan'){const pn=mk(a.createStereoPanner()); const l=mk(a.createOscillator()); l.frequency.value=0.15+am*1.35; const d=mk(a.createGain()); d.gain.value=0.9; l.connect(d); d.connect(pn.pan); l.start(); bus.connect(pn); out=pn;}
+    else if(f.id==='echo'){const dl=mk(a.createDelay(1)); dl.delayTime.value=0.34; const fb=mk(a.createGain()); fb.gain.value=am*0.85; const sum=mk(a.createGain()); bus.connect(sum); bus.connect(dl); dl.connect(fb); fb.connect(dl); dl.connect(sum); out=sum;}
+    else if(f.id==='verb'){const cv=mk(a.createConvolver()); cv.buffer=impulse(a,0.6+am*3.4); const wet=mk(a.createGain()); wet.gain.value=0.9; const dry=mk(a.createGain()); dry.gain.value=0.5; const sum=mk(a.createGain()); bus.connect(dry); dry.connect(sum); bus.connect(cv); cv.connect(wet); wet.connect(sum); out=sum;}
+    out.connect(anW); out.connect(mix); mix.connect(a.destination);
+    const dryBus=mk(a.createGain()); dryBus.connect(anD); fx.dryBus=dryBus;
+    fx.lv=null; fx.hist=[];
+    if(f.level){
+      const mkA=()=>{const n=mk(a.createAnalyser()); n.fftSize=2048; return n;};
+      if(f.level==='comp'){const w=mkA(), d=mkA(); out.connect(w); dryBus.connect(d); fx.lv={a:d,b:w};}
+      else{const sp=mk(a.createChannelSplitter(2)), l=mkA(), r=mkA(); out.connect(sp); sp.connect(l,0); sp.connect(r,1); fx.lv={a:l,b:r};}
+    }
+    fx.bus=bus; fx.nodes=N; fx.wet=anW; fx.dry=anD;
+    const pluck=['echo','verb','trem'].includes(f.id);
+    const comp=f.id==='comp', len=comp?1.3:pluck?2.2:2.6; let n=0;
+    const strike=()=>{
+      const t=a.currentTime+0.03, pk=comp?(n++%2?0.03:0.2):0.15;
+      chordHz().forEach(hz=>{
+        const o=a.createOscillator(), g=a.createGain(); o.type='triangle'; o.frequency.value=hz;
+        g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(pk,t+0.02);
+        if(pluck) g.gain.exponentialRampToValueAtTime(0.02,t+len); else g.gain.setValueAtTime(pk,t+len-0.4);
+        g.gain.linearRampToValueAtTime(0,t+len+0.1);
+        o.connect(g); g.connect(bus); g.connect(dryBus); o.start(t); o.stop(t+len+0.15);
+      });
+    };
+    strike(); fx.timer=setInterval(strike,comp?1400:pluck?2400:2300);
+    fx.on=true; document.getElementById('fxPlay').textContent='Stop'; document.getElementById('fxState').textContent='Playing';
+    fx.last=0; fxDraw();
+  }
+  function fxStop(){
+    clearInterval(fx.timer); cancelAnimationFrame(fx.raf);
+    fx.nodes.forEach(n=>{try{if(n.stop)n.stop();}catch(e){} try{n.disconnect();}catch(e){}});
+    fx.nodes=[]; fx.on=false;
+    document.getElementById('fxPlay').textContent='Play'; document.getElementById('fxState').textContent='';
+  }
+  const FXLO=40, FXHI=8000;
+  function fxDraw(){
+    if(!fx.on) return;
+    const cv=document.getElementById('fxCv'), dpr=window.devicePixelRatio||1, W=cv.clientWidth, H=cv.clientHeight;
+    if(cv.width!==Math.round(W*dpr)||cv.height!==Math.round(H*dpr)){cv.width=Math.round(W*dpr); cv.height=Math.round(H*dpr);}
+    const x=cv.getContext('2d'); x.setTransform(dpr,0,0,dpr,0,0); x.clearRect(0,0,W,H);
+    const css=getComputedStyle(document.documentElement), col=n=>css.getPropertyValue(n).trim();
+    const wet=new Float32Array(fx.wet.frequencyBinCount), dry=new Float32Array(fx.dry.frequencyBinCount);
+    fx.wet.getFloatFrequencyData(wet); fx.dry.getFloatFrequencyData(dry);
+    const sr=audio().sampleRate, hzBin=sr/fx.wet.fftSize, px=f=>Math.log(f/FXLO)/Math.log(FXHI/FXLO)*(W-8)+4, py=d=>H-14-(Math.min(-10,Math.max(-100,d))+100)/90*(H-24);
+    x.font='11px '+col('--font-mono'); x.fillStyle=col('--muted'); x.strokeStyle=col('--line'); x.lineWidth=1;
+    [50,100,200,500,1000,2000,5000].forEach(f=>{const X=px(f); x.beginPath(); x.moveTo(X,4); x.lineTo(X,H-14); x.stroke(); x.fillText(f>=1000?(f/1000)+'k':String(f),X+2,H-2);});
+    const path=arr=>{x.beginPath(); let first=true; for(let b=Math.ceil(FXLO/hzBin);b*hzBin<=FXHI;b++){const X=px(b*hzBin),Y=py(arr[b]); if(first){x.moveTo(X,Y);first=false;} else x.lineTo(X,Y);} };
+    path(wet); x.lineTo(px(FXHI),H-14); x.lineTo(px(FXLO),H-14); x.closePath(); x.fillStyle=col('--accent'); x.globalAlpha=0.35; x.fill(); x.globalAlpha=1;
+    path(wet); x.strokeStyle=col('--accent'); x.lineWidth=1.5; x.stroke();
+    if(FX[fx.i].id!=='dry'){path(dry); x.strokeStyle=col('--muted'); x.lineWidth=1; x.setLineDash([3,3]); x.stroke(); x.setLineDash([]);}
+    if(fx.lv) fxLevels(css);
+    const now=performance.now();
+    if(FX[fx.i].spectral&&now-fx.last>500){fx.last=now; fxReport(wet,dry,hzBin);}
+    fx.raf=requestAnimationFrame(fxDraw);
+  }
+  function rmsDb(an){
+    const buf=new Float32Array(an.fftSize); an.getFloatTimeDomainData(buf);
+    let q=0; for(let i=0;i<buf.length;i++) q+=buf[i]*buf[i];
+    return Math.max(-80,10*Math.log10(q/buf.length+1e-12));
+  }
+  function fxLevels(css){
+    const cv=document.getElementById('fxLv'), dpr=window.devicePixelRatio||1, W=cv.clientWidth, H=cv.clientHeight;
+    if(cv.width!==Math.round(W*dpr)||cv.height!==Math.round(H*dpr)){cv.width=Math.round(W*dpr); cv.height=Math.round(H*dpr);}
+    const x=cv.getContext('2d'); x.setTransform(dpr,0,0,dpr,0,0); x.clearRect(0,0,W,H);
+    const col=n=>css.getPropertyValue(n).trim(), id=FX[fx.i].id;
+    fx.hist.push([rmsDb(fx.lv.a),rmsDb(fx.lv.b)]); if(fx.hist.length>480) fx.hist.shift();
+    const H0=fx.hist, py=d=>H-12-(Math.min(0,Math.max(-60,d))+60)/60*(H-20), px=i=>4+i/479*(W-8);
+    x.font='11px '+col('--font-mono'); x.fillStyle=col('--muted'); x.strokeStyle=col('--line'); x.lineWidth=1;
+    [0,-20,-40].forEach(d=>{x.beginPath(); x.moveTo(4,py(d)); x.lineTo(W-4,py(d)); x.stroke(); x.fillText(d+' dB',6,py(d)-2);});
+    const line=(k,dash,color)=>{x.beginPath(); H0.forEach((v,i)=>{const X=px(i+480-H0.length),Y=py(v[k]); if(i)x.lineTo(X,Y); else x.moveTo(X,Y);}); x.setLineDash(dash); x.strokeStyle=color; x.lineWidth=1.8; x.stroke(); x.setLineDash([]);};
+    if(id==='comp'){line(0,[4,4],col('--muted')); line(1,[],col('--accent'));} else {line(0,[],col('--accent')); line(1,[4,4],col('--fn-d'));}
+    const rec=H0.slice(-240);
+    if(rec.length>60){
+      const sw=k=>{const v=rec.map(r=>r[k]).filter(d=>d>-60); return v.length?Math.max(...v)-Math.min(...v):0;};
+      document.getElementById('fxMeas').textContent=id==='comp'
+        ? 'Gap between loud and soft chords: '+Math.round(sw(0))+' dB before, '+Math.round(sw(1))+' dB after.'
+        : 'Left and right trade up to '+Math.round(Math.max(...rec.map(r=>Math.abs(r[0]-r[1]))))+' dB of level.';
+    }
+  }
+  function fxPeaks(arr,hzBin,score){
+    const lo=Math.ceil(FXLO/hzBin), hi=Math.floor(FXHI/hzBin), out=[];
+    for(let b=lo+3;b<hi-3;b++){
+      let m=true; for(let k=-3;k<=3;k++) if(k&&arr[b+k]>arr[b]) m=false;
+      if(!m) continue; const sc=score(b); if(sc>0) out.push({hz:b*hzBin,sc});
+    }
+    out.sort((p,q)=>q.sc-p.sc); const keep=[];
+    out.forEach(p=>{if(keep.length<5&&keep.every(k=>Math.abs(Math.log(k.hz/p.hz))>0.06)) keep.push(p);});
+    return keep.sort((p,q)=>p.hz-q.hz);
+  }
+  function fxReport(wet,dry,hzBin){
+    const fl=(v)=>v.map(p=>Math.round(p.hz)+' Hz').join(', ');
+    const added=fxPeaks(wet,hzBin,b=>wet[b]>-85&&wet[b]-dry[b]>12?wet[b]-dry[b]:0);
+    const cut=fxPeaks(dry,hzBin,b=>dry[b]>-70&&dry[b]-wet[b]>12?dry[b]-wet[b]:0);
+    const id=FX[fx.i].id;
+    document.getElementById('fxAdd').textContent=id==='dry'?'Nothing: this is the plain sound.':added.length?fl(added):'No clear new peaks. Raise the amount.';
+    document.getElementById('fxCut').textContent=id==='dry'?'Nothing.':cut.length?fl(cut):'Nothing clearly removed.';
+  }
+  document.getElementById('fxAmt').addEventListener('input',e=>{fx.amt=e.target.value/100; fxLabel(); if(fx.on){fxStop();fxStart();}});
+  document.getElementById('fxPlay').addEventListener('click',()=>{if(fx.on) fxStop(); else fxStart();});
+  document.addEventListener('visibilitychange',()=>{if(document.hidden&&fx.on) fxStop();});
+  fillSelect(document.getElementById('fxRoot'),PLAIN,fx.root);
+  fillSelect(document.getElementById('fxType'),TYPES.map(t=>t.name),fx.type);
+  const fxPick=()=>{fx.root=+document.getElementById('fxRoot').value; fx.type=+document.getElementById('fxType').value; fxLabel(); if(fx.on){fxStop();fxStart();}};
+  document.getElementById('fxRoot').addEventListener('change',fxPick);
+  document.getElementById('fxType').addEventListener('change',fxPick);
+  fxLabel();
+
+  renderClock(); renderFq(); renderKb(); renderVf(); renderKeys(); renderQz(); earNext(false);
+})();
+</script>
+
+</body>
+</html>
